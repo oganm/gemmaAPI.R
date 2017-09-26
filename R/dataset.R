@@ -13,6 +13,12 @@ downloadDataset = function(dataset, file = NULL,filter = FALSE,return=TRUE){
     url = glue::glue(gemmaBase(),'datasets/{dataset}/data?filter={filter %>% tolower}')
     
     raw = httr::GET(url = url)
+    
+    if(raw$status_code != 200){
+        cat("Received a response with status", raw$status_code, '\n', file = stderr())
+        stop(content$error$message);
+    }
+    
     lines = rawToChar(raw$content)
     
     out= readr::read_tsv(file = lines,skip =6)
