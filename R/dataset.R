@@ -12,7 +12,7 @@ filterDatasets = function(taxa = NULL,
 downloadDataset = function(dataset, file = NULL,filter = FALSE,return=TRUE){
     url = glue::glue(gemmaBase(),'datasets/{dataset}/data?filter={filter %>% tolower}')
     
-    raw = GET(url = url)
+    raw = httr::GET(url = url)
     lines = rawToChar(raw$content)
     
     out= readr::read_tsv(file = lines,skip =6)
