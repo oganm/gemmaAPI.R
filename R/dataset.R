@@ -21,11 +21,11 @@ downloadDataset = function(dataset, file = NULL,filter = FALSE,return=TRUE){
     
     lines = rawToChar(raw$content)
     
-    out= readr::read_tsv(file = lines,skip =6)
     if(!is.null(file)){
         write(lines,file = file)
     }
     if(return){
+        out= readr::read_tsv(file = lines,skip =6)
         return(invisible(out))
     } else{
         return(NULL)
