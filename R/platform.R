@@ -1,5 +1,5 @@
 #' @export
-platform = function(platform = NULL, offset = 0, sort = '+id'){
+getPlatform = function(platform = NULL, offset = 0, sort = '+id'){
     limit = 9999
     if(!is.null(platform)){
         platform = paste0(platform,'/')
@@ -7,6 +7,10 @@ platform = function(platform = NULL, offset = 0, sort = '+id'){
         platform = ''
     }
     url = glue::glue(gemmaBase(),'platforms/{platform}','?offset={offset}&limit={limit}&sort{URLencode(sort,reserved = TRUE)}')
-    getContent(url)
+    content = getContent(url)
+    if(platform == ''){
+        names(content) = content %>% purrr::map_chr('shortName')
+    }
+    return(content)
 }
 

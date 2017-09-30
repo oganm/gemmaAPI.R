@@ -10,7 +10,9 @@ Imports:
     RCurl,
     glue,
     magrittr,
-    readr
+    readr,
+    purrr,
+    assertthat
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

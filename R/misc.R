@@ -10,6 +10,6 @@ getContent = function(url){
         cat("Received a response with status", raw$status_code, '\n', file = stderr())
         stop(content$error$message);
     }
-    content = jsonlite::fromJSON(rawToChar(raw$content))$data
+    content = jsonlite::fromJSON(rawToChar(raw$content),simplifyVector = FALSE)$data
     return(content)
 }
