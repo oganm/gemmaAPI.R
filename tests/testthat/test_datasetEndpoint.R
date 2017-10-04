@@ -16,6 +16,8 @@ testthat::test_that('datasetInfo',{
     testthat::expect_is(datasetInfo('GSE81454'),'list')
     testthat::expect_is(datasetInfo('GSE81454',request = 'samples'),'list')
     testthat::expect_is(datasetInfo('GSE81454',request = 'annotations'),'list')
+    testthat::expect_is(datasetInfo('GSE81454',request = 'platforms'),'list')
+    
     testthat::expect_is(datasetInfo('GSE81454',request = 'design'),'data.frame')
     nonFiltered  = datasetInfo('GSE81454',request = 'data')
     testthat::expect_is(nonFiltered,'data.frame')

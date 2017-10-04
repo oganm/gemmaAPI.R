@@ -8,7 +8,40 @@
 #' Only datasets that user has access to will be available.
 #' 
 #' Do not combine different identifiers in one query.
-#' @inheritParams datasetFilter
+#' @param filter Filtering can be done on any* property of a supported type or nested property that the ExpressionExperiment class has ( and is mapped by hibernate ). E.g: 'curationDetails' or 'curationDetails.lastTroubledEvent.date'
+#' Currently supported types are:
+#' \itemize{
+#'     \item String - property of String type, required value can be any String.
+#'     \item Number - any Number implementation. Required value must be a string parseable to the specific Number type.
+#'     \item Boolean - required value will be parsed to true only if the string matches 'true', ignoring case.
+#' }    
+#' Accepted operator keywords are:
+#' \itemize{
+#'     \item '=' - equality
+#'     \item '!=' - non-equality
+#'     \item '<' - smaller than
+#'     \item '=>' - larger or equal
+#'     \item 'like' similar string, effectively means 'contains', translates to the sql 'LIKE' operator (given value will be surrounded by % signs)
+#' }
+#' Multiple filters can be chained using 'AND' or 'OR' keywords.
+#' 
+#' Leave space between the keywords and the previous/next word! 
+#' 
+#' E.g: ?filter=property1 < value1 AND property2 like value2
+#' 
+#' If chained filters are mixed conjunctions and disjunctions, the query must be in conjunctive normal form (CNF). Parentheses are not necessary - every AND keyword separates blocks of disjunctions.
+#' Example:
+#' 
+#'?filter=p1 = v1 OR p1 != v2 AND p2 <= v2 AND p3 > v3 OR p3 < v4
+#'
+#' Above query will translate to: 
+#' 
+#' (p1 = v1 OR p1 != v2) AND (p2 <= v2) AND (p3 > v3 OR p3 < v4;)
+#' 
+#' Breaking the CNF results in an error.
+#' 
+#' Filter "curationDetails.troubled" will be ignored if user is not an administrator.
+#' 
 #' @inheritParams queryLimit 
 #' @inheritParams sortArg
 #'
@@ -16,7 +49,12 @@
 #' @export
 #'
 #' @examples
+#' # only non-troubled datasets
+#' allDatasets(filter ='curationDetails.troubled = false')
 #' 
+#' # return all datasets. it is slower and prone to connection interruptions
+#' # alternative is to loop using offset and limit
+#' allDatasets(limit = 0)
 allDatasets = function(datasets = NULL,
                        filter = NULL,
                        offset = 0,
@@ -31,9 +69,16 @@ allDatasets = function(datasets = NULL,
         datasets = ''
     }
     
+    if(!is.null(filter)){
+        assertthat::assert_that(assertthat::is.string(filter))
+        filter %<>% URLencode(reserved = TRUE)
+        filter = glue::glue('filter={filter}')
+    } else{
+        filter = ''
+    }
     
     
-    url = glue::glue(gemmaBase(),'datasets/{datasets}?{queryLimit(offset,limit)}&{sortArg(sort)}&{datasetFilter(filter)}')
+    url = glue::glue(gemmaBase(),'datasets/{datasets}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filter}')
     
     content = getContent(url)
     names(content) =  content %>% purrr::map_chr('shortName')
@@ -75,6 +120,8 @@ allDatasets = function(datasets = NULL,
 #'
 #' @examples
 #' datasetInfo('GSE81454')
+#' datasetInfo('GSE81454', request = 'platforms')
+#' datasetInfo('GSE81454', request='data',filter = FALSE)
 datasetInfo  = function(dataset, 
                         request = NULL,
                         ...,
