@@ -25,8 +25,11 @@ datasetInfo(dataset, request = NULL, ..., file = NULL)
       for the given dataset. Parameters:
          \itemize{
              \item \code{qValueThreshold}: Required. Q-value threshold.
-             \item \code{offset}: Optional, defaults to 0. Skips the specified amount of objects when retrieving them from the database.
-             \item \code{limit}: Optional, defaults to 20. Limits the result to specified amount of objects. Use 0 for no limit.
+             \item \code{offset}: Optional, defaults to 0. Skips the 
+             specified amount of objects when retrieving them from the
+              database.
+             \item \code{limit}: Optional, defaults to 20. Limits the result 
+             to specified amount of objects. Use 0 for no limit.
          }
 }}
 
@@ -40,4 +43,6 @@ identifier. Combines several API calls
 }
 \examples{
 datasetInfo('GSE81454')
+datasetInfo('GSE81454', request = 'platforms')
+datasetInfo('GSE81454', request='data',filter = FALSE)
 }

@@ -9,7 +9,8 @@ allDatasets(datasets = NULL, filter = NULL, offset = 0, limit = 20,
 }
 \arguments{
 \item{datasets}{Character vector of identifiers. 
-Identifiers can either be the ExpressionExperiment ID or its short name (e.g. GSE1234). 
+Identifiers can either be the ExpressionExperiment ID or its short name 
+(e.g. GSE1234). 
 Retrieval by ID is more efficient.
 Only datasets that user has access to will be available.
 
@@ -69,5 +70,10 @@ List of lists containing experiment data.
 Lists all datasets, or datasets with provided identifiers
 }
 \examples{
+# only non-troubled datasets
+allDatasets(filter ='curationDetails.troubled = false')
 
+# return all datasets. it is slower and prone to connection interruptions
+# alternative is to loop using offset and limit
+allDatasets(limit = 0)
 }

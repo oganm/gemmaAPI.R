@@ -3,7 +3,8 @@
 #' Lists all datasets, or datasets with provided identifiers
 #'
 #' @param datasets Character vector of identifiers. 
-#' Identifiers can either be the ExpressionExperiment ID or its short name (e.g. GSE1234). 
+#' Identifiers can either be the ExpressionExperiment ID or its short name 
+#' (e.g. GSE1234). 
 #' Retrieval by ID is more efficient.
 #' Only datasets that user has access to will be available.
 #' 
@@ -38,7 +39,9 @@ allDatasets = function(datasets = NULL,
     }
     
     
-    url = glue::glue(gemmaBase(),'datasets/{datasets}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
+    url = 
+        glue::glue(gemmaBase(),
+                   'datasets/{datasets}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
     
     content = getContent(url)
     names(content) =  content %>% purrr::map_chr('shortName')
@@ -69,8 +72,11 @@ allDatasets = function(datasets = NULL,
 #'       for the given dataset. Parameters:
 #'          \itemize{
 #'              \item \code{qValueThreshold}: Required. Q-value threshold.
-#'              \item \code{offset}: Optional, defaults to 0. Skips the specified amount of objects when retrieving them from the database.
-#'              \item \code{limit}: Optional, defaults to 20. Limits the result to specified amount of objects. Use 0 for no limit.
+#'              \item \code{offset}: Optional, defaults to 0. Skips the 
+#'              specified amount of objects when retrieving them from the
+#'               database.
+#'              \item \code{limit}: Optional, defaults to 20. Limits the result 
+#'              to specified amount of objects. Use 0 for no limit.
 #'          }
 #' }
 #' @param ... Use if the specified request has additional parameters.
