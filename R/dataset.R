@@ -126,7 +126,7 @@ datasetInfo  = function(dataset,
         }
     }
     
-    content = getContent(url)
+    content = getContent(url,file = file)
     # just setting names. not essential
     if(!is.null(request)){
         if(request %in% c('platforms')){
