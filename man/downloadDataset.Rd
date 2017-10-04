@@ -7,13 +7,14 @@
 downloadDataset(dataset, file = NULL, filter = FALSE, return = TRUE)
 }
 \arguments{
-\item{dataset}{Character. Can either be the ExpressionExperiment ID or its
+\item{dataset}{Character. Can either be the ExpressionExperiment ID or its 
 short name (e.g. GSE1234). Retrieval by ID is more efficient. Only datasets
 that user has access to will be available}
 
 \item{file}{Character. File path. If provided expression data will be saved.}
 
-\item{filter}{Logical. If true filters the expression data so that they do not contain samples under a minimum threshold.}
+\item{filter}{Logical. If true filters the expression data so that they do
+not contain samples under a minimum threshold.}
 
 \item{return}{Logical. If true returns the expression data.}
 }

@@ -2,6 +2,8 @@
 
 export("%<>%")
 export("%>%")
+export(allDatasets)
+export(datasetInfo)
 export(downloadDataset)
 export(getDatasets)
 export(getPlatform)
