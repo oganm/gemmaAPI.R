@@ -127,12 +127,22 @@ datasetInfo  = function(dataset,
                         ...,
                         file = NULL){
     assertthat::assert_that(assertthat::is.string(dataset))
+    # optional paramters go here
     requestParams = list(...)
     
     url = glue::glue(gemmaBase(),'datasets/{dataset}')
     if(!is.null(request)){
-        request = match.arg(request, choices = c('platforms','samples','annotations','design','data','differential'))
-        url = glue::glue('{url}/{request}')
+        request = match.arg(request, 
+                            choices = c('platforms',
+                                        'samples',
+                                        'annotations',
+                                        'design','data',
+                                        'differential'))
+        if(request == 'differential'){
+            url = glue::glue('{url}/analyses/differential')
+        } else{
+            url = glue::glue('{url}/{request}')
+        }
         if(request == 'data'){
             # if not provoided, returns false
             filter = requestParams$filter
@@ -179,6 +189,8 @@ datasetInfo  = function(dataset,
             names(content) =  content %>% purrr::map_chr('name')
         } else if(request %in% 'annotations'){
             names(content) =  content %>% purrr::map_chr('className')
+        } else if (request %in% 'differential'){
+            names(content) =  content %>% purrr::map_chr('probe')
         }
     }
     return(content)

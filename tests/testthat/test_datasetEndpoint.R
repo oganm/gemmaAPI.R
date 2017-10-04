@@ -33,5 +33,7 @@ testthat::test_that('datasetInfo',{
     
     
     testthat::expect_error(datasetInfo('GSE81454',request = 'differential'),regexp = 'qValueThreshold')
-    testthat::expect_is(datasetInfo('GSE81454',request = 'differential',qValueThreshold = 1),'list')
+    testthat::expect_is(datasetInfo('GSE12679',request = 'differential',qValueThreshold = 1),'list')
+    testthat::expect_true(length(datasetInfo('GSE12679',request = 'differential',qValueThreshold = 1))>0)
+    
 })
