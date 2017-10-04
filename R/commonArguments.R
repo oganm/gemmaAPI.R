@@ -91,3 +91,16 @@ filterArg = function(filter){
     
     return(filter)
 }
+
+
+#' file and return
+#'
+#' @keywords internal
+#'
+#' @name fileReturn
+#'
+#' @param file Character. File path. If provided, response will be saved to file
+#' @param return Logical. If the response should be returned. Set to false when
+#' you only want to save a file
+#' 
+NULL

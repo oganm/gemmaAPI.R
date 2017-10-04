@@ -9,11 +9,15 @@ testthat::test_that('allDatasets',{
     filterCall = allDatasets(filter ='curationDetails.troubled = true')
     listCall = allDatasets(datasets = c('GSE2871','GSE2869','GSE2868'))
     testthat::expect_equal(names(listCall),  c('GSE2871','GSE2869','GSE2868'))
+    listCall = allDatasets(datasets = c('GSE2871','GSE2869','GSE2868'),return = FALSE)
+    testthat::expect_null(listCall)
 })
 
 
 testthat::test_that('datasetInfo',{
     testthat::expect_is(datasetInfo('GSE81454'),'list')
+    testthat::expect_null(datasetInfo('GSE81454',return = FALSE))
+    
     testthat::expect_true(length(datasetInfo('GSE81454'))>0)
     
     testthat::expect_is(datasetInfo('GSE81454',request = 'samples'),'list')

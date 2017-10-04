@@ -5,7 +5,7 @@
 \title{All datasets}
 \usage{
 allDatasets(datasets = NULL, filter = NULL, offset = 0, limit = 20,
-  sort = "+id")
+  sort = "+id", file = NULL, return = TRUE)
 }
 \arguments{
 \item{datasets}{Character vector of identifiers. 
@@ -62,9 +62,14 @@ are also supported (recursively).
 
 E.g:
 +curationDetails.lastTroubledEvent.date}
+
+\item{file}{Character. File path. If provided, response will be saved to file}
+
+\item{return}{Logical. If the response should be returned. Set to false when
+you only want to save a file}
 }
 \value{
-List of lists containing experiment data.
+List of lists containing experiment object.
 }
 \description{
 Lists all datasets, or datasets with provided identifiers

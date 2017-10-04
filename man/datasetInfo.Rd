@@ -4,7 +4,7 @@
 \alias{datasetInfo}
 \title{datasetInfo}
 \usage{
-datasetInfo(dataset, request = NULL, ..., file = NULL)
+datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE)
 }
 \arguments{
 \item{dataset}{Character. Can either be the dataset ID or its short name 
@@ -36,6 +36,9 @@ datasetInfo(dataset, request = NULL, ..., file = NULL)
 \item{...}{Use if the specified request has additional parameters.}
 
 \item{file}{Character. File path. If provided, response will be saved to file}
+
+\item{return}{Logical. If the response should be returned. Set to false when
+you only want to save a file}
 }
 \description{
 Retrieves information about a single dataset based on the given dataset 

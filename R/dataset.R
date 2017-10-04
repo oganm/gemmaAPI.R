@@ -13,8 +13,8 @@
 #' @inheritParams filterArg 
 #' @inheritParams queryLimit 
 #' @inheritParams sortArg
-#'
-#' @return List of lists containing experiment data.
+#' @inheritParams fileReturn
+#' @return List of lists containing experiment object.
 #' @export
 #'
 #' @examples
@@ -28,7 +28,9 @@ allDatasets = function(datasets = NULL,
                        filter = NULL,
                        offset = 0,
                        limit = 20,
-                       sort = '+id'){
+                       sort = '+id',
+                       file = NULL,
+                       return = TRUE){
     
     if(!is.null(datasets)){
         assertthat::assert_that(is.character(datasets))
@@ -43,8 +45,10 @@ allDatasets = function(datasets = NULL,
         glue::glue(gemmaBase(),
                    'datasets/{datasets}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
     
-    content = getContent(url)
-    names(content) =  content %>% purrr::map_chr('shortName')
+    content = getContent(url, file = file, return = return)
+    if(return){
+        names(content) =  content %>% purrr::map_chr('shortName')
+    }
     return(content)
 }
 
@@ -80,7 +84,7 @@ allDatasets = function(datasets = NULL,
 #'          }
 #' }
 #' @param ... Use if the specified request has additional parameters.
-#' @param file Character. File path. If provided, response will be saved to file
+#' @inheritParams fileReturn
 #' @return 
 #' @export
 #'
@@ -91,7 +95,8 @@ allDatasets = function(datasets = NULL,
 datasetInfo  = function(dataset, 
                         request = NULL,
                         ...,
-                        file = NULL){
+                        file = NULL,
+                        return = TRUE){
     assertthat::assert_that(assertthat::is.string(dataset))
     # optional paramters go here
     requestParams = list(...)
@@ -146,17 +151,19 @@ datasetInfo  = function(dataset,
         }
     }
     
-    content = getContent(url,file = file)
+    content = getContent(url,file = file,return=return)
     # just setting names. not essential
-    if(!is.null(request)){
-        if(request %in% c('platforms')){
-            names(content) =  content %>% purrr::map_chr('shortName')
-        } else if (request %in% c('samples')){
-            names(content) =  content %>% purrr::map_chr('name')
-        } else if(request %in% 'annotations'){
-            names(content) =  content %>% purrr::map_chr('className')
-        } else if (request %in% 'differential'){
-            names(content) =  content %>% purrr::map_chr('probe')
+    if(return){
+        if(!is.null(request)){
+            if(request %in% c('platforms')){
+                names(content) =  content %>% purrr::map_chr('shortName')
+            } else if (request %in% c('samples')){
+                names(content) =  content %>% purrr::map_chr('name')
+            } else if(request %in% 'annotations'){
+                names(content) =  content %>% purrr::map_chr('className')
+            } else if (request %in% 'differential'){
+                names(content) =  content %>% purrr::map_chr('probe')
+            }
         }
     }
     return(content)
