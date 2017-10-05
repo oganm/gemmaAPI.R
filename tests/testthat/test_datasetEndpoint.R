@@ -16,6 +16,8 @@ testthat::test_that('allDatasets',{
 
 testthat::test_that('datasetInfo',{
     testthat::expect_is(datasetInfo('GSE81454'),'list')
+    testthat::expect_error(datasetInfo('o zaman dans'),'404')
+    
     testthat::expect_null(datasetInfo('GSE81454',return = FALSE))
     
     testthat::expect_true(length(datasetInfo('GSE81454'))>0)
