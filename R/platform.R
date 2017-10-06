@@ -48,7 +48,7 @@ allPlatforms = function(filter = NULL,
 #'              to specified amount of objects. Use 0 for no limit.
 #'         }
 #'     \item \code{annotations}: Retrieves the annotation file for the given platform. If you set a file path, the downloaded file will be a .gz file.
-#'     \item \code{elements}: Retrieves the composite sequences (elements) for the given platform (probes). Parameters:
+#'     \item \code{elements}: Retrieves the composite sequences (elements/probes) for the given platform. Parameters:
 #'         \itemize{
 #'             \item \code{offset}: As in datasets
 #'             \item \code{limit}: As in datasets

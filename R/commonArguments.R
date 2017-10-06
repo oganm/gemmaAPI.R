@@ -89,7 +89,7 @@ sortArg = function(sort){
 #' Filter "curationDetails.troubled" will be ignored if user is not an administrator.
 #' 
 filterArg = function(filter){
-    addStringArg(filte = filter)
+    addStringArg(filter = filter)
     # if(!is.null(filter)){
     #     assertthat::assert_that(assertthat::is.string(filter))
     #     filter %<>% URLencode(reserved = TRUE)
@@ -102,6 +102,7 @@ filterArg = function(filter){
 }
 
 
+# takes in strings, checks if string, combines them into a single query
 addStringArg = function(...,addName = TRUE, sep = '&'){
     stringArgs = list(...)
     out = ''
