@@ -7,6 +7,7 @@ testthat::test_that('allDatasets',{
     limitCall = allDatasets(limit = 10) 
     testthat::expect_length(limitCall,10)
     filterCall = allDatasets(filter ='curationDetails.troubled = true')
+    testthat::expect_is(filterCall,'list')
     listCall = allDatasets(datasets = c('GSE2871','GSE2869','GSE2868'))
     testthat::expect_equal(names(listCall),  c('GSE2871','GSE2869','GSE2868'))
     listCall = allDatasets(datasets = c('GSE2871','GSE2869','GSE2868'),return = FALSE)
@@ -16,7 +17,7 @@ testthat::test_that('allDatasets',{
 
 testthat::test_that('datasetInfo',{
     testthat::expect_is(datasetInfo('GSE81454'),'list')
-    testthat::expect_error(datasetInfo('o zaman dans'),'404')
+    # testthat::expect_error(datasetInfo('o zaman dans'),'404')
     
     testthat::expect_null(datasetInfo('GSE81454',return = FALSE))
     

@@ -85,7 +85,7 @@ allDatasets = function(datasets = NULL,
 #' }
 #' @param ... Use if the specified request has additional parameters.
 #' @inheritParams fileReturn
-#' @return 
+#' @return A data.frame or a list depending on the request
 #' @export
 #'
 #' @examples
@@ -97,11 +97,10 @@ datasetInfo  = function(dataset,
                         ...,
                         file = NULL,
                         return = TRUE){
-    assertthat::assert_that(assertthat::is.string(dataset))
     # optional paramters go here
     requestParams = list(...)
     
-    url = glue::glue(gemmaBase(),'datasets/{dataset}')
+    url = glue::glue(gemmaBase(),'datasets/{addStringArg(dataset = dataset,addName=FALSE)}')
     if(!is.null(request)){
         request = match.arg(request, 
                             choices = c('platforms',
@@ -131,12 +130,7 @@ datasetInfo  = function(dataset,
         } else if(request == 'differential') {
             qValueThreshold = requestParams$qValueThreshold
             assertthat::assert_that(assertthat::is.number(qValueThreshold))
-            if(is.null(requestParams$offset)){
-                requestParams$offset = 0
-            }
-            if(is.null(requestParams$limit)){
-                requestParams$limit = 20
-            }
+
             
             if(any(!names(requestParams) %in% c('qValueThreshold','offset','limit'))){
                 warning("Differential request only accepts 'qValueThreshold', 'offset' and 'limit' as parameters")

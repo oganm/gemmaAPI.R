@@ -10,7 +10,14 @@
 #' 
 queryLimit = function(offset = 0,
                       limit = 20){
-    # do not accept NULL since they have defaults
+    # enforce defaults in the face of NULL
+    if(is.null(offset)){
+        offset = 0
+    }
+    
+    if(is.null(limit)){
+        limit = 20
+    }
     assertthat::assert_that(assertthat::is.number(offset))
     assertthat::assert_that(assertthat::is.number(limit))
     glue::glue('offset={offset}&limit={limit}')
@@ -34,9 +41,10 @@ queryLimit = function(offset = 0,
 #' 
 #' 
 sortArg = function(sort){
-    assertthat::assert_that(assertthat::is.string(sort))
-    sort %<>% URLencode(reserved =  TRUE)
-    glue::glue('sort={sort}')
+    addStringArg(sort = sort)
+    # assertthat::assert_that(assertthat::is.string(sort))
+    # sort %<>% URLencode(reserved =  TRUE)
+    # glue::glue('sort={sort}')
 }
 
 
@@ -81,17 +89,41 @@ sortArg = function(sort){
 #' Filter "curationDetails.troubled" will be ignored if user is not an administrator.
 #' 
 filterArg = function(filter){
-    if(!is.null(filter)){
-        assertthat::assert_that(assertthat::is.string(filter))
-        filter %<>% URLencode(reserved = TRUE)
-        filter = glue::glue('filter={filter}')
-    } else{
-        filter = ''
-    }
-    
-    return(filter)
+    addStringArg(filte = filter)
+    # if(!is.null(filter)){
+    #     assertthat::assert_that(assertthat::is.string(filter))
+    #     filter %<>% URLencode(reserved = TRUE)
+    #     filter = glue::glue('filter={filter}')
+    # } else{
+    #     filter = ''
+    # }
+    # 
+    # return(filter)
 }
 
+
+addStringArg = function(...,addName = TRUE, sep = '&'){
+    stringArgs = list(...)
+    out = ''
+    for(i in 1:length(stringArgs)){
+        if(is.null(stringArgs[[i]])){
+            next
+        }
+        assertthat::assert_that(assertthat::is.string(stringArgs[[i]]),
+                                msg = glue::glue(names(stringArgs)[i],
+                                                 ' is not a string (a length one character vector).'))
+        stringArgs[[i]] %<>% URLencode(reserved = TRUE)
+        if(addName){
+            out = glue::glue('{out}{names(stringArgs)[i]}={stringArgs[[i]]}')
+        } else{
+            out = glue::glue('{out}{stringArgs[[i]]}')
+        }
+        if(i != length(stringArgs)){
+            out = paste0(out,sep)
+        }
+    }
+    return(out)
+}
 
 #' file and return
 #'

@@ -40,6 +40,9 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE)
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
 }
+\value{
+A data.frame or a list depending on the request
+}
 \description{
 Retrieves information about a single dataset based on the given dataset 
 identifier. Combines several API calls

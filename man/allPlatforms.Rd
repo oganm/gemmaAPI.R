@@ -4,7 +4,8 @@
 \alias{allPlatforms}
 \title{All platforms}
 \usage{
-allPlatforms(filter = NULL, offset = 0, limit = 20, sort = "+id")
+allPlatforms(filter = NULL, offset = 0, limit = 20, sort = "+id",
+  file = NULL, return = TRUE)
 }
 \arguments{
 \item{filter}{Filtering can be done on any* property of a supported type or nested property that the ExpressionExperiment class has ( and is mapped by hibernate ). E.g: 'curationDetails' or 'curationDetails.lastTroubledEvent.date'
@@ -53,10 +54,22 @@ are also supported (recursively).
 
 E.g:
 +curationDetails.lastTroubledEvent.date}
+
+\item{file}{Character. File path. If provided, response will be saved to file}
+
+\item{return}{Logical. If the response should be returned. Set to false when
+you only want to save a file}
 }
 \value{
 List of lists containing platform object.
 }
 \description{
 List all platforms
+}
+\examples{
+allPlatforms()
+
+# return all platforms it is slower and prone to connection interruptions
+# alternative is to loop using offset and limit
+allPlatforms(limit = 0)
 }
