@@ -87,10 +87,6 @@ geneInfo = function(gene, request = NULL,
             names(content) =  content %>% purrr::map_chr('officialSymbol')
         } else if (request %in% c('goTerms')){
             names(content) =  content %>% purrr::map_chr('goId')
-        } else if(request %in% 'annotations'){
-            names(content) =  content %>% purrr::map_chr('className')
-        } else if (request %in% 'differential'){
-            names(content) =  content %>% purrr::map_chr('probe')
         }
     }
     
