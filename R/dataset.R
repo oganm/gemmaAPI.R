@@ -125,10 +125,7 @@ datasetInfo  = function(dataset,
         if(request == 'data'){
             url = glue::glue('{url}?{logicArg(filter = requestParams$filter)}')
         } else if(request == 'differential') {
-            qValueThreshold = requestParams$qValueThreshold
-            assertthat::assert_that(assertthat::is.number(qValueThreshold))
-            
-            url = glue::glue('{url}?qValueThreshold={requestParams$qValueThreshold}',
+            url = glue::glue('{url}?{numberArg(qValueThreshold = requestParams$qValueThreshold)}',
                              '&{queryLimit(requestParams$offset, requestParams$limit)}')
         }
     }
