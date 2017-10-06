@@ -34,13 +34,59 @@
 #' @param ... Use if the specified request has additional parameters.
 #' @inheritParams fileReturn
 #' 
-#' @return
+#' @return A list
 #' @export
 #'
 #' @examples
+#' geneInfo('1859') # single match it is a unique NCBI id
+#' geneInfo('DYRK1A') # this returns all genes named DYRK1A from all species
 geneInfo = function(gene, request = NULL,
                     ...,
                     file = NULL,
                     return = TRUE){
+    requestParams = list(...)
+    url = glue::glue(gemmaBase(),'genes/{gene}')
     
+    if(!is.null(request)){
+        request = match.arg(request, 
+                            choices = c('evidence',
+                                        'locations',
+                                        'probes',
+                                        'goTerms',
+                                        'coexpression'))
+        
+        allowedArguments = list(probes = c('limit','offset'),
+                                coexpression = c('with','limit','stringency'))
+        
+        mandatoryArguments = list(coexpression = 'with')
+        
+        checkArguments(request,requestParams,allowedArguments,mandatoryArguments)
+        
+        
+        if (request %in% c('evidence','locations','goTerms')){
+            url = glue::glue(url,'/{request}')
+        } else if(request == 'probes'){
+            url = glue::glue(url,'/probes?{queryLimit(requestParams$offset, requestParams$limit)}')
+        } else if(request == 'coexpression'){
+            url = glue::glue(url,'/coexpression?with={requestParams$with}&',
+                             numberArg(limit = requestParams$limit,
+                                       stringency = requestParams$stringency))
+        }
+    }
+    
+    
+    content = getContent(url,file = file,return=return)
+    if(return){
+        if(is.null(request)){
+            names(content) =  content %>% purrr::map_chr('officialSymbol')
+        } else if (request %in% c('goTerms')){
+            names(content) =  content %>% purrr::map_chr('goId')
+        } else if(request %in% 'annotations'){
+            names(content) =  content %>% purrr::map_chr('className')
+        } else if (request %in% 'differential'){
+            names(content) =  content %>% purrr::map_chr('probe')
+        }
+    }
+    
+    return(content)
 }
