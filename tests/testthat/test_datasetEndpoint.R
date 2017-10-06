@@ -26,6 +26,8 @@ testthat::test_that('datasetInfo',{
     testthat::expect_is(datasetInfo('GSE81454',request = 'samples'),'list')
     testthat::expect_true(length(datasetInfo('GSE81454',request = 'samples'))>0)
     
+    testthat::expect_warning(datasetInfo('GSE81454',request = 'samples',loyloy= 'sadds'),'does not accept parameters')
+    
     testthat::expect_is(datasetInfo('GSE81454',request = 'annotations'),'list')
     testthat::expect_true(length(datasetInfo('GSE81454',request = 'annotations'))>0)
     

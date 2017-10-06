@@ -55,11 +55,11 @@ allPlatforms = function(filter = NULL,
 #'         }
 #'     \item \code{specificElement} Retrieves a specific composite sequence (element) for the given platform. Paramaters: 
 #'         \itemize{
-#'             \item \code{probe}: Can either be the probe name or ID.
+#'             \item \code{probe}: Required. Can either be the probe name or ID.
 #'         }
 #'     \item \code{genes} Retrieves the genes on the given platform element. Parameters:
 #'         \itemize{
-#'             \item \code{probe}: Can either be the probe name or ID.
+#'             \item \code{probe}: Required. Can either be the probe name or ID.
 #'             \item \code{offset}: As in datasets
 #'             \item \code{limit}: As in datasets
 #'         }
@@ -80,7 +80,7 @@ platformInfo = function(platform,
                         return = TRUE){
     # optional paramters go here
     requestParams = list(...)
-    url = glue::glue(gemmaBase(),'platforms/{addStringArg(platform = platform,addName=FALSE)}')
+    url = glue::glue(gemmaBase(),'platforms/{stringArg(platform = platform,addName=FALSE)}')
     if(!is.null(request)){
         request = match.arg(request, 
                             choices = c('datasets',
@@ -88,26 +88,28 @@ platformInfo = function(platform,
                                         'specificElement',
                                         'genes',
                                         'annotations'))
+        
+        allowedArguments = list(datasets = c('offset','limit'),
+                                elements = c('offset','limit'),
+                                genes = c('probe','offset','limit'),
+                                specificElement = 'probe')
+        
+        mandatoryArguments = list(genes = 'probe',
+                                  specificElement = 'probe')
+        
+        checkArguments(request,requestParams,allowedArguments,mandatoryArguments)
+        
+        
         if(request %in% c('datasets','elements')){
-            if(any(!names(requestParams) %in% c('offset','limit'))){
-                warning(request, "request only accepts 'offset' and 'limit' as parameters.")
-            }
-            
             url = glue::glue(url,'/{request}/?',queryLimit(requestParams$offset,
                                                            requestParams$limit))
         } else if (request %in% 'specificElement'){
-            if(any(!names(requestParams) %in% c('probe'))){
-                warning(request, "request only accepts 'probe' as parameters.")
-            }
             url = glue::glue(url,'/elements/',
-                             addStringArg(probe = requestParams$probe, 
+                             stringArg(probe = requestParams$probe, 
                                           addName=FALSE))
         } else if(request == 'genes'){
-            if(any(!names(requestParams) %in% c('probe','offset','limit'))){
-                warning(request, "request only accepts 'probe', 'offset' and 'limit' as parameters.")
-            }
             url = glue::glue(url,'/elements/',
-                             addStringArg(probe = requestParams$probe, 
+                             stringArg(probe = requestParams$probe, 
                                           addName=FALSE),
             '/genes/?',queryLimit(requestParams$offset,requestParams$limit))
         } else if (request == 'annotations'){

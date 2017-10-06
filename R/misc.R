@@ -3,7 +3,10 @@ gemmaBase = function(x){
 }
 
 
-
+# detects what the content is, reads it return = TRUE, saves it if file path is provided
+# if json, reads json, if not attempts to read it as a table
+# if content can't be converted into text, assumes it is a gzipped platform
+# annotation file
 getContent = function(url,file = NULL, return = TRUE){
     raw = httr::GET(url = url)
     if(raw$status_code != 200){
@@ -44,6 +47,26 @@ getContent = function(url,file = NULL, return = TRUE){
         content = NULL
     }
     return(content)
+}
+
+
+checkArguments = function(request, requestParams, allowedArguments,mandatoryArguments){
+
+    if(is.null(allowedArguments[[request]]) & length(requestParams)>0){
+        warning('Your request does not accept parameters. Ignoring.')
+    } else if(any(!names(requestParams) %in% allowedArguments[[request]])){
+        # if request is made with unkown arguments complain
+        warning(request,
+                " request only accepts '",
+                paste(allowedArguments[[request]],collapse = "', '"),"'. Ignoring.")
+    }
+    
+    # if request has mandatory arguments that are not provided, fail
+    if(length(mandatoryArguments[[request]]>0)){
+        if(!all(mandatoryArguments[[request]] %in% names(requestParams))){
+            stop(request, " request requires '", paste(mandatoryArguments[[request]], collapse = "', '"), "' specified.")
+        }
+    }
 }
 
 

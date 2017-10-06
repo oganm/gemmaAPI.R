@@ -27,11 +27,11 @@ platformInfo(platform, request = NULL, ..., file = NULL, return = TRUE)
         }
     \item \code{specificElement} Retrieves a specific composite sequence (element) for the given platform. Paramaters: 
         \itemize{
-            \item \code{probe}: Can either be the probe name or ID.
+            \item \code{probe}: Required. Can either be the probe name or ID.
         }
     \item \code{genes} Retrieves the genes on the given platform element. Parameters:
         \itemize{
-            \item \code{probe}: Can either be the probe name or ID.
+            \item \code{probe}: Required. Can either be the probe name or ID.
             \item \code{offset}: As in datasets
             \item \code{limit}: As in datasets
         }
