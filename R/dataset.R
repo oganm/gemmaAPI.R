@@ -35,7 +35,7 @@ allDatasets = function(datasets = NULL,
     if(!is.null(datasets)){
         assertthat::assert_that(is.character(datasets))
         datasets %<>% paste(collapse =',')
-        datasets %<>% URLencode(reserved = TRUE)
+        datasets %<>% utils::URLencode(reserved = TRUE)
     } else{
         datasets = ''
     }

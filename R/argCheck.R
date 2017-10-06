@@ -10,7 +10,7 @@ stringArg = function(...,addName = TRUE, sep = '&'){
         assertthat::assert_that(assertthat::is.string(stringArgs[[i]]),
                                 msg = glue::glue(names(stringArgs)[i],
                                                  ' is not a string (a length one character vector).'))
-        stringArgs[[i]] %<>% URLencode(reserved = TRUE)
+        stringArgs[[i]] %<>% utils::URLencode(reserved = TRUE)
         if(addName){
             out = glue::glue('{out}{names(stringArgs)[i]}={stringArgs[[i]]}')
         } else{
