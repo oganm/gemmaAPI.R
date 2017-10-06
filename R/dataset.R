@@ -100,7 +100,7 @@ datasetInfo  = function(dataset,
     # optional paramters go here
     requestParams = list(...)
     
-    url = glue::glue(gemmaBase(),'datasets/{addStringArg(dataset = dataset,addName=FALSE)}')
+    url = glue::glue(gemmaBase(),'datasets/{stringArg(dataset = dataset,addName=FALSE)}')
     if(!is.null(request)){
         request = match.arg(request, 
                             choices = c('platforms',
@@ -108,40 +108,28 @@ datasetInfo  = function(dataset,
                                         'annotations',
                                         'design','data',
                                         'differential'))
+        
+        allowedArguments = list(data = 'filter',
+                                differential = c('qValueThreshold',
+                                                 'offset',
+                                                 'limit'))
+        mandatoryArguments = list(differential = 'qValueThreshold')
+        
+        checkArguments(request,requestParams,allowedArguments,mandatoryArguments)
+        
         if(request == 'differential'){
             url = glue::glue('{url}/analyses/differential')
         } else{
             url = glue::glue('{url}/{request}')
         }
         if(request == 'data'){
-            # if not provoided, returns false
-            filter = requestParams$filter
-            if(is.null(filter)){
-                filter = FALSE
-            }
-            assertthat::assert_that(is.logical(filter))
-            filter = filter %>% tolower()
-            # if other parameters are around send out a warning
-            if(any(names(requestParams) != 'filter')){
-                warning("Data request only accepts 'filter' as parameter")
-            }
-            url = glue::glue('{url}?filter={filter}')
-            
+            url = glue::glue('{url}?{logicArg(filter = requestParams$filter)}')
         } else if(request == 'differential') {
             qValueThreshold = requestParams$qValueThreshold
             assertthat::assert_that(assertthat::is.number(qValueThreshold))
-
-            
-            if(any(!names(requestParams) %in% c('qValueThreshold','offset','limit'))){
-                warning("Differential request only accepts 'qValueThreshold', 'offset' and 'limit' as parameters")
-            }
             
             url = glue::glue('{url}?qValueThreshold={requestParams$qValueThreshold}',
                              '&{queryLimit(requestParams$offset, requestParams$limit)}')
-        } else {
-            if(length(requestParams)>0){
-                warning('Your request does not accept parameters. Ignoring')
-            }
         }
     }
     

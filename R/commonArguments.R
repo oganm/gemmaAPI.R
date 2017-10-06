@@ -41,7 +41,7 @@ queryLimit = function(offset = 0,
 #' 
 #' 
 sortArg = function(sort){
-    addStringArg(sort = sort)
+    stringArg(sort = sort)
     # assertthat::assert_that(assertthat::is.string(sort))
     # sort %<>% URLencode(reserved =  TRUE)
     # glue::glue('sort={sort}')
@@ -89,7 +89,7 @@ sortArg = function(sort){
 #' Filter "curationDetails.troubled" will be ignored if user is not an administrator.
 #' 
 filterArg = function(filter){
-    addStringArg(filter = filter)
+    stringArg(filter = filter)
     # if(!is.null(filter)){
     #     assertthat::assert_that(assertthat::is.string(filter))
     #     filter %<>% URLencode(reserved = TRUE)
@@ -103,7 +103,7 @@ filterArg = function(filter){
 
 
 # takes in strings, checks if string, combines them into a single query
-addStringArg = function(...,addName = TRUE, sep = '&'){
+stringArg = function(...,addName = TRUE, sep = '&'){
     stringArgs = list(...)
     out = ''
     for(i in 1:length(stringArgs)){
@@ -125,6 +125,31 @@ addStringArg = function(...,addName = TRUE, sep = '&'){
     }
     return(out)
 }
+
+logicArg = function(...,addName = TRUE, sep = '&'){
+    logicArgs = list(...)
+    out = ''
+    for(i in 1:length(logicArgs)){
+        if(is.null(logicArgs[[i]])){
+            next
+        }
+        assertthat::assert_that(is.logical(logicArgs[[i]]),
+                                msg = glue::glue(names(logicArgs)[i],
+                                                 ' is not logical'))
+        logicArgs[[i]] %<>% tolower()
+        if(addName){
+            out = glue::glue('{out}{names(logicArgs)[i]}={logicArgs[[i]]}')
+        } else{
+            out = glue::glue('{out}{logicArgs[[i]]}')
+        }
+        if(i != length(logicArgs)){
+            out = paste0(out,sep)
+        }
+    }
+    return(out)
+}
+
+
 
 #' file and return
 #'
