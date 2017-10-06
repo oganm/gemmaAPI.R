@@ -37,7 +37,7 @@ allPlatforms = function(filter = NULL,
 #' Retrieves information about a single platform. Combines several API calls.
 #'
 #' @param platform Can either be the platform ID or its short name (e.g: GPL1355). Retrieval by ID is more efficient. Only platforms that user has access to will be available.
-#' @param request Character. If NULL retrieves the dataset object. Otherwise
+#' @param request Character. If NULL retrieves the platform object. Otherwise
 #' \itemize{
 #'     \item \code{datasets}: Retrieves experiments in the given platform. Parameters:
 #'         \itemize{
@@ -47,7 +47,7 @@ allPlatforms = function(filter = NULL,
 #'             \item \code{limit}: Optional, defaults to 20. Limits the result 
 #'              to specified amount of objects. Use 0 for no limit.
 #'         }
-#'     \item \code{annotations}: Retrieves the annotation file for the given platform
+#'     \item \code{annotations}: Retrieves the annotation file for the given platform. If you set a file path, the downloaded file will be a .gz file.
 #'     \item \code{elements}: Retrieves the composite sequences (elements) for the given platform (probes). Parameters:
 #'         \itemize{
 #'             \item \code{offset}: As in datasets
