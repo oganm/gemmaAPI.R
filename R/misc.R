@@ -27,7 +27,7 @@ getContent = function(url,file = NULL, return = TRUE){
     
     if(contentText[1] == 'THISISFILE' & return){
         # if output is a gz file and return is desired, read the gzfile.
-        content = read.table(gzfile(contentText[2]), header=T,sep='\t', quote="", stringsAsFactors = F)
+        content = utils::read.table(gzfile(contentText[2]), header=T,sep='\t', quote="", stringsAsFactors = F)
         return(content)
     }
     

@@ -193,7 +193,7 @@ taxonInfo = function(taxon,
         } else if(request %in% c('phenoCandidateGenes','phenotypes')){
             names(content) =  content %>% purrr::map_chr('value')
         } else if(request %in% c('gene','geneEvidence','genesAtLocation')){
-            names(content) =  content %>% purrr::map_chr('ncbiId')
+            names(content) =  content %>% purrr::map_chr('officialSymbol')
         }
     }
     return(content)

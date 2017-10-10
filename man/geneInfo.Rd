@@ -40,12 +40,26 @@ Official symbol represents a gene homologue for a random taxon, unless used in a
         }
 }}
 
-\item{...}{}
+\item{...}{Use if the specified request has additional parameters.}
 
-\item{file}{}
+\item{file}{Character. File path. If provided, response will be saved to file}
 
-\item{return}{}
+\item{return}{Logical. If the response should be returned. Set to false when
+you only want to save a file}
+}
+\value{
+A list
 }
 \description{
 geneInfo
+}
+\examples{
+geneInfo('1859') # single match it is a unique NCBI id
+geneInfo('DYRK1A') # this returns all genes named DYRK1A from all species
+
+geneInfo('1859','goTerms')
+geneInfo('1859','locations')
+geneInfo('1859','probes')
+geneInfo('1859','evidence')
+
 }
