@@ -18,9 +18,10 @@ queryLimit = function(offset = 0,
     if(is.null(limit)){
         limit = 20
     }
-    assertthat::assert_that(assertthat::is.number(offset))
-    assertthat::assert_that(assertthat::is.number(limit))
-    glue::glue('offset={offset}&limit={limit}')
+    numberArg(offset = offset,limit =limit)
+    # assertthat::assert_that(assertthat::is.number(offset))
+    # assertthat::assert_that(assertthat::is.number(limit))
+    # glue::glue('offset={offset}&limit={limit}')
 }
 
 

@@ -1,71 +1,51 @@
 # this could have been better...
-
-stringArg = function(...,addName = TRUE, sep = '&'){
-    stringArgs = list(...)
+argCheck = function(...,addName = TRUE, sep = '&',checkFunction,processFunction=NULL,error){
+    args = list(...)
     out = ''
-    for(i in 1:length(stringArgs)){
-        if(is.null(stringArgs[[i]])){
+    for(i in 1:length(args)){
+        if(is.null(args[[i]])){
             next
         }
-        assertthat::assert_that(assertthat::is.string(stringArgs[[i]]),
-                                msg = glue::glue(names(stringArgs)[i],
-                                                 ' is not a string (a length one character vector).'))
-        stringArgs[[i]] %<>% utils::URLencode(reserved = TRUE)
-        if(addName){
-            out = glue::glue('{out}{names(stringArgs)[i]}={stringArgs[[i]]}')
-        } else{
-            out = glue::glue('{out}{stringArgs[[i]]}')
+        assertthat::assert_that(checkFunction(args[[i]]),
+                                msg = glue::glue(names(args)[i],
+                                                 ' {error}'))
+        if(!is.null(processFunction)){
+            args[[i]] %<>% processFunction
         }
-        if(i != length(stringArgs)){
+        if(addName){
+            if(is.null(names(args)[i])){
+                stop('addName = TRUE but some arguments do not have names')
+            }
+            out = glue::glue('{out}{names(args)[i]}={args[[i]]}')
+        } else{
+            out = glue::glue('{out}{args[[i]]}')
+        }
+        if(i != length(args)){
             out = paste0(out,sep)
         }
     }
     return(out)
 }
 
+
+stringArg = function(...,addName = TRUE, sep = '&'){
+    argCheck(...,addName = addName,
+             sep = sep,
+             checkFunction = assertthat::is.string,
+             processFunction = function(x){utils::URLencode(x,reserved = TRUE)},
+             error = "is not a string (a length one character vector).")
+}
+
 logicArg = function(...,addName = TRUE, sep = '&'){
-    logicArgs = list(...)
-    out = ''
-    for(i in 1:length(logicArgs)){
-        if(is.null(logicArgs[[i]])){
-            next
-        }
-        assertthat::assert_that(is.logical(logicArgs[[i]]),
-                                msg = glue::glue(names(logicArgs)[i],
-                                                 ' is not logical'))
-        logicArgs[[i]] %<>% tolower()
-        if(addName){
-            out = glue::glue('{out}{names(logicArgs)[i]}={logicArgs[[i]]}')
-        } else{
-            out = glue::glue('{out}{logicArgs[[i]]}')
-        }
-        if(i != length(logicArgs)){
-            out = paste0(out,sep)
-        }
-    }
-    return(out)
+    argCheck(...,addName = addName,sep = sep,
+             checkFunction = is.logical,
+             processFunction = tolower,
+             error = "is not logical")
 }
 
 
 numberArg = function(...,addName = TRUE, sep = '&'){
-    numberArgs = list(...)
-    out = ''
-    for(i in 1:length(numberArgs)){
-        if(is.null(numberArgs[[i]])){
-            next
-        }
-        assertthat::assert_that(assertthat::is.number(numberArgs[[i]]),
-                                msg = glue::glue(names(numberArgs)[i],
-                                                 ' is not a number'))
-        numberArgs[[i]] %<>% tolower()
-        if(addName){
-            out = glue::glue('{out}{names(numberArgs)[i]}={numberArgs[[i]]}')
-        } else{
-            out = glue::glue('{out}{numberArgs[[i]]}')
-        }
-        if(i != length(numberArgs)){
-            out = paste0(out,sep)
-        }
-    }
-    return(out)
+    argCheck(...,addName = addName, sep = sep,
+             checkFunction = assertthat::is.number,
+             error = "is not a number")
 }
