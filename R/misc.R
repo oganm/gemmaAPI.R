@@ -3,7 +3,7 @@ gemmaBase = function(x){
 }
 
 
-# detects what the content is, reads it return = TRUE, saves it if file path is provided
+# detects what the content is, reads it if return = TRUE, saves it if file path is provided
 # if json, reads json, if not attempts to read it as a table
 # if content can't be converted into text, assumes it is a gzipped platform
 # annotation file
