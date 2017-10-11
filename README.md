@@ -8,6 +8,18 @@ This is an R wrapper for [Gemma](http://www.chibi.ubc.ca/Gemma/home.html)'s rest
 
 To cite Gemma, please use: [Zoubarev, A., et al., Gemma: A resource for the re-use, sharing and meta-analysis of expression profiling data. Bioinformatics, 2012.](http://dx.doi.org/doi:10.1093/bioinformatics/bts430)
 
+Installation
+============
+
+    devtools::install_github('oganm/gemmaAPI')
+
+Documentation
+=============
+
+For basic api calls see `?endpointFunctions`. These functions return mostly unaltered data from a given API endpoint.
+
+For high level functions see `?highLevelFunctions`. These functions return data compiled from multiple api calls.
+
 Examples
 ========
 
