@@ -4,6 +4,7 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+devtools::load_all()
 ```
 
 # Gemma API
@@ -17,3 +18,19 @@ This is an R wrapper for [Gemma](http://www.chibi.ubc.ca/Gemma/home.html)'s rest
 
 To cite Gemma, please use: 
 [Zoubarev, A., et al., Gemma: A resource for the re-use, sharing and meta-analysis of expression profiling data. Bioinformatics, 2012.](http://dx.doi.org/doi:10.1093/bioinformatics/bts430)
+
+
+# Examples
+
+Download data for a dataset
+```{r}
+data = 
+    datasetInfo('GSE81454',
+                request='data', # we want this endpoint to return data. see documentation
+                filter = FALSE, # data request accepts filter argument we want non filtered data
+                return = TRUE, # TRUE by default, all functions have this. if false there'll be no return
+                file = NULL # NULL by default, all functions have this. If specificed, output will be saved.
+    )
+
+head(data) %>% knitr::kable(format ='markdown')
+```
