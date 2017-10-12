@@ -13,7 +13,8 @@ Imports:
     readr,
     data.table,
     purrr,
-    assertthat
+    assertthat,
+    memoise
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
