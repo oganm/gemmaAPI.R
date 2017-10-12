@@ -31,8 +31,8 @@ argCheck = function(...,addName = TRUE, sep = '&',checkFunction,processFunction=
 stringArg = function(...,addName = TRUE, sep = '&'){
     argCheck(...,addName = addName,
              sep = sep,
-             checkFunction = assertthat::is.string,
-             processFunction = function(x){utils::URLencode(x,reserved = TRUE)},
+             checkFunction = function(x){assertthat::is.string(x) | assertthat::is.number(x)}, # allow numbers too
+             processFunction = function(x){x %>% as.character %>% utils::URLencode(reserved = TRUE)},
              error = "is not a string (a length one character vector).")
 }
 
