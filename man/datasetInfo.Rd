@@ -18,8 +18,12 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE)
      \item \code{design}: Retrieves the design for the given dataset
      \item \code{data}: Retrieves the data for the given dataset. Parameters:
          \itemize{
-             \item \code{filter}: Optional, defaults to false. If true, call
+             \item \code{filter}: Optional, defaults to FALSE. If TRUE, call
               returns filtered expression data.
+              \item \code{IdColnames}: Optional. defaults to FALSE.
+               If true shortens data column names to only include the bioAssayId
+               which is unique to samples in Gemma. Makes it easier to match to
+               samples acqured from the "samples" request.
          }
      \item \code{differential}: Retrieves the differential analysis results
       for the given dataset. Parameters:

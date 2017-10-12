@@ -14,7 +14,8 @@ Imports:
     data.table,
     purrr,
     assertthat,
-    memoise
+    memoise,
+    stringr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

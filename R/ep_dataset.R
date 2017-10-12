@@ -69,8 +69,12 @@ allDatasets = function(datasets = NULL,
 #'      \item \code{design}: Retrieves the design for the given dataset
 #'      \item \code{data}: Retrieves the data for the given dataset. Parameters:
 #'          \itemize{
-#'              \item \code{filter}: Optional, defaults to false. If true, call
+#'              \item \code{filter}: Optional, defaults to FALSE. If TRUE, call
 #'               returns filtered expression data.
+#'               \item \code{IdColnames}: Optional. defaults to FALSE.
+#'                If true shortens data column names to only include the bioAssayId
+#'                which is unique to samples in Gemma. Makes it easier to match to
+#'                samples acqured from the "samples" request.
 #'          }
 #'      \item \code{differential}: Retrieves the differential analysis results
 #'       for the given dataset. Parameters:
@@ -102,6 +106,7 @@ datasetInfo  = function(dataset,
     
     url = glue::glue(gemmaBase(),'datasets/{stringArg(dataset = dataset,addName=FALSE)}')
     if(!is.null(request)){
+        assertthat::assert_that(length(dataset)==1)
         request = match.arg(request, 
                             choices = c('platforms',
                                         'samples',
@@ -109,7 +114,7 @@ datasetInfo  = function(dataset,
                                         'design','data',
                                         'differential'))
         
-        allowedArguments = list(data = 'filter',
+        allowedArguments = list(data = c('filter','IdColnames'),
                                 differential = c('qValueThreshold',
                                                  'offset',
                                                  'limit'))
@@ -128,21 +133,30 @@ datasetInfo  = function(dataset,
             url = glue::glue('{url}?{numberArg(qValueThreshold = requestParams$qValueThreshold)}',
                              '&{queryLimit(requestParams$offset, requestParams$limit)}')
         }
+    } else{
+        # content = allDatasets(dataset,limit = 0,file=file,return= return)
+        # return(content)
     }
-    
     content = getContent(url,file = file,return=return)
     # just setting names. not essential
     if(return){
-        if(!is.null(request)){
-            if(request %in% c('platforms')){
-                names(content) =  content %>% purrr::map_chr('shortName')
-            } else if (request %in% c('samples')){
-                names(content) =  content %>% purrr::map_chr('name')
-            } else if(request %in% 'annotations'){
-                names(content) =  content %>% purrr::map_chr('className')
-            } else if (request %in% 'differential'){
-                names(content) =  content %>% purrr::map_chr('probe')
+        if(is.null(request)){
+            # return to this when API is finalized
+            # content  = content[[1]]
+            # names(content) =  content %>% purrr::map_chr('shortName')
+        } else if(request == 'data'){
+            if(!is.null(requestParams$IdColnames) && requestParams$IdColnames){
+                colnames(content)[grepl('BioAssayId\\=',colnames(content))] %<>% 
+                    stringr::str_extract('(?<=BioAssayId\\=).*(?=Name)')
             }
+        }else if(request %in% c('platforms')){
+            names(content) =  content %>% purrr::map_chr('shortName')
+        } else if (request %in% c('samples')){
+            names(content) =  content %>% purrr::map_chr('name')
+        } else if(request %in% 'annotations'){
+            names(content) =  content %>% purrr::map_chr('className')
+        } else if (request %in% 'differential'){
+            names(content) =  content %>% purrr::map_chr('probe')
         }
     }
     return(content)
