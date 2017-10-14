@@ -124,7 +124,7 @@ NULL
 #' @name memoised
 #'
 #' @param memoised Logical. If TRUE a memoised version of the function will be
-#'  used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+#'  used which is faster for repeated requests. Use \code{\link{forgetGemmaMemoised}}
 #'  to clear memory.
 #' 
 NULL
