@@ -3,6 +3,11 @@ context('taxa endpoint')
 testthat::test_that('allDatasets',{
     defaultCall = allTaxa() 
     testthat::expect_is(defaultCall,'list')
+    
+    # memoise test. memoised function should be faster
+    time = microbenchmark::microbenchmark(allTaxa(),unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(allTaxa(memoised = TRUE),unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$mean,time$mean)
 })
 
 
