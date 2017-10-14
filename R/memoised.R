@@ -30,8 +30,4 @@ forgetGemmaMemoised = function(){
     return(NULL)
 }
 
-# temporary
-#' @export
-forgetTest = function(){
-    mem_allDatasets(limit = 0)
-}
+
