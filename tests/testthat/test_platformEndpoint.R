@@ -12,9 +12,9 @@ testthat::test_that('allPlatforms',{
     testthat::expect_null(noCall)
     
     # memoise test. memoised function should be faster
-    time = microbenchmark::microbenchmark(allPlatforms(),unit = 'ms') %>% summary
-    timeMemo = microbenchmark::microbenchmark(allPlatforms(memoised = TRUE),unit = 'ms') %>% summary
-    testthat::expect_lt(timeMemo$mean,time$mean)
+    time = microbenchmark::microbenchmark(allPlatforms(),times = 10,unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(allPlatforms(memoised = TRUE),times = 10,unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$median,time$median)
 })
 
 
@@ -34,9 +34,9 @@ testthat::test_that('platformInfo',{
     
     
     # memoise test. memoised function should be faster
-    time = microbenchmark::microbenchmark(platformInfo('GPL1355'),unit = 'ms') %>% summary
-    timeMemo = microbenchmark::microbenchmark(platformInfo('GPL1355',memoised = TRUE),unit = 'ms') %>% summary
-    testthat::expect_lt(timeMemo$mean,time$mean)
+    time = microbenchmark::microbenchmark(platformInfo('GPL1355'),times = 10, unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(platformInfo('GPL1355',memoised = TRUE),times = 10, unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$median,time$median)
 })
     
 

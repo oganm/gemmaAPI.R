@@ -8,7 +8,7 @@ testthat::test_that('annotation endpoint',{
     testthat::expect_is(expCall,'list')
     
     # memoise test. memoised function should be faster
-    time = microbenchmark::microbenchmark(annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105'),unit = 'ms') %>% summary
-    timeMemo = microbenchmark::microbenchmark(annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105',memoised = TRUE),unit = 'ms') %>% summary
-    testthat::expect_lt(timeMemo$mean,time$mean)
+    time = microbenchmark::microbenchmark(annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105'),times = 10,unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105',memoised = TRUE),times = 10,unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$median,time$median)
 })

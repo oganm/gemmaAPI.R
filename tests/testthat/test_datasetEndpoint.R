@@ -14,9 +14,9 @@ testthat::test_that('allDatasets',{
     testthat::expect_null(listCall)
     
     # memoise test. memoised function should be faster
-    time = microbenchmark::microbenchmark(allDatasets(limit = 100),unit = 'ms') %>% summary
-    timeMemo = microbenchmark::microbenchmark(allDatasets(limit = 100,memoised = TRUE),unit = 'ms') %>% summary
-    testthat::expect_lt(timeMemo$mean,time$mean)
+    time = microbenchmark::microbenchmark(allDatasets(limit = 100),times = 10,unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(allDatasets(limit = 100,memoised = TRUE),times =10, unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$median,time$median)
 })
 
 
@@ -69,7 +69,7 @@ testthat::test_that('datasetInfo',{
     
     
     # memoise test. memoised function should be faster
-    time = microbenchmark::microbenchmark(datasetInfo('GSE81454',request = 'design'),unit = 'ms') %>% summary
-    timeMemo = microbenchmark::microbenchmark(datasetInfo('GSE81454',request = 'design',memoised = TRUE),unit = 'ms') %>% summary
-    testthat::expect_lt(timeMemo$mean,time$mean)
+    time = microbenchmark::microbenchmark(datasetInfo('GSE81454',request = 'design'),times = 10,unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(datasetInfo('GSE81454',request = 'design',memoised = TRUE),times = 10,unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$median,time$median)
 })

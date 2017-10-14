@@ -5,9 +5,9 @@ testthat::test_that('allDatasets',{
     testthat::expect_is(defaultCall,'list')
     
     # memoise test. memoised function should be faster
-    time = microbenchmark::microbenchmark(allTaxa(),unit = 'ms') %>% summary
-    timeMemo = microbenchmark::microbenchmark(allTaxa(memoised = TRUE),unit = 'ms') %>% summary
-    testthat::expect_lt(timeMemo$mean,time$mean)
+    time = microbenchmark::microbenchmark(allTaxa(),times = 10,unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(allTaxa(memoised = TRUE),times = 10,unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$median,time$median)
 })
 
 
@@ -41,7 +41,7 @@ testthat::test_that('taxonInfo',{
     testthat::expect_error(taxonInfo('human', request= 'genesAtLocation',chromosome=21,start = 37365790),'request requires')
     
     # memoise test. memoised function should be faster
-    time = microbenchmark::microbenchmark(taxonInfo('human','datasets'),unit = 'ms') %>% summary
-    timeMemo = microbenchmark::microbenchmark(taxonInfo('human','datasets',memoised = TRUE),unit = 'ms') %>% summary
-    testthat::expect_lt(timeMemo$mean,time$mean)
+    time = microbenchmark::microbenchmark(taxonInfo('human','datasets'),times = 10,unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(taxonInfo('human','datasets',memoised = TRUE),times= 10,unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$median,time$median)
 })
