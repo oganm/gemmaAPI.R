@@ -4,7 +4,8 @@
 \alias{geneInfo}
 \title{geneInfo}
 \usage{
-geneInfo(gene, request = NULL, ..., file = NULL, return = TRUE)
+geneInfo(gene, request = NULL, ..., file = NULL, return = TRUE,
+  memoised = FALSE)
 }
 \arguments{
 \item{gene}{Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or official symbol (DYRK1A) of the gene. 
@@ -46,6 +47,10 @@ Official symbol represents a gene homologue for a random taxon, unless used in a
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{memoised}{Logical. If TRUE a memoised version of the function will be
+used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+to clear memory.}
 }
 \value{
 A list

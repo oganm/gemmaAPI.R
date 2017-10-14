@@ -6,6 +6,7 @@
 #' @inheritParams queryLimit
 #' @inheritParams sortArg
 #' @inheritParams fileReturn
+#' @inheritParams memoised
 #' @return List of lists containing platform object.
 #' @export
 #'
@@ -20,7 +21,19 @@ allPlatforms = function(filter = NULL,
                         limit = 20,
                         sort = '+id',
                         file = NULL,
-                        return = TRUE){
+                        return = TRUE,
+                        memoised = FALSE){
+    if(memoised){
+        mem_allPlatforms(filter = filter,
+                         offset = offset,
+                         limit = limit,
+                         sort = sort,
+                         file = file,
+                         return = return,
+                         memoised = FALSE) -> out
+        return(out)
+    }
+    
     url = 
         glue::glue(gemmaBase(),
                    'platforms/?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
@@ -66,6 +79,7 @@ allPlatforms = function(filter = NULL,
 #' }
 #' @param ...  Use if the specified request has additional parameters.
 #' @inheritParams fileReturn
+#' @inheritParams memoised
 #'
 #' @return A data.frame or a list depending on the request
 #' @export
@@ -77,7 +91,18 @@ platformInfo = function(platform,
                         request = NULL,
                         ...,
                         file = NULL,
-                        return = TRUE){
+                        return = TRUE,
+                        memoised = FALSE){
+    if(memoised){
+        mem_platformInfo(platform = platform,
+                         request= request,
+                         ...,
+                         file = file,
+                         return = return,
+                         memoised = FALSE) -> out
+        return(out)
+    }
+    
     # optional paramters go here
     requestParams = list(...)
     url = glue::glue(gemmaBase(),'platforms/{stringArg(platform = platform,addName=FALSE)}')

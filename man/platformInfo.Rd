@@ -4,7 +4,8 @@
 \alias{platformInfo}
 \title{platformInfo}
 \usage{
-platformInfo(platform, request = NULL, ..., file = NULL, return = TRUE)
+platformInfo(platform, request = NULL, ..., file = NULL, return = TRUE,
+  memoised = FALSE)
 }
 \arguments{
 \item{platform}{Can either be the platform ID or its short name (e.g: GPL1355). Retrieval by ID is more efficient. Only platforms that user has access to will be available.}
@@ -43,6 +44,10 @@ platformInfo(platform, request = NULL, ..., file = NULL, return = TRUE)
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{memoised}{Logical. If TRUE a memoised version of the function will be
+used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+to clear memory.}
 }
 \value{
 A data.frame or a list depending on the request

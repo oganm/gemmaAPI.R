@@ -16,5 +16,8 @@ testthat::test_that('geneInfo',{
     
     testthat::expect_is(geneInfo('1859','coexpression',with= '1859'),'list')
     
-    
+    # memoise test. memoised function should be faster
+    time = microbenchmark::microbenchmark(geneInfo('1859'),unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(geneInfo('1859',memoised = TRUE),unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$mean,time$mean)
 })

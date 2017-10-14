@@ -14,6 +14,7 @@
 #' @inheritParams queryLimit 
 #' @inheritParams sortArg
 #' @inheritParams fileReturn
+#' @inheritParams memoised
 #' @return List of lists containing experiment object.
 #' @export
 #'
@@ -30,7 +31,20 @@ allDatasets = function(datasets = NULL,
                        limit = 20,
                        sort = '+id',
                        file = NULL,
-                       return = TRUE){
+                       return = TRUE,
+                       memoised = FALSE){
+    if(memoised){
+        mem_allDatasets(datasets = datasets,
+                        filter = filter,
+                        offset = offset,
+                        limit = limit,
+                        sort = sort,
+                        file = file,
+                        return = TRUE,
+                        memoised = FALSE) -> out
+        return(out)
+    }
+    
     
     if(!is.null(datasets)){
         assertthat::assert_that(is.character(datasets))
@@ -89,6 +103,7 @@ allDatasets = function(datasets = NULL,
 #' }
 #' @param ... Use if the specified request has additional parameters.
 #' @inheritParams fileReturn
+#' @inheritParams memoised
 #' @return A data.frame or a list depending on the request
 #' @export
 #'
@@ -100,7 +115,17 @@ datasetInfo  = function(dataset,
                         request = NULL,
                         ...,
                         file = NULL,
-                        return = TRUE){
+                        return = TRUE,
+                        memoised = FALSE){
+    if(memoised){
+        mem_datasetInfo(dataset = dataset,
+                        request = request,
+                        ...,
+                        file = file,
+                        return = TRUE,
+                        memoised = FALSE) -> out
+        return(out)
+    }
     # optional paramters go here
     requestParams = list(...)
     

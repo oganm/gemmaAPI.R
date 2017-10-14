@@ -5,7 +5,7 @@
 \title{All datasets}
 \usage{
 allDatasets(datasets = NULL, filter = NULL, offset = 0, limit = 20,
-  sort = "+id", file = NULL, return = TRUE)
+  sort = "+id", file = NULL, return = TRUE, memoised = FALSE)
 }
 \arguments{
 \item{datasets}{Character vector of identifiers. 
@@ -67,6 +67,10 @@ E.g:
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{memoised}{Logical. If TRUE a memoised version of the function will be
+used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+to clear memory.}
 }
 \value{
 List of lists containing experiment object.

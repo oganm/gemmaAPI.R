@@ -115,3 +115,16 @@ filterArg = function(filter){
 #' you only want to save a file
 #' 
 NULL
+
+
+#' memoised
+#'
+#' @keywords internal
+#'
+#' @name memoised
+#'
+#' @param memoised Logical. If TRUE a memoised version of the function will be
+#'  used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+#'  to clear memory.
+#' 
+NULL

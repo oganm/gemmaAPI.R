@@ -10,6 +10,11 @@ testthat::test_that('allPlatforms',{
     testthat::expect_is(filterCall,'list')
     noCall = allPlatforms(return=FALSE)
     testthat::expect_null(noCall)
+    
+    # memoise test. memoised function should be faster
+    time = microbenchmark::microbenchmark(allPlatforms(),unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(allPlatforms(memoised = TRUE),unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$mean,time$mean)
 })
 
 
@@ -27,6 +32,11 @@ testthat::test_that('platformInfo',{
     testthat::expect_is(platformInfo('GPL1355',request = 'specificElement',probe = 'AFFX_Rat_beta-actin_M_at'),'list')
     testthat::expect_is(platformInfo('GPL1355',request = 'genes',probe = 'AFFX_Rat_beta-actin_M_at'),'list')
     
+    
+    # memoise test. memoised function should be faster
+    time = microbenchmark::microbenchmark(platformInfo('GPL1355'),unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(platformInfo('GPL1355',memoised = TRUE),unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$mean,time$mean)
 })
     
 

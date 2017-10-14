@@ -4,7 +4,8 @@
 \alias{datasetInfo}
 \title{datasetInfo}
 \usage{
-datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE)
+datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
+  memoised = FALSE)
 }
 \arguments{
 \item{dataset}{Character. Can either be the dataset ID or its short name 
@@ -43,6 +44,10 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE)
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{memoised}{Logical. If TRUE a memoised version of the function will be
+used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+to clear memory.}
 }
 \value{
 A data.frame or a list depending on the request

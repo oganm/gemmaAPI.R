@@ -4,7 +4,8 @@
 \alias{annotationInfo}
 \title{annotationInfo}
 \usage{
-annotationInfo(annotation, request = NULL, file = NULL, return = TRUE)
+annotationInfo(annotation, request = NULL, file = NULL, return = TRUE,
+  memoised = FALSE)
 }
 \arguments{
 \item{annotation}{Character. Either plain text, ontology term ID or an ontology term URI.}
@@ -18,6 +19,10 @@ annotationInfo(annotation, request = NULL, file = NULL, return = TRUE)
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{memoised}{Logical. If TRUE a memoised version of the function will be
+used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+to clear memory.}
 }
 \value{
 A list
@@ -27,7 +32,6 @@ annotationInfo
 }
 \examples{
 annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105')
-annotationInfo('OBI_0000105')
 annotationInfo('transplantation')
-annotationInfo('OBI_0000105', request = 'experiments')
+annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105', request = 'experiments')
 }

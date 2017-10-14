@@ -5,13 +5,22 @@
 #' Lists all available taxa.
 #'
 #' @inheritParams fileReturn
+#' @inheritParams memoised
 #' @return List of lists containing experiment object.
 #' @export
 #'
 #' @examples
 #' allTaxa()
 allTaxa = function(file = NULL,
-                       return = TRUE){
+                   return = TRUE,
+                   memoised = FALSE){
+    
+    if(memoised){
+        mem_allTaxa(file=file,
+                    return = return,
+                    memoised = FALSE) -> out
+        return(out)
+    }
 
     url = paste0(gemmaBase(),'taxa')
     
@@ -109,7 +118,7 @@ allTaxa = function(file = NULL,
 #'     }
 #' @param ... Use if the specified request has additional parameters.
 #' @inheritParams fileReturn
-#'
+#' @inheritParams memoised
 #' @return a list
 #' @export
 #'
@@ -126,7 +135,19 @@ taxonInfo = function(taxon,
                      request = NULL,
                      ...,
                      file = NULL,
-                     return = TRUE){
+                     return = TRUE,
+                     memoised = FALSE){
+    
+    if(memoised){
+        mem_taxonInfo(taxon = taxon,
+                      request = request,
+                      ...,
+                      file = file,
+                      return = return,
+                      memoised = FALSE) -> out
+        return(out)
+    }
+    
 
     # optional paramters go here
     requestParams = list(...)

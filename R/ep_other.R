@@ -6,27 +6,30 @@
 #'     \item \code{experiments}: Does a search for datasets containing annotations matching the given string
 #' }
 #' @inheritParams fileReturn
+#' @inheritParams memoised
 #' 
 #' @return A list
 #' @export
 #'
 #' @examples
 #' annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105')
-#' annotationInfo('OBI_0000105')
 #' annotationInfo('transplantation')
-#' annotationInfo('OBI_0000105', request = 'experiments')
+#' annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105', request = 'experiments')
 annotationInfo = function(annotation,
                           request = NULL,
                           file = NULL,
-                          return = TRUE){
-
-    linkRegex = '[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)'
-    annotationRegex = '[A-Za-z]+?_[0-9]+'
-    if(!grepl(linkRegex,annotation,perl = TRUE) & 
-       grepl(annotationRegex,annotation,perl = TRUE)){
-        annotation = paste0('http://purl.obolibrary.org/obo/',annotation)
-    }
+                          return = TRUE,
+                          memoised = FALSE){
     
+    if(memoised){
+        mem_annotationInfo(annotation = annotation,
+                           request = request,
+                           file = file,
+                           return = return,
+                           memoised = FALSE) -> out
+        return(out)
+    }
+
     url = glue::glue(gemmaBase(),'annotations/search/{stringArg(annotation = annotation,addName=FALSE)}')
     if(!is.null(request)){
         request = match.arg(request,choices = 'experiments')

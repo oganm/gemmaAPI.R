@@ -4,5 +4,5 @@
 \alias{highLevelFunctions}
 \title{High Level Functions}
 \description{
-These functions return data compiled from multiple api calls
+\code{\link{compileMetadata}}
 }

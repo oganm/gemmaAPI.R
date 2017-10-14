@@ -4,7 +4,8 @@
 \alias{taxonInfo}
 \title{Title}
 \usage{
-taxonInfo(taxon, request = NULL, ..., file = NULL, return = TRUE)
+taxonInfo(taxon, request = NULL, ..., file = NULL, return = TRUE,
+  memoised = FALSE)
 }
 \arguments{
 \item{taxon}{can either be Taxon ID, Taxon NCBI ID, or one of its string
@@ -94,6 +95,10 @@ taxonInfo(taxon, request = NULL, ..., file = NULL, return = TRUE)
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{memoised}{Logical. If TRUE a memoised version of the function will be
+used which is faster for repeated requests. Use \link{\code{forgetGemmaMemoised}}
+to clear memory.}
 }
 \value{
 a list

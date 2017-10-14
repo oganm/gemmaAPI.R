@@ -35,5 +35,8 @@ testthat::test_that('taxonInfo',{
     testthat::expect_is(taxonInfo('human', request= 'genesAtLocation',chromosome=21,start = 37365790,size = 1),'list')
     testthat::expect_error(taxonInfo('human', request= 'genesAtLocation',chromosome=21,start = 37365790),'request requires')
     
-    
+    # memoise test. memoised function should be faster
+    time = microbenchmark::microbenchmark(taxonInfo('human','datasets'),unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(taxonInfo('human','datasets',memoised = TRUE),unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$mean,time$mean)
 })

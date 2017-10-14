@@ -12,6 +12,11 @@ testthat::test_that('allDatasets',{
     testthat::expect_equal(names(listCall),  c('GSE2871','GSE2869','GSE2868'))
     listCall = allDatasets(datasets = c('GSE2871','GSE2869','GSE2868'),return = FALSE)
     testthat::expect_null(listCall)
+    
+    # memoise test. memoised function should be faster
+    time = microbenchmark::microbenchmark(allDatasets(limit = 100),unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(allDatasets(limit = 100,memoised = TRUE),unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$mean,time$mean)
 })
 
 
@@ -35,7 +40,16 @@ testthat::test_that('datasetInfo',{
     testthat::expect_true(length(datasetInfo('GSE81454',request = 'platforms'))>0)
     
     testthat::expect_is(datasetInfo('GSE81454',request = 'design'),'data.frame')
+    
+    testthat::expect_is(datasetInfo('GSE81454',request = 'design'),'data.frame')
+    
+    
     nonFiltered  = datasetInfo('GSE81454',request = 'data')
+    idColnames = datasetInfo('GSE81454',request = 'data',IdColnames = TRUE)
+    idColnamesFalse = datasetInfo('GSE81454',request = 'data',IdColnames = FALSE)
+    testthat::expect_true(nchar(colnames(idColnames)[7])< nchar(colnames(idColnamesFalse)[7]))
+    
+    
     testthat::expect_is(nonFiltered,'data.frame')
     filtered = datasetInfo('GSE81454',request = 'data',filter=TRUE)
     testthat::expect_is(filtered,'data.frame')
@@ -51,7 +65,11 @@ testthat::test_that('datasetInfo',{
     testthat::expect_error(datasetInfo('GSE81454',request = 'differential'),regexp = 'qValueThreshold')
     testthat::expect_is(datasetInfo('GSE12679',request = 'differential',qValueThreshold = 1),'list')
     testthat::expect_true(length(datasetInfo('GSE12679',request = 'differential',qValueThreshold = 1))>0)
-    # testthat::expect_true(length(datasetInfo('GSE12679',request = 'differential',qValueThreshold = 1,limit = 0))>0) # gemma bug
     
     
+    
+    # memoise test. memoised function should be faster
+    time = microbenchmark::microbenchmark(datasetInfo('GSE81454',request = 'design'),unit = 'ms') %>% summary
+    timeMemo = microbenchmark::microbenchmark(datasetInfo('GSE81454',request = 'design',memoised = TRUE),unit = 'ms') %>% summary
+    testthat::expect_lt(timeMemo$mean,time$mean)
 })

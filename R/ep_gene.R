@@ -33,6 +33,7 @@
 #'     }
 #' @param ... Use if the specified request has additional parameters.
 #' @inheritParams fileReturn
+#' @inheritParams memoised
 #' 
 #' @return A list
 #' @export
@@ -49,7 +50,17 @@
 geneInfo = function(gene, request = NULL,
                     ...,
                     file = NULL,
-                    return = TRUE){
+                    return = TRUE,
+                    memoised = FALSE){
+    if(memoised){
+        mem_geneInfo(gene = gene, request=  request,
+                     ...,
+                     file = file,
+                     return = return,
+                     memoised = FALSE) -> out
+        return(out)
+    }
+    
     requestParams = list(...)
     url = glue::glue(gemmaBase(),'genes/{gene}')
     
