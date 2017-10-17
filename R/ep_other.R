@@ -19,6 +19,7 @@ annotationInfo = function(annotation,
                           request = NULL,
                           file = NULL,
                           return = TRUE,
+                          overwrite = FALSE,
                           memoised = FALSE){
     
     if(memoised){
@@ -26,6 +27,7 @@ annotationInfo = function(annotation,
                            request = request,
                            file = file,
                            return = return,
+                           overwrite = overwrite,
                            memoised = FALSE) -> out
         return(out)
     }
@@ -38,7 +40,7 @@ annotationInfo = function(annotation,
         }
     }
     
-    content = getContent(url,file = file,return=return)
+    content = getContent(url,file = file,return=return, overwrite = overwrite)
     
     
     if(return){

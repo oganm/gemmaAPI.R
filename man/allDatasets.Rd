@@ -5,7 +5,8 @@
 \title{All datasets}
 \usage{
 allDatasets(datasets = NULL, filter = NULL, offset = 0, limit = 20,
-  sort = "+id", file = NULL, return = TRUE, memoised = FALSE)
+  sort = "+id", file = NULL, return = TRUE, overwrite = FALSE,
+  memoised = FALSE)
 }
 \arguments{
 \item{datasets}{Character vector of identifiers. 
@@ -67,6 +68,9 @@ E.g:
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{overwrite}{Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.}
 
 \item{memoised}{Logical. If TRUE a memoised version of the function will be
 used which is faster for repeated requests. Use \code{\link{forgetGemmaMemoised}}

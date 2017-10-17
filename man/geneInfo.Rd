@@ -5,7 +5,7 @@
 \title{geneInfo}
 \usage{
 geneInfo(gene, request = NULL, ..., file = NULL, return = TRUE,
-  memoised = FALSE)
+  overwrite = FALSE, memoised = FALSE)
 }
 \arguments{
 \item{gene}{Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or official symbol (DYRK1A) of the gene. 
@@ -48,6 +48,9 @@ Official symbol represents a gene homologue for a random taxon, unless used in a
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
 
+\item{overwrite}{Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.}
+
 \item{memoised}{Logical. If TRUE a memoised version of the function will be
 used which is faster for repeated requests. Use \code{\link{forgetGemmaMemoised}}
 to clear memory.}
@@ -59,6 +62,7 @@ A list
 geneInfo
 }
 \examples{
+geneInfo(1859)
 geneInfo('1859') # single match it is a unique NCBI id
 geneInfo('DYRK1A') # this returns all genes named DYRK1A from all species
 

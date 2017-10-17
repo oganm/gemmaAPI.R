@@ -13,6 +13,7 @@
 #' allTaxa()
 allTaxa = function(file = NULL,
                    return = TRUE,
+                   overwrite = FALSE,
                    memoised = FALSE){
     
     if(memoised){
@@ -24,7 +25,7 @@ allTaxa = function(file = NULL,
 
     url = paste0(gemmaBase(),'taxa')
     
-    content = getContent(url, file = file, return = return)
+    content = getContent(url, file = file, return = return,overwrite=overwrite)
     if(return){
         names(content) =  content %>% purrr::map_chr('scientificName')
     }
@@ -136,6 +137,7 @@ taxonInfo = function(taxon,
                      ...,
                      file = NULL,
                      return = TRUE,
+                     overwrite = FALSE,
                      memoised = FALSE){
     
     if(memoised){
@@ -206,7 +208,7 @@ taxonInfo = function(taxon,
     }
         
     
-    content = getContent(url,file = file, return = return)
+    content = getContent(url,file = file, return = return,overwrite=overwrite)
     # just setting names. not essential
     if(return & !is.null(request)){
         if(request %in% 'datasets'){

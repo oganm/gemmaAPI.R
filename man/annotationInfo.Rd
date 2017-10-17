@@ -5,7 +5,7 @@
 \title{annotationInfo}
 \usage{
 annotationInfo(annotation, request = NULL, file = NULL, return = TRUE,
-  memoised = FALSE)
+  overwrite = FALSE, memoised = FALSE)
 }
 \arguments{
 \item{annotation}{Character. Either plain text, ontology term ID or an ontology term URI.}
@@ -19,6 +19,9 @@ annotationInfo(annotation, request = NULL, file = NULL, return = TRUE,
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{overwrite}{Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.}
 
 \item{memoised}{Logical. If TRUE a memoised version of the function will be
 used which is faster for repeated requests. Use \code{\link{forgetGemmaMemoised}}

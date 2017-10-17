@@ -32,6 +32,7 @@ allDatasets = function(datasets = NULL,
                        sort = '+id',
                        file = NULL,
                        return = TRUE,
+                       overwrite = FALSE,
                        memoised = FALSE){
     if(memoised){
         mem_allDatasets(datasets = datasets,
@@ -41,6 +42,7 @@ allDatasets = function(datasets = NULL,
                         sort = sort,
                         file = file,
                         return = TRUE,
+                        overwrite = overwrite,
                         memoised = FALSE) -> out
         return(out)
     }
@@ -59,7 +61,7 @@ allDatasets = function(datasets = NULL,
         glue::glue(gemmaBase(),
                    'datasets/{datasets}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
     
-    content = getContent(url, file = file, return = return)
+    content = getContent(url, file = file, return = return,overwrite = overwrite)
     if(return){
         names(content) =  content %>% purrr::map_chr('shortName')
     }
@@ -116,13 +118,15 @@ datasetInfo  = function(dataset,
                         ...,
                         file = NULL,
                         return = TRUE,
+                        overwrite = FALSE,
                         memoised = FALSE){
     if(memoised){
         mem_datasetInfo(dataset = dataset,
                         request = request,
                         ...,
                         file = file,
-                        return = TRUE,
+                        return = return,
+                        overwrite = overwrite,
                         memoised = FALSE) -> out
         return(out)
     }
@@ -162,7 +166,7 @@ datasetInfo  = function(dataset,
         # content = allDatasets(dataset,limit = 0,file=file,return= return)
         # return(content)
     }
-    content = getContent(url,file = file,return=return)
+    content = getContent(url,file = file,return=return,overwrite = overwrite)
     # just setting names. not essential
     if(return){
         if(is.null(request)){

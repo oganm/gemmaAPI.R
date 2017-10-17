@@ -4,13 +4,16 @@
 \alias{allTaxa}
 \title{All taxa}
 \usage{
-allTaxa(file = NULL, return = TRUE, memoised = FALSE)
+allTaxa(file = NULL, return = TRUE, overwrite = FALSE, memoised = FALSE)
 }
 \arguments{
 \item{file}{Character. File path. If provided, response will be saved to file}
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{overwrite}{Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.}
 
 \item{memoised}{Logical. If TRUE a memoised version of the function will be
 used which is faster for repeated requests. Use \code{\link{forgetGemmaMemoised}}

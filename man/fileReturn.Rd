@@ -8,6 +8,9 @@
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{overwrite}{Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.}
 }
 \description{
 file and return

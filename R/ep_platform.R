@@ -22,6 +22,7 @@ allPlatforms = function(filter = NULL,
                         sort = '+id',
                         file = NULL,
                         return = TRUE,
+                        overwrite = FALSE,
                         memoised = FALSE){
     if(memoised){
         mem_allPlatforms(filter = filter,
@@ -30,6 +31,7 @@ allPlatforms = function(filter = NULL,
                          sort = sort,
                          file = file,
                          return = return,
+                         overwrite = overwrite,
                          memoised = FALSE) -> out
         return(out)
     }
@@ -37,7 +39,7 @@ allPlatforms = function(filter = NULL,
     url = 
         glue::glue(gemmaBase(),
                    'platforms/?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
-    content = getContent(url,file = file,return = return)
+    content = getContent(url,file = file,return = return, overwrite = overwrite)
     if(return){
         names(content) =  content %>% purrr::map_chr('shortName')
     }
@@ -92,6 +94,7 @@ platformInfo = function(platform,
                         ...,
                         file = NULL,
                         return = TRUE,
+                        overwrite = FALSE,
                         memoised = FALSE){
     if(memoised){
         mem_platformInfo(platform = platform,
@@ -99,6 +102,7 @@ platformInfo = function(platform,
                          ...,
                          file = file,
                          return = return,
+                         overwrite = FALSE,
                          memoised = FALSE) -> out
         return(out)
     }
@@ -144,7 +148,7 @@ platformInfo = function(platform,
 
     }
     
-    content = getContent(url,file = file,return=return)
+    content = getContent(url,file = file,return=return, overwrite = overwrite)
     if(return){
         if(!is.null(request)){
             if(request %in% c('datasets')){

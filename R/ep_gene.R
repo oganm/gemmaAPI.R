@@ -39,6 +39,7 @@
 #' @export
 #'
 #' @examples
+#' geneInfo(1859)
 #' geneInfo('1859') # single match it is a unique NCBI id
 #' geneInfo('DYRK1A') # this returns all genes named DYRK1A from all species
 #' 
@@ -51,12 +52,14 @@ geneInfo = function(gene, request = NULL,
                     ...,
                     file = NULL,
                     return = TRUE,
+                    overwrite = FALSE,
                     memoised = FALSE){
     if(memoised){
         mem_geneInfo(gene = gene, request=  request,
                      ...,
                      file = file,
                      return = return,
+                     overwrite = overwrite,
                      memoised = FALSE) -> out
         return(out)
     }
@@ -92,7 +95,7 @@ geneInfo = function(gene, request = NULL,
     }
     
     
-    content = getContent(url,file = file,return=return)
+    content = getContent(url,file = file,return=return,overwrite = overwrite)
     if(return){
         if(is.null(request)){
             names(content) =  content %>% purrr::map_chr('officialSymbol')

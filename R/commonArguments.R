@@ -113,6 +113,8 @@ filterArg = function(filter){
 #' @param file Character. File path. If provided, response will be saved to file
 #' @param return Logical. If the response should be returned. Set to false when
 #' you only want to save a file
+#' @param overwrite Logical. If TRUE, existing files will be overwritten. If FALSE
+#' a warning will be thrown and no action is taken.
 #' 
 NULL
 

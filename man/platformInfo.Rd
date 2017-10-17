@@ -5,7 +5,7 @@
 \title{platformInfo}
 \usage{
 platformInfo(platform, request = NULL, ..., file = NULL, return = TRUE,
-  memoised = FALSE)
+  overwrite = FALSE, memoised = FALSE)
 }
 \arguments{
 \item{platform}{Can either be the platform ID or its short name (e.g: GPL1355). Retrieval by ID is more efficient. Only platforms that user has access to will be available.}
@@ -44,6 +44,9 @@ platformInfo(platform, request = NULL, ..., file = NULL, return = TRUE,
 
 \item{return}{Logical. If the response should be returned. Set to false when
 you only want to save a file}
+
+\item{overwrite}{Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.}
 
 \item{memoised}{Logical. If TRUE a memoised version of the function will be
 used which is faster for repeated requests. Use \code{\link{forgetGemmaMemoised}}

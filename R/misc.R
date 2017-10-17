@@ -7,7 +7,7 @@ gemmaBase = function(x){
 # if json, reads json, if not attempts to read it as a table
 # if content can't be converted into text, assumes it is a gzipped platform
 # annotation file
-getContent = function(url,file = NULL, return = TRUE){
+getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
     raw = httr::GET(url = url)
     if(raw$status_code != 200){
         stop("Received a response with status ", raw$status_code, '\n', raw$error$message);
@@ -33,7 +33,11 @@ getContent = function(url,file = NULL, return = TRUE){
     
     # write to file if provided
     if(!is.null(file)){
-        write(contentText,file = file)
+        if(file.exists(file) & !overwrite){
+            warning(file,' exists. Skipping')
+        }else{
+            write(contentText,file = file)
+        }
     }
     
     if(return){
