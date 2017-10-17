@@ -8,6 +8,11 @@ gemmaBase = function(x){
 # if content can't be converted into text, assumes it is a gzipped platform
 # annotation file
 getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
+    if(return == FALSE & overwrite == FALSE & !is.null(file) && file.exists(file)){
+        warning(file,' exists. Skipping')
+        return(NULL)
+    }
+    
     raw = httr::GET(url = url)
     if(raw$status_code != 200){
         stop("Received a response with status ", raw$status_code, '\n', raw$error$message);
