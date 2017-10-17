@@ -31,7 +31,7 @@ testthat::test_that('overwrite',{
         file = tempfile()
         arguments = c(args[[i]],
                       list(file = file,
-                           return = FALSE,
+                           return = TRUE,
                            overwrite= FALSE))
         do.call(functionList[[i]],arguments)
         info = file.info(file)
