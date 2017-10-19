@@ -2,12 +2,6 @@ gemmaBase = function(x){
     'http://www.chibi.ubc.ca/Gemma/rest/v2/'
 }
 
-gemmaRead_tsv = function(file){
-    lines = readLines(gzfile(f),n = 100)
-    skip = lines %>% grepl('^#',x = .) %>% which %>% max
-    readFile = read_tsv(gzfile(f), col_names= TRUE,skip = skip)   
-}
-
 # detects what the content is, reads it if return = TRUE, saves it if file path is provided
 # if json, reads json, if not attempts to read it as a table
 # if content can't be converted into text, assumes it is a gzipped platform
@@ -17,7 +11,6 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
         warning(file,' exists. Skipping')
         return(NULL)
     }
-    
     raw = httr::GET(url = url)
     if(raw$status_code != 200){
         stop("Received a response with status ", raw$status_code, '\n', raw$error$message);
@@ -40,7 +33,7 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
         # this is a bad heuristics. will fail if file has a header comment longer that 100 lines
         lines = readLines(gzfile(contentText[2]),n = 100)
         skip = lines %>% grepl('^#',x = .) %>% which %>% max
-        con = gzfile(contentText[2])
+        con = gzfile(contentText[2],open = c('rb'))
         content = readr::read_tsv(con, col_names= TRUE,skip = skip)
         close(con)
         # content = utils::read.table(gzfile(contentText[2]), header=T,sep='\t', quote="", stringsAsFactors = F)
