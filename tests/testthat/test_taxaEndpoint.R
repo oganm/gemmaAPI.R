@@ -14,7 +14,7 @@ testthat::test_that('allDatasets',{
 testthat::test_that('taxonInfo',{
     testthat::expect_is(taxonInfo('human'),'list')
     testthat::expect_true(length(taxonInfo('human'))>0)
-    testthat::expect_error(taxonInfo('o zaman dans'),'404')
+    testthat::expect_error(taxonInfo('o zaman dans'),'400')
     testthat::expect_null(taxonInfo('human',return = FALSE))
     
     testthat::expect_warning(taxonInfo('human',request = 'datasets',dsad=3),'request only accepts')

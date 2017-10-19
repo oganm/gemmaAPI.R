@@ -4,7 +4,7 @@ context('other endpoints')
 testthat::test_that('annotation endpoint',{
     defaultCall = annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105')
     testthat::expect_is(defaultCall,'list')
-    expCall = annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105', request = 'experiments')
+    expCall = annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105', request = 'datasets')
     testthat::expect_is(expCall,'list')
     
     # memoise test. memoised function should be faster

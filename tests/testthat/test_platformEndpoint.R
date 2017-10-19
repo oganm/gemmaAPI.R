@@ -20,7 +20,8 @@ testthat::test_that('allPlatforms',{
 
 testthat::test_that('platformInfo',{
     testthat::expect_is(platformInfo('GPL1355'),'list')
-    testthat::expect_error(platformInfo('o zaman dans'),'404')
+    # no longer is an error
+    # testthat::expect_error(platformInfo('o zaman dans'),'404')
     testthat::expect_null(platformInfo('GPL1355',return = FALSE))
     testthat::expect_true(length(platformInfo('GPL1355'))>0)
     

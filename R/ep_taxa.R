@@ -210,8 +210,10 @@ taxonInfo = function(taxon,
     
     content = getContent(url,file = file, return = return,overwrite=overwrite)
     # just setting names. not essential
-    if(return & !is.null(request)){
-        if(request %in% 'datasets'){
+    if(return){
+        if(is.null(request)){
+            names(content) =  content %>% purrr::map_chr('scientificName')
+        } else if(request %in% 'datasets'){
             names(content) =  content %>% purrr::map_chr('shortName')
         } else if(request %in% c('phenoCandidateGenes','phenotypes')){
             names(content) =  content %>% purrr::map_chr('value')

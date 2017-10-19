@@ -57,8 +57,10 @@ testthat::test_that('datasetInfo',{
     
     f = tempfile()
     datasetInfo('GSE81454',request = 'design',file = f)
-    readFile = data.table::fread(f,data.table=FALSE)
     
+    lines = readLines(gzfile(f),n = 100)
+    skip = lines %>% grepl('^#',x = .) %>% which %>% max
+    readFile = readr::read_tsv(gzfile(f), col_names= TRUE,skip = skip)    
     testthat::expect_is(readFile,'data.frame')
     
     

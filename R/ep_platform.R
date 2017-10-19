@@ -150,16 +150,17 @@ platformInfo = function(platform,
     
     content = getContent(url,file = file,return=return, overwrite = overwrite)
     if(return){
-        if(!is.null(request)){
-            if(request %in% c('datasets')){
-                names(content) =  content %>% purrr::map_chr('shortName')
-            } else if (request %in% c('elements')){
-                names(content) =  content %>% purrr::map_chr('name')
-            }  else if (request %in% 'genes'){
-                names(content) =  content %>% purrr::map_chr('name')
-            }
+        if(is.null(request)){
+            names(content) =  content %>% purrr::map_chr('shortName')
+        } else if(request %in% c('datasets')){
+            names(content) =  content %>% purrr::map_chr('shortName')
+        } else if (request %in% c('elements')){
+            names(content) =  content %>% purrr::map_chr('name')
+        }  else if (request %in% 'genes'){
+            names(content) =  content %>% purrr::map_chr('name')
         }
     }
+    
     return(content)
     
 }

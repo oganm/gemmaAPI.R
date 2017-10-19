@@ -170,9 +170,7 @@ datasetInfo  = function(dataset,
     # just setting names. not essential
     if(return){
         if(is.null(request)){
-            # return to this when API is finalized
-            # content  = content[[1]]
-            # names(content) =  content %>% purrr::map_chr('shortName')
+            names(content) =  content %>% purrr::map_chr('shortName')
         } else if(request == 'data'){
             if(!is.null(requestParams$IdColnames) && requestParams$IdColnames){
                 colnames(content)[grepl('BioAssayId\\=',colnames(content))] %<>% 

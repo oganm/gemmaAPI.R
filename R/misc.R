@@ -2,6 +2,11 @@ gemmaBase = function(x){
     'http://www.chibi.ubc.ca/Gemma/rest/v2/'
 }
 
+gemmaRead_tsv = function(file){
+    lines = readLines(gzfile(f),n = 100)
+    skip = lines %>% grepl('^#',x = .) %>% which %>% max
+    readFile = read_tsv(gzfile(f), col_names= TRUE,skip = skip)   
+}
 
 # detects what the content is, reads it if return = TRUE, saves it if file path is provided
 # if json, reads json, if not attempts to read it as a table
@@ -18,7 +23,7 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
         stop("Received a response with status ", raw$status_code, '\n', raw$error$message);
     }
     
-    
+    # browser()
     contentText = tryCatch(rawToChar(raw$content),
                            error = function(e){
                                # if you find a file save it. as temp file if address not provided
@@ -32,12 +37,18 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
     
     if(contentText[1] == 'THISISFILE' & return){
         # if output is a gz file and return is desired, read the gzfile.
-        content = utils::read.table(gzfile(contentText[2]), header=T,sep='\t', quote="", stringsAsFactors = F)
+        # this is a bad heuristics. will fail if file has a header comment longer that 100 lines
+        lines = readLines(gzfile(contentText[2]),n = 100)
+        skip = lines %>% grepl('^#',x = .) %>% which %>% max
+        con = gzfile(contentText[2])
+        content = readr::read_tsv(con, col_names= TRUE,skip = skip)
+        close(con)
+        # content = utils::read.table(gzfile(contentText[2]), header=T,sep='\t', quote="", stringsAsFactors = F)
         return(content)
     }
     
     # write to file if provided
-    if(!is.null(file)){
+    if(!is.null(file) & contentText[1] != 'THISISFILE' ){
         if(file.exists(file) & !overwrite){
             warning(file,' exists. Skipping')
         }else{
@@ -50,7 +61,9 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
         if(jsonlite::validate(contentText)){
             content = jsonlite::fromJSON(contentText,simplifyVector = FALSE)$data
         } else{
-            content = data.table::fread(contentText,data.table=FALSE)
+            # probably obsolete now
+            skip = contentText %>% grepl('^#',x = .) %>% which %>% max
+            content = readr::read_tsv(contentText, col_names= TRUE,skip = skip)
         }
     } else{
         content = NULL
