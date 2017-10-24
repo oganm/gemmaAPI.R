@@ -12,7 +12,7 @@ annotationInfo(annotation, request = NULL, file = NULL, return = TRUE,
 
 \item{request}{Character. If null retreeives the annotation object. Otherwise
 \itemize{
-    \item \code{experiments}: Does a search for datasets containing annotations matching the given string
+    \item \code{datasets}: Does a search for datasets containing annotations matching the given string
 }}
 
 \item{file}{Character. File path. If provided, response will be saved to file}
@@ -36,5 +36,5 @@ annotationInfo
 \examples{
 annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105')
 annotationInfo('transplantation')
-annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105', request = 'experiments')
+annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105', request = 'datasets')
 }
