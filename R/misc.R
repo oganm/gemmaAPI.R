@@ -31,8 +31,11 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
     if(contentText[1] == 'THISISFILE' & return){
         # if output is a gz file and return is desired, read the gzfile.
         # this is a bad heuristics. will fail if file has a header comment longer that 100 lines
-        lines = readLines(gzfile(contentText[2]),n = 100)
+        # browser()
+        con = gzfile(contentText[2])
+        lines = readLines(con,n = 100)
         skip = lines %>% grepl('^#',x = .) %>% which %>% max
+        close(con)
         con = gzfile(contentText[2],open = c('rb'))
         content = readr::read_tsv(con, col_names= TRUE,skip = skip)
         close(con)
