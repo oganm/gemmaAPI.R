@@ -1,5 +1,5 @@
 gemmaBase = function(x){
-    'http://www.chibi.ubc.ca/Gemma/rest/v2/'
+    'https://gemma.msl.ubc.ca/rest/v2/'
 }
 
 # detects what the content is, reads it if return = TRUE, saves it if file path is provided
