@@ -16,7 +16,7 @@ NCBI ID is the most efficient (and guaranteed to be unique) identifier.
 Official symbol represents a gene homologue for a random taxon, unless used 
 in a specific taxon (see the Taxa Endpoints).
 
-If a vector of length>1 is not currently supported}
+If a vector of length>1 is provided all matching gene objects will be returned.}
 
 \item{request}{Character. If NULL retrieves all genes matching the identifier. Otherwise
 \itemize{

@@ -8,7 +8,7 @@
 #' Official symbol represents a gene homologue for a random taxon, unless used 
 #' in a specific taxon (see the Taxa Endpoints).
 #' 
-#' If a vector of length>1 is not currently supported
+#' If a vector of length>1 is provided all matching gene objects will be returned.
 #' 
 #' @param request Character. If NULL retrieves all genes matching the identifier. Otherwise
 #'     \itemize{
@@ -70,9 +70,9 @@ geneInfo = function(gene, request = NULL,
     }
     
     requestParams = list(...)
-    url = glue::glue(gemmaBase(),'genes/{gene}')
     
     if(!is.null(request)){
+        url = glue::glue(gemmaBase(),'genes/{gene}')
         request = match.arg(request, 
                             choices = c('evidence',
                                         'locations',
@@ -97,6 +97,12 @@ geneInfo = function(gene, request = NULL,
                              numberArg(limit = requestParams$limit,
                                        stringency = requestParams$stringency))
         }
+    } else{
+        assertthat::assert_that(is.character(gene) | is.numeric(gene))
+        gene %<>% paste(collapse =',')
+        gene %<>% utils::URLencode(reserved = TRUE)
+        url = glue::glue(gemmaBase(),'genes/{gene}')
+        content = getContent(url,file = file,return=return,overwrite = overwrite)
     }
     
     
