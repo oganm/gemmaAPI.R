@@ -35,59 +35,68 @@ taxonInfo(taxon, request = NULL, ..., file = NULL, return = TRUE,
 12           \tab zebrafish           \tab Danio rerio              \tab                 \tab 7955            \cr
 13           \tab fly                 \tab Drosophila melanogaster  \tab                 \tab 7227            \cr
 14           \tab worm                \tab Caenorhabditis elegans   \tab                 \tab 6239            
-}}
+}
+
+
+If a vector of length>1 is provided return all matching taxon
+objects similar to \code{\link{allTaxon}} but without access to additional 
+parameters. \code{request} parameter cannot be specified for vector inputs}
 
 \item{request}{character. If NULL retrieves the dataset object. Otherwise
-\itemize{
-    \item \code{datasets}: Retrieves datasets for the given taxon. Parameters:
-        \itemize{
-            \item \code{filter}: Optional see \code{\link{allPlatforms}} filter argument.
-            \item \code{offset}: Optional, defaults to 0. Skips the specified amount of objects when retrieving them from the database
-            \item \code{limit}: Optional, defaults to 20. Limits the result to specified amount of objects. Use 0 for no limit.
-            \item \code{sort}: Character. Optional parameter (defaults to +id) sets the ordering property and direction. Format is [+,-][property name]. E.g. "-accession" will translate to descending ordering by the Accession property. Note that this does not guarantee the order of the returned entities. Nested properties are also supported (recursively). 
-            
-            E.g: +curationDetails.lastTroubledEvent.date
-        }
-    \item \code{phenotypes}: Loads all phenotypes for the given taxon. Paremeters:
-        \itemize{
-            \item \code{editableOnly}: Optional, defaults to FALSE. Whether to only list editable objects.
-            \item \code{tree}: Optional, defaults to FALSE. Whether the returned structure should be an actual tree (nested JSON objects). 
-            
-            Default is false - the tree is flattened and the tree structure information is stored as the values of the returned object.
-        }
-    \item \code{phenoCandidateGenes}: Given a set of phenotypes, return all genes associated with them. Parameters:
-        \itemize{
-            \item \code{editableOnly}: Optional, defaults to FALSE. Whether to only list editable objects.
-            \item \code{phenotypes}: Required. Phenotype value URIs separated by commas.
-        }
-    \item \code{gene}: Retrieves genes matching the identifier on the given taxon. Parameters:
-        \itemize{
-            \item \code{gene}: Required. Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or official symbol (DYRK1A) of the gene.
-            
-            NCBI ID is the most efficient (and guaranteed to be unique) identifier.
-            
-            Official symbol represents a gene homologue for a random taxon, unless used in a specific taxon (see the Taxa Endpoints).
-        }
-    \item \code{geneEvidence}: Retrieves gene evidence for the gene on the given taxon. Parameters:
-        \itemize{
-            \item \code{gene}: Required. Same as "gene" request
-        }
-    \item \code{geneLocation}: Retrieves gene evidence for the gene on the given taxon. Parameters:
-        \itemize{
-            \item \code{gene}: Required. Same as "gene" request
-        }
-    \item \code{genesAtLocation}: Finds genes overlapping a given region. Parameters:
-        \itemize{
-            \item \code{chromosome}: Required. The chromosome of the query location. Eg: 3, 21, X
-            \item \code{strand}: Optional. Can either be + or -. 
-            
-            This is a WIP parameter and does currently not do anything.
-            
-            When using in scripts, remember to URL-encode the '+' plus character (see the compiled URL below).
-            \item \code{start}: Required. Number of the start nucleotide of the desired region.
-            \item \code{size}: Required. Amount of nucleotides in the desired region (i.e. the length of the region).
-        }
-}}
+    \itemize{
+        \item \code{datasets}: Retrieves datasets for the given taxon. Parameters:
+            \itemize{
+                \item \code{filter}: Optional see \code{\link{allPlatforms}} filter argument.
+                \item \code{offset}: Optional, defaults to 0. Skips the specified amount of objects when retrieving them from the database
+                \item \code{limit}: Optional, defaults to 20. Limits the result to specified amount of objects. Use 0 for no limit.
+                \item \code{sort}: Character. Optional parameter (defaults to +id) sets the ordering property and direction. Format is [+,-][property name]. E.g. "-accession" will translate to descending ordering by the Accession property. Note that this does not guarantee the order of the returned entities. Nested properties are also supported (recursively). 
+                
+                E.g: +curationDetails.lastTroubledEvent.date
+            }
+        \item \code{phenotypes}: Loads all phenotypes for the given taxon. Paremeters:
+            \itemize{
+                \item \code{editableOnly}: Optional, defaults to FALSE. Whether to only list editable objects.
+                \item \code{tree}: Optional, defaults to FALSE. Whether the returned structure should be an actual tree (nested JSON objects). 
+                
+                Default is false - the tree is flattened and the tree structure information is stored as the values of the returned object.
+            }
+        \item \code{phenoCandidateGenes}: Given a set of phenotypes, return all genes associated with them. Parameters:
+            \itemize{
+                \item \code{editableOnly}: Optional, defaults to FALSE. Whether to only list editable objects.
+                \item \code{phenotypes}: Required. Phenotype value URIs separated by commas.
+            }
+        \item \code{gene}: Retrieves genes matching the identifier on the given taxon. Parameters:
+            \itemize{
+                \item \code{gene}: Required. Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or official symbol (DYRK1A) of the gene.
+                
+                NCBI ID is the most efficient (and guaranteed to be unique) identifier.
+                
+                Official symbol represents a gene homologue for a random taxon, unless used in a specific taxon (see the Taxa Endpoints).
+            }
+        \item \code{geneEvidence}: Retrieves gene evidence for the gene on the given taxon. Parameters:
+            \itemize{
+                \item \code{gene}: Required. Same as "gene" request
+            }
+        \item \code{geneLocation}: Retrieves gene evidence for the gene on the given taxon. Parameters:
+            \itemize{
+                \item \code{gene}: Required. Same as "gene" request
+            }
+        \item \code{genesAtLocation}: Finds genes overlapping a given region. Parameters:
+            \itemize{
+                \item \code{chromosome}: Required. The chromosome of the query location. Eg: 3, 21, X
+                \item \code{strand}: Optional. Can either be + or -. 
+                
+                This is a WIP parameter and does currently not do anything.
+                
+                When using in scripts, remember to URL-encode the '+' plus character (see the compiled URL below).
+                \item \code{start}: Required. Number of the start nucleotide of the desired region.
+                \item \code{size}: Required. Amount of nucleotides in the desired region (i.e. the length of the region).
+            }
+    }
+
+If a vector of length>1 is provided return all matching taxon
+objects similar to \code{\link{allTaxa}}
+\code{request} parameter cannot be specified for vector inputs}
 
 \item{...}{Use if the specified request has additional parameters.}
 

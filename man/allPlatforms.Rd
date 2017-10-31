@@ -4,10 +4,20 @@
 \alias{allPlatforms}
 \title{All platforms}
 \usage{
-allPlatforms(filter = NULL, offset = 0, limit = 20, sort = "+id",
-  file = NULL, return = TRUE, overwrite = FALSE, memoised = FALSE)
+allPlatforms(platforms = NULL, filter = NULL, offset = 0, limit = 20,
+  sort = "+id", file = NULL, return = TRUE, overwrite = FALSE,
+  memoised = FALSE)
 }
 \arguments{
+\item{platforms}{A list of identifiers (e.g: GPL96,GPL1355,GPL1261). 
+Identifiers can either be the Platform ID or its short name. 
+
+ Retrieval by ID is more efficient. 
+
+Only platforms that user has access to will be available. 
+
+Do not combine different identifiers in one query.}
+
 \item{filter}{Filtering can be done on any* property of a supported type or nested property that the ExpressionExperiment class has ( and is mapped by hibernate ). E.g: 'curationDetails' or 'curationDetails.lastTroubledEvent.date'
 Currently supported types are:
 \itemize{
@@ -75,7 +85,7 @@ List all platforms
 }
 \examples{
 allPlatforms()
-
+allPlatforms(c('GPL1355','GPL570'))
 # return all platforms it is slower and prone to connection interruptions
 # alternative is to loop using offset and limit
 allPlatforms(limit = 0)

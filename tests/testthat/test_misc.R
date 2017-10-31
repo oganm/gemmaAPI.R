@@ -43,12 +43,4 @@ testthat::test_that('overwrite',{
         info3 = file.info(file)
         testthat::expect_true(info$mtime<info3$mtime)
     }
-    
-    file = tempfile()
-    x = 'GSE12679'
-    file.create(file)
-    time = 
-        microbenchmark::microbenchmark(datasetInfo(x,request = 'data',return = FALSE,file = file),times = 5,unit = 'ms')
-    time = time %>% summary
-    testthat::expect_lt(time$median,5)
 })

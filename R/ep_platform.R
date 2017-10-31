@@ -1,7 +1,14 @@
 #' All platforms
 #' 
 #' List all platforms
+#' @param platforms A list of identifiers (e.g: GPL96,GPL1355,GPL1261). 
+#' Identifiers can either be the Platform ID or its short name. 
 #'
+#'  Retrieval by ID is more efficient. 
+#' 
+#' Only platforms that user has access to will be available. 
+#' 
+#' Do not combine different identifiers in one query.
 #' @inheritParams filterArg
 #' @inheritParams queryLimit
 #' @inheritParams sortArg
@@ -12,11 +19,12 @@
 #'
 #' @examples
 #' allPlatforms()
-#' 
+#' allPlatforms(c('GPL1355','GPL570'))
 #' # return all platforms it is slower and prone to connection interruptions
 #' # alternative is to loop using offset and limit
 #' allPlatforms(limit = 0)
-allPlatforms = function(filter = NULL,
+allPlatforms = function(platforms = NULL,
+                        filter = NULL,
                         offset = 0,
                         limit = 20,
                         sort = '+id',
@@ -36,9 +44,17 @@ allPlatforms = function(filter = NULL,
         return(out)
     }
     
+    if(!is.null(platforms)){
+        assertthat::assert_that(is.character(platforms) | is.numeric(platforms))
+        platforms %<>% paste(collapse =',')
+        platforms %<>% utils::URLencode(reserved = TRUE)
+    } else{
+        platforms = ''
+    }
+    
     url = 
         glue::glue(gemmaBase(),
-                   'platforms/?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
+                   'platforms/{platforms}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
     content = getContent(url,file = file,return = return, overwrite = overwrite)
     if(return){
         names(content) =  content %>% purrr::map_chr('shortName')
@@ -51,7 +67,12 @@ allPlatforms = function(filter = NULL,
 #' 
 #' Retrieves information about a single platform. Combines several API calls.
 #'
-#' @param platform Can either be the platform ID or its short name (e.g: GPL1355). Retrieval by ID is more efficient. Only platforms that user has access to will be available.
+#' @param platform Can either be the platform ID or its short name (e.g: GPL1355). 
+#' Retrieval by ID is more efficient. Only platforms that user has access to will be available.
+#' 
+#' If a vector of length>1 is provided return all matching platform
+#' objects similar to \code{\link{allPlatforms}} but without access to additional 
+#' parameters. \code{request} parameter cannot be specified for vector inputs
 #' @param request Character. If NULL retrieves the platform object. Otherwise
 #' \itemize{
 #'     \item \code{datasets}: Retrieves experiments in the given platform. Parameters:
@@ -109,8 +130,8 @@ platformInfo = function(platform,
     
     # optional paramters go here
     requestParams = list(...)
-    url = glue::glue(gemmaBase(),'platforms/{stringArg(platform = platform,addName=FALSE)}')
     if(!is.null(request)){
+        url = glue::glue(gemmaBase(),'platforms/{stringArg(platform = platform,addName=FALSE)}')
         request = match.arg(request, 
                             choices = c('datasets',
                                         'elements',
@@ -144,14 +165,16 @@ platformInfo = function(platform,
         } else if (request == 'annotations'){
             url = glue::glue(url,'/{request}')
         }
-        
-
+    } else{
+        content = allPlatforms(platform,limit = 0,file=file,return= return,
+                               overwrite = overwrite,memoised = memoised)
+        return(content)
     }
     
     content = getContent(url,file = file,return=return, overwrite = overwrite)
     if(return){
         if(is.null(request)){
-            names(content) =  content %>% purrr::map_chr('shortName')
+            # names(content) =  content %>% purrr::map_chr('shortName')
         } else if(request %in% c('datasets')){
             names(content) =  content %>% purrr::map_chr('shortName')
         } else if (request %in% c('elements')){

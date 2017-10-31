@@ -8,7 +8,12 @@ platformInfo(platform, request = NULL, ..., file = NULL, return = TRUE,
   overwrite = FALSE, memoised = FALSE)
 }
 \arguments{
-\item{platform}{Can either be the platform ID or its short name (e.g: GPL1355). Retrieval by ID is more efficient. Only platforms that user has access to will be available.}
+\item{platform}{Can either be the platform ID or its short name (e.g: GPL1355). 
+Retrieval by ID is more efficient. Only platforms that user has access to will be available.
+
+If a vector of length>1 is provided return all matching platform
+objects similar to \code{\link{allPlatforms}} but without access to additional 
+parameters. \code{request} parameter cannot be specified for vector inputs}
 
 \item{request}{Character. If NULL retrieves the platform object. Otherwise
 \itemize{

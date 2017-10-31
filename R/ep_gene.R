@@ -1,10 +1,15 @@
 #' geneInfo
 #'
-#' @param gene Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or official symbol (DYRK1A) of the gene. 
+#' @param gene Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or 
+#' official symbol (DYRK1A) of the gene. 
 #' 
 #' NCBI ID is the most efficient (and guaranteed to be unique) identifier.
 #' 
-#' Official symbol represents a gene homologue for a random taxon, unless used in a specific taxon (see the Taxa Endpoints).
+#' Official symbol represents a gene homologue for a random taxon, unless used 
+#' in a specific taxon (see the Taxa Endpoints).
+#' 
+#' If a vector of length>1 is not currently supported
+#' 
 #' @param request Character. If NULL retrieves all genes matching the identifier. Otherwise
 #'     \itemize{
 #'         \item \code{evidence}: Retrieves gene evidence for the given gene

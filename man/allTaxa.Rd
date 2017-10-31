@@ -4,9 +4,22 @@
 \alias{allTaxa}
 \title{All taxa}
 \usage{
-allTaxa(file = NULL, return = TRUE, overwrite = FALSE, memoised = FALSE)
+allTaxa(taxa = NULL, file = NULL, return = TRUE, overwrite = FALSE,
+  memoised = FALSE)
 }
 \arguments{
+\item{taxa}{Limits the result to entities with given identifiers.
+
+A list of identifiers, separated by commas (e.g: human, mouse, fly).
+ Identifiers can be the any of the following:
+
+\itemize{
+  \item taxon ID
+  \item scientific name
+  \item common name
+  \item abbreviation
+}}
+
 \item{file}{Character. File path. If provided, response will be saved to file}
 
 \item{return}{Logical. If the response should be returned. Set to false when
@@ -27,4 +40,5 @@ Lists all available taxa.
 }
 \examples{
 allTaxa()
+allTaxa(c('human','mouse'))
 }

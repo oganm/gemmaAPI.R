@@ -4,6 +4,18 @@
 #'
 #' Lists all available taxa.
 #'
+#' @param taxa Limits the result to entities with given identifiers.
+#' 
+#' A list of identifiers, separated by commas (e.g: human, mouse, fly).
+#'  Identifiers can be the any of the following:
+#' 
+#' \itemize{
+#'   \item taxon ID
+#'   \item scientific name
+#'   \item common name
+#'   \item abbreviation
+#' }
+#' 
 #' @inheritParams fileReturn
 #' @inheritParams memoised
 #' @return List of lists containing experiment object.
@@ -11,7 +23,9 @@
 #'
 #' @examples
 #' allTaxa()
-allTaxa = function(file = NULL,
+#' allTaxa(c('human','mouse'))
+allTaxa = function(taxa = NULL,
+                   file = NULL,
                    return = TRUE,
                    overwrite = FALSE,
                    memoised = FALSE){
@@ -22,8 +36,16 @@ allTaxa = function(file = NULL,
                     memoised = FALSE) -> out
         return(out)
     }
+    
+    if(!is.null(taxa)){
+        assertthat::assert_that(is.character(taxa) | is.numeric(taxa))
+        taxa %<>% paste(collapse =',')
+        taxa %<>% utils::URLencode(reserved = TRUE)
+    } else{
+        taxa = ''
+    }
 
-    url = paste0(gemmaBase(),'taxa')
+    url = glue::glue(gemmaBase(),'taxa/{taxa}')
     
     content = getContent(url, file = file, return = return,overwrite=overwrite)
     if(return){
@@ -65,7 +87,11 @@ allTaxa = function(file = NULL,
 #' 14           \tab worm                \tab Caenorhabditis elegans   \tab                 \tab 6239            
 #' }
 #' 
-#'   
+#' 
+#' If a vector of length>1 is provided return all matching taxon
+#' objects similar to \code{\link{allTaxon}} but without access to additional 
+#' parameters. \code{request} parameter cannot be specified for vector inputs
+#' 
 #' @param request character. If NULL retrieves the dataset object. Otherwise
 #'     \itemize{
 #'         \item \code{datasets}: Retrieves datasets for the given taxon. Parameters:
@@ -117,6 +143,11 @@ allTaxa = function(file = NULL,
 #'                 \item \code{size}: Required. Amount of nucleotides in the desired region (i.e. the length of the region).
 #'             }
 #'     }
+#' 
+#' If a vector of length>1 is provided return all matching taxon
+#' objects similar to \code{\link{allTaxa}}
+#' \code{request} parameter cannot be specified for vector inputs
+#'     
 #' @param ... Use if the specified request has additional parameters.
 #' @inheritParams fileReturn
 #' @inheritParams memoised
@@ -153,8 +184,9 @@ taxonInfo = function(taxon,
 
     # optional paramters go here
     requestParams = list(...)
-    url = glue::glue(gemmaBase(),'taxa/{stringArg(taxon = taxon,addName=FALSE)}')
     if(!is.null(request)){
+        url = glue::glue(gemmaBase(),'taxa/{stringArg(taxon = taxon,addName=FALSE)}')
+        
         request %<>%  match.arg(c('datasets',
                               'phenotypes',
                               'phenoCandidateGenes',
@@ -205,6 +237,12 @@ taxonInfo = function(taxon,
                              'start={requestParams$start}&size={requestParams$size}')
         }
         
+    } else{
+        content = allTaxa(taxon,file = file,
+                          return = return,
+                          overwrite = overwrite,
+                          memoised = memoised)
+        return(content)
     }
         
     
@@ -212,7 +250,7 @@ taxonInfo = function(taxon,
     # just setting names. not essential
     if(return){
         if(is.null(request)){
-            names(content) =  content %>% purrr::map_chr('scientificName')
+            # names(content) =  content %>% purrr::map_chr('scientificName')
         } else if(request %in% 'datasets'){
             names(content) =  content %>% purrr::map_chr('shortName')
         } else if(request %in% c('phenoCandidateGenes','phenotypes')){

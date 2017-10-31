@@ -9,7 +9,9 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
 }
 \arguments{
 \item{dataset}{Character. Can either be the dataset ID or its short name 
-(e.g. GSE1234).}
+(e.g. GSE1234). If a vector of length>1 is provided return all matching dataset
+ objects similar to \code{\link{allDatasets}} but without access to additional 
+ parameters. \code{request} parameter cannot be specified for vector inputs}
 
 \item{request}{Character. If NULL retrieves the dataset object. Otherwise
  \itemize{

@@ -49,7 +49,7 @@ allDatasets = function(datasets = NULL,
     
     
     if(!is.null(datasets)){
-        assertthat::assert_that(is.character(datasets))
+        assertthat::assert_that(is.character(datasets) | is.numeric(datasets))
         datasets %<>% paste(collapse =',')
         datasets %<>% utils::URLencode(reserved = TRUE)
     } else{
@@ -76,7 +76,9 @@ allDatasets = function(datasets = NULL,
 #' identifier. Combines several API calls
 #'
 #' @param dataset Character. Can either be the dataset ID or its short name 
-#' (e.g. GSE1234).
+#' (e.g. GSE1234). If a vector of length>1 is provided return all matching dataset
+#'  objects similar to \code{\link{allDatasets}} but without access to additional 
+#'  parameters. \code{request} parameter cannot be specified for vector inputs
 #' @param request Character. If NULL retrieves the dataset object. Otherwise
 #'  \itemize{
 #'      \item \code{platforms}: Retrieves platforms for the given dataset
@@ -133,8 +135,8 @@ datasetInfo  = function(dataset,
     # optional paramters go here
     requestParams = list(...)
     
-    url = glue::glue(gemmaBase(),'datasets/{stringArg(dataset = dataset,addName=FALSE)}')
     if(!is.null(request)){
+        url = glue::glue(gemmaBase(),'datasets/{stringArg(dataset = dataset,addName=FALSE)}')
         assertthat::assert_that(length(dataset)==1)
         request = match.arg(request, 
                             choices = c('platforms',
@@ -163,14 +165,15 @@ datasetInfo  = function(dataset,
                              '&{queryLimit(requestParams$offset, requestParams$limit)}')
         }
     } else{
-        # content = allDatasets(dataset,limit = 0,file=file,return= return)
-        # return(content)
+        content = allDatasets(dataset,limit = 0,file=file,return= return,overwrite = overwrite,memoised = memoised)
+        return(content)
     }
     content = getContent(url,file = file,return=return,overwrite = overwrite)
     # just setting names. not essential
     if(return){
         if(is.null(request)){
-            names(content) =  content %>% purrr::map_chr('shortName')
+            # currently no one comes here
+            # names(content) =  content %>% purrr::map_chr('shortName')
         } else if(request == 'data'){
             if(!is.null(requestParams$IdColnames) && requestParams$IdColnames){
                 colnames(content)[grepl('BioAssayId\\=',colnames(content))] %<>% 
