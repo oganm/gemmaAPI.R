@@ -29,6 +29,7 @@ testthat::test_that('overwrite',{
                 annotationInfo = list(annotation = "http://purl.obolibrary.org/obo/OBI_0000105"))
     for(i in seq_along(functionList)){
         file = tempfile()
+        suppressWarnings(file.remove(file))
         arguments = c(args[[i]],
                       list(file = file,
                            return = TRUE,

@@ -4,6 +4,7 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
 devtools::load_all()
 ```
 
@@ -48,3 +49,18 @@ data =
 head(data) %>% knitr::kable(format ='markdown')
 ```
 
+
+Get metadata for first 10 mouse studies.
+
+```{r}
+mouseStudies = taxonInfo('mouse',request = 'datasets',limit = 0)
+studyIDs = mouseStudies %>% purrr::map_int('id')
+mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata)
+mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
+```
+
+Download expression data a study
+
+```{r,eval=FALSE}
+studyIDs %>% sapply(function(x){datasetInfo(x,request= 'data',return= FALSE, file = paste0('data/',x))})
+```
