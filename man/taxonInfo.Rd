@@ -39,7 +39,7 @@ taxonInfo(taxon, request = NULL, ..., file = NULL, return = TRUE,
 
 
 If a vector of length>1 is provided return all matching taxon
-objects similar to \code{\link{allTaxon}} but without access to additional 
+objects similar to \code{\link{allTaxa}} but without access to additional 
 parameters. \code{request} parameter cannot be specified for vector inputs}
 
 \item{request}{character. If NULL retrieves the dataset object. Otherwise

@@ -5,7 +5,7 @@
 #' Compiles metadata for a single dataset that includes sample and sample
 #' metadata. Note that this function uses memoised functions to speed up loops.
 #' If something changes in gemma as you work and you want to update, restart 
-#' your session or use \link{\code{forgetGemmaMemoised}}
+#' your session or use \code{\link{forgetGemmaMemoised}}
 #'
 #' @param dataset Character. Can either be the dataset ID or its short name 
 #' (e.g. GSE1234).
