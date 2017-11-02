@@ -102,7 +102,6 @@ geneInfo = function(gene, request = NULL,
         gene %<>% paste(collapse =',')
         gene %<>% utils::URLencode(reserved = TRUE)
         url = glue::glue(gemmaBase(),'genes/{gene}')
-        content = getContent(url,file = file,return=return,overwrite = overwrite)
     }
     
     
