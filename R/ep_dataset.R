@@ -79,6 +79,7 @@ allDatasets = function(datasets = NULL,
 #' (e.g. GSE1234). If a vector of length>1 is provided return all matching dataset
 #'  objects similar to \code{\link{allDatasets}} but without access to additional 
 #'  parameters. \code{request} parameter cannot be specified for vector inputs
+#'  unless specifiet otherwise in request description.
 #' @param request Character. If NULL retrieves the dataset object. Otherwise
 #'  \itemize{
 #'      \item \code{platforms}: Retrieves platforms for the given dataset
@@ -103,6 +104,21 @@ allDatasets = function(datasets = NULL,
 #'               database.
 #'              \item \code{limit}: Optional, defaults to 20. Limits the result 
 #'              to specified amount of objects. Use 0 for no limit.
+#'          }
+#'      \item \code{geneExpression}: Retrieves the expression levels of given genes for 
+#'      given datasets. Can be used with multiple datasets. Parameters:
+#'          \itemize{
+#'              \item \code{genes}: Required. A list of identifiers, separated by commas (e.g: 1859, 5728).
+#'              
+#'              Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or official symbol (DYRK1A) of the gene.
+#'              
+#'              NCBI ID is the most efficient (and guaranteed to be unique) identifier.
+#'              
+#'              Official symbol represents a gene homologue for a random taxon, unless used in a specific taxon (see the Taxa Endpoints).
+#'              
+#'              If the gene taxon does not match the taxon of the given datasets, expression levels for that gene will be missing from the response
+#'              
+#'              You can combine various identifiers in one query, but any invalid identifier will cause the call to yield an error. Duplicate identifiers of the same gene will result in duplicates in the response.
 #'          }
 #' }
 #' @param ... Use if the specified request has additional parameters.
@@ -143,26 +159,31 @@ datasetInfo  = function(dataset,
                                         'samples',
                                         'annotations',
                                         'design','data',
-                                        'differential'))
+                                        'differential',
+                                        'geneExpression'))
         
         allowedArguments = list(data = c('filter','IdColnames'),
                                 differential = c('qValueThreshold',
                                                  'offset',
-                                                 'limit'))
-        mandatoryArguments = list(differential = 'qValueThreshold')
+                                                 'limit'),
+                                geneExpression = 'genes')
+        mandatoryArguments = list(differential = 'qValueThreshold',
+                                  geneExpression = 'genes')
         
         checkArguments(request,requestParams,allowedArguments,mandatoryArguments)
         
         if(request == 'differential'){
-            url = glue::glue('{url}/analyses/differential')
+            url = glue::glue('{url}/analyses/differential?',
+                             '{numberArg(qValueThreshold = requestParams$qValueThreshold)}',
+                             '&{queryLimit(requestParams$offset, requestParams$limit)}')
+        } else if (request == 'geneExpression'){
+            genes %<>% paste(collapse=',')
+            url = glue::glue('{url}/expressions/genes/{stringArg(genes = genes,addName = FALSE)}')
         } else{
             url = glue::glue('{url}/{request}')
         }
         if(request == 'data'){
             url = glue::glue('{url}?{logicArg(filter = requestParams$filter)}')
-        } else if(request == 'differential') {
-            url = glue::glue('{url}?{numberArg(qValueThreshold = requestParams$qValueThreshold)}',
-                             '&{queryLimit(requestParams$offset, requestParams$limit)}')
         }
     } else{
         content = allDatasets(dataset,limit = 0,file=file,return= return,overwrite = overwrite,memoised = memoised)
@@ -187,6 +208,12 @@ datasetInfo  = function(dataset,
             names(content) =  content %>% purrr::map_chr('className')
         } else if (request %in% 'differential'){
             names(content) =  content %>% purrr::map_chr('probe')
+        } else if(request %in% 'geneExpression'){
+            names(content) =  content %>% purrr::map_chr('datasetId')
+            content %<>% lapply(function(x){
+                names(x$geneExpressionLevels) = x$geneExpressionLevels %>% purrr::map_chr('designElementName')
+                return(x)
+            })
         }
     }
     return(content)

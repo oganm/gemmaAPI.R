@@ -42,6 +42,11 @@ testthat::test_that('datasetInfo',{
     testthat::expect_is(datasetInfo('GSE81454',request = 'design'),'data.frame')
     
     testthat::expect_is(datasetInfo('GSE81454',request = 'design'),'data.frame')
+
+    expressions = datasetInfo(3888,request='geneExpression',genes = c(1859, 5728))
+    testthat::expect_is(expressions,'list')
+    testthat::expect_length(expressions, 1)
+    testthat::expect_equal(names(expressions[[1]]),c('geneExpressionLevels', 'datasetId'))   
     
     
     nonFiltered  = datasetInfo('GSE81454',request = 'data')
@@ -62,6 +67,8 @@ testthat::test_that('datasetInfo',{
     skip = lines %>% grepl('^#',x = .) %>% which %>% max
     readFile = readr::read_tsv(gzfile(f), col_names= TRUE,skip = skip)    
     testthat::expect_is(readFile,'data.frame')
+    
+    
     
     
     testthat::expect_error(datasetInfo('GSE81454',request = 'differential'),regexp = 'qValueThreshold')

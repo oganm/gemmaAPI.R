@@ -38,6 +38,21 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
              \item \code{limit}: Optional, defaults to 20. Limits the result 
              to specified amount of objects. Use 0 for no limit.
          }
+     \item \code{geneExpression}: Retrieves the expression levels of given genes for 
+     given datasets. Parameters:
+         \itemize{
+             \item \code{genes}: Required. A list of identifiers, separated by commas (e.g: 1859, 5728).
+             
+             Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or official symbol (DYRK1A) of the gene.
+             
+             NCBI ID is the most efficient (and guaranteed to be unique) identifier.
+             
+             Official symbol represents a gene homologue for a random taxon, unless used in a specific taxon (see the Taxa Endpoints).
+             
+             If the gene taxon does not match the taxon of the given datasets, expression levels for that gene will be missing from the response
+             
+             You can combine various identifiers in one query, but any invalid identifier will cause the call to yield an error. Duplicate identifiers of the same gene will result in duplicates in the response.
+         }
 }}
 
 \item{...}{Use if the specified request has additional parameters.}
