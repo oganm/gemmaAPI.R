@@ -177,8 +177,8 @@ datasetInfo  = function(dataset,
                              '{numberArg(qValueThreshold = requestParams$qValueThreshold)}',
                              '&{queryLimit(requestParams$offset, requestParams$limit)}')
         } else if (request == 'geneExpression'){
-            genes %<>% paste(collapse=',')
-            url = glue::glue('{url}/expressions/genes/{stringArg(genes = genes,addName = FALSE)}')
+            requestParams$genes %<>% paste(collapse=',')
+            url = glue::glue('{url}/expressions/genes/{stringArg(genes = requestParams$genes,addName = FALSE)}')
         } else{
             url = glue::glue('{url}/{request}')
         }
