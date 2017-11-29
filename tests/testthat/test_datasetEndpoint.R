@@ -26,9 +26,11 @@ testthat::test_that('datasetInfo',{
     
     testthat::expect_null(datasetInfo('GSE81454',return = FALSE))
     
-    testthat::expect_true(length(datasetInfo('GSE81454'))>0)
+    testthat::expect_length(datasetInfo('GSE81454'),1)
     
     testthat::expect_is(datasetInfo('GSE81454',request = 'samples'),'list')
+    testthat::expect_error(datasetInfo(c('GSE81454',3888),request = 'samples'),regexp = 'not a string')
+    
     testthat::expect_true(length(datasetInfo('GSE81454',request = 'samples'))>0)
     
     testthat::expect_warning(datasetInfo('GSE81454',request = 'samples',loyloy= 'sadds'),'does not accept parameters')
@@ -47,6 +49,9 @@ testthat::test_that('datasetInfo',{
     testthat::expect_is(expressions,'list')
     testthat::expect_length(expressions, 1)
     testthat::expect_equal(names(expressions[[1]]),c('geneExpressionLevels', 'datasetId'))   
+    expressionsMultiple = datasetInfo(c(3888,'GSE2871'),request='geneExpression',genes = c(1859, 5728))
+    testthat::expect_length(expressionsMultiple, 2)
+    
     
     
     nonFiltered  = datasetInfo('GSE81454',request = 'data')

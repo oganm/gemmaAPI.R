@@ -119,6 +119,19 @@ allDatasets = function(datasets = NULL,
 #'              If the gene taxon does not match the taxon of the given datasets, expression levels for that gene will be missing from the response
 #'              
 #'              You can combine various identifiers in one query, but any invalid identifier will cause the call to yield an error. Duplicate identifiers of the same gene will result in duplicates in the response.
+#'              
+#'              \item \code{keepNonSpecific}: Optional. Defaults to FALSE. 
+#'              
+#'              If set to false, the response will only include elements that map exclusively to each queried gene
+#'              
+#'              If set to true, the response will include all elements that map to each queried gene, even if they also map to other genes.
+#'              
+#'              \item \code{consolidate}: Optional. Defaults no NULL. 
+#'              Optional, defaults to empty.
+#'              
+#'              Whether genes with multiple elements should consolidate the information. If the 'keepNonSpecific' parameter is set to true, then all gene non-specific vectors are excluded from the chosen procedure.
+#'              
+#'              The options are:
 #'          }
 #' }
 #' @param ... Use if the specified request has additional parameters.
@@ -152,6 +165,12 @@ datasetInfo  = function(dataset,
     requestParams = list(...)
     
     if(!is.null(request)){
+        # allow multiple dataset inputs if gene expression is requested
+        if(request %in% c('geneExpression')){
+            assertthat::assert_that(is.character(dataset) | is.numeric(dataset))
+            dataset %<>% paste(collapse =',')
+        }
+        
         url = glue::glue(gemmaBase(),'datasets/{stringArg(dataset = dataset,addName=FALSE)}')
         assertthat::assert_that(length(dataset)==1)
         request = match.arg(request, 
@@ -166,7 +185,9 @@ datasetInfo  = function(dataset,
                                 differential = c('qValueThreshold',
                                                  'offset',
                                                  'limit'),
-                                geneExpression = 'genes')
+                                geneExpression = c('genes',
+                                                   'keepNonSpecific',
+                                                   'consolidate'))
         mandatoryArguments = list(differential = 'qValueThreshold',
                                   geneExpression = 'genes')
         
@@ -178,7 +199,12 @@ datasetInfo  = function(dataset,
                              '&{queryLimit(requestParams$offset, requestParams$limit)}')
         } else if (request == 'geneExpression'){
             requestParams$genes %<>% paste(collapse=',')
-            url = glue::glue('{url}/expressions/genes/{stringArg(genes = requestParams$genes,addName = FALSE)}')
+            requestParams$consolidate %<>% match.arg(choices = c(NULL,
+                                                                 'pickmax',
+                                                                 'pickvar',
+                                                                 'average'))
+            url = glue::glue('{url}/expressions/genes/{stringArg(genes = requestParams$genes,addName = FALSE)}?',
+                             stringArg(consolidate = requestParams$consolidate), '&', logicArg(keepNonSpecific = requestParams$keepNonSpecific))
         } else{
             url = glue::glue('{url}/{request}')
         }
@@ -211,7 +237,12 @@ datasetInfo  = function(dataset,
         } else if(request %in% 'geneExpression'){
             names(content) =  content %>% purrr::map_chr('datasetId')
             content %<>% lapply(function(x){
-                names(x$geneExpressionLevels) = x$geneExpressionLevels %>% purrr::map_chr('designElementName')
+                names(x$geneExpressionLevels) = x$geneExpressionLevels %>% 
+                    purrr::map_chr('geneNcbiId')
+                x$geneExpressionLevels %<>% lapply(function(y){
+                    names(y$vectors) = y$vectors %>% purrr::map_chr('designElementName')
+                    return(y)
+                })
                 return(x)
             })
         }
