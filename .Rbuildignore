@@ -4,3 +4,5 @@
 ^codecov\.yml$
 ^\.httr-oauth$
 README.rmd
+CONTRIBUTING.rmd
+CONTRIBUTING.md
