@@ -25,6 +25,9 @@ testthat::test_that('compileMetadata',{
         compileMetadata(x)
     })
     
+    meta3 = compileMetadata(3)
+    testthat::expect_true(any(grepl('GENE_',meta3$sampleAnnotationOntoID)))
+    
     # mouseMetadata = studyIDs[studyIDs > 5384] %>% lapply(function(x){
     #     print(x)
     #     compileMetadata(x)

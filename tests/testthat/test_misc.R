@@ -34,13 +34,13 @@ testthat::test_that('overwrite',{
                       list(file = file,
                            return = TRUE,
                            overwrite= FALSE))
-        do.call(functionList[[i]],arguments)
+        invisible(do.call(functionList[[i]],arguments))
         info = file.info(file)
         testthat::expect_warning(do.call(functionList[[i]],arguments),"Skipping")
         info2 = file.info(file)
         testthat::expect_equal(info$mtime,info2$mtime)
         arguments$overwrite = TRUE
-        do.call(functionList[[i]],arguments)
+        invisible(do.call(functionList[[i]],arguments))
         info3 = file.info(file)
         testthat::expect_true(info$mtime<info3$mtime)
     }

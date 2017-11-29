@@ -53,29 +53,16 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
             paste(collapse='|')
     }
     
-    # return NULL instead of erroring out
-    epAnnotationInfo = function(annotation,
-                                    request = NULL,
-                                    file=NULL,
-                                    return = TRUE){
-        out = tryCatch(annotationInfo(annotation,request,file,return,memoised = memoised),
-                 error = function(e){
-                   NULL  
-                 })
-        return(out)
-    }
-    
+
     getAnnotationID = function(URI){
-        annot = epAnnotationInfo(URI)
-        if(is.null(annot)){
-            out = 'NA'
-        } else if(length(annot)==1){
-            out = annot[[1]]$urlId
-        } else if(length(annot)==0){
-            warning('Weird URI ', URI)
+        if(is.null(URI) || is.na(URI)){
+            out = "NA"
+        }else if(grepl(pattern = '#',URI)){
+            out = stringr::str_extract(URI,'(?<=#).*')
+        } else if(grepl(pattern = 'ncbi_gene',URI)){
+            out = paste0('GENE_',basename(URI))
+        }else{
             out = basename(URI)
-        } else{
-            stop('API Problem: Exacty URL matched multiple annotations. This is not good.')
         }
         return(out)
     }
@@ -100,7 +87,6 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     
     experimentAnnotClassURI =  annotation %>% 
         mapNoNull('classUri') %>% combine()
-    
     experimentAnnotClassOntoID = annotation %>% purrr::map('classUri') %>%
         mapNoNull(getAnnotationID) %>% 
         combine()

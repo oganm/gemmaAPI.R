@@ -21,7 +21,6 @@ annotationInfo = function(annotation,
                           return = TRUE,
                           overwrite = FALSE,
                           memoised = FALSE){
-    
     if(memoised){
         mem_annotationInfo(annotation = annotation,
                            request = request,
@@ -45,7 +44,7 @@ annotationInfo = function(annotation,
     
     if(return){
         if(is.null(request)){
-            names(content) =  content %>% purrr::map_chr('urlId')
+            names(content) =  content %>% purrr::map_chr('value')
         } else if (request %in% c('datasets')){
             names(content) =  content %>% purrr::map_chr('shortName')
         }
