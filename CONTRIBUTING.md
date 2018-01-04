@@ -116,3 +116,5 @@ Adding a new request to an endpoint
         testthat::expect_error(datasetInfo('GSE81454',request = 'differential'),
                                regexp = 'qValueThreshold')
         ```
+
+
