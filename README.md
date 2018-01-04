@@ -2,7 +2,7 @@
 Gemma API
 =========
 
-[![Build Status](https://travis-ci.org/oganm/gemmaAPI.svg?branch=master)](https://travis-ci.org/oganm/gemmaAPI) [![codecov](https://codecov.io/gh/oganm/gemmaAPI/branch/master/graph/badge.svg)](https://codecov.io/gh/oganm/gemmaAPI)
+[![Build Status](https://travis-ci.org/PavlidisLab/gemmaAPI.R.svg?branch=master)](https://travis-ci.org/PavlidisLab/gemmaAPI.R)[![codecov](https://codecov.io/gh/PavlidisLab/gemmaAPI.R/branch/master/graph/badge.svg)](https://codecov.io/gh/PavlidisLab/gemmaAPI.R)
 
 This is an R wrapper for [Gemma](http://www.chibi.ubc.ca/Gemma/home.html)'s restful [API](http://www.chibi.ubc.ca/Gemma/resources/restapidocs/).
 
@@ -380,7 +380,7 @@ mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata)
 mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 ```
 
-<table>
+<table style="width:100%;">
 <colgroup>
 <col width="3%" />
 <col width="0%" />
@@ -445,7 +445,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000399|EFO_0000635|EFO_0005135|PATO_0000047|EFO_0000510</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000399%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://purl.obolibrary.org/obo/PATO_0000047%7Chttp://www.ebi.ac.uk/efo/EFO_0000510" class="uri">http://www.ebi.ac.uk/efo/EFO_0000399|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0005135|http://purl.obolibrary.org/obo/PATO_0000047|http://www.ebi.ac.uk/efo/EFO_0000510</a></td>
 <td align="left">Mouse elderly|brain|C57BL/6|female|Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|30060</td>
+<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|GENE_30060</td>
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
@@ -471,7 +471,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000399|EFO_0000635|EFO_0005135|PATO_0000047|EFO_0000510</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000399%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://purl.obolibrary.org/obo/PATO_0000047%7Chttp://www.ebi.ac.uk/efo/EFO_0000510" class="uri">http://www.ebi.ac.uk/efo/EFO_0000399|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0005135|http://purl.obolibrary.org/obo/PATO_0000047|http://www.ebi.ac.uk/efo/EFO_0000510</a></td>
 <td align="left">Mouse elderly|brain|C57BL/6|female|Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|30060</td>
+<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|GENE_30060</td>
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
@@ -497,7 +497,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000399|EFO_0000635|EFO_0005135|PATO_0000047|EFO_0000510</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000399%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://purl.obolibrary.org/obo/PATO_0000047%7Chttp://www.ebi.ac.uk/efo/EFO_0000510" class="uri">http://www.ebi.ac.uk/efo/EFO_0000399|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0005135|http://purl.obolibrary.org/obo/PATO_0000047|http://www.ebi.ac.uk/efo/EFO_0000510</a></td>
 <td align="left">Mouse elderly|brain|C57BL/6|female|Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|30060</td>
+<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|GENE_30060</td>
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
@@ -511,7 +511,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
 <td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">30060;TGEMO_00001</td>
+<td align="left">GENE_30060;TGEMO_00001</td>
 <td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
 </tr>
 <tr class="even">
@@ -523,7 +523,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000399|EFO_0000635|EFO_0005135|PATO_0000047|EFO_0000510</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000399%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://purl.obolibrary.org/obo/PATO_0000047%7Chttp://www.ebi.ac.uk/efo/EFO_0000510" class="uri">http://www.ebi.ac.uk/efo/EFO_0000399|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0005135|http://purl.obolibrary.org/obo/PATO_0000047|http://www.ebi.ac.uk/efo/EFO_0000510</a></td>
 <td align="left">Mouse elderly|brain|C57BL/6|female|Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|30060</td>
+<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|GENE_30060</td>
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
@@ -537,7 +537,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
 <td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">30060;TGEMO_00001</td>
+<td align="left">GENE_30060;TGEMO_00001</td>
 <td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
 </tr>
 <tr class="odd">
@@ -549,7 +549,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000399|EFO_0000635|EFO_0005135|PATO_0000047|EFO_0000510</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000399%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://purl.obolibrary.org/obo/PATO_0000047%7Chttp://www.ebi.ac.uk/efo/EFO_0000510" class="uri">http://www.ebi.ac.uk/efo/EFO_0000399|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0005135|http://purl.obolibrary.org/obo/PATO_0000047|http://www.ebi.ac.uk/efo/EFO_0000510</a></td>
 <td align="left">Mouse elderly|brain|C57BL/6|female|Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|30060</td>
+<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|GENE_30060</td>
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
@@ -563,7 +563,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
 <td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">30060;TGEMO_00001</td>
+<td align="left">GENE_30060;TGEMO_00001</td>
 <td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
 </tr>
 <tr class="even">
@@ -575,7 +575,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000399|EFO_0000635|EFO_0005135|PATO_0000047|EFO_0000510</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000399%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://purl.obolibrary.org/obo/PATO_0000047%7Chttp://www.ebi.ac.uk/efo/EFO_0000510" class="uri">http://www.ebi.ac.uk/efo/EFO_0000399|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0005135|http://purl.obolibrary.org/obo/PATO_0000047|http://www.ebi.ac.uk/efo/EFO_0000510</a></td>
 <td align="left">Mouse elderly|brain|C57BL/6|female|Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|30060</td>
+<td align="left">birnlex_466|UBERON_0000955|birnlex_398|PATO_0000383|GENE_30060</td>
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
@@ -589,7 +589,7 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
 <td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">30060;TGEMO_00001</td>
+<td align="left">GENE_30060;TGEMO_00001</td>
 <td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
 </tr>
 </tbody>
