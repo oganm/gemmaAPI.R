@@ -11,7 +11,7 @@ To cite Gemma, please use: [Zoubarev, A., et al., Gemma: A resource for the re-u
 Installation
 ============
 
-    devtools::install_github('oganm/gemmaAPI')
+    devtools::install_github('PavlidisLab/gemmaAPI.R')
 
 Documentation
 =============

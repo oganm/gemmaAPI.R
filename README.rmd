@@ -24,7 +24,7 @@ To cite Gemma, please use:
 # Installation
 
 ```
-devtools::install_github('oganm/gemmaAPI')
+devtools::install_github('PavlidisLab/gemmaAPI.R')
 ```
 
 # Documentation
