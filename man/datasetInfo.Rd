@@ -11,7 +11,8 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
 \item{dataset}{Character. Can either be the dataset ID or its short name 
 (e.g. GSE1234). If a vector of length>1 is provided return all matching dataset
  objects similar to \code{\link{allDatasets}} but without access to additional 
- parameters. \code{request} parameter cannot be specified for vector inputs}
+ parameters. \code{request} parameter cannot be specified for inputs of length>1
+ unless specifiet otherwise in request description.}
 
 \item{request}{Character. If NULL retrieves the dataset object. Otherwise
  \itemize{
@@ -39,7 +40,7 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
              to specified amount of objects. Use 0 for no limit.
          }
      \item \code{geneExpression}: Retrieves the expression levels of given genes for 
-     given datasets. Parameters:
+     given datasets. Can be used with multiple datasets. Parameters:
          \itemize{
              \item \code{genes}: Required. A list of identifiers, separated by commas (e.g: 1859, 5728).
              
@@ -52,6 +53,25 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
              If the gene taxon does not match the taxon of the given datasets, expression levels for that gene will be missing from the response
              
              You can combine various identifiers in one query, but any invalid identifier will cause the call to yield an error. Duplicate identifiers of the same gene will result in duplicates in the response.
+             
+             \item \code{keepNonSpecific}: Optional. Defaults to FALSE. 
+             
+             If set to false, the response will only include elements that map exclusively to each queried gene
+             
+             If set to true, the response will include all elements that map to each queried gene, even if they also map to other genes.
+             
+             \item \code{consolidate}: Optional. Defaults no NULL. 
+             Optional, defaults to empty.
+             
+             Whether genes with multiple elements should consolidate the information. If the 'keepNonSpecific' parameter is set to true, then all gene non-specific vectors are excluded from the chosen procedure.
+             
+             The options are:
+                 \itemize{
+                     \item \code{NULL}:list all vectors separately. 
+                     \item \code{"pickmax"}: only return the vector that has the highest expression (mean over all its bioAssays).
+                     \item \code{"pickvar"}: only return the vector with highest variance of expression across its bioAssays
+                     \item \code{"average"}: create a new vector that will average the bioAssay values from all vectors
+                 }
          }
 }}
 

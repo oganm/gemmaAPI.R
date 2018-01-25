@@ -78,7 +78,7 @@ allDatasets = function(datasets = NULL,
 #' @param dataset Character. Can either be the dataset ID or its short name 
 #' (e.g. GSE1234). If a vector of length>1 is provided return all matching dataset
 #'  objects similar to \code{\link{allDatasets}} but without access to additional 
-#'  parameters. \code{request} parameter cannot be specified for vector inputs
+#'  parameters. \code{request} parameter cannot be specified for inputs of length>1
 #'  unless specifiet otherwise in request description.
 #' @param request Character. If NULL retrieves the dataset object. Otherwise
 #'  \itemize{
@@ -132,6 +132,12 @@ allDatasets = function(datasets = NULL,
 #'              Whether genes with multiple elements should consolidate the information. If the 'keepNonSpecific' parameter is set to true, then all gene non-specific vectors are excluded from the chosen procedure.
 #'              
 #'              The options are:
+#'                  \itemize{
+#'                      \item \code{NULL}:list all vectors separately. 
+#'                      \item \code{"pickmax"}: only return the vector that has the highest expression (mean over all its bioAssays).
+#'                      \item \code{"pickvar"}: only return the vector with highest variance of expression across its bioAssays
+#'                      \item \code{"average"}: create a new vector that will average the bioAssay values from all vectors
+#'                  }
 #'          }
 #' }
 #' @param ... Use if the specified request has additional parameters.
