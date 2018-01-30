@@ -34,6 +34,8 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     # 167 has double accession
     # 873 was supposed to have double accession. this is parkinson dataset and its crazy
     # 924 has None in experiment category
+    
+    # prevent NULLs from ruining the data frame
     mapNoNull = function(.x,.f,...){
         out = purrr::map(.x,.f,...)
         if(length(out)>0){
@@ -101,17 +103,24 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     
     experimentAnnotationURI = annotation %>% mapNoNull('termUri') %>% combine()
     
+    # get batch confound information
+    batchConfound = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
+    batchEffect = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
+    
     # get experiment platforms
     platforms = datasetInfo(dataset,request = 'platforms',memoised = memoised)
     platformName = platforms %>% mapNoNull('shortName') %>% combine()
 
     technologyType = platforms %>% mapNoNull('technologyType') %>% combine()
     
+    
     experimentData = data.frame(datasetID, datasetName, taxon, 
                                 experimentAnnotClass, experimentAnnotClassOntoID, experimentAnnotClassURI,
                                 experimentAnnotation, experimentAnnotationOntoID, experimentAnnotationURI, 
                                 platformName,
                                 technologyType,
+                                batchConfound,
+                                batchEffect,
                                 stringsAsFactors = FALSE)
     
     # get sample annotations

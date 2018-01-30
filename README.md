@@ -380,7 +380,7 @@ mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata)
 mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 ```
 
-<table style="width:100%;">
+<table>
 <colgroup>
 <col width="3%" />
 <col width="0%" />
@@ -389,11 +389,13 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <col width="5%" />
 <col width="5%" />
 <col width="13%" />
-<col width="10%" />
+<col width="9%" />
 <col width="5%" />
 <col width="20%" />
 <col width="0%" />
 <col width="1%" />
+<col width="0%" />
+<col width="0%" />
 <col width="0%" />
 <col width="0%" />
 <col width="1%" />
@@ -421,6 +423,8 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <th align="left">experimentAnnotationURI</th>
 <th align="left">platformName</th>
 <th align="left">technologyType</th>
+<th align="left">batchConfound</th>
+<th align="left">batchEffect</th>
 <th align="left">id</th>
 <th align="left">accession</th>
 <th align="right">sampleBiomaterialID</th>
@@ -449,6 +453,8 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 <td align="left">48</td>
 <td align="left">GSM101416</td>
 <td align="right">48</td>
@@ -475,6 +481,8 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 <td align="left">47</td>
 <td align="left">GSM101417</td>
 <td align="right">47</td>
@@ -501,6 +509,8 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 <td align="left">52</td>
 <td align="left">GSM101412</td>
 <td align="right">52</td>
@@ -527,6 +537,8 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 <td align="left">51</td>
 <td align="left">GSM101413</td>
 <td align="right">51</td>
@@ -553,6 +565,8 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 <td align="left">50</td>
 <td align="left">GSM101414</td>
 <td align="right">50</td>
@@ -579,6 +593,8 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left"><a href="http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398%7Chttp://purl.obolibrary.org/obo/PATO_0000383%7Chttp://purl.org/commons/record/ncbi_gene/30060" class="uri">http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_466|http://purl.obolibrary.org/obo/UBERON_0000955|http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-Organism.owl#birnlex_398|http://purl.obolibrary.org/obo/PATO_0000383|http://purl.org/commons/record/ncbi_gene/30060</a></td>
 <td align="left">GPL1261</td>
 <td align="left">ONECOLOR</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
 <td align="left">49</td>
 <td align="left">GSM101415</td>
 <td align="right">49</td>
