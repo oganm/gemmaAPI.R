@@ -98,7 +98,6 @@ allDatasets = function(datasets = NULL,
 #'      \item \code{differential}: Retrieves the differential analysis results
 #'       for the given dataset. Parameters:
 #'          \itemize{
-#'              \item \code{qValueThreshold}: Required. Q-value threshold.
 #'              \item \code{offset}: Optional, defaults to 0. Skips the 
 #'              specified amount of objects when retrieving them from the
 #'               database.
@@ -188,21 +187,18 @@ datasetInfo  = function(dataset,
                                         'geneExpression'))
         
         allowedArguments = list(data = c('filter','IdColnames'),
-                                differential = c('qValueThreshold',
-                                                 'offset',
+                                differential = c('offset',
                                                  'limit'),
                                 geneExpression = c('genes',
                                                    'keepNonSpecific',
                                                    'consolidate'))
-        mandatoryArguments = list(differential = 'qValueThreshold',
-                                  geneExpression = 'genes')
+        mandatoryArguments = list(geneExpression = 'genes')
         
         checkArguments(request,requestParams,allowedArguments,mandatoryArguments)
         
         if(request == 'differential'){
             url = glue::glue('{url}/analyses/differential?',
-                             '{numberArg(qValueThreshold = requestParams$qValueThreshold)}',
-                             '&{queryLimit(requestParams$offset, requestParams$limit)}')
+                             '{queryLimit(requestParams$offset, requestParams$limit)}')
         } else if (request == 'geneExpression'){
             requestParams$genes %<>% paste(collapse=',')
             requestParams$consolidate %<>% match.arg(choices = c(NULL,
@@ -239,7 +235,13 @@ datasetInfo  = function(dataset,
         } else if(request %in% 'annotations'){
             names(content) =  content %>% purrr::map_chr('className')
         } else if (request %in% 'differential'){
-            names(content) =  content %>% purrr::map_chr('probe')
+            # this will have to change after update
+            names(content[[1]]$resultSets) = content[[1]]$resultSets %>% purrr::map_chr('resultSetId')
+            content[[1]]$resultSets %<>% lapply(function(x){
+                names(x$experimentalFactors) = x$experimentalFactors %>% purrr::map_chr('category')
+                return(x)
+            }) 
+            content = content[[1]]
         } else if(request %in% 'geneExpression'){
             names(content) =  content %>% purrr::map_chr('datasetId')
             content %<>% lapply(function(x){
