@@ -154,7 +154,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         
         URIs %>% unlist(recursive=FALSE) %>% 
             mapNoNull(getAnnotationID) %>% 
-            unlist %>% relist(URIs) %>% combine
+            unlist %>% utils::relist(URIs) %>% combine
     }) %>% unlist(recursive = FALSE)
     
     sampleAnnotCategoryURI = factorValueObjects %>% mapNoNull(function(x){

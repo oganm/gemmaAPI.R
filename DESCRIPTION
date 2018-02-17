@@ -16,7 +16,8 @@ Imports:
     assertthat,
     memoise,
     stringr,
-    dplyr
+    dplyr,
+    utils
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
