@@ -43,7 +43,7 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
         cut(breaks= c(seq(0,length(genes),by = 500),length(genes)) %>% unique)
     
     combineOut = lapply(unique(splits),function(split){
-        listOut = datasetInfo(datasets,request = 'geneExpression',
+        listOut = datasetInfo(dataset,request = 'geneExpression',
                               genes = genes[splits %in% split],
                               keepNonSpecific = keepNonSpecific,
                               consolidate = consolidate,
