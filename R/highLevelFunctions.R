@@ -36,30 +36,44 @@
 #'
 #' @export
 expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate = NULL){
-    listOut = datasetInfo(datasets,request = 'geneExpression',
-                          genes = genes,
-                          keepNonSpecific = keepNonSpecific,
-                          consolidate = consolidate)
     
-    listOut %<>% purrr::map('geneExpressionLevels')
+    splits = seq(1,length(genes),by = 500)
     
-    frameOut = listOut %>% lapply(function(x){
-        out = x %>% lapply(function(y){
-            expression = y$vectors %>% lapply(function(z){
-                z$bioAssayExpressionLevels %>% unlist
-            }) %>% as.data.frame %>% t
-            if(nrow(expression) == 0){
-                return(NULL)
-            }
-            
-             data.frame(Probe = names(y$vectors),
-                       GeneSymbol = y$geneOfficialSymbol,
-                       NCBIid = y$geneNcbiId,expression)
-        })
+    splits = (1:length(genes)) %>% 
+        cut(breaks= c(seq(0,length(genes),by = 500),length(genes)) %>% unique)
+    
+    combineOut = lapply(unique(splits),function(split){
+        listOut = datasetInfo(datasets,request = 'geneExpression',
+                              genes = genes[splits %in% split],
+                              keepNonSpecific = keepNonSpecific,
+                              consolidate = consolidate)
+        listOut = datasetInfo(datasets,request = 'geneExpression',
+                              genes = genes[1:1000],
+                              keepNonSpecific = keepNonSpecific,
+                              consolidate = consolidate)
         
-        do.call(rbind,out)
+        listOut %<>% purrr::map('geneExpressionLevels')
+        
+        frameOut = listOut %>% lapply(function(x){
+            out = x %>% lapply(function(y){
+                expression = y$vectors %>% lapply(function(z){
+                    z$bioAssayExpressionLevels %>% unlist
+                }) %>% as.data.frame %>% t
+                if(nrow(expression) == 0){
+                    return(NULL)
+                }
+                
+                data.frame(Probe = names(y$vectors),
+                           GeneSymbol = y$geneOfficialSymbol,
+                           NCBIid = y$geneNcbiId,expression)
+            })
+            
+            do.call(rbind,out)
+        })
+        return(frameOut)
     })
-    return(frameOut)
+    
+    return(do.call(rbind,combineOut))
 }
 
 
