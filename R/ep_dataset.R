@@ -201,10 +201,14 @@ datasetInfo  = function(dataset,
                              '{queryLimit(requestParams$offset, requestParams$limit)}')
         } else if (request == 'geneExpression'){
             requestParams$genes %<>% paste(collapse=',')
-            requestParams$consolidate %<>% match.arg(choices = c(NULL,
+            requestParams$consolidate %<>% match.arg(choices = c('NULL',
                                                                  'pickmax',
                                                                  'pickvar',
                                                                  'average'))
+            if(requestParams$consolidate == 'NULL'){
+                # match arg fucks up when you use NULL as a choice
+                requestParams$consolidate = NULL
+            }
             url = glue::glue('{url}/expressions/genes/{stringArg(genes = requestParams$genes,addName = FALSE)}?',
                              stringArg(consolidate = requestParams$consolidate), '&', logicArg(keepNonSpecific = requestParams$keepNonSpecific))
         } else{
