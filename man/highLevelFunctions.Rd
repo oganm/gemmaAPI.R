@@ -6,3 +6,6 @@
 \description{
 \code{\link{compileMetadata}}
 }
+\details{
+\code{\link{expressionSubset}}
+}

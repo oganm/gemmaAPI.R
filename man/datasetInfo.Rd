@@ -32,7 +32,6 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
      \item \code{differential}: Retrieves the differential analysis results
       for the given dataset. Parameters:
          \itemize{
-             \item \code{qValueThreshold}: Required. Q-value threshold.
              \item \code{offset}: Optional, defaults to 0. Skips the 
              specified amount of objects when retrieving them from the
               database.

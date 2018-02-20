@@ -31,6 +31,8 @@ NULL
 #' 
 #' \code{\link{compileMetadata}}
 #' 
+#' \code{\link{expressionSubset}}
+#' 
 #' @name highLevelFunctions
 #' 
 NULL
