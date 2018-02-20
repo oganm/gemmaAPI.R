@@ -55,14 +55,15 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
             out = x %>% lapply(function(y){
                 expression = y$vectors %>% lapply(function(z){
                     z$bioAssayExpressionLevels %>% unlist
-                }) %>% as.data.frame %>% t
+                }) %>% as.data.frame() %>% t
                 if(nrow(expression) == 0){
                     return(NULL)
                 }
                 
                 data.frame(Probe = names(y$vectors),
                            GeneSymbol = y$geneOfficialSymbol,
-                           NCBIid = y$geneNcbiId,expression)
+                           NCBIid = y$geneNcbiId,expression,
+                           check.names = FALSE)
             })
             
             do.call(rbind,out)
