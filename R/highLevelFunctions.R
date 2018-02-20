@@ -63,7 +63,7 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
                 data.frame(Probe = names(y$vectors),
                            GeneSymbol = y$geneOfficialSymbol,
                            NCBIid = y$geneNcbiId,expression,
-                           check.names = FALSE)
+                           check.names = FALSE,row.names = NULL)
             })
             
             do.call(rbind,out)
