@@ -3,9 +3,8 @@ context('high level functions')
 testthat::test_that('get gene expression',{
     out = expressionSubset(3888,genes = c('1859','6506'))
     
-    testthat::expect_is(out,'list')
-    testthat::expect_is(out$`3888`,'data.frame')
-    
+    testthat::expect_is(out,'data.frame')
+
 })
 
 testthat::test_that('compileMetadata',{

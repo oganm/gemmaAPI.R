@@ -2,7 +2,7 @@
 #'
 #' Uses gene expression endpoint to get expression of some genes
 #'
-#' @param datasets Can either be the dataset IDs or their short names
+#' @param dataset Can either be the dataset ID or its short name
 #' (e.g. GSE1234)
 #' @param genes A list of identifiers, separated by commas (e.g: 1859, 5728).
 #'              
@@ -35,7 +35,7 @@
 #'                  }
 #'
 #' @export
-expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate = NULL,memoised = FALSE){
+expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate = NULL,memoised = FALSE){
     
     splits = seq(1,length(genes),by = 500)
     
@@ -70,7 +70,7 @@ expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate
         return(do.call(rbind,frameOut))
     })
     
-    return(combineOut)
+    return(do.call(rbind,combineOut))
 }
 
 
