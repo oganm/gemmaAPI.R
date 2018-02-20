@@ -203,8 +203,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
                                 batchEf,
                                 batchCorrected,
                                 stringsAsFactors = FALSE)
-    browser()
-    
+
     # get sample annotations
     sampleData = tryCatch(datasetInfo(dataset,request = 'samples',memoised = memoised),
                           error = function(e){
