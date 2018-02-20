@@ -70,7 +70,7 @@ expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate
         return(do.call(rbind,frameOut))
     })
     
-    return(do.call(rbind,combineOut))
+    return(combineOut)
 }
 
 
@@ -178,9 +178,13 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     experimentAnnotationURI = annotation %>% mapNoNull('termUri') %>% combine()
     
     # get batch confound information
-    batchConfound = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
-    batchEffect = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
+    # batchConf and batchEff are temporary. 
+    batchConfound = basicInfo$geeq$qScorePublicBatchConfound
+    batchConf = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
+    batchEffect = basicInfo$geeq$qScorePublicBatchEffect
+    batchEf = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
     
+    batchCorrected = basicInfo$geeq$batchCorrected
     # get experiment platforms
     platforms = datasetInfo(dataset,request = 'platforms',memoised = memoised)
     platformName = platforms %>% mapNoNull('shortName') %>% combine()
@@ -194,8 +198,12 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
                                 platformName,
                                 technologyType,
                                 batchConfound,
+                                batchConf,
                                 batchEffect,
+                                batchEf,
+                                batchCorrected,
                                 stringsAsFactors = FALSE)
+    browser()
     
     # get sample annotations
     sampleData = tryCatch(datasetInfo(dataset,request = 'samples',memoised = memoised),
@@ -266,6 +274,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     }) %>% unlist(recursive = FALSE)
     
     sampleData = data.frame(id,
+                            sampleName,
                             accession,
                             sampleBiomaterialID,
                             sampleAnnotCategory, sampleAnnotCategoryOntoID, sampleAnnotCategoryURI,
@@ -279,10 +288,11 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         sampleData %<>% split(f = sampleData$sampleBiomaterialID) %>% lapply(function(bioMatData){
             # temporary just to see if something's wrong
             assertthat::are_equal(
-                bioMatData %>% dplyr::select(-id,-accession) %>% unique %>% nrow,1
+                bioMatData %>% dplyr::select(-id,-sampleName,-accession) %>% unique %>% nrow,1
             )
             
             newData = data.frame(id = bioMatData$id %>% combine,
+                                 sampleName = bioMatData$sampleName %>% combine,
                                  accession = bioMatData$accession %>% combine,
                                  bioMatData %>% dplyr::select(-id,-accession) %>% {.[1,]},
                                  stringsAsFactors = FALSE)
