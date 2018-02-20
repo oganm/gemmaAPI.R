@@ -35,7 +35,7 @@
 #'                  }
 #'
 #' @export
-expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate = NULL){
+expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate = NULL,memoised = FALSE){
     
     splits = seq(1,length(genes),by = 500)
     
@@ -46,11 +46,8 @@ expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate
         listOut = datasetInfo(datasets,request = 'geneExpression',
                               genes = genes[splits %in% split],
                               keepNonSpecific = keepNonSpecific,
-                              consolidate = consolidate)
-        listOut = datasetInfo(datasets,request = 'geneExpression',
-                              genes = genes[1:1000],
-                              keepNonSpecific = keepNonSpecific,
-                              consolidate = consolidate)
+                              consolidate = consolidate,
+                              memoised = memoised)
         
         listOut %<>% purrr::map('geneExpressionLevels')
         
@@ -70,7 +67,7 @@ expressionSubset = function(datasets,genes, keepNonSpecific = FALSE, consolidate
             
             do.call(rbind,out)
         })
-        return(frameOut)
+        return(do.call(rbind,frameOut))
     })
     
     return(do.call(rbind,combineOut))
