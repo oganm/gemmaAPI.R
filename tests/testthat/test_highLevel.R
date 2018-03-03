@@ -41,4 +41,13 @@ testthat::test_that('compileMetadata',{
 
     
 })
+
+
+testthat::test_that('Matching colnames in expression data and metadata',{
+    data = datasetInfo('GSE1294',request= 'data', IdColnames = TRUE)
     
+    metadata=  compileMetadata('GSE1294')
+    
+    testthat::expect_true(all(metadata$id %in% colnames(data)))
+    
+})
