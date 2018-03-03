@@ -229,8 +229,9 @@ datasetInfo  = function(dataset,
             # names(content) =  content %>% purrr::map_chr('shortName')
         } else if(request == 'data'){
             if(!is.null(requestParams$IdColnames) && requestParams$IdColnames){
-                colnames(content)[grepl('BioAssayId\\=',colnames(content))] %<>% 
-                    stringr::str_extract('(?<=BioAssayId\\=).*(?=Name)')
+                colnames(content)[grepl('BioAssayId\\=',colnames(content))] %>% 
+                    stringr::str_extract_all('(?<=BioAssayId\\=)[0-9]*(?=Name)') %>% 
+                    {.[[1]]} %>% sort %>%  paste(collapse=  '|')
             }
         }else if(request %in% c('platforms')){
             names(content) =  content %>% purrr::map_chr('shortName')
