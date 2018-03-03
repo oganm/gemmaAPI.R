@@ -16,9 +16,9 @@ testthat::test_that('compileMetadata',{
     meta167NoCollapse = compileMetadata(167,collapseBioMaterials = FALSE)
     
     testthat::expect_gt(nrow(meta167NoCollapse), nrow(meta167))
-    meta924 = compileMetadata(924)
     
-    testthat::expect_true(meta924$experimentAnnotClassOntoID %>% stringr::str_split('\\|') %>% {.[[1]][1] == "NA"})
+    # meta924 = compileMetadata(924)
+    # testthat::expect_true(meta924$experimentAnnotClassOntoID %>% stringr::str_split('\\|') %>% {.[[1]][1] == "NA"})
     
     
     mouseStudies = taxonInfo('mouse',request = 'datasets',limit = 0)
