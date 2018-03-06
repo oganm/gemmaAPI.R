@@ -48,7 +48,7 @@ testthat::test_that('datasetInfo',{
     expressions = datasetInfo(3888,request='geneExpression',genes = c(1859, 5728))
     testthat::expect_is(expressions,'list')
     testthat::expect_length(expressions, 1)
-    testthat::expect_equal(names(expressions[[1]]),c('geneExpressionLevels', 'datasetId'))   
+    testthat::expect_true(all(names(expressions[[1]]) %in% c('geneExpressionLevels', 'datasetId')))
     expressionsMultiple = datasetInfo(c(3888,'GSE2871'),request='geneExpression',genes = c(1859, 5728))
     testthat::expect_length(expressionsMultiple, 2)
     

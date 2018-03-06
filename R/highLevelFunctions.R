@@ -122,11 +122,18 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         return(out)
     }
     
-    combine = function(mapResult){
+    combine = function(mapResult , sort = FALSE){
         mapResult %>% 
             purrr::map(stringr::str_replace_all,pattern = ';',replacement = '_') %>%  # escape all ;s
             purrr::map(paste,collapse=';') %>% 
             purrr::map(stringr::str_replace_all,pattern = '\\|',replacement = '_') %>%  # escape all |s
+            {
+                if(sort){
+                    .= sort(unlist(.))
+                }
+                .
+                
+            } %>% 
             paste(collapse='|')
     }
     
@@ -291,9 +298,9 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
                 bioMatData %>% dplyr::select(-id,-sampleName,-accession) %>% unique %>% nrow,1
             )
             
-            newData = data.frame(id = bioMatData$id %>% combine,
-                                 sampleName = bioMatData$sampleName %>% combine,
-                                 accession = bioMatData$accession %>% combine,
+            newData = data.frame(id = bioMatData$id %>% combine(sort = TRUE),
+                                 sampleName = bioMatData$sampleName %>% combine(sort = TRUE),
+                                 accession = bioMatData$accession %>% combine(sort = TRUE),
                                  bioMatData %>% dplyr::select(-id,-accession) %>% {.[1,]},
                                  stringsAsFactors = FALSE)
         }) %>% data.table::rbindlist() %>% as.data.frame
