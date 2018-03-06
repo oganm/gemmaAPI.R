@@ -264,7 +264,9 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     # sample annotation
     sampleAnnotation =  factorValueObjects %>% mapNoNull(function(x){
         x %>% mapNoNull(function(y){
-            if(length(y$characteristics) != 0 ){
+            if(is.na(y)){
+                return(NA)
+            } else if(length(y$characteristics) != 0 ){
                 return(y$characteristics %>% mapNoNull('value'))
             } else{
                 return(y$measurement$value)
@@ -274,7 +276,9 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     
     sampleAnnotType = factorValueObjects %>% mapNoNull(function(x){
         x %>% mapNoNull(function(y){
-            if(length(y$characteristics) != 0){
+            if(is.na(y)){
+                return(NA)
+            } else if(length(y$characteristics) != 0){
                 return('factor')
             } else{
                 return('continuous')
