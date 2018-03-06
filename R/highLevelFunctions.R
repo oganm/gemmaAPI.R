@@ -261,10 +261,25 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     sampleAnnotBroadCategoryURI = factorValueObjects %>%  mapNoNull(function(x){
         x %>% mapNoNull('experimentalFactorCategory') %>% mapNoNull('valueUri')%>% combine
     }) %>% unlist(recursive = FALSE)
-    
     # sample annotation
     sampleAnnotation =  factorValueObjects %>% mapNoNull(function(x){
-        x %>% mapNoNull('characteristics') %>% mapNoNull(mapNoNull,'value') %>% combine
+        x %>% mapNoNull(function(y){
+            if(length(y$characteristics) != 0 ){
+                return(y$characteristics %>% mapNoNull('value'))
+            } else{
+                return(y$measurement$value)
+            }
+        }) %>% combine
+    }) %>% unlist(recursive = FALSE)
+    
+    sampleAnnotType = factorValueObjects %>% mapNoNull(function(x){
+        x %>% mapNoNull(function(y){
+            if(length(y$characteristics) != 0){
+                return('factor')
+            } else{
+                return('continuous')
+            }
+        }) %>% combine
     }) %>% unlist(recursive = FALSE)
     
     sampleAnnotationOntoID = factorValueObjects %>% mapNoNull(function(x){
@@ -279,13 +294,15 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         URIs = x %>% mapNoNull('characteristics') %>% mapNoNull(mapNoNull,'valueUri') %>% combine
     }) %>% unlist(recursive = FALSE)
     
+
+    
     sampleData = data.frame(id,
                             sampleName,
                             accession,
                             sampleBiomaterialID,
                             sampleAnnotCategory, sampleAnnotCategoryOntoID, sampleAnnotCategoryURI,
                             sampleAnnotBroadCategory, sampleAnnotBroadCategoryOntoID, sampleAnnotBroadCategoryURI,
-                            sampleAnnotation, sampleAnnotationOntoID, sampleAnnotationURI,
+                            sampleAnnotation, sampleAnnotationOntoID, sampleAnnotType, sampleAnnotationURI,
                             stringsAsFactors = FALSE)
     
     if(collapseBioMaterials & any(duplicated(sampleData$sampleBiomaterialID))){
