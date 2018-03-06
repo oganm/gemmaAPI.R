@@ -221,7 +221,6 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         warning('Weird dataset ', dataset)
         return(NULL)
     }
-    
     sampleName = sampleData %>% purrr::map_chr('name')
     id =  sampleData %>% purrr::map_chr('id')
     accession = sampleData %>% mapNoNull('accession') %>% mapNoNull('accession') %>%
@@ -301,7 +300,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
             newData = data.frame(id = bioMatData$id %>% combine(sort = TRUE),
                                  sampleName = bioMatData$sampleName %>% combine(sort = TRUE),
                                  accession = bioMatData$accession %>% combine(sort = TRUE),
-                                 bioMatData %>% dplyr::select(-id,-accession) %>% {.[1,]},
+                                 bioMatData %>% dplyr::select(-id,-accession, - sampleName) %>% {.[1,]},
                                  stringsAsFactors = FALSE)
         }) %>% data.table::rbindlist() %>% as.data.frame
     }
