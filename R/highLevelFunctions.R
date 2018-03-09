@@ -1,3 +1,27 @@
+#' Read expression data
+#'
+#' @param gzFile Path to expression file downloaded from gemma, possibly using datasetInfo
+#' function (request = 'data'). Should be in its original gzipped form
+#' @param IdColnames Logical. should column names be turned into IDs
+#'
+#' @return A data frame
+#' @export
+#'
+readExpression = function(expFile,IdColnames = FALSE){
+    con = gzfile(expFile)
+    lines = readLines(con,n = 100)
+    skip = lines %>% grepl('^#',x = .) %>% which %>% max
+    close(con)
+    con = gzfile(expFile,open = c('rb'))
+    expData = readr::read_tsv(con, col_names= TRUE,skip = skip)
+    close(con)
+    
+    if(IdColnames){
+        colnames(expData) %<>% simplifyExpressionColnames()
+    }
+    return(expData)
+}
+
 #'expressionSubset
 #'
 #' Uses gene expression endpoint to get expression of some genes

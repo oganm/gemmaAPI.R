@@ -4,11 +4,11 @@
 \alias{expressionSubset}
 \title{expressionSubset}
 \usage{
-expressionSubset(datasets, genes, keepNonSpecific = FALSE,
-  consolidate = NULL)
+expressionSubset(dataset, genes, keepNonSpecific = FALSE,
+  consolidate = NULL, memoised = FALSE)
 }
 \arguments{
-\item{datasets}{Can either be the dataset IDs or their short names
+\item{dataset}{Can either be the dataset ID or its short name
 (e.g. GSE1234)}
 
 \item{genes}{A list of identifiers, separated by commas (e.g: 1859, 5728).

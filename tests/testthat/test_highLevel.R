@@ -54,5 +54,16 @@ testthat::test_that('Matching colnames in expression data and metadata',{
     metadata=  compileMetadata('GSE1294')
     
     testthat::expect_true(all(metadata$id %in% colnames(data)))
+})
+
+testthat::test_that('readExpression',{
+    temp = tempfile()
+    data = datasetInfo('GSE1294',request= 'data', IdColnames = TRUE,return = TRUE,file = temp)
+    readData =  readExpression(temp)
+    testthat::expect_identical(readData %>% dim, data %>% dim)
+    
+    readData2 =  readExpression(temp,IdColnames = TRUE)
+    testthat::expect_identical(readData2, data)
+    
     
 })

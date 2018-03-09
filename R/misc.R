@@ -2,6 +2,13 @@ gemmaBase = function(x){
     'https://gemma.msl.ubc.ca/rest/v2/'
 }
 
+simplifyExpressionColnames = function(cn){
+    cn[grepl('BioAssayId\\=',cn)] %<>% 
+        stringr::str_extract_all('(?<=BioAssay(Impl|)Id\\=)[0-9]*(?=Name)') %>% 
+        lapply(sort) %>% sapply(paste,collapse = '|')
+    return(cn)
+}
+
 # detects what the content is, reads it if return = TRUE, saves it if file path is provided
 # if json, reads json, if not attempts to read it as a table
 # if content can't be converted into text, assumes it is a gzipped platform
