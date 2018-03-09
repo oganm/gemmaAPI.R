@@ -4,8 +4,13 @@
 \alias{highLevelFunctions}
 \title{High Level Functions}
 \description{
-\code{\link{compileMetadata}}
+High level functions that create useful outputs from basic API calls or from their
+outputs
 }
 \details{
+\code{\link{compileMetadata}}
+
 \code{\link{expressionSubset}}
+
+\code{\link{readExpression}}
 }

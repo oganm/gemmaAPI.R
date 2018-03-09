@@ -88,5 +88,7 @@ allDatasets(filter ='curationDetails.troubled = false')
 
 # return all datasets. it is slower and prone to connection interruptions
 # alternative is to loop using offset and limit
+\dontrun{
 allDatasets(limit = 0)
+}
 }

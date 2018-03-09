@@ -28,10 +28,14 @@ NULL
 
 #' High Level Functions
 #'
+#' High level functions that create useful outputs from basic API calls or from their
+#' outputs
 #' 
 #' \code{\link{compileMetadata}}
 #' 
 #' \code{\link{expressionSubset}}
+#' 
+#' \code{\link{readExpression}}
 #' 
 #' @name highLevelFunctions
 #' 
