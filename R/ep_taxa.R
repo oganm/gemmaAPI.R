@@ -56,7 +56,7 @@ allTaxa = function(taxa = NULL,
 
 
 # use ogbox::roxygenTabular to re-create the table if needed
-#' Title
+#' taxonInfo
 #'
 #' @param taxon can either be Taxon ID, Taxon NCBI ID, or one of its string
 #'   identifiers: scientific name, common name, abbreviation. 

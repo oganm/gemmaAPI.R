@@ -2,7 +2,7 @@
 % Please edit documentation in R/ep_taxa.R
 \name{taxonInfo}
 \alias{taxonInfo}
-\title{Title}
+\title{taxonInfo}
 \usage{
 taxonInfo(taxon, request = NULL, ..., file = NULL, return = TRUE,
   overwrite = FALSE, memoised = FALSE)
@@ -116,7 +116,7 @@ to clear memory.}
 a list
 }
 \description{
-Title
+taxonInfo
 }
 \examples{
 taxonInfo('human')
