@@ -133,6 +133,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     # 167 has double accession
     # 873 was supposed to have double accession. this is parkinson dataset and its crazy
     # 924 has None in experiment category
+    # 95 no characteristics for annotations
     
     # prevent NULLs from ruining the data frame
     mapNoNull = function(.x,.f,...){
@@ -304,10 +305,10 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         x %>% mapNoNull(function(y){
             if(is.na(y)){
                 return(NA)
-            } else if(length(y$characteristics) != 0){
-                return('factor')
-            } else{
+            } else if(length(y$measurement) != 0){
                 return('continuous')
+            }else {
+                return('factor')
             }
         }) %>% combine
     }) %>% unlist(recursive = FALSE)
