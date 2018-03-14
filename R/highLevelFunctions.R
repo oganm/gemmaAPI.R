@@ -292,8 +292,10 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
                 return(NA)
             } else if(length(y$characteristics) != 0 ){
                 return(y$characteristics %>% mapNoNull('value'))
-            } else{
+            } else if(length(y$measurement)> 0){
                 return(y$measurement$value)
+            } else{
+                return(y$fvValue)
             }
         }) %>% combine
     }) %>% unlist(recursive = FALSE)
