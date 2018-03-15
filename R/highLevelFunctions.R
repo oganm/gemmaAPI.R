@@ -303,7 +303,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     
     sampleAnnotType = factorValueObjects %>% mapNoNull(function(x){
         x %>% mapNoNull(function(y){
-            if(is.na(y)){
+            if(is.na(y)[[1]]){
                 return(NA)
             } else if(length(y$measurement) != 0){
                 return('continuous')
