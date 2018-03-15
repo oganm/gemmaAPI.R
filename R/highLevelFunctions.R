@@ -289,7 +289,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     # sample annotation
     sampleAnnotation =  factorValueObjects %>% mapNoNull(function(x){
         x %>% mapNoNull(function(y){
-            if(is.na(y)){
+            if(is.na(y)[[1]]){
                 return(NA)
             } else if(length(y$characteristics) != 0 ){
                 return(y$characteristics %>% mapNoNull('value'))
