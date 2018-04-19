@@ -22,4 +22,6 @@ Basic API calls. These functions return mostly unaltered data from a given API e
 \code{\link{taxonInfo}}: Get information about a specific taxon
 
 \code{\link{annotationInfo}}: Query for annotations
+
+\code{\link{setGemmaUser}}: Sets gemma username and password for authentication
 }

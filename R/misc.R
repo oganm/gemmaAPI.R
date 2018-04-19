@@ -1,3 +1,22 @@
+#' Gemma authentication
+#' 
+#' Allows the user to access information that requires logging in to Gemma. To log out, run
+#' \code{setGemmaUser} without specifying the username or password
+#'
+#' @param username Gemma username
+#' @param password Gemma password
+#'
+#' @export
+#'
+#' @examples
+#' setGemmaUser('username','password') # login
+#' setGemmaUser() # log out
+setGemmaUser = function(username = NULL, password = NULL){
+    options(gemmaPassword = password)
+    options(gemmaUsername = username)
+}
+
+
 gemmaBase = function(x){
     'https://gemma.msl.ubc.ca/rest/v2/'
 }
@@ -18,7 +37,12 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
         warning(file,' exists. Skipping')
         return(NULL)
     }
-    raw = httr::GET(url = url)
+    if(!is.null(getOption('gemmaPassword')) & !is.null(getOption('gemmaUsername'))){
+        raw = httr::GET(url = url, httr::authenticate(getOption('gemmaUsername'), 
+                                                      getOption('gemmaPassword')))
+    } else{
+        raw = httr::GET(url = url)
+    }
     if(raw$status_code != 200){
         stop("Received a response with status ", raw$status_code, '\n', raw$error$message);
     }
