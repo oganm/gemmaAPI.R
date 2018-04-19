@@ -212,13 +212,13 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     
     # get batch confound information
     # batchConf and batchEff are temporary. 
-    batchConfound = basicInfo$geeq$qScorePublicBatchConfound
+    batchConfound = basicInfo$geeq$qScorePublicBatchConfound  %>% {if(is.null(.)){'NA'}else{.}}
     batchConf = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
-    batchEffect = basicInfo$geeq$qScorePublicBatchEffect
+    batchEffect = basicInfo$geeq$qScorePublicBatchEffect %>% {if(is.null(.)){'NA'}else{.}}
     batchEf = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
+    batchCorrected = basicInfo$geeq$batchCorrected %>% {if(is.null(.)){'NA'}else{.}}
     
-    batchCorrected = basicInfo$geeq$batchCorrected
-    # get experiment platforms
+    # get experiment platforms 
     platforms = datasetInfo(dataset,request = 'platforms',memoised = memoised)
     platformName = platforms %>% mapNoNull('shortName') %>% combine()
 
