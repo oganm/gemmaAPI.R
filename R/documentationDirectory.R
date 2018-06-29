@@ -18,6 +18,8 @@
 #' 
 #' \code{\link{annotationInfo}}: Query for annotations
 #' 
+#' \code{\link{setGemmaUser}}: Sets gemma username and password for authentication
+#' 
 #' 
 #' @name endpointFunctions
 #' 
