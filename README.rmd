@@ -39,7 +39,7 @@ Download data for a dataset
 
 ```{r}
 data = 
-    datasetInfo('GSE81454',
+    datasetInfo('GSE107999',
                 request='data', # we want this endpoint to return data. see documentation
                 filter = FALSE, # data request accepts filter argument we want non filtered data
                 return = TRUE, # TRUE by default, all functions have this. if false there'll be no return
