@@ -78,7 +78,9 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
         frameOut = listOut %>% lapply(function(x){
             out = x %>% lapply(function(y){
                 expression = y$vectors %>% lapply(function(z){
-                    z$bioAssayExpressionLevels %>% unlist %>% as.numeric
+                    vector = z$bioAssayExpressionLevels %>% unlist
+                    vectorOut = vector %>% as.numeric()
+                    names(vectorOut) = names(vector)
                 }) %>% as.data.frame() %>% t
                 if(nrow(expression) == 0){
                     return(NULL)
