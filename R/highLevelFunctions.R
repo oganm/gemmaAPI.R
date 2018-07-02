@@ -81,6 +81,7 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
                     vector = z$bioAssayExpressionLevels %>% unlist
                     vectorOut = vector %>% as.numeric()
                     names(vectorOut) = names(vector)
+                    return(vectorOut)
                 }) %>% as.data.frame() %>% t
                 if(nrow(expression) == 0){
                     return(NULL)
