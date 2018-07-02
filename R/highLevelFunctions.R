@@ -78,7 +78,7 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
         frameOut = listOut %>% lapply(function(x){
             out = x %>% lapply(function(y){
                 expression = y$vectors %>% lapply(function(z){
-                    z$bioAssayExpressionLevels %>% unlist
+                    z$bioAssayExpressionLevels %>% unlist %>% as.numeric
                 }) %>% as.data.frame() %>% t
                 if(nrow(expression) == 0){
                     return(NULL)
@@ -87,7 +87,8 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
                 data.frame(Probe = names(y$vectors),
                            GeneSymbol = y$geneOfficialSymbol,
                            NCBIid = y$geneNcbiId,expression,
-                           check.names = FALSE,row.names = NULL)
+                           check.names = FALSE,row.names = NULL,
+                           stringsAsFactors = FALSE)
             })
             
             do.call(rbind,out)
@@ -212,13 +213,13 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     
     # get batch confound information
     # batchConf and batchEff are temporary. 
-    batchConfound = basicInfo$geeq$qScorePublicBatchConfound  %>% {if(is.null(.)){'NA'}else{.}}
+    batchConfound = basicInfo$geeq$qScorePublicBatchConfound
     batchConf = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
-    batchEffect = basicInfo$geeq$qScorePublicBatchEffect %>% {if(is.null(.)){'NA'}else{.}}
+    batchEffect = basicInfo$geeq$qScorePublicBatchEffect
     batchEf = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
-    batchCorrected = basicInfo$geeq$batchCorrected %>% {if(is.null(.)){'NA'}else{.}}
     
-    # get experiment platforms 
+    batchCorrected = basicInfo$geeq$batchCorrected
+    # get experiment platforms
     platforms = datasetInfo(dataset,request = 'platforms',memoised = memoised)
     platformName = platforms %>% mapNoNull('shortName') %>% combine()
 
