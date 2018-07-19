@@ -8,7 +8,7 @@ library(dplyr)
 devtools::load_all()
 ```
 
-# Gemma API
+# Gemma API <img src="gemmaAPI.png" align="right" height="100px"/>
 
 [![Build Status](https://travis-ci.org/PavlidisLab/gemmaAPI.R.svg?branch=master)](https://travis-ci.org/PavlidisLab/gemmaAPI.R)[![codecov](https://codecov.io/gh/PavlidisLab/gemmaAPI.R/branch/master/graph/badge.svg)](https://codecov.io/gh/PavlidisLab/gemmaAPI.R)
 
@@ -39,7 +39,7 @@ Download data for a dataset
 
 ```{r}
 data = 
-    datasetInfo('GSE81454',
+    datasetInfo('GSE107999',
                 request='data', # we want this endpoint to return data. see documentation
                 filter = FALSE, # data request accepts filter argument we want non filtered data
                 return = TRUE, # TRUE by default, all functions have this. if false there'll be no return
