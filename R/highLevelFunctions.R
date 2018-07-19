@@ -326,6 +326,11 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     }) %>% unlist(recursive = FALSE)
     
 
+    # characteristics 
+    characteristics = bioMatData %>% mapNoNull('characteristics')
+    otherCharacteristics = characteristics %>% mapNoNull(function(x){
+        values = x %>% mapNoNull('value') %>% combine
+    }) %>% unlist
     
     sampleData = data.frame(id,
                             sampleName,
@@ -334,6 +339,7 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
                             sampleAnnotCategory, sampleAnnotCategoryOntoID, sampleAnnotCategoryURI,
                             sampleAnnotBroadCategory, sampleAnnotBroadCategoryOntoID, sampleAnnotBroadCategoryURI,
                             sampleAnnotation, sampleAnnotationOntoID, sampleAnnotType, sampleAnnotationURI,
+                            otherCharacteristics,
                             stringsAsFactors = FALSE)
     
     if(collapseBioMaterials & any(duplicated(sampleData$sampleBiomaterialID))){

@@ -28,7 +28,7 @@ testthat::test_that('compileMetadata',{
     
     
     mouseMetadata = studyIDs[1:10] %>% lapply(function(x){
-        print(x)
+        # print(x)
         compileMetadata(x)
     })
     
