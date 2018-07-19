@@ -1,6 +1,6 @@
 Package: gemmaAPI
 Title: A wrapper for Gemma's restful API
-Version: 1.0.1.9000
+Version: 1.0.2.9000
 Authors@R: person("Ogan", "Mancarci", email = "ogan.mancarci@gmail.com", role = c("aut", "cre"))
 Description: This package provides low and high level wrappers for Gemma's restful API.
 Depends: R (>= 3.3.2)

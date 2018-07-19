@@ -54,22 +54,18 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
                                if(is.null(file)){
                                    file = paste0(tempfile(),'.txt.gz')
                                }
-                               writeBin(raw$content,file)
-                               
+                               if(file.exists(file) & !overwrite){
+                                   warning(file, ' exists but overwrite = FALSE.\nOutput will be read from existing file.')
+                               } else{
+                                   writeBin(raw$content,file)
+                               }
                                return(c('THISISFILE',file))
                            })
     
     if(contentText[1] == 'THISISFILE' & return){
         # if output is a gz file and return is desired, read the gzfile.
-        # this is a bad heuristics. will fail if file has a header comment longer that 100 lines
         # browser()
-        con = gzfile(contentText[2])
-        lines = readLines(con,n = 100)
-        skip = lines %>% grepl('^#',x = .) %>% which %>% max
-        close(con)
-        con = gzfile(contentText[2],open = c('rb'))
-        content = readr::read_tsv(con, col_names= TRUE,skip = skip)
-        close(con)
+        content = readExpression(contentText[2])
         # content = utils::read.table(gzfile(contentText[2]), header=T,sep='\t', quote="", stringsAsFactors = F)
         return(content)
     }

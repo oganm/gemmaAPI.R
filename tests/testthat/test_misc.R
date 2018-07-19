@@ -13,6 +13,7 @@ testthat::test_that('forgetGemmaMemoised',{
 testthat::test_that('overwrite',{
     functionList = c(allDatasets,
                      datasetInfo,
+                     datasetInfo,
                      allPlatforms,
                      platformInfo,
                      geneInfo,
@@ -21,6 +22,7 @@ testthat::test_that('overwrite',{
                      annotationInfo)
     args = list(allDatasets = NULL,
                 datasetInfo = list(dataset = 'GSE81454'),
+                datasetInfo2 = list(dataset = 'GSE81454', request = 'data'),
                 allPlatforms = NULL,
                 platformInfo = list(platform = 'GPL1355'),
                 geneInfo = list(gene = 1859),

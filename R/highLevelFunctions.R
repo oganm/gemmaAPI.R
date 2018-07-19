@@ -8,6 +8,7 @@
 #' @export
 #'
 readExpression = function(expFile,IdColnames = FALSE){
+    # this is a bad heuristics. will fail if file has a header comment longer that 100 lines
     con = gzfile(expFile)
     lines = readLines(con,n = 100)
     skip = lines %>% grepl('^#',x = .) %>% which %>% max
