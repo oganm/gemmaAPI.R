@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read expression data — readExpression • gemmaAPI</title>
+<title>Read expression data from gemma — readExpression • gemmaAPI</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,9 +27,9 @@
 <script src="../pkgdown.js"></script>
   
   
-<meta property="og:title" content="Read expression data — readExpression" />
+<meta property="og:title" content="Read expression data from gemma — readExpression" />
 
-<meta property="og:description" content="Read expression data" />
+<meta property="og:description" content="Read expression data from gemma" />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -81,11 +81,11 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read expression data</h1>
+    <h1>Read expression data from gemma</h1>
     </div>
 
     
-    <p>Read expression data</p>
+    <p>Read expression data from gemma</p>
     
 
     <pre class="usage"><span class='fu'>readExpression</span>(<span class='no'>expFile</span>, <span class='kw'>IdColnames</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
@@ -94,13 +94,13 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>IdColnames</th>
-      <td><p>Logical. should column names be turned into IDs</p></td>
+      <th>expFile</th>
+      <td><p>Path to a file downloaded from gemma, possibly using datasetInfo
+function (request = 'data').</p></td>
     </tr>
     <tr>
-      <th>gzFile</th>
-      <td><p>Path to expression file downloaded from gemma, possibly using datasetInfo
-function (request = 'data'). Should be in its original gzipped form</p></td>
+      <th>IdColnames</th>
+      <td><p>Logical. should column names be turned into IDs. Only valid for expression data</p></td>
     </tr>
     </table>
     

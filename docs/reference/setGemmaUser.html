@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Endpoint functions — endpointFunctions • gemmaAPI</title>
+<title>Gemma authentication — setGemmaUser • gemmaAPI</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,9 +27,10 @@
 <script src="../pkgdown.js"></script>
   
   
-<meta property="og:title" content="Endpoint functions — endpointFunctions" />
+<meta property="og:title" content="Gemma authentication — setGemmaUser" />
 
-<meta property="og:description" content="Basic API calls. These functions return mostly unaltered data from a given API endpoint." />
+<meta property="og:description" content="Allows the user to access information that requires logging in to Gemma. To log out, run
+setGemmaUser without specifying the username or password" />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -81,35 +82,41 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Endpoint functions</h1>
+    <h1>Gemma authentication</h1>
     </div>
 
     
-    <p>Basic API calls. These functions return mostly unaltered data from a given API endpoint.</p>
+    <p>Allows the user to access information that requires logging in to Gemma. To log out, run
+<code>setGemmaUser</code> without specifying the username or password</p>
     
 
-        
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p><code><a href='setGemmaUser.html'>setGemmaUser</a></code>: Allows authentication
-    <code><a href='allDatasets.html'>allDatasets</a></code>: List all datasets
-    <code><a href='datasetInfo.html'>datasetInfo</a></code>: Get information about a specific dataset
-    <code><a href='allPlatforms.html'>allPlatforms</a></code>: List all platforms
-    <code><a href='platformInfo.html'>platformInfo</a></code>: Get information about a specific platform
-    <code><a href='geneInfo.html'>geneInfo</a></code>: Get information about genes
-    <code><a href='allTaxa.html'>allTaxa</a></code>: List all taxa
-    <code><a href='taxonInfo.html'>taxonInfo</a></code>: Get information about a specific taxon
-    <code><a href='annotationInfo.html'>annotationInfo</a></code>: Query for annotations
-    <code><a href='setGemmaUser.html'>setGemmaUser</a></code>: Sets gemma username and password for authentication</p>
+    <pre class="usage"><span class='fu'>setGemmaUser</span>(<span class='kw'>username</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>password</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>username</th>
+      <td><p>Gemma username</p></td>
+    </tr>
+    <tr>
+      <th>password</th>
+      <td><p>Gemma password</p></td>
+    </tr>
+    </table>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>setGemmaUser</span>(<span class='st'>'username'</span>,<span class='st'>'password'</span>) <span class='co'># login</span>
+<span class='fu'>setGemmaUser</span>() <span class='co'># log out</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      
-      <li><a href="#details">Details</a></li>
-          </ul>
+      <li><a href="#arguments">Arguments</a></li>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

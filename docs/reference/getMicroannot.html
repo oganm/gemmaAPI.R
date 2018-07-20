@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Endpoint functions — endpointFunctions • gemmaAPI</title>
+<title>Get Gemma annotations — getMicroannot • gemmaAPI</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,9 +27,9 @@
 <script src="../pkgdown.js"></script>
   
   
-<meta property="og:title" content="Endpoint functions — endpointFunctions" />
+<meta property="og:title" content="Get Gemma annotations — getMicroannot" />
 
-<meta property="og:description" content="Basic API calls. These functions return mostly unaltered data from a given API endpoint." />
+<meta property="og:description" content="Gets Gemma's platform annotation files that can be accessed from https://gemma.msl.ubc.ca/annots/" />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -81,34 +81,56 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Endpoint functions</h1>
+    <h1>Get Gemma annotations</h1>
     </div>
 
     
-    <p>Basic API calls. These functions return mostly unaltered data from a given API endpoint.</p>
+    <p>Gets Gemma's platform annotation files that can be accessed from https://gemma.msl.ubc.ca/annots/</p>
     
 
-        
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <pre class="usage"><span class='fu'>getMicroannot</span>(<span class='no'>platform</span>, <span class='kw'>annotType</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"bioProcess"</span>, <span class='st'>"noParents"</span>,
+  <span class='st'>"allParents"</span>), <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>return</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>platform</th>
+      <td><p>Can either be the platform ID or its short name (e.g: GPL1355). 
+Retrieval by ID is more efficient. Only platforms that user has access to will be available.</p></td>
+    </tr>
+    <tr>
+      <th>annotType</th>
+      <td><p>Which go terms should the input include</p></td>
+    </tr>
+    <tr>
+      <th>file</th>
+      <td><p>Character. File path. If provided, response will be saved to file</p></td>
+    </tr>
+    <tr>
+      <th>return</th>
+      <td><p>Logical. If the response should be returned. Set to false when
+you only want to save a file</p></td>
+    </tr>
+    <tr>
+      <th>overwrite</th>
+      <td><p>Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code><a href='setGemmaUser.html'>setGemmaUser</a></code>: Allows authentication
-    <code><a href='allDatasets.html'>allDatasets</a></code>: List all datasets
-    <code><a href='datasetInfo.html'>datasetInfo</a></code>: Get information about a specific dataset
-    <code><a href='allPlatforms.html'>allPlatforms</a></code>: List all platforms
-    <code><a href='platformInfo.html'>platformInfo</a></code>: Get information about a specific platform
-    <code><a href='geneInfo.html'>geneInfo</a></code>: Get information about genes
-    <code><a href='allTaxa.html'>allTaxa</a></code>: List all taxa
-    <code><a href='taxonInfo.html'>taxonInfo</a></code>: Get information about a specific taxon
-    <code><a href='annotationInfo.html'>annotationInfo</a></code>: Query for annotations
-    <code><a href='setGemmaUser.html'>setGemmaUser</a></code>: Sets gemma username and password for authentication</p>
+    <p>A data frame including annotation information</p>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#details">Details</a></li>
+      <li><a href="#value">Value</a></li>
           </ul>
 
   </div>

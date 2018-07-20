@@ -134,25 +134,19 @@ to clear memory.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>allTaxa</span>()</div><div class='output co'>#&gt; $`Homo sapiens`
-#&gt; $`Homo sapiens`$commonName
-#&gt; [1] "human"
-#&gt; 
 #&gt; $`Homo sapiens`$externalDatabase
 #&gt; $`Homo sapiens`$externalDatabase$checked
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $`Homo sapiens`$externalDatabase$name
-#&gt; [1] "hg19"
+#&gt; [1] "hg38"
 #&gt; 
 #&gt; $`Homo sapiens`$externalDatabase$id
-#&gt; [1] 65
+#&gt; [1] 87
 #&gt; 
 #&gt; 
-#&gt; $`Homo sapiens`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Homo sapiens`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Homo sapiens`$commonName
+#&gt; [1] "human"
 #&gt; 
 #&gt; $`Homo sapiens`$scientificName
 #&gt; [1] "Homo sapiens"
@@ -160,20 +154,26 @@ to clear memory.</p></td>
 #&gt; $`Homo sapiens`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Homo sapiens`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Homo sapiens`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Homo sapiens`$ncbiId
 #&gt; [1] 9606
 #&gt; 
 #&gt; $`Homo sapiens`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Homo sapiens`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Homo sapiens`$id
 #&gt; [1] 1
 #&gt; 
 #&gt; 
 #&gt; $`Mus musculus`
-#&gt; $`Mus musculus`$commonName
-#&gt; [1] "mouse"
-#&gt; 
 #&gt; $`Mus musculus`$externalDatabase
 #&gt; $`Mus musculus`$externalDatabase$checked
 #&gt; [1] FALSE
@@ -185,11 +185,8 @@ to clear memory.</p></td>
 #&gt; [1] 81
 #&gt; 
 #&gt; 
-#&gt; $`Mus musculus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Mus musculus`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Mus musculus`$commonName
+#&gt; [1] "mouse"
 #&gt; 
 #&gt; $`Mus musculus`$scientificName
 #&gt; [1] "Mus musculus"
@@ -197,36 +194,39 @@ to clear memory.</p></td>
 #&gt; $`Mus musculus`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Mus musculus`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Mus musculus`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Mus musculus`$ncbiId
 #&gt; [1] 10090
 #&gt; 
 #&gt; $`Mus musculus`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Mus musculus`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Mus musculus`$id
 #&gt; [1] 2
 #&gt; 
 #&gt; 
 #&gt; $`Rattus norvegicus`
-#&gt; $`Rattus norvegicus`$commonName
-#&gt; [1] "rat"
-#&gt; 
 #&gt; $`Rattus norvegicus`$externalDatabase
 #&gt; $`Rattus norvegicus`$externalDatabase$checked
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $`Rattus norvegicus`$externalDatabase$name
-#&gt; [1] "rn4"
+#&gt; [1] "rn6"
 #&gt; 
 #&gt; $`Rattus norvegicus`$externalDatabase$id
-#&gt; [1] 13
+#&gt; [1] 86
 #&gt; 
 #&gt; 
-#&gt; $`Rattus norvegicus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Rattus norvegicus`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Rattus norvegicus`$commonName
+#&gt; [1] "rat"
 #&gt; 
 #&gt; $`Rattus norvegicus`$scientificName
 #&gt; [1] "Rattus norvegicus"
@@ -234,387 +234,31 @@ to clear memory.</p></td>
 #&gt; $`Rattus norvegicus`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Rattus norvegicus`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Rattus norvegicus`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Rattus norvegicus`$ncbiId
 #&gt; [1] 10116
 #&gt; 
 #&gt; $`Rattus norvegicus`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Rattus norvegicus`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Rattus norvegicus`$id
 #&gt; [1] 3
 #&gt; 
 #&gt; 
-#&gt; $Salmonidae
-#&gt; $Salmonidae$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $Salmonidae$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $Salmonidae$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $Salmonidae$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $Salmonidae$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $Salmonidae$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $Salmonidae$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $Salmonidae$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $Salmonidae$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Salmo salar`
-#&gt; $`Salmo salar`$commonName
-#&gt; [1] "atlantic salmon"
-#&gt; 
-#&gt; $`Salmo salar`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Salmo salar`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Salmo salar`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Salmo salar`$scientificName
-#&gt; [1] "Salmo salar"
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon
-#&gt; $`Salmo salar`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Salmo salar`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Salmo salar`$ncbiId
-#&gt; [1] 8030
-#&gt; 
-#&gt; $`Salmo salar`$abbreviation
-#&gt; [1] "ssal"
-#&gt; 
-#&gt; $`Salmo salar`$id
-#&gt; [1] 5
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`
-#&gt; $`Oncorhynchus mykiss`$commonName
-#&gt; [1] "rainbow trout"
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$scientificName
-#&gt; [1] "Oncorhynchus mykiss"
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$ncbiId
-#&gt; [1] 8022
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$abbreviation
-#&gt; [1] "omyk"
-#&gt; 
-#&gt; $`Oncorhynchus mykiss`$id
-#&gt; [1] 6
-#&gt; 
-#&gt; 
-#&gt; $`Coregonus clupeaformis`
-#&gt; $`Coregonus clupeaformis`$commonName
-#&gt; [1] "whitefish"
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$scientificName
-#&gt; [1] "Coregonus clupeaformis"
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon
-#&gt; $`Coregonus clupeaformis`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$ncbiId
-#&gt; [1] 59861
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$abbreviation
-#&gt; [1] "cclu"
-#&gt; 
-#&gt; $`Coregonus clupeaformis`$id
-#&gt; [1] 7
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`
-#&gt; $`Oncorhynchus tshawytscha`$commonName
-#&gt; [1] "chinook salmon"
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$scientificName
-#&gt; [1] "Oncorhynchus tshawytscha"
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$ncbiId
-#&gt; [1] 74940
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$abbreviation
-#&gt; [1] "otsh"
-#&gt; 
-#&gt; $`Oncorhynchus tshawytscha`$id
-#&gt; [1] 8
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus keta`
-#&gt; $`Oncorhynchus keta`$commonName
-#&gt; [1] "chum salmon"
-#&gt; 
-#&gt; $`Oncorhynchus keta`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus keta`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus keta`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus keta`$scientificName
-#&gt; [1] "Oncorhynchus keta"
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon
-#&gt; $`Oncorhynchus keta`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus keta`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus keta`$ncbiId
-#&gt; [1] 8018
-#&gt; 
-#&gt; $`Oncorhynchus keta`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus keta`$id
-#&gt; [1] 9
-#&gt; 
-#&gt; 
-#&gt; $`Osmerus mordax`
-#&gt; $`Osmerus mordax`$commonName
-#&gt; [1] "rainbow smelt"
-#&gt; 
-#&gt; $`Osmerus mordax`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Osmerus mordax`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Osmerus mordax`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Osmerus mordax`$scientificName
-#&gt; [1] "Osmerus mordax"
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon
-#&gt; $`Osmerus mordax`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Osmerus mordax`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Osmerus mordax`$ncbiId
-#&gt; [1] 8014
-#&gt; 
-#&gt; $`Osmerus mordax`$abbreviation
-#&gt; [1] "omor"
-#&gt; 
-#&gt; $`Osmerus mordax`$id
-#&gt; [1] 10
-#&gt; 
-#&gt; 
 #&gt; $`Saccharomyces cerevisiae`
-#&gt; $`Saccharomyces cerevisiae`$commonName
-#&gt; [1] "yeast"
-#&gt; 
 #&gt; $`Saccharomyces cerevisiae`$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`Saccharomyces cerevisiae`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Saccharomyces cerevisiae`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Saccharomyces cerevisiae`$commonName
+#&gt; [1] "yeast"
 #&gt; 
 #&gt; $`Saccharomyces cerevisiae`$scientificName
 #&gt; [1] "Saccharomyces cerevisiae"
@@ -622,28 +266,31 @@ to clear memory.</p></td>
 #&gt; $`Saccharomyces cerevisiae`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Saccharomyces cerevisiae`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Saccharomyces cerevisiae`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Saccharomyces cerevisiae`$ncbiId
 #&gt; [1] 4932
 #&gt; 
 #&gt; $`Saccharomyces cerevisiae`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Saccharomyces cerevisiae`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Saccharomyces cerevisiae`$id
 #&gt; [1] 11
 #&gt; 
 #&gt; 
 #&gt; $`Danio rerio`
-#&gt; $`Danio rerio`$commonName
-#&gt; [1] "zebrafish"
-#&gt; 
 #&gt; $`Danio rerio`$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`Danio rerio`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Danio rerio`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Danio rerio`$commonName
+#&gt; [1] "zebrafish"
 #&gt; 
 #&gt; $`Danio rerio`$scientificName
 #&gt; [1] "Danio rerio"
@@ -651,60 +298,43 @@ to clear memory.</p></td>
 #&gt; $`Danio rerio`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Danio rerio`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Danio rerio`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Danio rerio`$ncbiId
 #&gt; [1] 7955
 #&gt; 
 #&gt; $`Danio rerio`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Danio rerio`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Danio rerio`$id
 #&gt; [1] 12
 #&gt; 
 #&gt; 
 #&gt; $`Drosophila melanogaster`
-#&gt; $`Drosophila melanogaster`$commonName
-#&gt; [1] "fly"
-#&gt; 
 #&gt; $`Drosophila melanogaster`$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`Drosophila melanogaster`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila melanogaster`$isGenesUsable
-#&gt; [1] FALSE
+#&gt; $`Drosophila melanogaster`$commonName
+#&gt; [1] "fly"
 #&gt; 
 #&gt; $`Drosophila melanogaster`$scientificName
 #&gt; [1] "Drosophila melanogaster"
 #&gt; 
 #&gt; $`Drosophila melanogaster`$parentTaxon
-#&gt; $`Drosophila melanogaster`$parentTaxon$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$isSpecies
+#&gt; $`Drosophila melanogaster`$isGenesUsable
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$isGenesUsable
+#&gt; $`Drosophila melanogaster`$isSpecies
 #&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila melanogaster`$parentTaxon$id
-#&gt; [1] 26
-#&gt; 
 #&gt; 
 #&gt; $`Drosophila melanogaster`$ncbiId
 #&gt; [1] 7227
@@ -712,22 +342,19 @@ to clear memory.</p></td>
 #&gt; $`Drosophila melanogaster`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Drosophila melanogaster`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Drosophila melanogaster`$id
 #&gt; [1] 13
 #&gt; 
 #&gt; 
 #&gt; $`Caenorhabditis elegans`
-#&gt; $`Caenorhabditis elegans`$commonName
-#&gt; [1] "worm"
-#&gt; 
 #&gt; $`Caenorhabditis elegans`$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`Caenorhabditis elegans`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Caenorhabditis elegans`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Caenorhabditis elegans`$commonName
+#&gt; [1] "worm"
 #&gt; 
 #&gt; $`Caenorhabditis elegans`$scientificName
 #&gt; [1] "Caenorhabditis elegans"
@@ -735,222 +362,31 @@ to clear memory.</p></td>
 #&gt; $`Caenorhabditis elegans`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Caenorhabditis elegans`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Caenorhabditis elegans`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Caenorhabditis elegans`$ncbiId
 #&gt; [1] 6239
 #&gt; 
 #&gt; $`Caenorhabditis elegans`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Caenorhabditis elegans`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Caenorhabditis elegans`$id
 #&gt; [1] 14
 #&gt; 
 #&gt; 
-#&gt; $`Oncorhynchus kisutch`
-#&gt; $`Oncorhynchus kisutch`$commonName
-#&gt; [1] "coho salmon"
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$scientificName
-#&gt; [1] "Oncorhynchus kisutch"
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$ncbiId
-#&gt; [1] 8019
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus kisutch`$id
-#&gt; [1] 15
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`
-#&gt; $`Oncorhynchus gorbuscha`$commonName
-#&gt; [1] "pink salmon"
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$scientificName
-#&gt; [1] "Oncorhynchus gorbuscha"
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$ncbiId
-#&gt; [1] 8017
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus gorbuscha`$id
-#&gt; [1] 16
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus nerka`
-#&gt; $`Oncorhynchus nerka`$commonName
-#&gt; [1] "sockeye salmon"
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$scientificName
-#&gt; [1] "Oncorhynchus nerka"
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon
-#&gt; $`Oncorhynchus nerka`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$ncbiId
-#&gt; [1] 8023
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Oncorhynchus nerka`$id
-#&gt; [1] 17
-#&gt; 
-#&gt; 
-#&gt; $`Onthophagus taurus`
-#&gt; $`Onthophagus taurus`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Onthophagus taurus`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Onthophagus taurus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Onthophagus taurus`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Onthophagus taurus`$scientificName
-#&gt; [1] "Onthophagus taurus"
-#&gt; 
-#&gt; $`Onthophagus taurus`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Onthophagus taurus`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Onthophagus taurus`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Onthophagus taurus`$id
-#&gt; [1] 18
-#&gt; 
-#&gt; 
 #&gt; $`synthetic construct`
-#&gt; $`synthetic construct`$commonName
-#&gt; NULL
-#&gt; 
 #&gt; $`synthetic construct`$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`synthetic construct`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`synthetic construct`$isGenesUsable
-#&gt; [1] FALSE
+#&gt; $`synthetic construct`$commonName
+#&gt; [1] "synthetic construct"
 #&gt; 
 #&gt; $`synthetic construct`$scientificName
 #&gt; [1] "synthetic construct"
@@ -958,584 +394,31 @@ to clear memory.</p></td>
 #&gt; $`synthetic construct`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`synthetic construct`$isGenesUsable
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $`synthetic construct`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`synthetic construct`$ncbiId
 #&gt; NULL
 #&gt; 
 #&gt; $`synthetic construct`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`synthetic construct`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`synthetic construct`$id
 #&gt; [1] 19
 #&gt; 
 #&gt; 
-#&gt; $`Drosophila simulans`
-#&gt; $`Drosophila simulans`$commonName
-#&gt; [1] "d.simulans"
-#&gt; 
-#&gt; $`Drosophila simulans`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila simulans`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila simulans`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila simulans`$scientificName
-#&gt; [1] "Drosophila simulans"
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon
-#&gt; $`Drosophila simulans`$parentTaxon$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila simulans`$parentTaxon$id
-#&gt; [1] 26
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila simulans`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila simulans`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila simulans`$id
-#&gt; [1] 20
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila santomea`
-#&gt; $`Drosophila santomea`$commonName
-#&gt; [1] "d.santomea"
-#&gt; 
-#&gt; $`Drosophila santomea`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila santomea`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila santomea`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila santomea`$scientificName
-#&gt; [1] "Drosophila santomea"
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon
-#&gt; $`Drosophila santomea`$parentTaxon$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila santomea`$parentTaxon$id
-#&gt; [1] 26
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila santomea`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila santomea`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila santomea`$id
-#&gt; [1] 21
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila yakuba`
-#&gt; $`Drosophila yakuba`$commonName
-#&gt; [1] "d.yakuba"
-#&gt; 
-#&gt; $`Drosophila yakuba`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila yakuba`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila yakuba`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila yakuba`$scientificName
-#&gt; [1] "Drosophila yakuba"
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon
-#&gt; $`Drosophila yakuba`$parentTaxon$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila yakuba`$parentTaxon$id
-#&gt; [1] 26
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila yakuba`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila yakuba`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila yakuba`$id
-#&gt; [1] 22
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila teissieri`
-#&gt; $`Drosophila teissieri`$commonName
-#&gt; [1] "d.teissieri"
-#&gt; 
-#&gt; $`Drosophila teissieri`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila teissieri`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila teissieri`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila teissieri`$scientificName
-#&gt; [1] "Drosophila teissieri"
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon
-#&gt; $`Drosophila teissieri`$parentTaxon$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila teissieri`$parentTaxon$id
-#&gt; [1] 26
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila teissieri`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila teissieri`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila teissieri`$id
-#&gt; [1] 23
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila mauritiana`
-#&gt; $`Drosophila mauritiana`$commonName
-#&gt; [1] "d.mauritiana"
-#&gt; 
-#&gt; $`Drosophila mauritiana`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila mauritiana`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila mauritiana`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila mauritiana`$scientificName
-#&gt; [1] "Drosophila mauritiana"
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon
-#&gt; $`Drosophila mauritiana`$parentTaxon$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila mauritiana`$parentTaxon$id
-#&gt; [1] 26
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila mauritiana`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila mauritiana`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila mauritiana`$id
-#&gt; [1] 24
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila sechellia`
-#&gt; $`Drosophila sechellia`$commonName
-#&gt; [1] "d.sechellia"
-#&gt; 
-#&gt; $`Drosophila sechellia`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila sechellia`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila sechellia`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila sechellia`$scientificName
-#&gt; [1] "Drosophila sechellia"
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon
-#&gt; $`Drosophila sechellia`$parentTaxon$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila sechellia`$parentTaxon$id
-#&gt; [1] 26
-#&gt; 
-#&gt; 
-#&gt; $`Drosophila sechellia`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila sechellia`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Drosophila sechellia`$id
-#&gt; [1] 25
-#&gt; 
-#&gt; 
-#&gt; $Drosophila
-#&gt; $Drosophila$commonName
-#&gt; [1] "drosophila"
-#&gt; 
-#&gt; $Drosophila$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $Drosophila$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $Drosophila$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $Drosophila$scientificName
-#&gt; [1] "Drosophila"
-#&gt; 
-#&gt; $Drosophila$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $Drosophila$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $Drosophila$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $Drosophila$id
-#&gt; [1] 26
-#&gt; 
-#&gt; 
-#&gt; $`Salvelinus fontinalis`
-#&gt; $`Salvelinus fontinalis`$commonName
-#&gt; [1] "brook trout"
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$scientificName
-#&gt; [1] "Salvelinus fontinalis"
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon
-#&gt; $`Salvelinus fontinalis`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$ncbiId
-#&gt; [1] 8038
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Salvelinus fontinalis`$id
-#&gt; [1] 27
-#&gt; 
-#&gt; 
-#&gt; $`Fundulus heteroclitus`
-#&gt; $`Fundulus heteroclitus`$commonName
-#&gt; [1] "killifish"
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$scientificName
-#&gt; [1] "Fundulus heteroclitus"
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon
-#&gt; $`Fundulus heteroclitus`$parentTaxon$commonName
-#&gt; [1] "salmonid"
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$isSpecies
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$isGenesUsable
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$scientificName
-#&gt; [1] "Salmonidae"
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$ncbiId
-#&gt; [1] 8015
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$parentTaxon$id
-#&gt; [1] 4
-#&gt; 
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$ncbiId
-#&gt; [1] 8078
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Fundulus heteroclitus`$id
-#&gt; [1] 28
-#&gt; 
-#&gt; 
-#&gt; $`Sparus aurata`
-#&gt; $`Sparus aurata`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Sparus aurata`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Sparus aurata`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Sparus aurata`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Sparus aurata`$scientificName
-#&gt; [1] "Sparus aurata"
-#&gt; 
-#&gt; $`Sparus aurata`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Sparus aurata`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Sparus aurata`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Sparus aurata`$id
-#&gt; [1] 30
-#&gt; 
-#&gt; 
-#&gt; $`Macaca mulatta`
-#&gt; $`Macaca mulatta`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Macaca mulatta`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Macaca mulatta`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Macaca mulatta`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Macaca mulatta`$scientificName
-#&gt; [1] "Macaca mulatta"
-#&gt; 
-#&gt; $`Macaca mulatta`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Macaca mulatta`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Macaca mulatta`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Macaca mulatta`$id
-#&gt; [1] 31
-#&gt; 
-#&gt; 
-#&gt; $`Pan troglodytes`
-#&gt; $`Pan troglodytes`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan troglodytes`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan troglodytes`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Pan troglodytes`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Pan troglodytes`$scientificName
-#&gt; [1] "Pan troglodytes"
-#&gt; 
-#&gt; $`Pan troglodytes`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan troglodytes`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan troglodytes`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan troglodytes`$id
-#&gt; [1] 32
-#&gt; 
-#&gt; 
 #&gt; $`Schizosaccharomyces pombe`
-#&gt; $`Schizosaccharomyces pombe`$commonName
-#&gt; NULL
-#&gt; 
 #&gt; $`Schizosaccharomyces pombe`$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`Schizosaccharomyces pombe`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Schizosaccharomyces pombe`$isGenesUsable
-#&gt; [1] FALSE
+#&gt; $`Schizosaccharomyces pombe`$commonName
+#&gt; [1] "fission yeast"
 #&gt; 
 #&gt; $`Schizosaccharomyces pombe`$scientificName
 #&gt; [1] "Schizosaccharomyces pombe"
@@ -1543,267 +426,102 @@ to clear memory.</p></td>
 #&gt; $`Schizosaccharomyces pombe`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Schizosaccharomyces pombe`$isGenesUsable
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $`Schizosaccharomyces pombe`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Schizosaccharomyces pombe`$ncbiId
 #&gt; NULL
 #&gt; 
 #&gt; $`Schizosaccharomyces pombe`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Schizosaccharomyces pombe`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Schizosaccharomyces pombe`$id
 #&gt; [1] 33
 #&gt; 
 #&gt; 
-#&gt; $`Canis lupus familiaris`
-#&gt; $`Canis lupus familiaris`$commonName
+#&gt; $`Macaca mulatta`
+#&gt; $`Macaca mulatta`$externalDatabase
 #&gt; NULL
 #&gt; 
-#&gt; $`Canis lupus familiaris`$externalDatabase
+#&gt; $`Macaca mulatta`$commonName
 #&gt; NULL
 #&gt; 
-#&gt; $`Canis lupus familiaris`$isSpecies
+#&gt; $`Macaca mulatta`$scientificName
+#&gt; [1] "Macaca mulatta"
+#&gt; 
+#&gt; $`Macaca mulatta`$parentTaxon
+#&gt; NULL
+#&gt; 
+#&gt; $`Macaca mulatta`$isGenesUsable
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $`Canis lupus familiaris`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Canis lupus familiaris`$scientificName
-#&gt; [1] "Canis lupus familiaris"
-#&gt; 
-#&gt; $`Canis lupus familiaris`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Canis lupus familiaris`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Canis lupus familiaris`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Canis lupus familiaris`$id
-#&gt; [1] 70
-#&gt; 
-#&gt; 
-#&gt; $`Monodelphis domestica`
-#&gt; $`Monodelphis domestica`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Monodelphis domestica`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Monodelphis domestica`$isSpecies
+#&gt; $`Macaca mulatta`$isSpecies
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $`Monodelphis domestica`$isGenesUsable
+#&gt; $`Macaca mulatta`$ncbiId
+#&gt; NULL
+#&gt; 
+#&gt; $`Macaca mulatta`$abbreviation
+#&gt; NULL
+#&gt; 
+#&gt; $`Macaca mulatta`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
+#&gt; $`Macaca mulatta`$id
+#&gt; [1] 78
+#&gt; 
+#&gt; 
+#&gt; $`Rattus rattus`
+#&gt; $`Rattus rattus`$externalDatabase
+#&gt; NULL
+#&gt; 
+#&gt; $`Rattus rattus`$commonName
+#&gt; NULL
+#&gt; 
+#&gt; $`Rattus rattus`$scientificName
+#&gt; [1] "Rattus rattus"
+#&gt; 
+#&gt; $`Rattus rattus`$parentTaxon
+#&gt; NULL
+#&gt; 
+#&gt; $`Rattus rattus`$isGenesUsable
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $`Monodelphis domestica`$scientificName
-#&gt; [1] "Monodelphis domestica"
-#&gt; 
-#&gt; $`Monodelphis domestica`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Monodelphis domestica`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Monodelphis domestica`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Monodelphis domestica`$id
-#&gt; [1] 71
-#&gt; 
-#&gt; 
-#&gt; $`Ornithorhynchus anatinus`
-#&gt; $`Ornithorhynchus anatinus`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Ornithorhynchus anatinus`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Ornithorhynchus anatinus`$isSpecies
+#&gt; $`Rattus rattus`$isSpecies
 #&gt; [1] TRUE
 #&gt; 
-#&gt; $`Ornithorhynchus anatinus`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Ornithorhynchus anatinus`$scientificName
-#&gt; [1] "Ornithorhynchus anatinus"
-#&gt; 
-#&gt; $`Ornithorhynchus anatinus`$parentTaxon
+#&gt; $`Rattus rattus`$ncbiId
 #&gt; NULL
 #&gt; 
-#&gt; $`Ornithorhynchus anatinus`$ncbiId
+#&gt; $`Rattus rattus`$abbreviation
 #&gt; NULL
 #&gt; 
-#&gt; $`Ornithorhynchus anatinus`$abbreviation
-#&gt; NULL
+#&gt; $`Rattus rattus`$`_totalInQuery`
+#&gt; [1] 0
 #&gt; 
-#&gt; $`Ornithorhynchus anatinus`$id
-#&gt; [1] 72
-#&gt; 
-#&gt; 
-#&gt; $`Gallus gallus`
-#&gt; $`Gallus gallus`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Gallus gallus`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Gallus gallus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Gallus gallus`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Gallus gallus`$scientificName
-#&gt; [1] "Gallus gallus"
-#&gt; 
-#&gt; $`Gallus gallus`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Gallus gallus`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Gallus gallus`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Gallus gallus`$id
-#&gt; [1] 73
-#&gt; 
-#&gt; 
-#&gt; $`Gorilla gorilla`
-#&gt; $`Gorilla gorilla`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Gorilla gorilla`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Gorilla gorilla`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Gorilla gorilla`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Gorilla gorilla`$scientificName
-#&gt; [1] "Gorilla gorilla"
-#&gt; 
-#&gt; $`Gorilla gorilla`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Gorilla gorilla`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Gorilla gorilla`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Gorilla gorilla`$id
-#&gt; [1] 74
-#&gt; 
-#&gt; 
-#&gt; $`Xenopus tropicalis`
-#&gt; $`Xenopus tropicalis`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Xenopus tropicalis`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Xenopus tropicalis`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Xenopus tropicalis`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Xenopus tropicalis`$scientificName
-#&gt; [1] "Xenopus tropicalis"
-#&gt; 
-#&gt; $`Xenopus tropicalis`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Xenopus tropicalis`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Xenopus tropicalis`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Xenopus tropicalis`$id
-#&gt; [1] 75
-#&gt; 
-#&gt; 
-#&gt; $`Pan paniscus`
-#&gt; $`Pan paniscus`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan paniscus`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan paniscus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Pan paniscus`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Pan paniscus`$scientificName
-#&gt; [1] "Pan paniscus"
-#&gt; 
-#&gt; $`Pan paniscus`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan paniscus`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan paniscus`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Pan paniscus`$id
-#&gt; [1] 76
-#&gt; 
-#&gt; 
-#&gt; $`Bos taurus`
-#&gt; $`Bos taurus`$commonName
-#&gt; NULL
-#&gt; 
-#&gt; $`Bos taurus`$externalDatabase
-#&gt; NULL
-#&gt; 
-#&gt; $`Bos taurus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Bos taurus`$isGenesUsable
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $`Bos taurus`$scientificName
-#&gt; [1] "Bos taurus"
-#&gt; 
-#&gt; $`Bos taurus`$parentTaxon
-#&gt; NULL
-#&gt; 
-#&gt; $`Bos taurus`$ncbiId
-#&gt; NULL
-#&gt; 
-#&gt; $`Bos taurus`$abbreviation
-#&gt; NULL
-#&gt; 
-#&gt; $`Bos taurus`$id
-#&gt; [1] 77
+#&gt; $`Rattus rattus`$id
+#&gt; [1] 79
 #&gt; 
 #&gt; </div><div class='input'><span class='fu'>allTaxa</span>(<span class='fu'>c</span>(<span class='st'>'human'</span>,<span class='st'>'mouse'</span>))</div><div class='output co'>#&gt; $`Homo sapiens`
-#&gt; $`Homo sapiens`$commonName
-#&gt; [1] "human"
-#&gt; 
 #&gt; $`Homo sapiens`$externalDatabase
 #&gt; $`Homo sapiens`$externalDatabase$checked
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $`Homo sapiens`$externalDatabase$name
-#&gt; [1] "hg19"
+#&gt; [1] "hg38"
 #&gt; 
 #&gt; $`Homo sapiens`$externalDatabase$id
-#&gt; [1] 65
+#&gt; [1] 87
 #&gt; 
 #&gt; 
-#&gt; $`Homo sapiens`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Homo sapiens`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Homo sapiens`$commonName
+#&gt; [1] "human"
 #&gt; 
 #&gt; $`Homo sapiens`$scientificName
 #&gt; [1] "Homo sapiens"
@@ -1811,20 +529,26 @@ to clear memory.</p></td>
 #&gt; $`Homo sapiens`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Homo sapiens`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Homo sapiens`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Homo sapiens`$ncbiId
 #&gt; [1] 9606
 #&gt; 
 #&gt; $`Homo sapiens`$abbreviation
 #&gt; NULL
 #&gt; 
+#&gt; $`Homo sapiens`$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
 #&gt; $`Homo sapiens`$id
 #&gt; [1] 1
 #&gt; 
 #&gt; 
 #&gt; $`Mus musculus`
-#&gt; $`Mus musculus`$commonName
-#&gt; [1] "mouse"
-#&gt; 
 #&gt; $`Mus musculus`$externalDatabase
 #&gt; $`Mus musculus`$externalDatabase$checked
 #&gt; [1] FALSE
@@ -1836,11 +560,8 @@ to clear memory.</p></td>
 #&gt; [1] 81
 #&gt; 
 #&gt; 
-#&gt; $`Mus musculus`$isSpecies
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $`Mus musculus`$isGenesUsable
-#&gt; [1] TRUE
+#&gt; $`Mus musculus`$commonName
+#&gt; [1] "mouse"
 #&gt; 
 #&gt; $`Mus musculus`$scientificName
 #&gt; [1] "Mus musculus"
@@ -1848,11 +569,20 @@ to clear memory.</p></td>
 #&gt; $`Mus musculus`$parentTaxon
 #&gt; NULL
 #&gt; 
+#&gt; $`Mus musculus`$isGenesUsable
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $`Mus musculus`$isSpecies
+#&gt; [1] TRUE
+#&gt; 
 #&gt; $`Mus musculus`$ncbiId
 #&gt; [1] 10090
 #&gt; 
 #&gt; $`Mus musculus`$abbreviation
 #&gt; NULL
+#&gt; 
+#&gt; $`Mus musculus`$`_totalInQuery`
+#&gt; [1] 0
 #&gt; 
 #&gt; $`Mus musculus`$id
 #&gt; [1] 2
