@@ -55,7 +55,7 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
                                    file = paste0(tempfile(),'.txt.gz')
                                }
                                if(file.exists(file) & !overwrite){
-                                   warning(file, ' exists but overwrite = FALSE.\nOutput will be read from existing file.')
+                                   warning(file, ' exists but overwrite = FALSE.\n Skipping writing to file.\nOutput will be read from existing file.')
                                } else{
                                    writeBin(raw$content,file)
                                }
@@ -65,7 +65,7 @@ getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
     if(contentText[1] == 'THISISFILE' & return){
         # if output is a gz file and return is desired, read the gzfile.
         # browser()
-        content = readExpression(contentText[2])
+        content = readDataFile(contentText[2])
         # content = utils::read.table(gzfile(contentText[2]), header=T,sep='\t', quote="", stringsAsFactors = F)
         return(content)
     }

@@ -7,6 +7,8 @@
 Basic API calls. These functions return mostly unaltered data from a given API endpoint.
 }
 \details{
+\code{\link{setGemmaUser}}: Allows authentication
+
 \code{\link{allDatasets}}: List all datasets
 
 \code{\link{datasetInfo}}: Get information about a specific dataset

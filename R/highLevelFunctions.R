@@ -1,20 +1,24 @@
-#' Read expression data
+#' Read data files from gemma
 #'
-#' @param gzFile Path to expression file downloaded from gemma, possibly using datasetInfo
-#' function (request = 'data'). Should be in its original gzipped form
-#' @param IdColnames Logical. should column names be turned into IDs
+#' This is a simple wrapper for read_tsv that also deals with comments that are
+#' at the beginning of the file. If it is an expression file IdColnames simplifies
+#' column names
+#'
+#' @param expFile Path to a file downloaded from gemma, possibly using datasetInfo
+#' function (request = 'data').
+#' @param IdColnames Logical. should column names be turned into IDs. Only valid for expression data
 #'
 #' @return A data frame
 #' @export
-#'
-readExpression = function(expFile,IdColnames = FALSE){
+#' 
+readDataFile = function(expFile,IdColnames = FALSE){
     # this is a bad heuristics. will fail if file has a header comment longer that 100 lines
     con = gzfile(expFile)
     lines = readLines(con,n = 100)
     skip = lines %>% grepl('^#',x = .) %>% which %>% max
     close(con)
     con = gzfile(expFile,open = c('rb'))
-    expData = readr::read_tsv(con, col_names= TRUE,skip = skip)
+    expData = suppressMessages(readr::read_tsv(con, col_names= TRUE,skip = skip))
     close(con)
     
     if(IdColnames){
@@ -22,6 +26,11 @@ readExpression = function(expFile,IdColnames = FALSE){
     }
     return(expData)
 }
+
+#' Read expression data from gemma
+#' @inherit readDataFile
+#' @export
+readExpression = readDataFile
 
 #'expressionSubset
 #'
@@ -337,6 +346,10 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         values = x %>% mapNoNull('value') %>% combine
     }) %>% unlist
     
+    # otherCharacteristicCategories = characteristics %>% mapNoNull(function(x){
+    #     values = x %>% mapNoNull('category') %>% combine
+    # }) %>% unlist
+
     sampleData = data.frame(id,
                             sampleName,
                             accession,
