@@ -9,8 +9,8 @@ annotationProbesetMatch(genes, annotation, removeNAs = FALSE)
 \arguments{
 \item{genes}{A character vector of gene names}
 
-\item{annotation}{Output of \code{\link{getMicroannot}} or a file path to an annotation
-information written by getMicroannot}
+\item{annotation}{Output of \code{\link{getAnnotation}} or a file path to an annotation
+information written by getAnnotation}
 
 \item{removeNAs}{If no match is found, NAs will be return. This removes NAs}
 }

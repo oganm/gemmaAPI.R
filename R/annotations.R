@@ -9,7 +9,7 @@
 #' @return A data frame including annotation information
 #' @export
 #'
-getMicroannot = function(platform,
+getAnnotation = function(platform,
                          annotType = c('bioProcess','noParents','allParents'),
                          file = NULL,
                          return = TRUE,
@@ -49,9 +49,9 @@ getMicroannot = function(platform,
 #' Match probesets to gene in a platform annotation
 #' 
 #' @param probesets A character vector of probeset names
-#' @param annotation Output of \code{\link{getMicroannot}} or a file path to an annotation
+#' @param annotation Output of \code{\link{getAnnotation}} or a file path to an annotation
 #' @param removeNAs If no match is found, NAs will be return. This removes NAs
-#' information written by getMicroannot
+#' information written by getAnnotation
 #' @return A character vector of gene names
 #' @export
 annotationGeneMatch = function(probesets, annotation , removeNAs = FALSE){
@@ -71,8 +71,8 @@ annotationGeneMatch = function(probesets, annotation , removeNAs = FALSE){
 #' Match probesets to gene in a platform annotation
 #' 
 #' @param genes A character vector of gene names
-#' @param annotation Output of \code{\link{getMicroannot}} or a file path to an annotation
-#' information written by getMicroannot
+#' @param annotation Output of \code{\link{getAnnotation}} or a file path to an annotation
+#' information written by getAnnotation
 #' @param removeNAs If no match is found, NAs will be return. This removes NAs
 #' @return A character vector of probeset names
 #' @export
