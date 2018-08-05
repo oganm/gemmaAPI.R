@@ -223,6 +223,7 @@ datasetInfo  = function(dataset,
         content = allDatasets(dataset,limit = 0,file=file,return= return,overwrite = overwrite,memoised = memoised)
         return(content)
     }
+
     content = getContent(url,file = file,return=return,overwrite = overwrite)
     # just setting names. not essential
     if(return){
@@ -238,7 +239,7 @@ datasetInfo  = function(dataset,
         } else if (request %in% c('samples')){
             names(content) =  content %>% purrr::map_chr('name')
         } else if(request %in% 'annotations'){
-            names(content) =  content %>% purrr::map_chr('className')
+            names(content) =  content %>% purrr::map_chr('termName')
         } else if (request %in% 'differential'){
             # this will have to change after update
             names(content[[1]]$resultSets) = content[[1]]$resultSets %>% purrr::map_chr('resultSetId')
