@@ -163,6 +163,13 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         }
         return(out)
     }
+    noNull = function(x){
+        if(is.null(x)){
+            return(NA)
+        } else{
+            return(x)
+        }
+    }
     
     combine = function(mapResult , sort = FALSE){
         mapResult %>% 
@@ -201,9 +208,9 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
         stop('you caught a bug! use internal Gemma IDs to avoid it')
     }
     
-    experimentData$datasetID = basicInfo$id
-    experimentData$datasetName = basicInfo$shortName
-    experimentData$taxon = basicInfo$taxon
+    experimentData$datasetID = basicInfo$id %>% noNull()
+    experimentData$datasetName = basicInfo$shortName %>% noNull()
+    experimentData$taxon = basicInfo$taxon %>% noNull()
     
     # get experiment annotations
     annotation = datasetInfo(dataset,request = 'annotations',memoised = memoised)
@@ -234,36 +241,36 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
 
     experimentData$technologyType = platforms %>% mapNoNull('technologyType') %>% combine()
     
-    experimentData$externalDatabase = basicInfo$externalDatabase
+    experimentData$externalDatabase = basicInfo$externalDatabase %>% noNull()
     
-    experimentData$troubled = basicInfo$troubled
-    experimentData$troubleDetails = basicInfo$troubleDetails
+    experimentData$troubled = basicInfo$troubled %>% noNull()
+    experimentData$troubleDetails = basicInfo$troubleDetails %>% noNull()
     
     # get batch confound and geeq quality information
-    experimentData$batchConfoundDescription = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
-    experimentData$batchEffectDescription = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
+    experimentData$batchConfoundDescription = basicInfo$batchConfound %>% noNull()
+    experimentData$batchEffectDescription = basicInfo$batchEffect %>% noNull()
     
     # this could have been written in a vectorized manner but I don't want it
     # to break if geek is changed slightly. also manually naming them has some value
     
-    experimentData$geeq.batchConfound = basicInfo$geeq$qScorePublicBatchConfound
-    experimentData$geeq.batchEffect = basicInfo$geeq$qScorePublicBatchEffect
-    experimentData$geeq.batchCorrected = basicInfo$geeq$batchCorrected
-    experimentData$geeq.batchInfo = basicInfo$geeq$qScoreBatchInfo
-    experimentData$geeq.qualityScore = basicInfo$geeq$publicQualityScore
-    experimentData$geeq.suitabilityScore = basicInfo$geeq$publicSuitabilityScore
-    experimentData$geeq.publication = basicInfo$geeq$sScorePublication
-    experimentData$geeq.platformAmount = basicInfo$geeq$sScorePlatformAmount
-    experimentData$geeq.platformsTechMulti = basicInfo$geeq$sScorePlatformsTechMulti
-    experimentData$geeq.platformPopularity = basicInfo$geeq$sScoreAvgPlatformPopularity
-    experimentData$geeq.avgPlatformSize = basicInfo$geeq$sScoreAvgPlatformSize
-    experimentData$geeq.sampleSize = basicInfo$geeq$sScoreSampleSize
-    experimentData$geeq.rawData =  basicInfo$geeq$sScoreRawData
-    experimentData$geeq.missingValues = basicInfo$geeq$sScoreMissingValues
-    experimentData$geeq.outliers = basicInfo$geeq$qScoreOutliers
-    experimentData$geeq.platformTechnology = basicInfo$geeq$qScorePlatformsTech
-    experimentData$geeq.replicates= basicInfo$geeq$qScoreReplicates
-    experimentData$geeq.medianSampleCorrelation = basicInfo$geeq$qScoreSampleMedianCorrelation
+    experimentData$geeq.batchConfound = basicInfo$geeq$qScorePublicBatchConfound %>% noNull()
+    experimentData$geeq.batchEffect = basicInfo$geeq$qScorePublicBatchEffect %>% noNull()
+    experimentData$geeq.batchCorrected = basicInfo$geeq$batchCorrected %>% noNull()
+    experimentData$geeq.batchInfo = basicInfo$geeq$qScoreBatchInfo %>% noNull()
+    experimentData$geeq.qualityScore = basicInfo$geeq$publicQualityScore %>% noNull()
+    experimentData$geeq.suitabilityScore = basicInfo$geeq$publicSuitabilityScore %>% noNull()
+    experimentData$geeq.publication = basicInfo$geeq$sScorePublication %>% noNull()
+    experimentData$geeq.platformAmount = basicInfo$geeq$sScorePlatformAmount %>% noNull()
+    experimentData$geeq.platformsTechMulti = basicInfo$geeq$sScorePlatformsTechMulti %>% noNull()
+    experimentData$geeq.platformPopularity = basicInfo$geeq$sScoreAvgPlatformPopularity %>% noNull()
+    experimentData$geeq.avgPlatformSize = basicInfo$geeq$sScoreAvgPlatformSize %>% noNull()
+    experimentData$geeq.sampleSize = basicInfo$geeq$sScoreSampleSize %>% noNull()
+    experimentData$geeq.rawData =  basicInfo$geeq$sScoreRawData %>% noNull()
+    experimentData$geeq.missingValues = basicInfo$geeq$sScoreMissingValues %>% noNull()
+    experimentData$geeq.outliers = basicInfo$geeq$qScoreOutliers %>% noNull()
+    experimentData$geeq.platformTechnology = basicInfo$geeq$qScorePlatformsTech %>% noNull()
+    experimentData$geeq.replicates= basicInfo$geeq$qScoreReplicates %>% noNull()
+    experimentData$geeq.medianSampleCorrelation = basicInfo$geeq$qScoreSampleMedianCorrelation %>% noNull()
     
     # 
 
