@@ -88,8 +88,8 @@
     <p>annotationInfo</p>
     
 
-    <pre class="usage"><span class='fu'>annotationInfo</span>(<span class='no'>annotation</span>, <span class='kw'>request</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>return</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>memoised</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>annotationInfo</span>(<span class='no'>annotation</span>, <span class='kw'>request</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>return</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>memoised</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -140,10 +140,10 @@ to clear memory.</p></td>
 #&gt; [1] "http://purl.obolibrary.org/obo/OBI_0000105"
 #&gt; 
 #&gt; $transplantation$category
-#&gt; [1] "medical procedure"
+#&gt; [1] "treatment"
 #&gt; 
 #&gt; $transplantation$categoryUri
-#&gt; [1] "http://www.ebi.ac.uk/efo/EFO_0002571"
+#&gt; [1] "http://www.ebi.ac.uk/efo/EFO_0000727"
 #&gt; 
 #&gt; </div><div class='input'><span class='fu'>annotationInfo</span>(<span class='st'>'transplantation'</span>)</div><div class='output co'>#&gt; $transplantation
 #&gt; $transplantation$value
@@ -894,6 +894,9 @@ to clear memory.</p></td>
 #&gt; $GSE75886$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE75886$experimentalDesign
+#&gt; [1] 9415
+#&gt; 
 #&gt; $GSE75886$accession
 #&gt; [1] "GSE75886"
 #&gt; 
@@ -906,13 +909,37 @@ to clear memory.</p></td>
 #&gt; $GSE75886$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE75886$experimentalDesign
-#&gt; [1] 9415
+#&gt; $GSE75886$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE75886$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE75886$geeq
+#&gt; $GSE75886$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE75886$geeq$publicQualityScore
+#&gt; [1] 0.2758847
+#&gt; 
+#&gt; $GSE75886$geeq$publicSuitabilityScore
+#&gt; [1] 0.4125
+#&gt; 
+#&gt; $GSE75886$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE75886$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE75886$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE75886$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE75886$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE75886$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -958,30 +985,6 @@ to clear memory.</p></td>
 #&gt; $GSE75886$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE75886$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE75886$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE75886$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE75886$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE75886$geeq$publicQualityScore
-#&gt; [1] 0.2758847
-#&gt; 
-#&gt; $GSE75886$geeq$publicSuitabilityScore
-#&gt; [1] 0.4125
-#&gt; 
-#&gt; $GSE75886$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE75886$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE75886$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -989,11 +992,17 @@ to clear memory.</p></td>
 #&gt; [1] 7941
 #&gt; 
 #&gt; 
-#&gt; $GSE75886$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE75886$bioAssayCount
+#&gt; [1] 29
 #&gt; 
-#&gt; $GSE75886$parentTaxonId
-#&gt; NULL
+#&gt; $GSE75886$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE75886$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE75886$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE75886$public
 #&gt; [1] TRUE
@@ -1010,20 +1019,8 @@ to clear memory.</p></td>
 #&gt; $GSE75886$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE75886$bioAssayCount
-#&gt; [1] 29
-#&gt; 
-#&gt; $GSE75886$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE75886$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE75886$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE75886$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE75886$description
 #&gt; [1] " Secondary hyperparathyroidism is well known complication manifested in end-stage renal disease (ESRD). Both nodular and diffuse parathyreoid hyperplasia occur in ESRD patients. Distinct molecular mechanisms involved in parathyreoid hyperplasia remain poorly understood. Microarray screening proved homogeneity of gene transcripts in hemodialysis patients as compared to transplant cohort and primary hyperparathyreoidism, therefore further studies were performed in hemodialysis patints only. Enrichment analysis conducted on 485 differentially expressed genes between nodular and diffuse parathyreoid hyperplasia revealed highly significant differences in GO terms and KEGG database in ribosome structure (p=3.70-18). Next, RT-qPCR validation of microarray analysis proved higher expression of RAN guanine nucleotide release factor (RANGRF, p&lt;0.001), calcyclin binding protein (CACYBP, p&lt;0.05) and exocyst complex component 8 (EXOC8, p&lt;0.05) and lower expression of peptidylprolyl cis/trans isomerase, NIMA-interacting 1 (PIN1, p&lt;0.01) mRNA in nodular hyperplasia. Multivariate analysis revealed RANGRF and PIN1 expression along with parathyroid weight to be associated with nodular hyperplasia. Higher expression of genes associated with ribosomal structure and function underline extended translation mechanisms involved in parathyreoid nodular formation in long-term hemodialysis treated patients.\nLast Updated (by provider): Sep 13 2017\n\nContributers:  Eva Girmanová Zden?k Krej?ík Viktor Stránecký Ctibor Povýšil Kv?toslav Lipár Jitka Št?pánková Petra Hrubá Marek ?ernoch Tomáš Marada Sylvie Dusilová Sulková Irena Týcová Ond?ej Viklický\n"
@@ -1038,16 +1035,19 @@ to clear memory.</p></td>
 #&gt; [1] 10906
 #&gt; 
 #&gt; $GSE75886$lastUpdated
-#&gt; [1] 1.527276e+12
-#&gt; 
-#&gt; $GSE75886$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537217e+12
 #&gt; 
 #&gt; $GSE75886$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE75886$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE75886$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE75886$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE75886$lastNeedsAttentionEvent
 #&gt; $GSE75886$lastNeedsAttentionEvent$performer
@@ -1089,11 +1089,8 @@ to clear memory.</p></td>
 #&gt; $GSE75886$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE75886$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE75886$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE47199
@@ -1118,6 +1115,9 @@ to clear memory.</p></td>
 #&gt; $GSE47199$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=1.4e-05"
 #&gt; 
+#&gt; $GSE47199$experimentalDesign
+#&gt; [1] 5707
+#&gt; 
 #&gt; $GSE47199$accession
 #&gt; [1] "GSE47199"
 #&gt; 
@@ -1130,13 +1130,37 @@ to clear memory.</p></td>
 #&gt; $GSE47199$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE47199$experimentalDesign
-#&gt; [1] 5707
+#&gt; $GSE47199$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE47199$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE47199$geeq
+#&gt; $GSE47199$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE47199$geeq$publicQualityScore
+#&gt; [1] -0.001091842
+#&gt; 
+#&gt; $GSE47199$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE47199$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE47199$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE47199$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE47199$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE47199$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE47199$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1153,7 +1177,7 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE47199$geeq$qScoreOutliers
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE47199$geeq$qScorePlatformsTech
 #&gt; [1] 1
@@ -1165,13 +1189,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE47199$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9558614
+#&gt; [1] -0.01506894
 #&gt; 
 #&gt; $GSE47199$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9654504
+#&gt; [1] -0.007642891
 #&gt; 
 #&gt; $GSE47199$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.00114467
+#&gt; [1] 0.03801432
 #&gt; 
 #&gt; $GSE47199$geeq$noVectors
 #&gt; [1] FALSE
@@ -1182,30 +1206,6 @@ to clear memory.</p></td>
 #&gt; $GSE47199$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE47199$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE47199$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE47199$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE47199$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE47199$geeq$publicQualityScore
-#&gt; [1] -0.1477928
-#&gt; 
-#&gt; $GSE47199$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE47199$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE47199$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE47199$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1213,11 +1213,17 @@ to clear memory.</p></td>
 #&gt; [1] 2015
 #&gt; 
 #&gt; 
-#&gt; $GSE47199$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE47199$bioAssayCount
+#&gt; [1] 57
 #&gt; 
-#&gt; $GSE47199$parentTaxonId
-#&gt; NULL
+#&gt; $GSE47199$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE47199$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE47199$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE47199$public
 #&gt; [1] TRUE
@@ -1234,20 +1240,8 @@ to clear memory.</p></td>
 #&gt; $GSE47199$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE47199$bioAssayCount
-#&gt; [1] 57
-#&gt; 
-#&gt; $GSE47199$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE47199$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE47199$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE47199$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE47199$description
 #&gt; [1] " We study the global gene expression profiles of BKV viremia and nephropathy patients using microarrays in order to better understand the immunologic response to polyomavirus BK (BKV). BKV has become increasingly prevalent since the introduction of more potent immunosuppressive agents. It has been shown that as many as 30% of renal transplant recipients develop asymptomatic viral shedding in the urine shortly after transplant, 10-20% have viremia, and as many as 1-10% can go on to develop overt nephropathy (BKVN) that might lead to graft loss. To date, the genomics of BKV viremia and BKVN have not been investigated thoroughly by microarray.\nLast Updated (by provider): May 23 2013\n\nContributers:  Enver Akalin Pilib Ó Broin\n"
@@ -1262,16 +1256,19 @@ to clear memory.</p></td>
 #&gt; [1] 6430
 #&gt; 
 #&gt; $GSE47199$lastUpdated
-#&gt; [1] 1.519872e+12
-#&gt; 
-#&gt; $GSE47199$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.53721e+12
 #&gt; 
 #&gt; $GSE47199$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE47199$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE47199$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE47199$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE47199$lastNeedsAttentionEvent
 #&gt; NULL
@@ -1282,11 +1279,8 @@ to clear memory.</p></td>
 #&gt; $GSE47199$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE47199$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE47199$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE24223
@@ -1311,6 +1305,9 @@ to clear memory.</p></td>
 #&gt; $GSE24223$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE24223$experimentalDesign
+#&gt; [1] 3458
+#&gt; 
 #&gt; $GSE24223$accession
 #&gt; [1] "GSE24223"
 #&gt; 
@@ -1323,13 +1320,37 @@ to clear memory.</p></td>
 #&gt; $GSE24223$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE24223$experimentalDesign
-#&gt; [1] 3458
+#&gt; $GSE24223$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE24223$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE24223$geeq
+#&gt; $GSE24223$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE24223$geeq$publicQualityScore
+#&gt; [1] -0.0004232615
+#&gt; 
+#&gt; $GSE24223$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE24223$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE24223$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE24223$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE24223$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE24223$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE24223$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1340,7 +1361,7 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE24223$geeq$sScoreRawData
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE24223$geeq$sScoreMissingValues
 #&gt; [1] 1
@@ -1358,13 +1379,13 @@ to clear memory.</p></td>
 #&gt; [1] -1
 #&gt; 
 #&gt; $GSE24223$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.8763534
+#&gt; [1] -0.001903594
 #&gt; 
 #&gt; $GSE24223$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.8911214
+#&gt; [1] -0.00296283
 #&gt; 
 #&gt; $GSE24223$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.003893934
+#&gt; [1] 0.04044785
 #&gt; 
 #&gt; $GSE24223$geeq$noVectors
 #&gt; [1] FALSE
@@ -1375,30 +1396,6 @@ to clear memory.</p></td>
 #&gt; $GSE24223$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE24223$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE24223$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE24223$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE24223$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE24223$geeq$publicQualityScore
-#&gt; [1] 0.1273031
-#&gt; 
-#&gt; $GSE24223$geeq$publicSuitabilityScore
-#&gt; [1] 0.75
-#&gt; 
-#&gt; $GSE24223$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE24223$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE24223$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1406,11 +1403,17 @@ to clear memory.</p></td>
 #&gt; [1] 5467
 #&gt; 
 #&gt; 
-#&gt; $GSE24223$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE24223$bioAssayCount
+#&gt; [1] 179
 #&gt; 
-#&gt; $GSE24223$parentTaxonId
-#&gt; NULL
+#&gt; $GSE24223$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE24223$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE24223$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE24223$public
 #&gt; [1] TRUE
@@ -1427,20 +1430,8 @@ to clear memory.</p></td>
 #&gt; $GSE24223$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE24223$bioAssayCount
-#&gt; [1] 179
-#&gt; 
-#&gt; $GSE24223$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE24223$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE24223$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE24223$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE24223$description
 #&gt; [1] " In this study we employed transcriptome  mRNA profiling of whole blood and purified CD4, CD8 T cells, B cells and monocytes in tandem with high-throughput flow cytometry in 10 kidney transplant patients sampled serially pre-transplant, 1, 2, 4, 8 and 12 weeks. We then mechanistically deconvoluted the early post-transplant immune response. The flow cytometry data confirms depletion of specific cell subsets in response to ATG  induction and immunosuppression with sustained decreases in CD4 as well as CD8 cell subsets. A series of T cell activation markers were expressed from Pre-Tx to 12 weeks indicating the evolution of immunity including expansion of CD45RO+CD62L- effector memory cells. Serial whole blood transcript monitoring demonstrated over 2000 differentially expressed genes, with over 80 percent down-regulated Post-Tx. However, cell subset analysis revealed a unique spectrum of subset-specific gene expression with time-dependent changes, with contrasting significant Post-Tx gene upregulation. Our results provide a unique view of the complex evolution of immune/inflammatory molecular networks marking the early post transplant immune response. A critical finding is that analysis of the constituent blood cell subsets provides an entirely new level of detail revealing the nature of this process, effectively deconvoluting the changes that are otherwise lost in the noise of cellular complexity of whole blood. \nLast Updated (by provider): Aug 18 2011\n\nContributers:  Sunil M Kurian\n"
@@ -1455,16 +1446,19 @@ to clear memory.</p></td>
 #&gt; [1] 3195
 #&gt; 
 #&gt; $GSE24223$lastUpdated
-#&gt; [1] 1.520587e+12
-#&gt; 
-#&gt; $GSE24223$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.53721e+12
 #&gt; 
 #&gt; $GSE24223$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE24223$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE24223$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE24223$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE24223$lastNeedsAttentionEvent
 #&gt; NULL
@@ -1475,11 +1469,8 @@ to clear memory.</p></td>
 #&gt; $GSE24223$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE24223$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE24223$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE14328
@@ -1504,6 +1495,9 @@ to clear memory.</p></td>
 #&gt; $GSE14328$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE14328$experimentalDesign
+#&gt; [1] 2372
+#&gt; 
 #&gt; $GSE14328$accession
 #&gt; [1] "GSE14328"
 #&gt; 
@@ -1516,13 +1510,37 @@ to clear memory.</p></td>
 #&gt; $GSE14328$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE14328$experimentalDesign
-#&gt; [1] 2372
+#&gt; $GSE14328$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE14328$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE14328$geeq
+#&gt; $GSE14328$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE14328$geeq$publicQualityScore
+#&gt; [1] 0.8551669
+#&gt; 
+#&gt; $GSE14328$geeq$publicSuitabilityScore
+#&gt; [1] 0.6625
+#&gt; 
+#&gt; $GSE14328$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE14328$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE14328$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE14328$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE14328$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE14328$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1551,13 +1569,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE14328$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9535394
+#&gt; [1] -0.02757056
 #&gt; 
 #&gt; $GSE14328$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9579753
+#&gt; [1] -0.01383152
 #&gt; 
 #&gt; $GSE14328$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.0003628688
+#&gt; [1] 0.06099776
 #&gt; 
 #&gt; $GSE14328$geeq$noVectors
 #&gt; [1] FALSE
@@ -1568,30 +1586,6 @@ to clear memory.</p></td>
 #&gt; $GSE14328$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE14328$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE14328$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE14328$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE14328$geeq$batchCorrected
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE14328$geeq$publicQualityScore
-#&gt; [1] 0.9939965
-#&gt; 
-#&gt; $GSE14328$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE14328$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE14328$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE14328$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1599,11 +1593,17 @@ to clear memory.</p></td>
 #&gt; [1] 1211
 #&gt; 
 #&gt; 
-#&gt; $GSE14328$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE14328$bioAssayCount
+#&gt; [1] 36
 #&gt; 
-#&gt; $GSE14328$parentTaxonId
-#&gt; NULL
+#&gt; $GSE14328$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE14328$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE14328$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE14328$public
 #&gt; [1] TRUE
@@ -1620,20 +1620,8 @@ to clear memory.</p></td>
 #&gt; $GSE14328$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE14328$bioAssayCount
-#&gt; [1] 36
-#&gt; 
-#&gt; $GSE14328$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE14328$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE14328$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE14328$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE14328$description
 #&gt; [1] " We integrated three transplant rejection microarray studies examining gene expression in samples from pediatric renal, adult renal, and adult heart transplants. We performed one study ourselves and retrieved two others from the NCBI Gene Expression Omnibus (GEO)(GSE4470 and GSE1563). We identified 45 genes that were upregulated in common in acute rejection. Half were involved in one immune-related pathway. Among ten proteins we tested by serum ELISA, three successfully distinguished acute rejection from stable transplants. These were CXCL9, PECAM1, and CD44, with areas under the receiver operating characteristic curves of 0.844, 0.802, and 0.738, respectively. Immunohistochemistry showed that the PECAM1 protein was increased in acute rejection in renal, liver and heart transplants versus normal tissues. Our results show that integrating publicly-available gene expression data sets is a fast, powerful, and cost-effective way to identify serum-detectable diagnostic biomarkers.\nLast Updated (by provider): Dec 15 2010\n\nContributers:  Neeraja Kambham Atul Butte Bryan Klassen Minnie Sarwal Tara Sigdel Sue Hsieh Li Li Rong Chen\n"
@@ -1648,16 +1636,19 @@ to clear memory.</p></td>
 #&gt; [1] 2105
 #&gt; 
 #&gt; $GSE14328$lastUpdated
-#&gt; [1] 1.519925e+12
-#&gt; 
-#&gt; $GSE14328$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537222e+12
 #&gt; 
 #&gt; $GSE14328$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE14328$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE14328$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE14328$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE14328$lastNeedsAttentionEvent
 #&gt; NULL
@@ -1668,11 +1659,8 @@ to clear memory.</p></td>
 #&gt; $GSE14328$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE14328$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE14328$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE50058
@@ -1697,6 +1685,9 @@ to clear memory.</p></td>
 #&gt; $GSE50058$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=1.1e-08"
 #&gt; 
+#&gt; $GSE50058$experimentalDesign
+#&gt; [1] 6274
+#&gt; 
 #&gt; $GSE50058$accession
 #&gt; [1] "GSE50058"
 #&gt; 
@@ -1709,13 +1700,37 @@ to clear memory.</p></td>
 #&gt; $GSE50058$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE50058$experimentalDesign
-#&gt; [1] 6274
+#&gt; $GSE50058$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE50058$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE50058$geeq
+#&gt; $GSE50058$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE50058$geeq$publicQualityScore
+#&gt; [1] 0.2820048
+#&gt; 
+#&gt; $GSE50058$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE50058$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE50058$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE50058$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE50058$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE50058$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE50058$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1744,46 +1759,22 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE50058$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.8485738
+#&gt; [1] -0.0004539636
 #&gt; 
 #&gt; $GSE50058$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.8622591
+#&gt; [1] -0.02596641
 #&gt; 
 #&gt; $GSE50058$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.008131342
+#&gt; [1] 0.1163076
 #&gt; 
 #&gt; $GSE50058$geeq$noVectors
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE50058$geeq$corrMatIssues
-#&gt; [1] 0
+#&gt; [1] 2
 #&gt; 
 #&gt; $GSE50058$geeq$replicatesIssues
 #&gt; [1] 0
-#&gt; 
-#&gt; $GSE50058$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50058$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50058$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50058$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE50058$geeq$publicQualityScore
-#&gt; [1] 0.4088942
-#&gt; 
-#&gt; $GSE50058$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50058$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE50058$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
 #&gt; 
 #&gt; $GSE50058$geeq$`_totalInQuery`
 #&gt; [1] 0
@@ -1792,11 +1783,17 @@ to clear memory.</p></td>
 #&gt; [1] 4052
 #&gt; 
 #&gt; 
-#&gt; $GSE50058$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE50058$bioAssayCount
+#&gt; [1] 101
 #&gt; 
-#&gt; $GSE50058$parentTaxonId
-#&gt; NULL
+#&gt; $GSE50058$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE50058$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE50058$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE50058$public
 #&gt; [1] TRUE
@@ -1813,20 +1810,8 @@ to clear memory.</p></td>
 #&gt; $GSE50058$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE50058$bioAssayCount
-#&gt; [1] 101
-#&gt; 
-#&gt; $GSE50058$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE50058$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE50058$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE50058$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE50058$description
 #&gt; [1] " Using meta-analysis of eight independent transplant datasets (236 graft biopsy samples) from four organs, we identified a common rejection module (CRM) consisting of 11 genes that were significantly overexpressed in acute rejection (AR) across all transplanted organs. The CRM genes could diagnose AR with high specificity and sensitivity in three additional independent cohorts (794 samples). In another two independent cohorts (151 renal transplant biopsies), the CRM genes correlated with the extent of graft injury and predicted future injury to a graft using protocol  biopsies. Inferred drug mechanisms from the literature suggested that two FDA-approved drugs (atorvastatin and dasatinib), approved for non-transplant indications, could regulate specific CRM genes and reduce the number of graft infiltrating cells during acute rejection. We treated mice with HLA-mismatched murine cardiac transplant with atorvastatin and dasatinib and showed reduction of the CRM genes, significant reduction of graft infiltrating cells, and extended graft survival. We further validated the beneficial effect of atorvastatina on graft survival by retrospective analysis of electronic medical records of a single-center cohort of 2,515 renal transplant patients. In conclusion, we identified a CRM in transplantation that provides new opportunities for diagnosis, drug repositioning and rational drug design. The eight transplant data sets used for discovery include  GSE4315, GSE2596, GSE4470, GSE9377,  GSE1563, GSE9493, GSE13440, GSE6095. The two additional independent cohorts of 151 transplant biopsies are GSE25902 and GSE1563. Not all samples from all studies were used. Only the samples marked as either AR or STA in each data set were used for analysis.\nLast Updated (by provider): Oct 04 2013\n\nContributers:  Purvesh Khatri\n"
@@ -1841,16 +1826,19 @@ to clear memory.</p></td>
 #&gt; [1] 7060
 #&gt; 
 #&gt; $GSE50058$lastUpdated
-#&gt; [1] 1.519893e+12
-#&gt; 
-#&gt; $GSE50058$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537214e+12
 #&gt; 
 #&gt; $GSE50058$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE50058$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE50058$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE50058$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE50058$lastNeedsAttentionEvent
 #&gt; NULL
@@ -1861,11 +1849,8 @@ to clear memory.</p></td>
 #&gt; $GSE50058$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE50058$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE50058$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE46474
@@ -1890,6 +1875,9 @@ to clear memory.</p></td>
 #&gt; $GSE46474$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE46474$experimentalDesign
+#&gt; [1] 7701
+#&gt; 
 #&gt; $GSE46474$accession
 #&gt; [1] "GSE46474"
 #&gt; 
@@ -1902,13 +1890,37 @@ to clear memory.</p></td>
 #&gt; $GSE46474$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE46474$experimentalDesign
-#&gt; [1] 7701
+#&gt; $GSE46474$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE46474$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE46474$geeq
+#&gt; $GSE46474$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE46474$geeq$publicQualityScore
+#&gt; [1] 0.4236576
+#&gt; 
+#&gt; $GSE46474$geeq$publicSuitabilityScore
+#&gt; [1] 0.9125
+#&gt; 
+#&gt; $GSE46474$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE46474$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE46474$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE46474$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE46474$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE46474$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1937,13 +1949,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE46474$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9205675
+#&gt; [1] -0.02422703
 #&gt; 
 #&gt; $GSE46474$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9300798
+#&gt; [1] -0.0343967
 #&gt; 
 #&gt; $GSE46474$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.001403027
+#&gt; [1] 0.1065743
 #&gt; 
 #&gt; $GSE46474$geeq$noVectors
 #&gt; [1] FALSE
@@ -1954,30 +1966,6 @@ to clear memory.</p></td>
 #&gt; $GSE46474$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE46474$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE46474$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE46474$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE46474$geeq$batchCorrected
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE46474$geeq$publicQualityScore
-#&gt; [1] 0.56144
-#&gt; 
-#&gt; $GSE46474$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE46474$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE46474$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE46474$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1985,11 +1973,17 @@ to clear memory.</p></td>
 #&gt; [1] 8442
 #&gt; 
 #&gt; 
-#&gt; $GSE46474$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE46474$bioAssayCount
+#&gt; [1] 40
 #&gt; 
-#&gt; $GSE46474$parentTaxonId
-#&gt; NULL
+#&gt; $GSE46474$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE46474$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE46474$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE46474$public
 #&gt; [1] TRUE
@@ -2006,20 +2000,8 @@ to clear memory.</p></td>
 #&gt; $GSE46474$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE46474$bioAssayCount
-#&gt; [1] 40
-#&gt; 
-#&gt; $GSE46474$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE46474$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE46474$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE46474$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE46474$description
 #&gt; [1] " Acute renal allograft rejection is an important complication in kidney transplantation. Accurate diagnosis of rejection events is necessary for timely response and treatment. We illustrate the usefulness and biological relevance of selected multivariate approaches to detect rejection from genomic and proteomic signals. The data was used to study gene expression changes using whole genome microarray analysis of peripheral blood from subjects with acute rejection (n=20) and non-rejecting controls (n=20) to obtain insight into the molecular and biological causation of acute renal allograft rejection when combined with proteomics (iTRAQ) data for the same patients/time-points.\nLast Updated (by provider): Jun 06 2014\n\nContributers:  W R McMaster Paul A Keown Bruce M McManus\n"
@@ -2034,16 +2016,19 @@ to clear memory.</p></td>
 #&gt; [1] 8567
 #&gt; 
 #&gt; $GSE46474$lastUpdated
-#&gt; [1] 1.524085e+12
-#&gt; 
-#&gt; $GSE46474$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537228e+12
 #&gt; 
 #&gt; $GSE46474$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE46474$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE46474$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE46474$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE46474$lastNeedsAttentionEvent
 #&gt; $GSE46474$lastNeedsAttentionEvent$performer
@@ -2085,11 +2070,8 @@ to clear memory.</p></td>
 #&gt; $GSE46474$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE46474$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE46474$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE37838
@@ -2114,6 +2096,9 @@ to clear memory.</p></td>
 #&gt; $GSE37838$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE37838$experimentalDesign
+#&gt; [1] 5393
+#&gt; 
 #&gt; $GSE37838$accession
 #&gt; [1] "GSE37838"
 #&gt; 
@@ -2126,13 +2111,37 @@ to clear memory.</p></td>
 #&gt; $GSE37838$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE37838$experimentalDesign
-#&gt; [1] 5393
+#&gt; $GSE37838$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE37838$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE37838$geeq
+#&gt; $GSE37838$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE37838$geeq$publicQualityScore
+#&gt; [1] 0.2824983
+#&gt; 
+#&gt; $GSE37838$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE37838$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE37838$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE37838$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE37838$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE37838$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE37838$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -2178,30 +2187,6 @@ to clear memory.</p></td>
 #&gt; $GSE37838$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE37838$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE37838$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE37838$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE37838$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE37838$geeq$publicQualityScore
-#&gt; [1] 0.2824983
-#&gt; 
-#&gt; $GSE37838$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE37838$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE37838$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE37838$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2209,11 +2194,17 @@ to clear memory.</p></td>
 #&gt; [1] 1033
 #&gt; 
 #&gt; 
-#&gt; $GSE37838$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE37838$bioAssayCount
+#&gt; [1] 78
 #&gt; 
-#&gt; $GSE37838$parentTaxonId
-#&gt; NULL
+#&gt; $GSE37838$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE37838$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE37838$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE37838$public
 #&gt; [1] TRUE
@@ -2230,20 +2221,8 @@ to clear memory.</p></td>
 #&gt; $GSE37838$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE37838$bioAssayCount
-#&gt; [1] 78
-#&gt; 
-#&gt; $GSE37838$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE37838$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE37838$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE37838$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE37838$description
 #&gt; [1] " In deceased donor kidney transplantation, acute kidney injury (AKI) prioir to surgery is a major determinant of delayed graft function (DGF), but AKI is histologically silent and difficult to assess. We hypothesized that a molecular measurement of AKI would add power to conventional risk assessments to predict the early poor allograft function at first week post transplantation.\nLast Updated (by provider): Feb 26 2013\n\nContributers:  Philip F Halloran Chatchai Kreepala Konrad S Famulski\n"
@@ -2258,16 +2237,19 @@ to clear memory.</p></td>
 #&gt; [1] 6067
 #&gt; 
 #&gt; $GSE37838$lastUpdated
-#&gt; [1] 1.526601e+12
-#&gt; 
-#&gt; $GSE37838$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE37838$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE37838$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE37838$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE37838$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE37838$lastNeedsAttentionEvent
 #&gt; $GSE37838$lastNeedsAttentionEvent$performer
@@ -2309,11 +2291,8 @@ to clear memory.</p></td>
 #&gt; $GSE37838$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE37838$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE37838$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE12720
@@ -2338,6 +2317,9 @@ to clear memory.</p></td>
 #&gt; $GSE12720$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE12720$experimentalDesign
+#&gt; [1] 4290
+#&gt; 
 #&gt; $GSE12720$accession
 #&gt; [1] "GSE12720"
 #&gt; 
@@ -2350,13 +2332,37 @@ to clear memory.</p></td>
 #&gt; $GSE12720$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE12720$experimentalDesign
-#&gt; [1] 4290
+#&gt; $GSE12720$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE12720$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE12720$geeq
+#&gt; $GSE12720$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE12720$geeq$publicQualityScore
+#&gt; [1] 0.7114103
+#&gt; 
+#&gt; $GSE12720$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE12720$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE12720$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE12720$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE12720$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE12720$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE12720$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -2402,30 +2408,6 @@ to clear memory.</p></td>
 #&gt; $GSE12720$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE12720$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE12720$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE12720$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE12720$geeq$batchCorrected
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE12720$geeq$publicQualityScore
-#&gt; [1] 0.7114103
-#&gt; 
-#&gt; $GSE12720$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE12720$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE12720$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE12720$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2433,11 +2415,17 @@ to clear memory.</p></td>
 #&gt; [1] 2299
 #&gt; 
 #&gt; 
-#&gt; $GSE12720$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE12720$bioAssayCount
+#&gt; [1] 63
 #&gt; 
-#&gt; $GSE12720$parentTaxonId
-#&gt; NULL
+#&gt; $GSE12720$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE12720$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE12720$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE12720$public
 #&gt; [1] TRUE
@@ -2454,20 +2442,8 @@ to clear memory.</p></td>
 #&gt; $GSE12720$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE12720$bioAssayCount
-#&gt; [1] 63
-#&gt; 
-#&gt; $GSE12720$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE12720$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE12720$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE12720$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE12720$description
 #&gt; [1] " Because of inherent differences between deceased donor (DD) and living donor (LD) liver grafts, we hypothesize that the molecular signatures will be unique, correlating with specific biologic pathways and clinical patterns.    Following reperfusion, 579 genes in DD grafts and 1324 genes in LDs were differentially expressed (p&lt;0.005). Many up-regulated LD genes were related to regeneration, biosynthesis and cell cycle, and a large number of down-regulated genes were linked to hepatic metabolism and energy pathways correlating with post-transplant clinical laboratory findings.  There was significant up-regulation of inflammatory/immune genes in both DD and LD, each with a distinct pattern. Gene expression patterns of select genes associated with inflammation and regeneration in LD and DD grafts correlated with protein expression. Unique patterns of early gene expression are seen in LD and DD liver grafts, correlating with protein expression and clinical results, demonstrating distinct inflammatory profiles and significant down-regulation of metabolic pathways in LD grafts. \nLast Updated (by provider): Apr 12 2012\n\nContributers:  Sunil M Kurian\n"
@@ -2482,16 +2458,19 @@ to clear memory.</p></td>
 #&gt; [1] 4750
 #&gt; 
 #&gt; $GSE12720$lastUpdated
-#&gt; [1] 1.526533e+12
-#&gt; 
-#&gt; $GSE12720$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537217e+12
 #&gt; 
 #&gt; $GSE12720$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE12720$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE12720$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE12720$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE12720$lastNeedsAttentionEvent
 #&gt; $GSE12720$lastNeedsAttentionEvent$performer
@@ -2533,11 +2512,8 @@ to clear memory.</p></td>
 #&gt; $GSE12720$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE12720$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE12720$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE1563
@@ -2562,6 +2538,9 @@ to clear memory.</p></td>
 #&gt; $GSE1563$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC3); p=1.0e-08"
 #&gt; 
+#&gt; $GSE1563$experimentalDesign
+#&gt; [1] 2582
+#&gt; 
 #&gt; $GSE1563$accession
 #&gt; [1] "GSE1563"
 #&gt; 
@@ -2574,13 +2553,37 @@ to clear memory.</p></td>
 #&gt; $GSE1563$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE1563$experimentalDesign
-#&gt; [1] 2582
+#&gt; $GSE1563$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE1563$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE1563$geeq
+#&gt; $GSE1563$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1563$geeq$publicQualityScore
+#&gt; [1] 0.1407058
+#&gt; 
+#&gt; $GSE1563$geeq$publicSuitabilityScore
+#&gt; [1] 0.6875
+#&gt; 
+#&gt; $GSE1563$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE1563$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE1563$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1563$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1563$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE1563$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 0
 #&gt; 
@@ -2626,30 +2629,6 @@ to clear memory.</p></td>
 #&gt; $GSE1563$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE1563$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1563$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1563$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1563$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1563$geeq$publicQualityScore
-#&gt; [1] 0.1407058
-#&gt; 
-#&gt; $GSE1563$geeq$publicSuitabilityScore
-#&gt; [1] 0.6875
-#&gt; 
-#&gt; $GSE1563$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE1563$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE1563$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2657,11 +2636,17 @@ to clear memory.</p></td>
 #&gt; [1] 2180
 #&gt; 
 #&gt; 
-#&gt; $GSE1563$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE1563$bioAssayCount
+#&gt; [1] 62
 #&gt; 
-#&gt; $GSE1563$parentTaxonId
-#&gt; NULL
+#&gt; $GSE1563$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE1563$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1563$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1563$public
 #&gt; [1] TRUE
@@ -2678,20 +2663,8 @@ to clear memory.</p></td>
 #&gt; $GSE1563$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE1563$bioAssayCount
-#&gt; [1] 62
-#&gt; 
-#&gt; $GSE1563$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE1563$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE1563$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1563$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1563$description
 #&gt; [1] " We used DNA microarrays (HG-U95Av2 GeneChips) to determine gene expression profiles for kidney biopsies and peripheral blood lymphocytes (PBLs) in transplant patients. Sample classes include kidney biopsies and PBLs from patients with 1) healthy normal donor kidneys, 2) well-functioning transplants with no clinical evidence of rejection, 3) kidneys undergoing acute rejection, and 4) transplants with renal dysfunction without rejection. Nomenclature for samples is as follows: 1) all sample names include either BX or PBL to indicate that they were derived from biopsies or PBLs respectively, 2) C indicates samples from healthy normal donors, 3) TX indicates samples from patients with well-functioning transplants with no clinical evidence of rejection, 3) AR indicates samples from transplant patients with kidneys undergoing acute rejection, 4) NR indicates samples from transplant patients with renal dysfunction without rejection. Abbreviations used to describe patient samples include the following: BX - Biopsy; PBL- Peripheral Blood Lymphocytes; CsA -Cyclosporine; MMF - Mycophenolate Mofetil; P - Prednisone; FK - Tacrolimus;  SRL - Sirolimus; CAD -Cadaveric;  LD - Live Donor; Scr - Serum Creatinine; ATN - Acute Tubular Necrosis CNI - Calcineurin Inhibitor; FSGS - Focal Segmental Glomerulosclerosis several array data sets did not pass quality control and were not analyzed. These include AR1PBL, NR4BX, and NR6PBL\nLast Updated (by provider): May 29 2005\n\nContributers:  Daniel J Cook Steven R Head Starlette M Sharp Jie Zhang Steven A Kay Daniel R Salomon Thomas C Whisenant Timothy Gilmartin Jeffrey D Chismar Sunil M Kurian Stuart M Flechner Tony Mondala Steve Horvath John R Walker\n\nIncludes GDS724.\n Update date: Sep 21 2004.\n Dataset description GDS724: Analysis of kidney transplant rejection by expression profiling of kidney biopsies and peripheral blood lymphocytes from patients. Results identify expression profiles unique to rejection, dysfunction without rejection, and well-functioning transplants..\n"
@@ -2706,16 +2679,19 @@ to clear memory.</p></td>
 #&gt; [1] 2314
 #&gt; 
 #&gt; $GSE1563$lastUpdated
-#&gt; [1] 1.524861e+12
-#&gt; 
-#&gt; $GSE1563$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537224e+12
 #&gt; 
 #&gt; $GSE1563$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1563$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE1563$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1563$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE1563$lastNeedsAttentionEvent
 #&gt; $GSE1563$lastNeedsAttentionEvent$performer
@@ -2757,11 +2733,8 @@ to clear memory.</p></td>
 #&gt; $GSE1563$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE1563$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE1563$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE8021
@@ -2786,6 +2759,9 @@ to clear memory.</p></td>
 #&gt; $GSE8021$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE8021$experimentalDesign
+#&gt; [1] 726
+#&gt; 
 #&gt; $GSE8021$accession
 #&gt; [1] "GSE8021"
 #&gt; 
@@ -2798,15 +2774,39 @@ to clear memory.</p></td>
 #&gt; $GSE8021$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE8021$experimentalDesign
-#&gt; [1] 726
+#&gt; $GSE8021$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE8021$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE8021$geeq
-#&gt; $GSE8021$geeq$sScoreAvgPlatformPopularity
+#&gt; $GSE8021$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE8021$geeq$publicQualityScore
+#&gt; [1] 0.7081901
+#&gt; 
+#&gt; $GSE8021$geeq$publicSuitabilityScore
+#&gt; [1] 0.875
+#&gt; 
+#&gt; $GSE8021$geeq$qScorePublicBatchEffect
 #&gt; [1] -1
+#&gt; 
+#&gt; $GSE8021$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE8021$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE8021$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE8021$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE8021$geeq$sScoreAvgPlatformPopularity
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE8021$geeq$sScoreAvgPlatformSize
 #&gt; [1] 0
@@ -2815,13 +2815,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE8021$geeq$sScoreRawData
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE8021$geeq$sScoreMissingValues
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE8021$geeq$qScoreOutliers
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE8021$geeq$qScorePlatformsTech
 #&gt; [1] 1
@@ -2833,46 +2833,22 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE8021$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0
+#&gt; [1] 0.9554222
 #&gt; 
 #&gt; $GSE8021$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0
+#&gt; [1] 0.9573304
 #&gt; 
 #&gt; $GSE8021$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0
+#&gt; [1] 0.000187939
 #&gt; 
 #&gt; $GSE8021$geeq$noVectors
-#&gt; [1] TRUE
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE8021$geeq$corrMatIssues
-#&gt; [1] 1
+#&gt; [1] 2
 #&gt; 
 #&gt; $GSE8021$geeq$replicatesIssues
 #&gt; [1] 0
-#&gt; 
-#&gt; $GSE8021$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE8021$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE8021$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE8021$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE8021$geeq$publicQualityScore
-#&gt; [1] 0.2857143
-#&gt; 
-#&gt; $GSE8021$geeq$publicSuitabilityScore
-#&gt; [1] 0.125
-#&gt; 
-#&gt; $GSE8021$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE8021$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
 #&gt; 
 #&gt; $GSE8021$geeq$`_totalInQuery`
 #&gt; [1] 0
@@ -2881,11 +2857,17 @@ to clear memory.</p></td>
 #&gt; [1] 1972
 #&gt; 
 #&gt; 
-#&gt; $GSE8021$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE8021$bioAssayCount
+#&gt; [1] 50
 #&gt; 
-#&gt; $GSE8021$parentTaxonId
-#&gt; NULL
+#&gt; $GSE8021$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE8021$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE8021$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE8021$public
 #&gt; [1] TRUE
@@ -2902,20 +2884,8 @@ to clear memory.</p></td>
 #&gt; $GSE8021$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE8021$bioAssayCount
-#&gt; [1] 50
-#&gt; 
-#&gt; $GSE8021$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE8021$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE8021$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE8021$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE8021$description
 #&gt; [1] " Expression profile of human donor lungs that have developed primary graft dysfunction (PGD) after lung transplantation and those that have not. In this study, we attempt to further our understanding of PGD by observing the changes in gene expression across donor lungs that developed PGD versus those that did not.\r\nLast Updated (by provider): Jun 06 2007\r\n\r\nContributers:  Sekhar Dharmarajan Monika Ray\r\n"
@@ -2930,16 +2900,19 @@ to clear memory.</p></td>
 #&gt; [1] 619
 #&gt; 
 #&gt; $GSE8021$lastUpdated
-#&gt; [1] 1.524291e+12
-#&gt; 
-#&gt; $GSE8021$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537212e+12
 #&gt; 
 #&gt; $GSE8021$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE8021$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE8021$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE8021$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE8021$lastNeedsAttentionEvent
 #&gt; $GSE8021$lastNeedsAttentionEvent$performer
@@ -2981,11 +2954,8 @@ to clear memory.</p></td>
 #&gt; $GSE8021$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE8021$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE8021$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE22459
@@ -3010,6 +2980,9 @@ to clear memory.</p></td>
 #&gt; $GSE22459$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE22459$experimentalDesign
+#&gt; [1] 3378
+#&gt; 
 #&gt; $GSE22459$accession
 #&gt; [1] "GSE22459"
 #&gt; 
@@ -3022,13 +2995,37 @@ to clear memory.</p></td>
 #&gt; $GSE22459$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE22459$experimentalDesign
-#&gt; [1] 3378
+#&gt; $GSE22459$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE22459$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE22459$geeq
+#&gt; $GSE22459$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE22459$geeq$publicQualityScore
+#&gt; [1] 0.8544258
+#&gt; 
+#&gt; $GSE22459$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22459$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22459$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22459$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22459$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22459$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE22459$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -3039,10 +3036,10 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE22459$geeq$sScoreRawData
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE22459$geeq$sScoreMissingValues
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE22459$geeq$qScoreOutliers
 #&gt; [1] 1
@@ -3054,48 +3051,24 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE22459$geeq$qScoreBatchInfo
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE22459$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9423929
+#&gt; [1] -0.01272326
 #&gt; 
 #&gt; $GSE22459$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9544383
+#&gt; [1] -0.01901946
 #&gt; 
 #&gt; $GSE22459$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.001311401
+#&gt; [1] 0.0723316
 #&gt; 
 #&gt; $GSE22459$geeq$noVectors
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22459$geeq$corrMatIssues
-#&gt; [1] 0
+#&gt; [1] 2
 #&gt; 
 #&gt; $GSE22459$geeq$replicatesIssues
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE22459$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22459$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22459$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22459$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE22459$geeq$publicQualityScore
-#&gt; [1] 0.4220626
-#&gt; 
-#&gt; $GSE22459$geeq$publicSuitabilityScore
-#&gt; [1] 0.5
-#&gt; 
-#&gt; $GSE22459$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE22459$geeq$qScorePublicBatchConfound
 #&gt; [1] 0
 #&gt; 
 #&gt; $GSE22459$geeq$`_totalInQuery`
@@ -3105,11 +3078,17 @@ to clear memory.</p></td>
 #&gt; [1] 5099
 #&gt; 
 #&gt; 
-#&gt; $GSE22459$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE22459$bioAssayCount
+#&gt; [1] 65
 #&gt; 
-#&gt; $GSE22459$parentTaxonId
-#&gt; NULL
+#&gt; $GSE22459$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE22459$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22459$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22459$public
 #&gt; [1] TRUE
@@ -3126,20 +3105,8 @@ to clear memory.</p></td>
 #&gt; $GSE22459$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE22459$bioAssayCount
-#&gt; [1] 65
-#&gt; 
-#&gt; $GSE22459$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE22459$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE22459$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE22459$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22459$description
 #&gt; [1] " We previously observed reduced graft survival for kidney transplants having interstitial fibrosis with subclinical inflammation, but not fibrosis alone, on 1-year protocol biopsy. The current study aimed to determine whether fibrosis with inflammation at 1 year is associated with renal functional decline in a low-risk transplant cohort and to characterize the nature of the inflammation. Subjects were living-donor, tacrolimus/mycophenolate-treated transplant recipients without overt risk factors for reduced graft survival (n=151). Transplants with normal histology (n=86) or fibrosis alone (n=45) on 1-year protocol biopsy had stable renal function between 1 and 5 years, while those having fibrosis with inflammation (n=20) had declining glomerular filtration rate and reduced graft survival. Immunohistochemistry confirmed increased interstitial T-cells and macrophages/dendritic cells in the fibrosis with inflammation group. Gene expression was performed on a subset of biopsies in each group and demonstrated increased expression of transcripts related to innate and cognate immunity in transplants having fibrosis with inflammation. Pathway- and pathological process-specific analyses of microarray profiles revealed that, in fibrosis with inflammation, over-expressed transcripts were enriched for potentially damaging immunological activities including Toll-like receptor signaling, antigen presentation/dendritic cell maturation, interferon gamma-inducible response, cytotoxic T lymphocyte-associated and acute rejection-associated genes. Thus, fibrosis with inflammation in 1-year protocol biopsies is associated with reduced graft survival and function and with a rejection-like gene expression signature even in recipients with no clinical risk for inferior outcome. Early interventions aimed at altering rejection-like inflammation may favor improved long-term KTx survival.\nLast Updated (by provider): Aug 18 2011\n\nContributers:  Fernando G Cosio Lynn D Cornell Matthew D Griffin Walter D Park Mark D Stegall\n"
@@ -3154,16 +3121,19 @@ to clear memory.</p></td>
 #&gt; [1] 3115
 #&gt; 
 #&gt; $GSE22459$lastUpdated
-#&gt; [1] 1.52654e+12
-#&gt; 
-#&gt; $GSE22459$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537209e+12
 #&gt; 
 #&gt; $GSE22459$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22459$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE22459$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22459$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE22459$lastNeedsAttentionEvent
 #&gt; $GSE22459$lastNeedsAttentionEvent$performer
@@ -3205,11 +3175,8 @@ to clear memory.</p></td>
 #&gt; $GSE22459$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE22459$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE22459$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE34437
@@ -3234,6 +3201,9 @@ to clear memory.</p></td>
 #&gt; $GSE34437$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=1.8e-06"
 #&gt; 
+#&gt; $GSE34437$experimentalDesign
+#&gt; [1] 7591
+#&gt; 
 #&gt; $GSE34437$accession
 #&gt; [1] "GSE34437"
 #&gt; 
@@ -3246,13 +3216,37 @@ to clear memory.</p></td>
 #&gt; $GSE34437$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE34437$experimentalDesign
-#&gt; [1] 7591
+#&gt; $GSE34437$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE34437$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE34437$geeq
+#&gt; $GSE34437$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE34437$geeq$publicQualityScore
+#&gt; [1] 0.2711887
+#&gt; 
+#&gt; $GSE34437$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE34437$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE34437$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE34437$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE34437$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE34437$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE34437$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -3298,30 +3292,6 @@ to clear memory.</p></td>
 #&gt; $GSE34437$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE34437$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE34437$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE34437$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE34437$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE34437$geeq$publicQualityScore
-#&gt; [1] 0.2711887
-#&gt; 
-#&gt; $GSE34437$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE34437$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE34437$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE34437$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -3329,11 +3299,17 @@ to clear memory.</p></td>
 #&gt; [1] 8155
 #&gt; 
 #&gt; 
-#&gt; $GSE34437$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE34437$bioAssayCount
+#&gt; [1] 66
 #&gt; 
-#&gt; $GSE34437$parentTaxonId
-#&gt; NULL
+#&gt; $GSE34437$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE34437$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE34437$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE34437$public
 #&gt; [1] TRUE
@@ -3350,20 +3326,8 @@ to clear memory.</p></td>
 #&gt; $GSE34437$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE34437$bioAssayCount
-#&gt; [1] 66
-#&gt; 
-#&gt; $GSE34437$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE34437$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE34437$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE34437$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE34437$description
 #&gt; [1] " Genesets for the IL-17 pathway and Th17 T-helper cell subtype showed increasing enrichment in 33 pre-transplant donor biopsies and 33 matching post-transplant biopsies from patients with increasing Banff grades of acute rejection (no signficant abnormalities, n=17; borderline, n=4; ARIA, n=7; ARIB, n=6) in gene set analysis using SAM (GSA, FDR 0.5; 1000 permutations, log rank regression) for a total of 3307 publically available and manually curated gene-sets. 14 genes of the IL-17 pathway gene-set and 132 genes of the Th17 gene set segregated patients according to their histological diagnosis by unsupervised hierarchical clustering and principal component analysis.\nLast Updated (by provider): Jun 06 2014\n\nContributers:  Homare Okamura Naoyuki Kimura Minnie M Sarwal Yongquan Fong Mike Fischbein Robert C Robbins Silke Roedder\n"
@@ -3378,16 +3342,19 @@ to clear memory.</p></td>
 #&gt; [1] 8452
 #&gt; 
 #&gt; $GSE34437$lastUpdated
-#&gt; [1] 1.526339e+12
-#&gt; 
-#&gt; $GSE34437$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537227e+12
 #&gt; 
 #&gt; $GSE34437$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE34437$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE34437$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE34437$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE34437$lastNeedsAttentionEvent
 #&gt; $GSE34437$lastNeedsAttentionEvent$performer
@@ -3429,11 +3396,8 @@ to clear memory.</p></td>
 #&gt; $GSE34437$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE34437$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE34437$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE15480
@@ -3458,6 +3422,9 @@ to clear memory.</p></td>
 #&gt; $GSE15480$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE15480$experimentalDesign
+#&gt; [1] 4424
+#&gt; 
 #&gt; $GSE15480$accession
 #&gt; [1] "GSE15480"
 #&gt; 
@@ -3470,13 +3437,37 @@ to clear memory.</p></td>
 #&gt; $GSE15480$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE15480$experimentalDesign
-#&gt; [1] 4424
+#&gt; $GSE15480$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE15480$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE15480$geeq
+#&gt; $GSE15480$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE15480$geeq$publicQualityScore
+#&gt; [1] 0.7078328
+#&gt; 
+#&gt; $GSE15480$geeq$publicSuitabilityScore
+#&gt; [1] 0.6625
+#&gt; 
+#&gt; $GSE15480$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE15480$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE15480$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE15480$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE15480$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE15480$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -3522,30 +3513,6 @@ to clear memory.</p></td>
 #&gt; $GSE15480$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE15480$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE15480$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE15480$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE15480$geeq$batchCorrected
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE15480$geeq$publicQualityScore
-#&gt; [1] 0.7078328
-#&gt; 
-#&gt; $GSE15480$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE15480$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE15480$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE15480$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -3553,11 +3520,17 @@ to clear memory.</p></td>
 #&gt; [1] 2741
 #&gt; 
 #&gt; 
-#&gt; $GSE15480$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE15480$bioAssayCount
+#&gt; [1] 24
 #&gt; 
-#&gt; $GSE15480$parentTaxonId
-#&gt; NULL
+#&gt; $GSE15480$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE15480$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE15480$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE15480$public
 #&gt; [1] TRUE
@@ -3574,20 +3547,8 @@ to clear memory.</p></td>
 #&gt; $GSE15480$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE15480$bioAssayCount
-#&gt; [1] 24
-#&gt; 
-#&gt; $GSE15480$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE15480$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE15480$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE15480$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE15480$description
 #&gt; [1] " The clear benefits of ischemic preconditioning (IPC) in reducing ischemia reperfusion injury (IRI) remain indistinct in human liver transplantation. To further understand the mechanistic aspects of IPC in human deceased donor liver transplantation (DDLT), we performed microarray analyses to determine global gene expression profiles associated with IPC administration. Donor and recipient characteristics in both groups were comparable. Clinical data from our study subset and larger trial were similar.  IPC increased expression of 10 transcripts at either time point with roles in: antioxidant defenses, immunological response, lipid biosynthesis, and xenobiotic metabolism.  IPC decreased the expression of 1 cell development related transcript.  Conclusions: 1) IPC in DDLT increased the expression of antioxidant transcripts similar to studies in animal IPC, anesthetic, and remote IPC.  2) IPC increased expression of lipogenic transcripts, which may be relevant to the clinically observed increased IRI in our IPC group. 3) Our microarray findings support our clinical observations and are compatible with the varied outcomes of hepatic IPC studies in human liver transplantation.\nLast Updated (by provider): May 25 2012\n\nContributers:  Baburao Koneru Patricia Soteropoulus Helen Fernandes George Dikdan Ali Raza\n"
@@ -3602,16 +3563,19 @@ to clear memory.</p></td>
 #&gt; [1] 4868
 #&gt; 
 #&gt; $GSE15480$lastUpdated
-#&gt; [1] 1.527717e+12
-#&gt; 
-#&gt; $GSE15480$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537218e+12
 #&gt; 
 #&gt; $GSE15480$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE15480$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE15480$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE15480$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE15480$lastNeedsAttentionEvent
 #&gt; $GSE15480$lastNeedsAttentionEvent$performer
@@ -3653,11 +3617,8 @@ to clear memory.</p></td>
 #&gt; $GSE15480$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE15480$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE15480$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE5967
@@ -3682,6 +3643,9 @@ to clear memory.</p></td>
 #&gt; $GSE5967$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE5967$experimentalDesign
+#&gt; [1] 7374
+#&gt; 
 #&gt; $GSE5967$accession
 #&gt; [1] "GSE5967"
 #&gt; 
@@ -3694,13 +3658,37 @@ to clear memory.</p></td>
 #&gt; $GSE5967$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE5967$experimentalDesign
-#&gt; [1] 7374
+#&gt; $GSE5967$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE5967$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE5967$geeq
+#&gt; $GSE5967$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE5967$geeq$publicQualityScore
+#&gt; [1] 0.8530205
+#&gt; 
+#&gt; $GSE5967$geeq$publicSuitabilityScore
+#&gt; [1] 0.7875
+#&gt; 
+#&gt; $GSE5967$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE5967$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE5967$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE5967$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE5967$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE5967$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -3729,13 +3717,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE5967$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9658853
+#&gt; [1] 0.9658849
 #&gt; 
 #&gt; $GSE5967$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9711445
+#&gt; [1] 0.9711437
 #&gt; 
 #&gt; $GSE5967$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.0003208338
+#&gt; [1] 0.0003208382
 #&gt; 
 #&gt; $GSE5967$geeq$noVectors
 #&gt; [1] FALSE
@@ -3746,30 +3734,6 @@ to clear memory.</p></td>
 #&gt; $GSE5967$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE5967$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE5967$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE5967$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE5967$geeq$batchCorrected
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE5967$geeq$publicQualityScore
-#&gt; [1] 0.8530206
-#&gt; 
-#&gt; $GSE5967$geeq$publicSuitabilityScore
-#&gt; [1] 0.7875
-#&gt; 
-#&gt; $GSE5967$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE5967$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE5967$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -3777,11 +3741,17 @@ to clear memory.</p></td>
 #&gt; [1] 7521
 #&gt; 
 #&gt; 
-#&gt; $GSE5967$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE5967$bioAssayCount
+#&gt; [1] 21
 #&gt; 
-#&gt; $GSE5967$parentTaxonId
-#&gt; NULL
+#&gt; $GSE5967$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE5967$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE5967$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE5967$public
 #&gt; [1] TRUE
@@ -3798,20 +3768,8 @@ to clear memory.</p></td>
 #&gt; $GSE5967$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE5967$bioAssayCount
-#&gt; [1] 21
-#&gt; 
-#&gt; $GSE5967$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE5967$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE5967$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE5967$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE5967$description
 #&gt; [1] " BACKGROUND: Assessment of gene expression in peripheral blood may provide a noninvasive screening test for allograft rejection. We hypothesized that changes in peripheral blood expression profiles would correlate with biopsy-proven rejection and would resolve after treatment of rejection episodes. METHODS AND RESULTS: We performed a case-control study nested within a cohort of 189 cardiac transplant patients who had blood samples obtained during endomyocardial biopsy (EMB). Using Affymetrix HU133A microarrays, we analyzed whole-blood expression profiles from 3 groups: (1) control samples with negative EMB (n=7); (2) samples obtained during rejection (at least International Society for Heart and Lung Transplantation grade 3A; n=7); and (3) samples obtained after rejection, after treatment and normalization of the EMB (n=7). We identified 91 transcripts differentially expressed in rejection compared with control (false discovery rate &lt;0.10). In postrejection samples, 98% of transcripts returned toward control levels, displaying an intermediate expression profile for patients with treated rejection (P&lt;0.0001). Cluster analysis of the 40 transcripts with &gt;25% change in expression levels during rejection demonstrated good discrimination between control and rejection samples and verified the intermediate expression profile of postrejection samples. Quantitative real-time polymerase chain reaction confirmed significant differential expression for the predictive markers CFLAR and SOD2 (UniGene ID No. 355724 and No. 384944). CONCLUSIONS: These data demonstrate that peripheral blood expression profiles correlate with biopsy-proven allograft rejection. Intermediate expression profiles of treated rejection suggest persistent immune activation despite normalization of the EMB. If validated in larger studies, expression profiling may prove to be a more sensitive screening test for allograft rejection than EMB.\nLast Updated (by provider): Aug 29 2013\n\nContributers:  Jonathan A Epstein Philip A Horwitz Emily J Tsai Thomas P Cappola Mary E Putt\n\nIncludes GDS2386.\n Update date: Feb 14 2013.\n Dataset description GDS2386: Analysis of peripheral blood from cardiac transplant patients with allograft rejection and from the same patients after resolution of rejection with augmented immunosuppression. Results provide insight into potential use of peripheral blood profiling for detection of cardiac allograft rejection..\n"
@@ -3826,16 +3784,19 @@ to clear memory.</p></td>
 #&gt; [1] 8192
 #&gt; 
 #&gt; $GSE5967$lastUpdated
-#&gt; [1] 1.523578e+12
-#&gt; 
-#&gt; $GSE5967$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537225e+12
 #&gt; 
 #&gt; $GSE5967$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE5967$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE5967$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE5967$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE5967$lastNeedsAttentionEvent
 #&gt; $GSE5967$lastNeedsAttentionEvent$performer
@@ -3877,11 +3838,8 @@ to clear memory.</p></td>
 #&gt; $GSE5967$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE5967$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE5967$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE50084
@@ -3906,6 +3864,9 @@ to clear memory.</p></td>
 #&gt; $GSE50084$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=3.2e-14"
 #&gt; 
+#&gt; $GSE50084$experimentalDesign
+#&gt; [1] 6110
+#&gt; 
 #&gt; $GSE50084$accession
 #&gt; [1] "GSE50084"
 #&gt; 
@@ -3918,13 +3879,37 @@ to clear memory.</p></td>
 #&gt; $GSE50084$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE50084$experimentalDesign
-#&gt; [1] 6110
+#&gt; $GSE50084$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE50084$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE50084$geeq
+#&gt; $GSE50084$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE50084$geeq$publicQualityScore
+#&gt; [1] 0.2845056
+#&gt; 
+#&gt; $GSE50084$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE50084$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE50084$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE50084$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE50084$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE50084$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE50084$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -3941,7 +3926,7 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE50084$geeq$qScoreOutliers
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE50084$geeq$qScorePlatformsTech
 #&gt; [1] 1
@@ -3953,13 +3938,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE50084$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9566969
+#&gt; [1] -0.006177797
 #&gt; 
 #&gt; $GSE50084$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9626142
+#&gt; [1] -0.008461057
 #&gt; 
 #&gt; $GSE50084$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.0004252722
+#&gt; [1] 0.03272043
 #&gt; 
 #&gt; $GSE50084$geeq$noVectors
 #&gt; [1] FALSE
@@ -3970,30 +3955,6 @@ to clear memory.</p></td>
 #&gt; $GSE50084$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE50084$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50084$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50084$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50084$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE50084$geeq$publicQualityScore
-#&gt; [1] 0.1375163
-#&gt; 
-#&gt; $GSE50084$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE50084$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE50084$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE50084$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4001,11 +3962,17 @@ to clear memory.</p></td>
 #&gt; [1] 3470
 #&gt; 
 #&gt; 
-#&gt; $GSE50084$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE50084$bioAssayCount
+#&gt; [1] 115
 #&gt; 
-#&gt; $GSE50084$parentTaxonId
-#&gt; NULL
+#&gt; $GSE50084$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE50084$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE50084$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE50084$public
 #&gt; [1] TRUE
@@ -4022,20 +3989,8 @@ to clear memory.</p></td>
 #&gt; $GSE50084$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE50084$bioAssayCount
-#&gt; [1] 115
-#&gt; 
-#&gt; $GSE50084$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE50084$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE50084$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE50084$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE50084$description
 #&gt; [1] " The presence of Donor-Specific anti-HLA Antibodies (DSA) is associated with an increased risk of both acute and chronic antibody-mediated rejection (AMR) in kidney allografts.  AMR has remained challenging in kidney transplantation and is the major cause of late allograft loss. However, not all patients with DSA develop AMR, leading to the question of whether this represents accommodation, if other protective mechanisms exist or if this is actually a state of pre-rejection. Clinical and histological features, and gene expression profiles of kidney biopsy and blood samples of donor-specific antibody (DSA)+ patients without rejection were compared to antibody-mediated rejection (AMR) patients to elucidate the mechanisms involved in prevention of AMR. Of the 71 DSA+ patients, 46 had diagnosis of AMR and 25 did not show rejection. 50 DSA- patients without rejection were used as control. A subgroup of patients with available biopsy (n=61) and blood samples (n=54) were analyzed by microarrays.  Both, DSA+/AMR+ and DSA+/AMR- biopsies showed increased expression of gene transcripts associated with cytotoxic T, natural killer cells, macrophages, interferon-gamma and rejection compared to DSA- biopsies. Regulatory T cell transcripts were up-regulated in DSA+/AMR+ and B cell transcripts in DSA+/AMR- biopsies. Whole blood gene expression analysis showed increased immune activity in only DSA+/AMR+ patients. There were no differentially expressed tolerant genes studied (n=14) in the blood or biopsy specimens of DSA+/AMR- patients. During a median 36 months follow-up, 4 DSA+/AMR- patients developed AMR, 12 continued to have DSAs but 9 lost DSAs. Gene expression profiles did not predict the development of AMR or persistence of DSAs. These results indicate increased immune activity in DSA+/AMR- biopsies despite lack of histologic findings of rejection.\nLast Updated (by provider): Aug 24 2013\n\nContributers:  Enver Akalin Pilib Ó Broin\n"
@@ -4050,16 +4005,19 @@ to clear memory.</p></td>
 #&gt; [1] 6881
 #&gt; 
 #&gt; $GSE50084$lastUpdated
-#&gt; [1] 1.519887e+12
-#&gt; 
-#&gt; $GSE50084$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537213e+12
 #&gt; 
 #&gt; $GSE50084$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE50084$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE50084$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE50084$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE50084$lastNeedsAttentionEvent
 #&gt; NULL
@@ -4070,11 +4028,8 @@ to clear memory.</p></td>
 #&gt; $GSE50084$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE50084$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE50084$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE10224
@@ -4099,6 +4054,9 @@ to clear memory.</p></td>
 #&gt; $GSE10224$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE10224$experimentalDesign
+#&gt; [1] 9610
+#&gt; 
 #&gt; $GSE10224$accession
 #&gt; [1] "GSE10224"
 #&gt; 
@@ -4111,13 +4069,37 @@ to clear memory.</p></td>
 #&gt; $GSE10224$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE10224$experimentalDesign
-#&gt; [1] 9610
+#&gt; $GSE10224$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE10224$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE10224$geeq
+#&gt; $GSE10224$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE10224$geeq$publicQualityScore
+#&gt; [1] 0.7108202
+#&gt; 
+#&gt; $GSE10224$geeq$publicSuitabilityScore
+#&gt; [1] 0.625
+#&gt; 
+#&gt; $GSE10224$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE10224$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE10224$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE10224$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE10224$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE10224$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -4163,30 +4145,6 @@ to clear memory.</p></td>
 #&gt; $GSE10224$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE10224$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10224$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10224$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10224$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10224$geeq$publicQualityScore
-#&gt; [1] 0.7108202
-#&gt; 
-#&gt; $GSE10224$geeq$publicSuitabilityScore
-#&gt; [1] 0.625
-#&gt; 
-#&gt; $GSE10224$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10224$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE10224$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4194,11 +4152,17 @@ to clear memory.</p></td>
 #&gt; [1] 9017
 #&gt; 
 #&gt; 
-#&gt; $GSE10224$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE10224$bioAssayCount
+#&gt; [1] 9
 #&gt; 
-#&gt; $GSE10224$parentTaxonId
-#&gt; NULL
+#&gt; $GSE10224$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE10224$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE10224$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE10224$public
 #&gt; [1] TRUE
@@ -4215,20 +4179,8 @@ to clear memory.</p></td>
 #&gt; $GSE10224$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE10224$bioAssayCount
-#&gt; [1] 9
-#&gt; 
-#&gt; $GSE10224$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE10224$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE10224$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10224$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE10224$description
 #&gt; [1] " Spinal Muscular Atrophy (SMA) is an autosomal recessive motor neuron disease and is the second most common genetic disorder leading to death in childhood. Stem cell transplantation could represent a therapeutic approach for motor neuron diseases such as SMA.  We examined the theraputics effects of a spinal cord neural stem cell population and their ability to modify SMA phenotype. Microarray technology was used to assess the global gene expression profile of laser-microdissected motoneurons obtained by transplanted and veichle treated SMA, and wildtype mice.\nLast Updated (by provider): Jul 01 2016\n\nContributers:  Stefania Corti Dario Ronchi\n"
@@ -4243,16 +4195,19 @@ to clear memory.</p></td>
 #&gt; [1] 11801
 #&gt; 
 #&gt; $GSE10224$lastUpdated
-#&gt; [1] 1.529098e+12
-#&gt; 
-#&gt; $GSE10224$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537218e+12
 #&gt; 
 #&gt; $GSE10224$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE10224$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE10224$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE10224$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE10224$lastNeedsAttentionEvent
 #&gt; NULL
@@ -4263,11 +4218,8 @@ to clear memory.</p></td>
 #&gt; $GSE10224$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE10224$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE10224$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE22707
@@ -4292,6 +4244,9 @@ to clear memory.</p></td>
 #&gt; $GSE22707$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=0.0013"
 #&gt; 
+#&gt; $GSE22707$experimentalDesign
+#&gt; [1] 4502
+#&gt; 
 #&gt; $GSE22707$accession
 #&gt; [1] "GSE22707"
 #&gt; 
@@ -4304,13 +4259,37 @@ to clear memory.</p></td>
 #&gt; $GSE22707$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE22707$experimentalDesign
-#&gt; [1] 4502
+#&gt; $GSE22707$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE22707$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE22707$geeq
+#&gt; $GSE22707$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22707$geeq$publicQualityScore
+#&gt; [1] 0.4262237
+#&gt; 
+#&gt; $GSE22707$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22707$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE22707$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE22707$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22707$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22707$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE22707$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -4356,30 +4335,6 @@ to clear memory.</p></td>
 #&gt; $GSE22707$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE22707$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22707$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22707$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22707$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE22707$geeq$publicQualityScore
-#&gt; [1] 0.4262237
-#&gt; 
-#&gt; $GSE22707$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22707$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE22707$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE22707$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4387,11 +4342,17 @@ to clear memory.</p></td>
 #&gt; [1] 3052
 #&gt; 
 #&gt; 
-#&gt; $GSE22707$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE22707$bioAssayCount
+#&gt; [1] 72
 #&gt; 
-#&gt; $GSE22707$parentTaxonId
-#&gt; NULL
+#&gt; $GSE22707$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE22707$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22707$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22707$public
 #&gt; [1] TRUE
@@ -4408,20 +4369,8 @@ to clear memory.</p></td>
 #&gt; $GSE22707$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE22707$bioAssayCount
-#&gt; [1] 72
-#&gt; 
-#&gt; $GSE22707$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE22707$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE22707$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE22707$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22707$description
 #&gt; [1] " Transplant recipients spontaneously accepting their grafts in the absence of immunosuppression demonstrate the feasibility of attaining allograft tolerance in humans. Previous studies have identified blood transcriptional and cell phenotypic markers specific for either liver or kidney tolerant recipients, but the two settings have not been directly compared yet employing the same platforms. To identify potential similarities in immune parameters between recipients tolerant to different organs, we analyzed blood samples from tolerant and non-tolerant liver and kidney recipients employing whole genome expression microarrays. Tolerant and non-tolerant liver and kidney recipients differed in their peripheral blood expression patterns, but no significant overlap was observed between the two datasets. This was confirmed at the functional level by employing gene set enrichment analysis.The lack of obvious similarities in immune parameters associated with liver and kidney tolerant recipients implies the involvement of different mechanisms in the two settings and argues against the existence of a common immunological constant of spontaneous operational tolerance in clinical transplantation.\nLast Updated (by provider): Apr 12 2012\n\nContributers:  A Pallier J J Lozano M Lopez J P Soulillou A Rimola M C Londoño M Martinez-Llordella R Danger A Sanchez-Fueyo S Brouard\n"
@@ -4436,16 +4385,19 @@ to clear memory.</p></td>
 #&gt; [1] 5147
 #&gt; 
 #&gt; $GSE22707$lastUpdated
-#&gt; [1] 1.524849e+12
-#&gt; 
-#&gt; $GSE22707$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537218e+12
 #&gt; 
 #&gt; $GSE22707$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22707$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE22707$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22707$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE22707$lastNeedsAttentionEvent
 #&gt; $GSE22707$lastNeedsAttentionEvent$performer
@@ -4487,204 +4439,8 @@ to clear memory.</p></td>
 #&gt; $GSE22707$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE22707$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE22707$`_totalInQuery`
-#&gt; [1] 31
-#&gt; 
-#&gt; 
-#&gt; $GSE10419
-#&gt; $GSE10419$shortName
-#&gt; [1] "GSE10419"
-#&gt; 
-#&gt; $GSE10419$metadata
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$userOwned
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$bioMaterialCount
 #&gt; [1] 30
-#&gt; 
-#&gt; $GSE10419$processedExpressionVectorCount
-#&gt; [1] 22153
-#&gt; 
-#&gt; $GSE10419$batchConfound
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$batchEffect
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$accession
-#&gt; [1] "GSE10419"
-#&gt; 
-#&gt; $GSE10419$externalDatabase
-#&gt; [1] "GEO"
-#&gt; 
-#&gt; $GSE10419$taxon
-#&gt; [1] "human"
-#&gt; 
-#&gt; $GSE10419$taxonId
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$experimentalDesign
-#&gt; [1] 2369
-#&gt; 
-#&gt; $GSE10419$isPublic
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE10419$geeq
-#&gt; $GSE10419$geeq$sScoreAvgPlatformPopularity
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE10419$geeq$sScoreAvgPlatformSize
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE10419$geeq$sScoreSampleSize
-#&gt; [1] 0.3
-#&gt; 
-#&gt; $GSE10419$geeq$sScoreRawData
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE10419$geeq$sScoreMissingValues
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$geeq$qScoreOutliers
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$geeq$qScorePlatformsTech
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$geeq$qScoreReplicates
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$geeq$qScoreBatchInfo
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE10419$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.175833
-#&gt; 
-#&gt; $GSE10419$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.1662536
-#&gt; 
-#&gt; $GSE10419$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.04717663
-#&gt; 
-#&gt; $GSE10419$geeq$noVectors
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$geeq$corrMatIssues
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE10419$geeq$replicatesIssues
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE10419$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE10419$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$geeq$publicQualityScore
-#&gt; [1] 0.3094648
-#&gt; 
-#&gt; $GSE10419$geeq$publicSuitabilityScore
-#&gt; [1] 0.1625
-#&gt; 
-#&gt; $GSE10419$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE10419$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE10419$geeq$`_totalInQuery`
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE10419$geeq$id
-#&gt; [1] 1194
-#&gt; 
-#&gt; 
-#&gt; $GSE10419$technologyType
-#&gt; [1] "DUALMODE"
-#&gt; 
-#&gt; $GSE10419$parentTaxonId
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$public
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE10419$shared
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$isShared
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$securableClass
-#&gt; [1] "ubic.gemma.model.expression.experiment.ExpressionExperiment"
-#&gt; 
-#&gt; $GSE10419$userCanWrite
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$bioAssayCount
-#&gt; [1] 30
-#&gt; 
-#&gt; $GSE10419$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
-#&gt; $GSE10419$arrayDesignCount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE10419$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$currentUserIsOwner
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$description
-#&gt; [1] " Because of world-wide shortage of renal grafts, kidney transplantation (KTx) from donors after cardiac death (DCD) is an alternative way to KTx from brain-dead donors. Although the prognosis of DCD KTx is gradually improving, the graft often undergoes delayed graft function (DGF) rendering the control of DGF essential for post-KTx patient care. To know the etiology of the DGF, we performed genome-wide gene expression profiling using renal biopsy samples performed at 1 hour after KTx from DCD and compared the data with those of KTx from living donors (LD). A total of 526 genes were differentially expressed between them. Genes involved in acute inflammation were activated, while metabolic pathways were consistently down-regulated in DCD. All of these findings imply inferior performance of the DCD grafts relative to LD grafts. We identified several genes of which expression levels were correlated well with parameters indicating short- and long-term prognosis of the DCD patients. In addition, we identified several genes encoding secretory proteins that might reflect the performance of the graft and be potent non-invasive biomarkers. Our data provide good source for candidates of biomarker that are potentially useful for control of DGF.\nLast Updated (by provider): Feb 07 2008\n"
-#&gt; 
-#&gt; $GSE10419$source
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$name
-#&gt; [1] "Global expression profiles in one hour biopsy of human kidney transplantation from donors after cardiac death"
-#&gt; 
-#&gt; $GSE10419$id
-#&gt; [1] 2102
-#&gt; 
-#&gt; $GSE10419$lastUpdated
-#&gt; [1] 1.519925e+12
-#&gt; 
-#&gt; $GSE10419$needsAttention
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE10419$troubled
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE10419$lastTroubledEvent
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$lastNeedsAttentionEvent
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$lastNoteUpdateEvent
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$curationNote
-#&gt; NULL
-#&gt; 
-#&gt; $GSE10419$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
-#&gt; $GSE10419$`_totalInQuery`
-#&gt; [1] 31
 #&gt; 
 #&gt; 
 #&gt; $GSE3075
@@ -4709,6 +4465,9 @@ to clear memory.</p></td>
 #&gt; $GSE3075$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PCnull); p=0.0"
 #&gt; 
+#&gt; $GSE3075$experimentalDesign
+#&gt; [1] 220
+#&gt; 
 #&gt; $GSE3075$accession
 #&gt; [1] "GSE3075"
 #&gt; 
@@ -4721,13 +4480,37 @@ to clear memory.</p></td>
 #&gt; $GSE3075$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE3075$experimentalDesign
-#&gt; [1] 220
+#&gt; $GSE3075$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE3075$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE3075$geeq
+#&gt; $GSE3075$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3075$geeq$publicQualityScore
+#&gt; [1] 0.5637816
+#&gt; 
+#&gt; $GSE3075$geeq$publicSuitabilityScore
+#&gt; [1] 0.625
+#&gt; 
+#&gt; $GSE3075$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3075$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3075$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3075$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3075$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE3075$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -4756,13 +4539,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE3075$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9948119
+#&gt; [1] -0.1221069
 #&gt; 
 #&gt; $GSE3075$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9952261
+#&gt; [1] -0.05352898
 #&gt; 
 #&gt; $GSE3075$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 4.050078e-06
+#&gt; [1] 0.065455
 #&gt; 
 #&gt; $GSE3075$geeq$noVectors
 #&gt; [1] FALSE
@@ -4773,30 +4556,6 @@ to clear memory.</p></td>
 #&gt; $GSE3075$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE3075$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3075$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3075$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3075$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE3075$geeq$publicQualityScore
-#&gt; [1] 0.4278894
-#&gt; 
-#&gt; $GSE3075$geeq$publicSuitabilityScore
-#&gt; [1] 0.625
-#&gt; 
-#&gt; $GSE3075$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE3075$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE3075$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4804,11 +4563,17 @@ to clear memory.</p></td>
 #&gt; [1] 901
 #&gt; 
 #&gt; 
-#&gt; $GSE3075$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE3075$bioAssayCount
+#&gt; [1] 9
 #&gt; 
-#&gt; $GSE3075$parentTaxonId
-#&gt; NULL
+#&gt; $GSE3075$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE3075$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3075$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3075$public
 #&gt; [1] TRUE
@@ -4825,20 +4590,8 @@ to clear memory.</p></td>
 #&gt; $GSE3075$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE3075$bioAssayCount
-#&gt; [1] 9
-#&gt; 
-#&gt; $GSE3075$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE3075$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE3075$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE3075$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3075$description
 #&gt; [1] " SMARD1 is an infantile autosomal recessive motor neuron (MN) disease, caused by mutations in the Immunoglobulin mu binding protein 2 (IGHMBP2). We investigated the potential of a spinal cord neural stem cell population isolated on the basis of aldehyde dehydrogenase activity (ALDH) to modify disease progression of nmd mice, an animal model of SMARD1. ALDHhiSSClo stem cells are self-renewing and multipotent and when intratechally transplanted in nmd mice generate motor neurons properly localized in the spinal cord ventral horns. Transplanted nmd animals presented delayed disease progression, sparing of motor neurons and ventral root axons and increased life-span. To further investigate the molecular events responsible for these differences, microarray and Real time RT-PCR analysis of wild-type, mutated and transplanted nmd spinal cord were undertaken. We demonstrated a down-regulation of genes involved in excitatory amino acid toxicity and oxidative stress handling, as well as an up-regulation of genes related to the chromatin organization in nmd compared to wild-type mice, suggesting that they may play a role in SMARD1 pathogenesis. Spinal cord of nmd transplanted mice expressed high transcript levels for genes related to neurogenesis such as Doublecortin (DCX), LIS1 and drebrin. The presence of DCX-expressing cells in adult nmd spinal cord suggests that both exogenous and endogenous neurogenesis may contribute to the observed nmd phenotype amelioration.\n\nLast Updated (by provider): Dec 21 2005\n\nContributers:  Roberto Del Bo Andreina Bordoni Sabrina Salani Sandra Strazzer Stefania Corti Federica Locatelli Dimitra Papadimitriou Giacomo P Comi Nereo Bresolin Marco Crimi Chiara Donadoni Francesco  Fortunato Giorgia Menozzi\n\nIncludes GDS1468.\n Update date: Aug 23 2006.\n Dataset description GDS1468: Analysis of neuromuscular degeneration mutant (nmd) spinal cords transplanted with ALDHhiSSClo neural stem cells. nmd is a model for spinal muscular atrophy with respiratory distress type 1. Results provide insight into the mechanisms underlying neuromuscular improvements in stem cell recipients..\n"
@@ -4853,16 +4606,19 @@ to clear memory.</p></td>
 #&gt; [1] 244
 #&gt; 
 #&gt; $GSE3075$lastUpdated
-#&gt; [1] 1.519865e+12
-#&gt; 
-#&gt; $GSE3075$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537209e+12
 #&gt; 
 #&gt; $GSE3075$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3075$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE3075$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3075$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE3075$lastNeedsAttentionEvent
 #&gt; NULL
@@ -4873,11 +4629,8 @@ to clear memory.</p></td>
 #&gt; $GSE3075$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE3075$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE3075$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE25902
@@ -4902,6 +4655,9 @@ to clear memory.</p></td>
 #&gt; $GSE25902$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE25902$experimentalDesign
+#&gt; [1] 4558
+#&gt; 
 #&gt; $GSE25902$accession
 #&gt; [1] "GSE25902"
 #&gt; 
@@ -4914,13 +4670,37 @@ to clear memory.</p></td>
 #&gt; $GSE25902$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE25902$experimentalDesign
-#&gt; [1] 4558
+#&gt; $GSE25902$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE25902$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE25902$geeq
+#&gt; $GSE25902$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE25902$geeq$publicQualityScore
+#&gt; [1] 0.1242588
+#&gt; 
+#&gt; $GSE25902$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE25902$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE25902$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE25902$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE25902$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE25902$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE25902$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -4966,30 +4746,6 @@ to clear memory.</p></td>
 #&gt; $GSE25902$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE25902$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE25902$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE25902$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE25902$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE25902$geeq$publicQualityScore
-#&gt; [1] 0.1242588
-#&gt; 
-#&gt; $GSE25902$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE25902$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE25902$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE25902$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4997,11 +4753,17 @@ to clear memory.</p></td>
 #&gt; [1] 3279
 #&gt; 
 #&gt; 
-#&gt; $GSE25902$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE25902$bioAssayCount
+#&gt; [1] 120
 #&gt; 
-#&gt; $GSE25902$parentTaxonId
-#&gt; NULL
+#&gt; $GSE25902$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE25902$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE25902$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE25902$public
 #&gt; [1] TRUE
@@ -5018,20 +4780,8 @@ to clear memory.</p></td>
 #&gt; $GSE25902$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE25902$bioAssayCount
-#&gt; [1] 120
-#&gt; 
-#&gt; $GSE25902$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE25902$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE25902$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE25902$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE25902$description
 #&gt; [1] " CONTEXT Slowly progressive chronic tubulo-interstitial damage jeopardizes long-term renal allograft survival. Both immune and non-immune mechanisms are thought to contribute, but the most promising targets for timely intervention have not been identified. OBJECTIVE In the current study we seek to determine the driving force behind progressive histological damage of renal allografts, without the interference of donor pathology, delayed graft function and acute graft rejection. DESIGN We used microarrays to examine whole genome expression profiles in renal allograft protocol biopsies, and analyzed the correlation between gene expression and the histological appearance over time. The gene expression profiles in these protocol biopsies were then compared with gene expression of biopsies with acute T-cell mediated rejection. PATIENTS Human renal allograft biopsies (N=120) were included: 96 rejection-free protocol biopsies and 24 biopsies with T-cell mediated acute rejection. RESULTS In this highly cross-validated study, we demonstrate the significant association of established, ongoing and future chronic histological damage with regulation of adaptive immune gene expression (T-cell and B-cell transcript sets) and innate immune response gene expression (dendritic cell, NK-cell, mast cell and granulocyte transcripts). We demonstrate the ability of gene expression analysis to perform as a quantitative marker for ongoing inflammation with a wide dynamic range: from subtle subhistological inflammation prior to development of chronic damage, over moderate subclinical inflammation associated with chronic histological damage, to marked inflammation of Banff-grade acute T-cell mediated rejection. CONCLUSION   Progressive chronic histological damage after kidney transplantation is associated with significant regulation of both innate and adaptive immune responses, months before the histological lesions appear. This study therefore corroborates the hypothesis that quantitative inflammation below the diagnostic threshold of classic T-cell or antibody-mediated rejection is associated with early subclinical stages of progressive renal allograft damage.\nLast Updated (by provider): Apr 12 2012\n\nContributers:  Atul J Butte Neeraja Kambham Purvesh Khatri Amery Chen Szu-Chuan Hsieh Minnie Sarwal Oscar Salvatierra Tara Sigdel Rong Chen Li Li Maarten Naesens\n"
@@ -5046,16 +4796,19 @@ to clear memory.</p></td>
 #&gt; [1] 5203
 #&gt; 
 #&gt; $GSE25902$lastUpdated
-#&gt; [1] 1.525377e+12
-#&gt; 
-#&gt; $GSE25902$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537219e+12
 #&gt; 
 #&gt; $GSE25902$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE25902$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE25902$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE25902$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE25902$lastNeedsAttentionEvent
 #&gt; $GSE25902$lastNeedsAttentionEvent$performer
@@ -5097,11 +4850,8 @@ to clear memory.</p></td>
 #&gt; $GSE25902$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE25902$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE25902$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE36059
@@ -5124,7 +4874,10 @@ to clear memory.</p></td>
 #&gt; [1] "Factor 'phenotype' may be confounded with batches; p=1.6e-06"
 #&gt; 
 #&gt; $GSE36059$batchEffect
-#&gt; [1] "This data set may have a batch artifact (PC5); p=2.4e-23"
+#&gt; [1] "This data set may have a batch artifact (PC 5), p=2.4222e-23"
+#&gt; 
+#&gt; $GSE36059$experimentalDesign
+#&gt; [1] 6850
 #&gt; 
 #&gt; $GSE36059$accession
 #&gt; [1] "GSE36059"
@@ -5138,13 +4891,37 @@ to clear memory.</p></td>
 #&gt; $GSE36059$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE36059$experimentalDesign
-#&gt; [1] 6850
+#&gt; $GSE36059$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE36059$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE36059$geeq
+#&gt; $GSE36059$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE36059$geeq$publicQualityScore
+#&gt; [1] 0.1424904
+#&gt; 
+#&gt; $GSE36059$geeq$publicSuitabilityScore
+#&gt; [1] 0.75
+#&gt; 
+#&gt; $GSE36059$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE36059$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE36059$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE36059$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE36059$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE36059$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -5173,13 +4950,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE36059$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9360849
+#&gt; [1] 0.002450931
 #&gt; 
 #&gt; $GSE36059$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9467456
+#&gt; [1] -0.002566923
 #&gt; 
 #&gt; $GSE36059$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.001357295
+#&gt; [1] 0.0593947
 #&gt; 
 #&gt; $GSE36059$geeq$noVectors
 #&gt; [1] FALSE
@@ -5190,30 +4967,6 @@ to clear memory.</p></td>
 #&gt; $GSE36059$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE36059$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE36059$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE36059$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE36059$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE36059$geeq$publicQualityScore
-#&gt; [1] 0.2781065
-#&gt; 
-#&gt; $GSE36059$geeq$publicSuitabilityScore
-#&gt; [1] 0.75
-#&gt; 
-#&gt; $GSE36059$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE36059$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE36059$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -5221,11 +4974,17 @@ to clear memory.</p></td>
 #&gt; [1] 6298
 #&gt; 
 #&gt; 
-#&gt; $GSE36059$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE36059$bioAssayCount
+#&gt; [1] 411
 #&gt; 
-#&gt; $GSE36059$parentTaxonId
-#&gt; NULL
+#&gt; $GSE36059$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE36059$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE36059$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE36059$public
 #&gt; [1] TRUE
@@ -5242,20 +5001,8 @@ to clear memory.</p></td>
 #&gt; $GSE36059$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE36059$bioAssayCount
-#&gt; [1] 411
-#&gt; 
-#&gt; $GSE36059$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE36059$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE36059$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE36059$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE36059$description
 #&gt; [1] " Histologic diagnosis of T cell-mediated rejection in kidney transplant biopsies has limited reproducibility because it is based on non-specific lesions using arbitrary rules that are subject to differing interpretations. We used microarray results from 403 indication biopsies previously given histologic diagnoses to develop a molecular classifier that assigned a molecular T cell-mediated rejection score to each biopsy. Independent assessment of the biopsies by multiple pathologists confirmed considerable disagreement on the presence of TCMR features: 79-88% accuracy and 35-69% sensitivity. The agreement of the molecular T cell-mediated rejection score with the histology diagnosis was similar to agreement among individual pathologists: accuracy 89%, sensitivity 51%. However, the score also predicted the consensus among pathologists, being highest when all agreed. Many discrepancies between the scores and the histologic diagnoses were in situations where histology is unreliable e.g. scarred biopsies. The score correlated with histologic lesions and gene sets associated with T cell-mediated rejection. The transcripts most often selected by the classifier were expressed in effector T cells, dendritic cells, or macrophages or inducible by interferon-gamma. Thus the T cell-mediated rejection score offers an objective assessment of kidney transplant biopsies, predicting the consensus opinion among multiple pathologists, and offering insights into underlying disease mechanisms.  Antibody-mediated rejection is a major cause of kidney transplant failure, but the current diagnostic system misses most cases due to dependency on subjective non-standardized tests. We hypothesized that molecular features could provide a test to address this problem. We classified 403 biopsies by a reference standard based on microcirculation lesions and donor-specific HLA antibody, and used microarray analysis to develop a classifier that assigned each biopsy a score reflecting the probability of antibody-mediated rejection. The scores correlated with donor-specific antibody and histologic lesions: 42/45 biopsies with antibody-mediated rejection scores &gt;0.5 had both donor-specific antibody and microcirculation lesions. Intermediate scores (0.2-0.5) were more ambiguous, but became more specific combined with donor-specific antibody. Compared to diagnoses based on histology-plus-donor-specific antibody, the scores had sensitivity 0.67; specificity 0.90. Donor-specific antibody improved the specificity to 0.97. The score correlated not only with diagnoses of individual pathologists but with the consensus among multiple pathologists. The classifier used transcripts expressed in endothelial cells (e.g. CDH13, DARC, ROBO4) and NK cells (e.g. CX3CR1, FGFBP2), as well as IFNG-inducible transcripts e.g. CXCL11. Thus the molecular phenotype of antibody-mediated rejection provides not only an objective test that predicts microcirculation lesions and donor-specific HLA antibody, but also offers mechanistic insights.\nLast Updated (by provider): Nov 27 2013\n\nContributers:  Philip F Halloran Jeff Reeve Joana Selleres\n"
@@ -5270,10 +5017,7 @@ to clear memory.</p></td>
 #&gt; [1] 7660
 #&gt; 
 #&gt; $GSE36059$lastUpdated
-#&gt; [1] 1.519918e+12
-#&gt; 
-#&gt; $GSE36059$needsAttention
-#&gt; [1] TRUE
+#&gt; [1] 1.53722e+12
 #&gt; 
 #&gt; $GSE36059$troubled
 #&gt; [1] FALSE
@@ -5281,8 +5025,45 @@ to clear memory.</p></td>
 #&gt; $GSE36059$lastTroubledEvent
 #&gt; NULL
 #&gt; 
+#&gt; $GSE36059$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE36059$troubleDetails
+#&gt; [1] "No trouble details provided."
+#&gt; 
 #&gt; $GSE36059$lastNeedsAttentionEvent
+#&gt; $GSE36059$lastNeedsAttentionEvent$performer
+#&gt; [1] "cindycri"
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$detail
 #&gt; NULL
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$actionName
+#&gt; [1] "Update"
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$eventTypeName
+#&gt; [1] "DoesNotNeedAttentionEvent"
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$action
+#&gt; [1] "U"
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$date
+#&gt; [1] 1.535487e+12
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$note
+#&gt; [1] "Does not need attention."
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$eventType
+#&gt; $GSE36059$lastNeedsAttentionEvent$eventType$id
+#&gt; [1] 248602
+#&gt; 
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$`_totalInQuery`
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE36059$lastNeedsAttentionEvent$id
+#&gt; [1] 25134294
+#&gt; 
 #&gt; 
 #&gt; $GSE36059$lastNoteUpdateEvent
 #&gt; NULL
@@ -5290,11 +5071,8 @@ to clear memory.</p></td>
 #&gt; $GSE36059$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE36059$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE36059$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE5104
@@ -5319,6 +5097,9 @@ to clear memory.</p></td>
 #&gt; $GSE5104$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE5104$experimentalDesign
+#&gt; [1] 1018
+#&gt; 
 #&gt; $GSE5104$accession
 #&gt; [1] "GSE5104"
 #&gt; 
@@ -5331,18 +5112,42 @@ to clear memory.</p></td>
 #&gt; $GSE5104$taxonId
 #&gt; [1] 3
 #&gt; 
-#&gt; $GSE5104$experimentalDesign
-#&gt; [1] 1018
+#&gt; $GSE5104$technologyType
+#&gt; [1] "TWOCOLOR"
 #&gt; 
 #&gt; $GSE5104$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE5104$geeq
+#&gt; $GSE5104$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE5104$geeq$publicQualityScore
+#&gt; [1] -0.2991499
+#&gt; 
+#&gt; $GSE5104$geeq$publicSuitabilityScore
+#&gt; [1] 0.275
+#&gt; 
+#&gt; $GSE5104$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE5104$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE5104$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE5104$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE5104$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE5104$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] -0.5
 #&gt; 
 #&gt; $GSE5104$geeq$sScoreAvgPlatformSize
-#&gt; [1] -0.5
+#&gt; [1] 0
 #&gt; 
 #&gt; $GSE5104$geeq$sScoreSampleSize
 #&gt; [1] -0.3
@@ -5366,13 +5171,13 @@ to clear memory.</p></td>
 #&gt; [1] -1
 #&gt; 
 #&gt; $GSE5104$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.8364882
+#&gt; [1] -0.08777829
 #&gt; 
 #&gt; $GSE5104$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.8468945
+#&gt; [1] -0.09404904
 #&gt; 
 #&gt; $GSE5104$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.002653078
+#&gt; [1] 0.04542492
 #&gt; 
 #&gt; $GSE5104$geeq$noVectors
 #&gt; [1] FALSE
@@ -5383,30 +5188,6 @@ to clear memory.</p></td>
 #&gt; $GSE5104$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE5104$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE5104$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE5104$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE5104$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE5104$geeq$publicQualityScore
-#&gt; [1] -0.1647294
-#&gt; 
-#&gt; $GSE5104$geeq$publicSuitabilityScore
-#&gt; [1] 0.2125
-#&gt; 
-#&gt; $GSE5104$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE5104$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE5104$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -5414,11 +5195,17 @@ to clear memory.</p></td>
 #&gt; [1] 2628
 #&gt; 
 #&gt; 
-#&gt; $GSE5104$technologyType
-#&gt; [1] "TWOCOLOR"
+#&gt; $GSE5104$bioAssayCount
+#&gt; [1] 12
 #&gt; 
-#&gt; $GSE5104$parentTaxonId
-#&gt; NULL
+#&gt; $GSE5104$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE5104$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE5104$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE5104$public
 #&gt; [1] TRUE
@@ -5435,20 +5222,8 @@ to clear memory.</p></td>
 #&gt; $GSE5104$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE5104$bioAssayCount
-#&gt; [1] 12
-#&gt; 
-#&gt; $GSE5104$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE5104$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE5104$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE5104$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE5104$description
 #&gt; [1] " The clinical results obtained with organ allografts from marginal or extended donors are less satisfactory over both the short-term and long-term than the outcome of grafting from living donors. Early postoperative graft function depends on several pretransplant factors, with the major donor influences being brain death (BD) and ischemia/reperfusion(I/R) injury. The effects of BD and I/R injury not only reduce the number of functioning nephrons, but also trigger a host immune response to the grafted kidney. It has been hypothesized that allografts from marginal sources may not be biologically inert at the time of surgery, but may already be programmed to initiate or amplify a host response. To exclude the effects of allogenicity, we established a rat renal isograft model using dead donors and compared the results with those obtained after grafting from living donors. In this study, we performed an analysis of the changes of gene expression in rat kidney isografts using samples obtained at 0(pre-transplant) and 1 hour time points since transplantation procedure. The results enhanced our insight into the pathways and cascades that are activated or down-regulated by BD and/or I/R injury. Better knowledge of the key components of BD or I/R injury will provide clues to the factors triggering progression that leads to a decline of organ viability, as well as ideas on how to overcome such graft failures. Such data may also allow us to identify novel biomarkers as predictors of adverse outcomes.\nLast Updated (by provider): Aug 15 2006\n\nIncludes GDS2263.\n Update date: Aug 15 2006.\n Dataset description GDS2263: Analysis of isografted kidneys from brain dead donors. Brain death in donors triggers nonspecific inflammatory events that increase the kinetics and intensity of the immunologic response in recipients after kidney transplantation. Results provide insight into the mechanisms underlying this response..\n"
@@ -5463,16 +5238,19 @@ to clear memory.</p></td>
 #&gt; [1] 847
 #&gt; 
 #&gt; $GSE5104$lastUpdated
-#&gt; [1] 1.519882e+12
-#&gt; 
-#&gt; $GSE5104$needsAttention
-#&gt; [1] TRUE
+#&gt; [1] 1.537213e+12
 #&gt; 
 #&gt; $GSE5104$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE5104$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE5104$needsAttention
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE5104$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE5104$lastNeedsAttentionEvent
 #&gt; NULL
@@ -5483,11 +5261,8 @@ to clear memory.</p></td>
 #&gt; $GSE5104$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE5104$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE5104$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE582
@@ -5512,6 +5287,9 @@ to clear memory.</p></td>
 #&gt; $GSE582$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE582$experimentalDesign
+#&gt; [1] 108
+#&gt; 
 #&gt; $GSE582$accession
 #&gt; [1] "GSE582"
 #&gt; 
@@ -5524,13 +5302,37 @@ to clear memory.</p></td>
 #&gt; $GSE582$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE582$experimentalDesign
-#&gt; [1] 108
+#&gt; $GSE582$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE582$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE582$geeq
+#&gt; $GSE582$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE582$geeq$publicQualityScore
+#&gt; [1] -0.009081246
+#&gt; 
+#&gt; $GSE582$geeq$publicSuitabilityScore
+#&gt; [1] 0.4
+#&gt; 
+#&gt; $GSE582$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE582$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE582$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE582$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE582$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE582$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -5559,13 +5361,13 @@ to clear memory.</p></td>
 #&gt; [1] -1
 #&gt; 
 #&gt; $GSE582$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9242569
+#&gt; [1] -0.07226957
 #&gt; 
 #&gt; $GSE582$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9371073
+#&gt; [1] -0.06356872
 #&gt; 
 #&gt; $GSE582$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.00182531
+#&gt; [1] 0.0928238
 #&gt; 
 #&gt; $GSE582$geeq$noVectors
 #&gt; [1] FALSE
@@ -5576,30 +5378,6 @@ to clear memory.</p></td>
 #&gt; $GSE582$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE582$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE582$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE582$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE582$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE582$geeq$publicQualityScore
-#&gt; [1] 0.1338725
-#&gt; 
-#&gt; $GSE582$geeq$publicSuitabilityScore
-#&gt; [1] 0.4
-#&gt; 
-#&gt; $GSE582$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE582$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE582$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -5607,11 +5385,17 @@ to clear memory.</p></td>
 #&gt; [1] 649
 #&gt; 
 #&gt; 
-#&gt; $GSE582$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE582$bioAssayCount
+#&gt; [1] 14
 #&gt; 
-#&gt; $GSE582$parentTaxonId
-#&gt; NULL
+#&gt; $GSE582$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE582$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE582$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE582$public
 #&gt; [1] TRUE
@@ -5628,20 +5412,8 @@ to clear memory.</p></td>
 #&gt; $GSE582$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE582$bioAssayCount
-#&gt; [1] 14
-#&gt; 
-#&gt; $GSE582$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE582$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE582$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE582$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE582$description
 #&gt; [1] " C57/BL6 to C57/BL6 Balb/c to C57/BL6 Balb/c to C57/BL6 with anti CD80/86 mAb  Identificaton of gene expression profile in tolerizing murine cardiac allograft by co-stimulatory blockade.  The induction of specific tolerance would be the ultimate achievement in transplant immunology, but the precise mechanisms of immunological tolerance remain largely unknown. Here, we investigated global gene expression analysis in tolerizing murine cardiac allografts by means of oligonucleotide microarrays. Tolerance induction was achieved in cardiac allografts from BALB/c to C57BL/6 mice by daily intraperitoneal injection of anti-CD80 and CD86 mAbs. Comparative analysis revealed 64 genes to be induced more extensively in the tolerizing than in the syngeneic isografts, and 16 genes than in the rejecting allografts. Two genes were specifically upregulated in the tolerizing allografts. In the tolerizing allografts there were induced marked expressions of a number of genes for proinflammatory factors, including interferon-gamma inducible cytokines and chemokines, as well as apoptosis-related genes which were also upregulated in the rejecting allografts. Moreover, these gene expression patterns continued to be upregulated more than 70 days post transplant. These results provide evidence that immunological tolerance can be induced and maintained in the presence of prominent proinflammatory gene expression in vivo..\nDate GSE582 Last Updated: Jun 15 2005\n\nContributers:  M Sata K Naruse T Kodama T Hamakubo S Ihara H Aburatani T Kohro A Saiura H Yagita Y Sugawara C Mataki T Yamaguchi A Izumi T Sakihama M Makuuchi Y Matsui T Minami\n\nIncludes GDS437.\n Update date: Nov 26 2003.\n Dataset description GDS437: Examination of immunologic tolerance induction achieved in cardiac allografts from BALB/c to C57BL/6 mice by daily intraperitoneal injection of anti-CD80 and anti-CD86 monoclonal antibodies (mAbs)..\n"
@@ -5656,16 +5428,19 @@ to clear memory.</p></td>
 #&gt; [1] 108
 #&gt; 
 #&gt; $GSE582$lastUpdated
-#&gt; [1] 1.519862e+12
-#&gt; 
-#&gt; $GSE582$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE582$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE582$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE582$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE582$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE582$lastNeedsAttentionEvent
 #&gt; NULL
@@ -5676,11 +5451,8 @@ to clear memory.</p></td>
 #&gt; $GSE582$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE582$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE582$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE65564
@@ -5705,6 +5477,9 @@ to clear memory.</p></td>
 #&gt; $GSE65564$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=6.2e-05"
 #&gt; 
+#&gt; $GSE65564$experimentalDesign
+#&gt; [1] 9000
+#&gt; 
 #&gt; $GSE65564$accession
 #&gt; [1] "GSE65564"
 #&gt; 
@@ -5717,13 +5492,37 @@ to clear memory.</p></td>
 #&gt; $GSE65564$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE65564$experimentalDesign
-#&gt; [1] 9000
+#&gt; $GSE65564$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE65564$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE65564$geeq
+#&gt; $GSE65564$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE65564$geeq$publicQualityScore
+#&gt; [1] 0.1376069
+#&gt; 
+#&gt; $GSE65564$geeq$publicSuitabilityScore
+#&gt; [1] 0.6625
+#&gt; 
+#&gt; $GSE65564$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE65564$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE65564$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE65564$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE65564$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE65564$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -5752,46 +5551,22 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE65564$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.877547
+#&gt; [1] -0.03689614
 #&gt; 
 #&gt; $GSE65564$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.8795048
+#&gt; [1] -0.03675141
 #&gt; 
 #&gt; $GSE65564$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.001155063
+#&gt; [1] 0.01467339
 #&gt; 
 #&gt; $GSE65564$geeq$noVectors
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE65564$geeq$corrMatIssues
-#&gt; [1] 0
+#&gt; [1] 2
 #&gt; 
 #&gt; $GSE65564$geeq$replicatesIssues
 #&gt; [1] 0
-#&gt; 
-#&gt; $GSE65564$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE65564$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE65564$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE65564$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE65564$geeq$publicQualityScore
-#&gt; [1] 0.2685007
-#&gt; 
-#&gt; $GSE65564$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE65564$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE65564$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
 #&gt; 
 #&gt; $GSE65564$geeq$`_totalInQuery`
 #&gt; [1] 0
@@ -5800,11 +5575,17 @@ to clear memory.</p></td>
 #&gt; [1] 6770
 #&gt; 
 #&gt; 
-#&gt; $GSE65564$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE65564$bioAssayCount
+#&gt; [1] 28
 #&gt; 
-#&gt; $GSE65564$parentTaxonId
-#&gt; NULL
+#&gt; $GSE65564$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE65564$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE65564$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE65564$public
 #&gt; [1] TRUE
@@ -5821,20 +5602,8 @@ to clear memory.</p></td>
 #&gt; $GSE65564$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE65564$bioAssayCount
-#&gt; [1] 28
-#&gt; 
-#&gt; $GSE65564$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE65564$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE65564$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE65564$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE65564$description
 #&gt; [1] " Renal dendritic cells play key roles in renal homeostasis and during kidney allograft rejection. Microarray analysis aims to evaluate whether dendritic cells modulate their gene expression profile in relation to their distribution in the different renal compartments (with varying biophysical characteristics), under homeostatic conditions and during acute renal allograft rejection (3 days post-transplantation).\nLast Updated (by provider): Dec 02 2016\n\nContributers:  Thomas Hielscher Federica Chessa\n"
@@ -5849,16 +5618,19 @@ to clear memory.</p></td>
 #&gt; [1] 10094
 #&gt; 
 #&gt; $GSE65564$lastUpdated
-#&gt; [1] 1.519887e+12
-#&gt; 
-#&gt; $GSE65564$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537214e+12
 #&gt; 
 #&gt; $GSE65564$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE65564$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE65564$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE65564$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE65564$lastNeedsAttentionEvent
 #&gt; NULL
@@ -5869,11 +5641,8 @@ to clear memory.</p></td>
 #&gt; $GSE65564$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE65564$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE65564$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE36539
@@ -5898,6 +5667,9 @@ to clear memory.</p></td>
 #&gt; $GSE36539$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=2.3e-07"
 #&gt; 
+#&gt; $GSE36539$experimentalDesign
+#&gt; [1] 5347
+#&gt; 
 #&gt; $GSE36539$accession
 #&gt; [1] "GSE36539"
 #&gt; 
@@ -5910,13 +5682,37 @@ to clear memory.</p></td>
 #&gt; $GSE36539$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE36539$experimentalDesign
-#&gt; [1] 5347
+#&gt; $GSE36539$technologyType
+#&gt; [1] "DUALMODE"
 #&gt; 
 #&gt; $GSE36539$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE36539$geeq
+#&gt; $GSE36539$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE36539$geeq$publicQualityScore
+#&gt; [1] 0.1405915
+#&gt; 
+#&gt; $GSE36539$geeq$publicSuitabilityScore
+#&gt; [1] 0.6625
+#&gt; 
+#&gt; $GSE36539$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE36539$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE36539$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE36539$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE36539$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE36539$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -5933,7 +5729,7 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE36539$geeq$qScoreOutliers
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE36539$geeq$qScorePlatformsTech
 #&gt; [1] 1
@@ -5945,13 +5741,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE36539$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9427566
+#&gt; [1] -0.02811037
 #&gt; 
 #&gt; $GSE36539$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9542505
+#&gt; [1] -0.01585926
 #&gt; 
 #&gt; $GSE36539$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.001676599
+#&gt; [1] 0.06241266
 #&gt; 
 #&gt; $GSE36539$geeq$noVectors
 #&gt; [1] FALSE
@@ -5962,30 +5758,6 @@ to clear memory.</p></td>
 #&gt; $GSE36539$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE36539$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE36539$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE36539$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE36539$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE36539$geeq$publicQualityScore
-#&gt; [1] -0.006535649
-#&gt; 
-#&gt; $GSE36539$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE36539$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE36539$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE36539$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -5993,11 +5765,17 @@ to clear memory.</p></td>
 #&gt; [1] 925
 #&gt; 
 #&gt; 
-#&gt; $GSE36539$technologyType
-#&gt; [1] "DUALMODE"
+#&gt; $GSE36539$bioAssayCount
+#&gt; [1] 32
 #&gt; 
-#&gt; $GSE36539$parentTaxonId
-#&gt; NULL
+#&gt; $GSE36539$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE36539$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE36539$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE36539$public
 #&gt; [1] TRUE
@@ -6014,20 +5792,8 @@ to clear memory.</p></td>
 #&gt; $GSE36539$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE36539$bioAssayCount
-#&gt; [1] 32
-#&gt; 
-#&gt; $GSE36539$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE36539$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE36539$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE36539$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE36539$description
 #&gt; [1] " Background: Hepatitis E Virus (HEV) is a new causative agent of chronic hepatitis in solid organ transplant recipients in Europe. Factors associated with the occurrence and persistence of chronic HEV infection remain largely unknown but chronic evolution seems to be the consequence of host’s immunological factors rather than of viral factors. Method: In a prospective case-control study, we have determined in whole blood of chronically HEV-infected kidney-transplant recipients the host response using microarray technology. Results: Chronically HEV-infected kidney-transplant recipients exhibited a specific transcriptional program, in which interferon effectors were prominent. The intensity of expression of each signature’s gene was significantly lower in patients who were subsequently cleared of HEV than in patients who were not. Furthermore, in patients who were cleared of HEV, a higher expression of these genes was associated with a longer delay until HEV clearance. Conclusions: The specific transcriptional program determined in chronically HEV-infected kidney-transplant recipients suggests an activation of type I interferon response. Intensity of interferon-stimulated genes expression could be useful to forecast the outcome of infection. High expression of interferon-stimulated genes could signify a dysregulation in the interferon response that might favour the persistence of the HEV infection. Trial’s registration number: NCT01090232; Registry’s URL: http://clinicaltrials.gov/ct2/show/study/NCT01090232?term=kidney+transplant+recipients&amp;cntry1=EU%3AFR&amp;rank=2\nLast Updated (by provider): Jan 31 2013\n\nContributers:  Amira Ben Amara Jean-Louis Mege Philippe Colson Vikram Mehraj Julien Textoris Valérie Moal Yvon Berland\n"
@@ -6042,16 +5808,19 @@ to clear memory.</p></td>
 #&gt; [1] 6027
 #&gt; 
 #&gt; $GSE36539$lastUpdated
-#&gt; [1] 1.519861e+12
-#&gt; 
-#&gt; $GSE36539$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE36539$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE36539$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE36539$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE36539$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE36539$lastNeedsAttentionEvent
 #&gt; NULL
@@ -6062,11 +5831,8 @@ to clear memory.</p></td>
 #&gt; $GSE36539$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE36539$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE36539$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE30886
@@ -6091,6 +5857,9 @@ to clear memory.</p></td>
 #&gt; $GSE30886$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC1); p=2.0e-07"
 #&gt; 
+#&gt; $GSE30886$experimentalDesign
+#&gt; [1] 4672
+#&gt; 
 #&gt; $GSE30886$accession
 #&gt; [1] "GSE30886"
 #&gt; 
@@ -6103,13 +5872,37 @@ to clear memory.</p></td>
 #&gt; $GSE30886$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE30886$experimentalDesign
-#&gt; [1] 4672
+#&gt; $GSE30886$technologyType
+#&gt; [1] "DUALMODE"
 #&gt; 
 #&gt; $GSE30886$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE30886$geeq
+#&gt; $GSE30886$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE30886$geeq$publicQualityScore
+#&gt; [1] 0.1397431
+#&gt; 
+#&gt; $GSE30886$geeq$publicSuitabilityScore
+#&gt; [1] 0.6625
+#&gt; 
+#&gt; $GSE30886$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE30886$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE30886$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE30886$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE30886$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE30886$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -6138,13 +5931,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE30886$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.6944841
+#&gt; [1] -0.02105508
 #&gt; 
 #&gt; $GSE30886$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.7052238
+#&gt; [1] -0.02179835
 #&gt; 
 #&gt; $GSE30886$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.01647014
+#&gt; [1] 0.1631315
 #&gt; 
 #&gt; $GSE30886$geeq$noVectors
 #&gt; [1] FALSE
@@ -6155,30 +5948,6 @@ to clear memory.</p></td>
 #&gt; $GSE30886$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE30886$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE30886$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE30886$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE30886$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE30886$geeq$publicQualityScore
-#&gt; [1] 0.2436034
-#&gt; 
-#&gt; $GSE30886$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE30886$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE30886$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE30886$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -6186,11 +5955,17 @@ to clear memory.</p></td>
 #&gt; [1] 3768
 #&gt; 
 #&gt; 
-#&gt; $GSE30886$technologyType
-#&gt; [1] "DUALMODE"
+#&gt; $GSE30886$bioAssayCount
+#&gt; [1] 41
 #&gt; 
-#&gt; $GSE30886$parentTaxonId
-#&gt; NULL
+#&gt; $GSE30886$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE30886$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE30886$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE30886$public
 #&gt; [1] TRUE
@@ -6207,20 +5982,8 @@ to clear memory.</p></td>
 #&gt; $GSE30886$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE30886$bioAssayCount
-#&gt; [1] 41
-#&gt; 
-#&gt; $GSE30886$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE30886$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE30886$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE30886$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE30886$description
 #&gt; [1] " The ability to identify a robust means for both pediatric and adult liver transplant recipients for minimization and weaning of immunosuppression is greatly needed.   We analyzed 298 samples from pediatric (n=83) and published adult (n=57) liver transplant recipients, and the public available cell or tissue specific samples (n=158). Biomarkers were first identified from the integration of the cross-platform analysis of Stanford pediatric and adult studies and validated in independent samples from UCLA on microarray. Furthermore, Q-PCR was performed for targets validation and delivers a robust diagnostic assay of predicting potential liver tolerance after liver transplantation.   Thirteen unique genes were identified (FDR&lt;5%) using nearest shrunken centroid classification methods as a minimum gene set to cross-validate and predict Stanford pediatric tolerance samples with 1misclassification, 5 misclassification for adult samples, and 100% sensitivity and 83% specificity for an independent UCLA pediatric samples in microarray platform. These subset of tolerant specific genes are highly expressed CD56+ natural killer cells (p=0.03). Furthermore, the subset can be narrowed down to 3 key genes with combined ROC=0.988 for the liver tolerance prediction from Q-PCR verification and 64% MIS and STA were predicted as tolerance with the &gt;90% prediction probability.   Specific peripheral transcriptional programs can be identified in operational tolerance in pediatric recipients of liver allografts, distinct from those previously identified in adult operationally tolerant liver recipients, and may provide a means to non-invasively monitor patients in a serial manner for immunosuppression minimization. These genes are highly expressed in specific peripheral blood lymphocyte subsets, and their coordinated may support the maintenance of operational tolerance in children, following liver transplantation.\nLast Updated (by provider): May 02 2012\n\nContributers:  Sue V McDiarmid Anita Talisetti Laura Wozniak Qian Wang Ken Cox Minnie Sarwal Carlos Esquivel Rong Chen Silke Rodder Li Li Sue Heish\n"
@@ -6235,16 +5998,19 @@ to clear memory.</p></td>
 #&gt; [1] 5317
 #&gt; 
 #&gt; $GSE30886$lastUpdated
-#&gt; [1] 1.524086e+12
-#&gt; 
-#&gt; $GSE30886$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.53722e+12
 #&gt; 
 #&gt; $GSE30886$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE30886$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE30886$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE30886$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE30886$lastNeedsAttentionEvent
 #&gt; $GSE30886$lastNeedsAttentionEvent$performer
@@ -6286,11 +6052,8 @@ to clear memory.</p></td>
 #&gt; $GSE30886$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE30886$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE30886$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE38262
@@ -6315,6 +6078,9 @@ to clear memory.</p></td>
 #&gt; $GSE38262$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC3); p=1.1e-12"
 #&gt; 
+#&gt; $GSE38262$experimentalDesign
+#&gt; [1] 6968
+#&gt; 
 #&gt; $GSE38262$accession
 #&gt; [1] "GSE38262"
 #&gt; 
@@ -6327,13 +6093,37 @@ to clear memory.</p></td>
 #&gt; $GSE38262$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE38262$experimentalDesign
-#&gt; [1] 6968
+#&gt; $GSE38262$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE38262$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE38262$geeq
+#&gt; $GSE38262$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE38262$geeq$publicQualityScore
+#&gt; [1] 0.1419321
+#&gt; 
+#&gt; $GSE38262$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE38262$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE38262$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE38262$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE38262$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE38262$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE38262$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -6350,7 +6140,7 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE38262$geeq$qScoreOutliers
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE38262$geeq$qScorePlatformsTech
 #&gt; [1] 1
@@ -6362,46 +6152,22 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE38262$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9415963
+#&gt; [1] 0.001356198
 #&gt; 
 #&gt; $GSE38262$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9546333
+#&gt; [1] -0.006475357
 #&gt; 
 #&gt; $GSE38262$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.001468914
+#&gt; [1] 0.05899848
 #&gt; 
 #&gt; $GSE38262$geeq$noVectors
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE38262$geeq$corrMatIssues
-#&gt; [1] 0
+#&gt; [1] 2
 #&gt; 
 #&gt; $GSE38262$geeq$replicatesIssues
 #&gt; [1] 0
-#&gt; 
-#&gt; $GSE38262$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE38262$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE38262$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE38262$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE38262$geeq$publicQualityScore
-#&gt; [1] -0.006480964
-#&gt; 
-#&gt; $GSE38262$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE38262$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE38262$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
 #&gt; 
 #&gt; $GSE38262$geeq$`_totalInQuery`
 #&gt; [1] 0
@@ -6410,11 +6176,17 @@ to clear memory.</p></td>
 #&gt; [1] 6581
 #&gt; 
 #&gt; 
-#&gt; $GSE38262$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE38262$bioAssayCount
+#&gt; [1] 92
 #&gt; 
-#&gt; $GSE38262$parentTaxonId
-#&gt; NULL
+#&gt; $GSE38262$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE38262$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE38262$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE38262$public
 #&gt; [1] TRUE
@@ -6431,20 +6203,8 @@ to clear memory.</p></td>
 #&gt; $GSE38262$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE38262$bioAssayCount
-#&gt; [1] 92
-#&gt; 
-#&gt; $GSE38262$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE38262$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE38262$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE38262$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE38262$description
 #&gt; [1] " We investigated the clinical and molecular significance of minimal peritubular capillary (PTC) and isolated glomerular C4d+ staining using microarrays. Immunohistochemistry for C4d was performed on paraffin-embedded sections. Of the 255 biopsies analyzed, 51% were C4d negative, 4% were minimal, 15% focal or diffuse PTC C4d+, and 31% isolated glomerular C4d+. Minimal and focal/ diffuse PTC C4d+ staining were associated with a higher frequency of donor-specific anti-HLA antibodies (DSA) (67% vs. 82% vs. 25%), antibody mediated rejection (AMR) (66% vs. 89% vs. 19%) and mean glomerulitis (0.88 vs. 0.65 vs. 0.25, p=0.003), interstitial inflammation (1.25 vs. 1.41 vs. 0.79; p=0.003) and peritubular capillaritis scores (1.5 vs. 1.5 vs. 0.34; p &lt; 0.001), compared to the C4d negative group, respectively. There were no differences in the DSA frequency, AMR rate, and Banff scores between isolated glomerular C4d+ and negative patients. While both minimal and focal/diffuse C4d+ biopsies showed increased expression of genes related to the immune response, and interferon-gamma and rejection induced, cytotoxic T cell and constitutive macrophage-associated pathogenesis based transcripts, there was no activation of immune-response related genes in isolated glomerular C4d+ biopsies. In summary, minimal PTC C4d+ staining but not isolated glomerular C4d+ staining is associated with AMR.\nLast Updated (by provider): Sep 17 2013\n\nContributers:  Monica Chung Min Ling Nicole Hayde Enver Akalin Graciela de Boccardo Ahmed Alansari Bin Ye James Pullman Daniel Schwartz Yi Bao Brent Calder Daniel Glicklich\n"
@@ -6459,16 +6219,19 @@ to clear memory.</p></td>
 #&gt; [1] 7782
 #&gt; 
 #&gt; $GSE38262$lastUpdated
-#&gt; [1] 1.519925e+12
-#&gt; 
-#&gt; $GSE38262$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537221e+12
 #&gt; 
 #&gt; $GSE38262$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE38262$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE38262$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE38262$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE38262$lastNeedsAttentionEvent
 #&gt; NULL
@@ -6479,11 +6242,8 @@ to clear memory.</p></td>
 #&gt; $GSE38262$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE38262$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE38262$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE52694
@@ -6508,6 +6268,9 @@ to clear memory.</p></td>
 #&gt; $GSE52694$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE52694$experimentalDesign
+#&gt; [1] 7509
+#&gt; 
 #&gt; $GSE52694$accession
 #&gt; [1] "GSE52694"
 #&gt; 
@@ -6520,13 +6283,37 @@ to clear memory.</p></td>
 #&gt; $GSE52694$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE52694$experimentalDesign
-#&gt; [1] 7509
+#&gt; $GSE52694$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE52694$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE52694$geeq
+#&gt; $GSE52694$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE52694$geeq$publicQualityScore
+#&gt; [1] 0.1361821
+#&gt; 
+#&gt; $GSE52694$geeq$publicSuitabilityScore
+#&gt; [1] 0.4125
+#&gt; 
+#&gt; $GSE52694$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE52694$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE52694$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE52694$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE52694$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE52694$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -6572,30 +6359,6 @@ to clear memory.</p></td>
 #&gt; $GSE52694$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE52694$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE52694$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE52694$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE52694$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE52694$geeq$publicQualityScore
-#&gt; [1] 0.1361821
-#&gt; 
-#&gt; $GSE52694$geeq$publicSuitabilityScore
-#&gt; [1] 0.4125
-#&gt; 
-#&gt; $GSE52694$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE52694$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE52694$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -6603,11 +6366,17 @@ to clear memory.</p></td>
 #&gt; [1] 7981
 #&gt; 
 #&gt; 
-#&gt; $GSE52694$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE52694$bioAssayCount
+#&gt; [1] 28
 #&gt; 
-#&gt; $GSE52694$parentTaxonId
-#&gt; NULL
+#&gt; $GSE52694$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE52694$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE52694$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE52694$public
 #&gt; [1] TRUE
@@ -6624,20 +6393,8 @@ to clear memory.</p></td>
 #&gt; $GSE52694$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE52694$bioAssayCount
-#&gt; [1] 28
-#&gt; 
-#&gt; $GSE52694$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE52694$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE52694$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE52694$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE52694$description
 #&gt; [1] " The significance of borderline changes (BL) in kidney allograft biopsies is widely debated. We examined differences in gene expression patterns between early clinical biopsy tissue and 3-month protocol biopsy tissue, all of which had histological BL changes and identified specific molecular BL patterns associated with poor graft outcome. The expression profiles were analyzed in training set of patients and next data were validated in validation cohort using RT-qPCR. Using the Illumina microarray technology, we observed greater expression of immunity- and inflammation-related genes in tissues from early clinical biopsies compared to 3-month protocol biopsies with BL findings. In tissues with early clinically manifested BL changes, graft deterioration within 24 months due to chronic rejection was associated with increased activation of immune, defense, and inflammatory processes, specifically with higher donor age and expression of macrophage receptor CLEC5A. In the 3-month protocol biopsies with BL changes, graft dysfunction was associated with increased expression of fibrinogen complex transcripts. This study highlights the molecular differences between clinical and subclinical biopsies with similar histological findings. The data also support a recommendation for frequent patient monitoring, especially in those who received grafts from expanded criteria donors (ECDs).\nLast Updated (by provider): Dec 19 2013\n\nContributers:  Petra Hruba Irena Brabcova Viktor Stranecky Ondrej Viklicky Roman Zachoval Zdenek Krejcik Eva Honsova\n"
@@ -6652,16 +6409,19 @@ to clear memory.</p></td>
 #&gt; [1] 8327
 #&gt; 
 #&gt; $GSE52694$lastUpdated
-#&gt; [1] 1.528308e+12
-#&gt; 
-#&gt; $GSE52694$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537226e+12
 #&gt; 
 #&gt; $GSE52694$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE52694$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE52694$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE52694$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE52694$lastNeedsAttentionEvent
 #&gt; $GSE52694$lastNeedsAttentionEvent$performer
@@ -6703,11 +6463,8 @@ to clear memory.</p></td>
 #&gt; $GSE52694$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE52694$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE52694$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE1743
@@ -6732,6 +6489,9 @@ to clear memory.</p></td>
 #&gt; $GSE1743$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE1743$experimentalDesign
+#&gt; [1] 4454
+#&gt; 
 #&gt; $GSE1743$accession
 #&gt; [1] "GSE1743"
 #&gt; 
@@ -6744,13 +6504,37 @@ to clear memory.</p></td>
 #&gt; $GSE1743$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE1743$experimentalDesign
-#&gt; [1] 4454
+#&gt; $GSE1743$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE1743$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE1743$geeq
+#&gt; $GSE1743$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1743$geeq$publicQualityScore
+#&gt; [1] 0.2818138
+#&gt; 
+#&gt; $GSE1743$geeq$publicSuitabilityScore
+#&gt; [1] 0.2875
+#&gt; 
+#&gt; $GSE1743$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE1743$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE1743$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1743$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1743$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE1743$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -6796,30 +6580,6 @@ to clear memory.</p></td>
 #&gt; $GSE1743$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE1743$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1743$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1743$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1743$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1743$geeq$publicQualityScore
-#&gt; [1] 0.2818138
-#&gt; 
-#&gt; $GSE1743$geeq$publicSuitabilityScore
-#&gt; [1] 0.2875
-#&gt; 
-#&gt; $GSE1743$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE1743$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE1743$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -6827,11 +6587,17 @@ to clear memory.</p></td>
 #&gt; [1] 2870
 #&gt; 
 #&gt; 
-#&gt; $GSE1743$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE1743$bioAssayCount
+#&gt; [1] 41
 #&gt; 
-#&gt; $GSE1743$parentTaxonId
-#&gt; NULL
+#&gt; $GSE1743$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE1743$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1743$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1743$public
 #&gt; [1] TRUE
@@ -6848,20 +6614,8 @@ to clear memory.</p></td>
 #&gt; $GSE1743$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE1743$bioAssayCount
-#&gt; [1] 41
-#&gt; 
-#&gt; $GSE1743$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE1743$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE1743$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1743$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1743$description
 #&gt; [1] " Background: Despite significant improvements in short-term kidney transplant survival, comparable increases in 5 and 10-year outcomes have not been achieved. Chronic allograft nephropathy (CAN) is a major cause of late graft loss. Toxic nephropathy and inadequate long-term immunosuppression are possible factors. We performed a randomized prospective trial comparing calcineurin inhibitor (CNI)-free to CNI-based immunosuppression to determine the impact on renal function, structure, and gene expression.  Methods: Sixty-one kidney recipients received mycophenolate mofetil (MMF), and prednisone (P). Randomized patients received concentration-controlled sirolimus or cyclosporine. Two years post-transplant 55 patients underwent renal function studies, 48 (87%) underwent transplant biopsies; all classified by Banff scoring and 41 by DNA microarrays.  Findings:  Comparing sirolimus/MMF/P to cyclosporine/MMF/P at two years, there was a significantly lower serum creatinine (1.35 vs. 1.81 mg/dl; p=0.008), significantly higher Cockroft-Gault glomerular filtration rate (GFR) (80.4 vs. 63.4 cc/min; p=0.008), iothalamate GFR (60.6 vs. 49.2 cc/min; p= 0.018), and Banff 0 (normal) biopsies (66.6 vs. 20.8%; p=0.013).  Regression analysis of calculated GFR’s from 1 to 36 months yielded a positive slope for sirolimus of 3.36 ml/min/year, and a negative slope for cyclosporine of –1.58 ml/min/year (p=0.008). Gene expression profiles of kidney biopsies with higher Banff CAN scores confirmed significant up regulation of genes responsible for immune/inflammation and fibrosis/tissue remodeling.  Interpretation:  At two years the sirolimus-treated patients have better renal transplant function, a diminished prevalence of CAN, and down regulated expression of genes responsible for the progression of CAN. All may provide for an alternative natural history with improved graft survival.\nLast Updated (by provider): May 16 2012\n\nContributers:  Jennifer A Hammond Caroline M Lanigan Hank Rollin Daniel J Cook Steven R Head Sunil M Kurian Daniel R Salomon Thomas C Whisenant Stuart M Flechner James T Burke Kim Solez\n\nIncludes GDS987.\n Update date: Apr 18 2005.\n Dataset description GDS987: Analysis of kidneys from adult renal transplant recipients subjected to calcineurin inhibitor-free immunosuppression using sirolimus. Patients treated with sirolimus have a lower prevalence of chronic allograft nephropathy compared to those treated with cyclosporine, a calcineurin inhibitor..\n"
@@ -6876,16 +6630,19 @@ to clear memory.</p></td>
 #&gt; [1] 4902
 #&gt; 
 #&gt; $GSE1743$lastUpdated
-#&gt; [1] 1.52772e+12
-#&gt; 
-#&gt; $GSE1743$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537218e+12
 #&gt; 
 #&gt; $GSE1743$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1743$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE1743$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1743$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE1743$lastNeedsAttentionEvent
 #&gt; $GSE1743$lastNeedsAttentionEvent$performer
@@ -6927,11 +6684,8 @@ to clear memory.</p></td>
 #&gt; $GSE1743$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE1743$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE1743$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE22229
@@ -6956,6 +6710,9 @@ to clear memory.</p></td>
 #&gt; $GSE22229$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC 1), p=6.3099e-07"
 #&gt; 
+#&gt; $GSE22229$experimentalDesign
+#&gt; [1] 3369
+#&gt; 
 #&gt; $GSE22229$accession
 #&gt; [1] "GSE22229"
 #&gt; 
@@ -6968,13 +6725,37 @@ to clear memory.</p></td>
 #&gt; $GSE22229$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE22229$experimentalDesign
-#&gt; [1] 3369
+#&gt; $GSE22229$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE22229$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE22229$geeq
+#&gt; $GSE22229$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22229$geeq$publicQualityScore
+#&gt; [1] 0.2810838
+#&gt; 
+#&gt; $GSE22229$geeq$publicSuitabilityScore
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22229$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE22229$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE22229$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22229$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE22229$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE22229$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -7020,30 +6801,6 @@ to clear memory.</p></td>
 #&gt; $GSE22229$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE22229$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22229$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22229$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22229$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE22229$geeq$publicQualityScore
-#&gt; [1] 0.2810838
-#&gt; 
-#&gt; $GSE22229$geeq$publicSuitabilityScore
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE22229$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE22229$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE22229$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -7051,11 +6808,17 @@ to clear memory.</p></td>
 #&gt; [1] 5073
 #&gt; 
 #&gt; 
-#&gt; $GSE22229$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE22229$bioAssayCount
+#&gt; [1] 58
 #&gt; 
-#&gt; $GSE22229$parentTaxonId
-#&gt; NULL
+#&gt; $GSE22229$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE22229$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22229$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22229$public
 #&gt; [1] TRUE
@@ -7072,20 +6835,8 @@ to clear memory.</p></td>
 #&gt; $GSE22229$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE22229$bioAssayCount
-#&gt; [1] 58
-#&gt; 
-#&gt; $GSE22229$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE22229$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE22229$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE22229$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22229$description
 #&gt; [1] " In this study, investigators recruited the largest reported cohort of tolerant kidney transplant recipients who maintained their graft after ceasing to take their immunosuppression drug, and compared this cohort to subjects with stable  allograft function while on immunosuppression and healthy non transplated, controls.  Using gene expression studies, they identified genetic markers that are strong candidates for predicting kidney transplant candidates who may benefit from minimization or withdrawl of immunosuppression. Microarrays were used to detect expressed gene profiles of whole-blood total RNA from subjects in the tolerant, standard immunotherapy and healthy control participants\nLast Updated (by provider): Aug 18 2011\n\nContributers:  Kenneth Newell Larry Turka Vicki Seyfert-Margolis Adam Asare\n"
@@ -7100,16 +6851,19 @@ to clear memory.</p></td>
 #&gt; [1] 3106
 #&gt; 
 #&gt; $GSE22229$lastUpdated
-#&gt; [1] 1.529516e+12
-#&gt; 
-#&gt; $GSE22229$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537209e+12
 #&gt; 
 #&gt; $GSE22229$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE22229$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE22229$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE22229$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE22229$lastNeedsAttentionEvent
 #&gt; $GSE22229$lastNeedsAttentionEvent$performer
@@ -7151,11 +6905,8 @@ to clear memory.</p></td>
 #&gt; $GSE22229$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE22229$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE22229$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; 
 #&gt; $GSE25098
@@ -7180,6 +6931,9 @@ to clear memory.</p></td>
 #&gt; $GSE25098$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE25098$experimentalDesign
+#&gt; [1] 3497
+#&gt; 
 #&gt; $GSE25098$accession
 #&gt; [1] "GSE25098"
 #&gt; 
@@ -7192,56 +6946,26 @@ to clear memory.</p></td>
 #&gt; $GSE25098$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE25098$experimentalDesign
-#&gt; [1] 3497
+#&gt; $GSE25098$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE25098$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE25098$geeq
-#&gt; $GSE25098$geeq$sScoreAvgPlatformPopularity
-#&gt; [1] 0.5
-#&gt; 
-#&gt; $GSE25098$geeq$sScoreAvgPlatformSize
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE25098$geeq$sScoreSampleSize
-#&gt; [1] 0.3
-#&gt; 
-#&gt; $GSE25098$geeq$sScoreRawData
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE25098$geeq$sScoreMissingValues
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE25098$geeq$qScoreOutliers
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE25098$geeq$qScorePlatformsTech
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE25098$geeq$qScoreReplicates
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE25098$geeq$qScoreBatchInfo
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE25098$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9389228
-#&gt; 
-#&gt; $GSE25098$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9461532
-#&gt; 
-#&gt; $GSE25098$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.0008439206
-#&gt; 
-#&gt; $GSE25098$geeq$noVectors
+#&gt; $GSE25098$geeq$batchCorrected
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE25098$geeq$corrMatIssues
+#&gt; $GSE25098$geeq$publicQualityScore
+#&gt; [1] -0.01679781
+#&gt; 
+#&gt; $GSE25098$geeq$publicSuitabilityScore
+#&gt; [1] 0.5375
+#&gt; 
+#&gt; $GSE25098$geeq$qScorePublicBatchEffect
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE25098$geeq$replicatesIssues
+#&gt; $GSE25098$geeq$qScorePublicBatchConfound
 #&gt; [1] 0
 #&gt; 
 #&gt; $GSE25098$geeq$sScorePublication
@@ -7253,19 +6977,49 @@ to clear memory.</p></td>
 #&gt; $GSE25098$geeq$sScorePlatformsTechMulti
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE25098$geeq$batchCorrected
-#&gt; [1] FALSE
+#&gt; $GSE25098$geeq$sScoreAvgPlatformPopularity
+#&gt; [1] 1
 #&gt; 
-#&gt; $GSE25098$geeq$publicQualityScore
-#&gt; [1] 0.2780219
-#&gt; 
-#&gt; $GSE25098$geeq$publicSuitabilityScore
-#&gt; [1] 0.225
-#&gt; 
-#&gt; $GSE25098$geeq$qScorePublicBatchEffect
+#&gt; $GSE25098$geeq$sScoreAvgPlatformSize
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE25098$geeq$qScorePublicBatchConfound
+#&gt; $GSE25098$geeq$sScoreSampleSize
+#&gt; [1] 0.3
+#&gt; 
+#&gt; $GSE25098$geeq$sScoreRawData
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE25098$geeq$sScoreMissingValues
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE25098$geeq$qScoreOutliers
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE25098$geeq$qScorePlatformsTech
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE25098$geeq$qScoreReplicates
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE25098$geeq$qScoreBatchInfo
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE25098$geeq$qScoreSampleMeanCorrelation
+#&gt; [1] 0.8620589
+#&gt; 
+#&gt; $GSE25098$geeq$qScoreSampleMedianCorrelation
+#&gt; [1] 0.8824153
+#&gt; 
+#&gt; $GSE25098$geeq$qScoreSampleCorrelationVariance
+#&gt; [1] 0.006048247
+#&gt; 
+#&gt; $GSE25098$geeq$noVectors
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE25098$geeq$corrMatIssues
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE25098$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
 #&gt; $GSE25098$geeq$`_totalInQuery`
@@ -7275,11 +7029,17 @@ to clear memory.</p></td>
 #&gt; [1] 5649
 #&gt; 
 #&gt; 
-#&gt; $GSE25098$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE25098$bioAssayCount
+#&gt; [1] 28
 #&gt; 
-#&gt; $GSE25098$parentTaxonId
-#&gt; NULL
+#&gt; $GSE25098$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE25098$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE25098$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE25098$public
 #&gt; [1] TRUE
@@ -7296,20 +7056,8 @@ to clear memory.</p></td>
 #&gt; $GSE25098$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE25098$bioAssayCount
-#&gt; [1] 28
-#&gt; 
-#&gt; $GSE25098$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE25098$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE25098$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE25098$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE25098$description
 #&gt; [1] " Microarray analysis of rhabdomyosarcomas generated using mice with conditional mutations in Kras and p53 using both in vivo and in vitro approaches to identify a cell of origin for rhabdomyosarcoma.\nLast Updated (by provider): Jan 31 2011\n\nContributers:  Jordan M Blum David G Kirsch\n"
@@ -7324,16 +7072,19 @@ to clear memory.</p></td>
 #&gt; [1] 3234
 #&gt; 
 #&gt; $GSE25098$lastUpdated
-#&gt; [1] 1.525067e+12
-#&gt; 
-#&gt; $GSE25098$needsAttention
-#&gt; [1] TRUE
+#&gt; [1] 1.53721e+12
 #&gt; 
 #&gt; $GSE25098$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE25098$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE25098$needsAttention
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE25098$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE25098$lastNeedsAttentionEvent
 #&gt; NULL
@@ -7344,11 +7095,8 @@ to clear memory.</p></td>
 #&gt; $GSE25098$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE25098$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE25098$`_totalInQuery`
-#&gt; [1] 31
+#&gt; [1] 30
 #&gt; 
 #&gt; </div></pre>
   </div>

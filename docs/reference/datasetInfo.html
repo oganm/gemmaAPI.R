@@ -204,6 +204,9 @@ to clear memory.</p></td>
 #&gt; $GSE81454$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE81454$experimentalDesign
+#&gt; [1] 9321
+#&gt; 
 #&gt; $GSE81454$accession
 #&gt; [1] "GSE81454"
 #&gt; 
@@ -216,15 +219,39 @@ to clear memory.</p></td>
 #&gt; $GSE81454$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE81454$experimentalDesign
-#&gt; [1] 9321
+#&gt; $GSE81454$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE81454$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE81454$geeq
+#&gt; $GSE81454$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE81454$geeq$publicQualityScore
+#&gt; [1] 0.419478
+#&gt; 
+#&gt; $GSE81454$geeq$publicSuitabilityScore
+#&gt; [1] 0.725
+#&gt; 
+#&gt; $GSE81454$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE81454$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE81454$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE81454$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE81454$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE81454$geeq$sScoreAvgPlatformPopularity
-#&gt; [1] -1
+#&gt; [1] -0.5
 #&gt; 
 #&gt; $GSE81454$geeq$sScoreAvgPlatformSize
 #&gt; [1] 1
@@ -263,33 +290,9 @@ to clear memory.</p></td>
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE81454$geeq$corrMatIssues
-#&gt; [1] 0
+#&gt; [1] 2
 #&gt; 
 #&gt; $GSE81454$geeq$replicatesIssues
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE81454$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE81454$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE81454$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE81454$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE81454$geeq$publicQualityScore
-#&gt; [1] 0.419478
-#&gt; 
-#&gt; $GSE81454$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE81454$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE81454$geeq$qScorePublicBatchConfound
 #&gt; [1] 0
 #&gt; 
 #&gt; $GSE81454$geeq$`_totalInQuery`
@@ -299,11 +302,17 @@ to clear memory.</p></td>
 #&gt; [1] 7697
 #&gt; 
 #&gt; 
-#&gt; $GSE81454$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE81454$bioAssayCount
+#&gt; [1] 31
 #&gt; 
-#&gt; $GSE81454$parentTaxonId
-#&gt; NULL
+#&gt; $GSE81454$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE81454$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE81454$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE81454$public
 #&gt; [1] TRUE
@@ -320,20 +329,8 @@ to clear memory.</p></td>
 #&gt; $GSE81454$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE81454$bioAssayCount
-#&gt; [1] 31
-#&gt; 
-#&gt; $GSE81454$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE81454$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE81454$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE81454$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE81454$description
 #&gt; [1] " Immune profiles were performed retrospectively in highly sensitized kidney transplant candidates Our hypothesis was that baseline differences in immune profiles could help identify candidates that respond to desensitization therapy.\nLast Updated (by provider): Apr 20 2017\n\nContributers:  Julie Yabu\n"
@@ -348,16 +345,19 @@ to clear memory.</p></td>
 #&gt; [1] 10634
 #&gt; 
 #&gt; $GSE81454$lastUpdated
-#&gt; [1] 1.519895e+12
-#&gt; 
-#&gt; $GSE81454$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537216e+12
 #&gt; 
 #&gt; $GSE81454$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE81454$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE81454$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE81454$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE81454$lastNeedsAttentionEvent
 #&gt; NULL
@@ -367,9 +367,6 @@ to clear memory.</p></td>
 #&gt; 
 #&gt; $GSE81454$curationNote
 #&gt; NULL
-#&gt; 
-#&gt; $GSE81454$troubleDetails
-#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE81454$`_totalInQuery`
 #&gt; [1] 1
@@ -414,18 +411,6 @@ to clear memory.</p></td>
 #&gt; $GPL15207$color
 #&gt; [1] "ONECOLOR"
 #&gt; 
-#&gt; $GPL15207$expressionExperimentCount
-#&gt; [1] 14
-#&gt; 
-#&gt; $GPL15207$hasBlatAssociations
-#&gt; NULL
-#&gt; 
-#&gt; $GPL15207$hasGeneAssociations
-#&gt; NULL
-#&gt; 
-#&gt; $GPL15207$hasSequenceAssociations
-#&gt; NULL
-#&gt; 
 #&gt; $GPL15207$isMerged
 #&gt; NULL
 #&gt; 
@@ -441,6 +426,18 @@ to clear memory.</p></td>
 #&gt; $GPL15207$lastRepeatMask
 #&gt; NULL
 #&gt; 
+#&gt; $GPL15207$expressionExperimentCount
+#&gt; [1] 14
+#&gt; 
+#&gt; $GPL15207$hasBlatAssociations
+#&gt; NULL
+#&gt; 
+#&gt; $GPL15207$hasGeneAssociations
+#&gt; NULL
+#&gt; 
+#&gt; $GPL15207$hasSequenceAssociations
+#&gt; NULL
+#&gt; 
 #&gt; $GPL15207$description
 #&gt; [1] ""
 #&gt; 
@@ -450,14 +447,17 @@ to clear memory.</p></td>
 #&gt; $GPL15207$lastUpdated
 #&gt; [1] 1.53031e+12
 #&gt; 
-#&gt; $GPL15207$needsAttention
-#&gt; [1] FALSE
-#&gt; 
 #&gt; $GPL15207$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GPL15207$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GPL15207$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GPL15207$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GPL15207$lastNeedsAttentionEvent
 #&gt; NULL
@@ -467,9 +467,6 @@ to clear memory.</p></td>
 #&gt; 
 #&gt; $GPL15207$curationNote
 #&gt; NULL
-#&gt; 
-#&gt; $GPL15207$troubleDetails
-#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GPL15207$`_totalInQuery`
 #&gt; [1] 0

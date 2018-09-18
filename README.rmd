@@ -14,6 +14,15 @@ devtools::load_all()
 
 
 
+Table of Contents
+=================
+
+   * [Installation](#installation)
+   * [Documentation](#documentation)
+   * [Examples](#examples)
+   * [Changelog](#changelog)
+
+
 This is an R wrapper for [Gemma](http://www.chibi.ubc.ca/Gemma/home.html)'s restful [API](http://www.chibi.ubc.ca/Gemma/resources/restapidocs/).
 
 
@@ -55,8 +64,9 @@ Get metadata for first 10 mouse studies.
 ```{r}
 mouseStudies = taxonInfo('mouse',request = 'datasets',limit = 0)
 studyIDs = mouseStudies %>% purrr::map_int('id')
-mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata)
-mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
+mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata,outputType = 'list') 
+# default outputType is data.frame, which returns a single data frame with study and sample data all together.
+mouseMetadata[[1]]$sampleData %>% head %>% knitr::kable(format ='markdown')
 ```
 
 Download expression data a study
@@ -64,3 +74,15 @@ Download expression data a study
 ```{r,eval=FALSE}
 studyIDs %>% sapply(function(x){datasetInfo(x,request= 'data',return= FALSE, file = paste0('data/',x))})
 ```
+
+
+# Changelog
+
+**17 September 2018:** 
+
+* Start writing changelog... 
+* `compileMetadata` function now returns all quality information in geeq. Existing columnames for batch effect information has been altered to better explain what they are.
+* `compileMetadata` now returns a list instead of a data frame for experiment specific information if the desired output is a list.
+* endpoint functions are fine if their naming variable is NULL. For most cases this shouldn't happen but names are for interactive usage and should not be relied on.
+* Started using proper semantic versioning
+* TOC added to readme

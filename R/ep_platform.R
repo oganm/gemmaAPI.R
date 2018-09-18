@@ -59,7 +59,7 @@ allPlatforms = function(platforms = NULL,
                    'platforms/{platforms}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
     content = getContent(url,file = file,return = return, overwrite = overwrite)
     if(return){
-        names(content) =  content %>% purrr::map_chr('shortName')
+        names(content) =  content %>% purrr::map_chr('shortName', .default = NA)
     }
     return(content)
 }
@@ -178,11 +178,11 @@ platformInfo = function(platform,
         if(is.null(request)){
             # names(content) =  content %>% purrr::map_chr('shortName')
         } else if(request %in% c('datasets')){
-            names(content) =  content %>% purrr::map_chr('shortName')
+            names(content) =  content %>% purrr::map_chr('shortName', .default = NA)
         } else if (request %in% c('elements')){
-            names(content) =  content %>% purrr::map_chr('name')
+            names(content) =  content %>% purrr::map_chr('name', .default = NA)
         }  else if (request %in% 'genes'){
-            names(content) =  content %>% purrr::map_chr('name')
+            names(content) =  content %>% purrr::map_chr('name', .default = NA)
         }
     }
     

@@ -130,224 +130,196 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>compileMetadata</span>(<span class='st'>'GSE11322'</span>)</div><div class='output co'>#&gt;               datasetID datasetName taxon              experimentAnnotClass
-#&gt; WT_basal_4         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_1         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_3         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_2         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_5         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_2         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_4         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_5         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_1         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_3         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt;                        experimentAnnotClassOntoID
-#&gt; WT_basal_4    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_1    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_3    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_2    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_5    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_2    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_4    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_5    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_1    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_3    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt;                                                                                                      experimentAnnotClassURI
-#&gt; WT_basal_4    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_5    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_1    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_3    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt;                                                              experimentAnnotation
-#&gt; WT_basal_4    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_1    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_3    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_2    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_5    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_2    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_4    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_5    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_1    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_3    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt;                         experimentAnnotationOntoID
-#&gt; WT_basal_4    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_1    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_3    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_2    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_5    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_2    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_4    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_5    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_1    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_3    GENE_12064|CL_0000540|UBERON_0001893
-#&gt;                                                                                                                              experimentAnnotationURI
-#&gt; WT_basal_4    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_1    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_3    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_5    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_4    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_5    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_1    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_3    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt;               platformName technologyType batchConfound
-#&gt; WT_basal_4          GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_5       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_5       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_2       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_1       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_3       GPL339       ONECOLOR            -1
-#&gt; KO_basal_1          GPL339       ONECOLOR            -1
-#&gt; KO_basal_3          GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_3       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_4       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_5       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_1       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_1       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_3       GPL339       ONECOLOR            -1
-#&gt; WT_basal_2          GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_3       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_4       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_1       GPL339       ONECOLOR            -1
-#&gt; WT_basal_5          GPL339       ONECOLOR            -1
-#&gt; KO_basal_2          GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_2       GPL339       ONECOLOR            -1
-#&gt; KO_basal_4          GPL339       ONECOLOR            -1
-#&gt; KO_basal_5          GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_4       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_5       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_2       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_2       GPL339       ONECOLOR            -1
-#&gt; WT_basal_1          GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_4       GPL339       ONECOLOR            -1
-#&gt; WT_basal_3          GPL339       ONECOLOR            -1
-#&gt;                                                                           batchConf
+    <pre class="examples"><div class='input'><span class='fu'>compileMetadata</span>(<span class='st'>'GSE11322'</span>)</div><div class='output co'>#&gt;               datasetID datasetName taxon
+#&gt; WT_basal_4         1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_5      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_5      1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_2      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_1      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_3      1017    GSE11322 mouse
+#&gt; KO_basal_1         1017    GSE11322 mouse
+#&gt; KO_basal_3         1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_3      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_4      1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_5      1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_1      1017    GSE11322 mouse
+#&gt; KO_BDNF_24h_1      1017    GSE11322 mouse
+#&gt; KO_BDNF_24h_3      1017    GSE11322 mouse
+#&gt; WT_basal_2         1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_3      1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_4      1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_1      1017    GSE11322 mouse
+#&gt; WT_basal_5         1017    GSE11322 mouse
+#&gt; KO_basal_2         1017    GSE11322 mouse
+#&gt;                                              experimentAnnotClass
+#&gt; WT_basal_4    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_5 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_5 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_2 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_basal_1    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_basal_3    treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_4 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_5 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_24h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_24h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_basal_2    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_4 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_basal_5    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_basal_2    treatment|organism part|genotype|cell type|genotype
+#&gt;                                                experimentAnnotClassOntoID
+#&gt; WT_basal_4    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_5 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_5 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_2 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_basal_1    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_basal_3    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_4 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_5 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_24h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_24h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_basal_2    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_4 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_basal_5    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_basal_2    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt;                                                                                                                                                                                experimentAnnotClassURI
+#&gt; WT_basal_4    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_basal_5    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt;                                                                                                                       experimentAnnotation
+#&gt; WT_basal_4    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_5 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_2 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_basal_1    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_basal_3    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_4 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_basal_2    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_4 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_basal_5    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_basal_2    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt;                                                experimentAnnotationOntoID
+#&gt; WT_basal_4    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_5 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_5 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_2 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_basal_1    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_basal_3    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_4 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_5 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_24h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_24h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_basal_2    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_4 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_basal_5    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_basal_2    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt;                                                                                                                                                                                                                        experimentAnnotationURI
+#&gt; WT_basal_4    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_basal_1    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_basal_3    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_basal_5    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt;               platformName technologyType externalDatabase troubled
+#&gt; WT_basal_4          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_5       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_5       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_2       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_basal_1          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_basal_3          GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_4       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_5       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_24h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_24h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_basal_2          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_4       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_basal_5          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_basal_2          GPL339       ONECOLOR              GEO    FALSE
+#&gt;                             troubleDetails
+#&gt; WT_basal_4    No trouble details provided.
+#&gt; KO_BDNF_48h_5 No trouble details provided.
+#&gt; WT_BDNF_24h_5 No trouble details provided.
+#&gt; WT_BDNF_48h_2 No trouble details provided.
+#&gt; WT_BDNF_24h_1 No trouble details provided.
+#&gt; WT_BDNF_24h_3 No trouble details provided.
+#&gt; KO_basal_1    No trouble details provided.
+#&gt; KO_basal_3    No trouble details provided.
+#&gt; WT_BDNF_48h_3 No trouble details provided.
+#&gt; WT_BDNF_24h_4 No trouble details provided.
+#&gt; WT_BDNF_48h_5 No trouble details provided.
+#&gt; KO_BDNF_48h_1 No trouble details provided.
+#&gt; KO_BDNF_24h_1 No trouble details provided.
+#&gt; KO_BDNF_24h_3 No trouble details provided.
+#&gt; WT_basal_2    No trouble details provided.
+#&gt; KO_BDNF_48h_3 No trouble details provided.
+#&gt; KO_BDNF_48h_4 No trouble details provided.
+#&gt; WT_BDNF_48h_1 No trouble details provided.
+#&gt; WT_basal_5    No trouble details provided.
+#&gt; KO_basal_2    No trouble details provided.
+#&gt;                                                            batchConfoundDescription
 #&gt; WT_basal_4    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; KO_BDNF_48h_5 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; WT_BDNF_24h_5 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
@@ -368,48 +340,7 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; WT_basal_5    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; KO_basal_2    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_BDNF_24h_2 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_basal_4    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_basal_5    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_BDNF_48h_4 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_24h_5 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_48h_2 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_24h_2 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_basal_1    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_24h_4 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_basal_3    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt;               batchEffect
-#&gt; WT_basal_4             -1
-#&gt; KO_BDNF_48h_5          -1
-#&gt; WT_BDNF_24h_5          -1
-#&gt; WT_BDNF_48h_2          -1
-#&gt; WT_BDNF_24h_1          -1
-#&gt; WT_BDNF_24h_3          -1
-#&gt; KO_basal_1             -1
-#&gt; KO_basal_3             -1
-#&gt; WT_BDNF_48h_3          -1
-#&gt; WT_BDNF_24h_4          -1
-#&gt; WT_BDNF_48h_5          -1
-#&gt; KO_BDNF_48h_1          -1
-#&gt; KO_BDNF_24h_1          -1
-#&gt; KO_BDNF_24h_3          -1
-#&gt; WT_basal_2             -1
-#&gt; KO_BDNF_48h_3          -1
-#&gt; KO_BDNF_48h_4          -1
-#&gt; WT_BDNF_48h_1          -1
-#&gt; WT_basal_5             -1
-#&gt; KO_basal_2             -1
-#&gt; WT_BDNF_24h_2          -1
-#&gt; KO_basal_4             -1
-#&gt; KO_basal_5             -1
-#&gt; WT_BDNF_48h_4          -1
-#&gt; KO_BDNF_24h_5          -1
-#&gt; KO_BDNF_48h_2          -1
-#&gt; KO_BDNF_24h_2          -1
-#&gt; WT_basal_1             -1
-#&gt; KO_BDNF_24h_4          -1
-#&gt; WT_basal_3             -1
-#&gt;                                                                batchEf
+#&gt;                                                 batchEffectDescription
 #&gt; WT_basal_4    This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; KO_BDNF_48h_5 This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; WT_BDNF_24h_5 This data set may have a batch artifact (PC1); p=1.7e-05
@@ -430,78 +361,174 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; WT_basal_5    This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; KO_basal_2    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_BDNF_24h_2 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_basal_4    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_basal_5    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_BDNF_48h_4 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_24h_5 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_48h_2 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_24h_2 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_basal_1    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_24h_4 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_basal_3    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt;               batchCorrected    id    sampleName accession sampleBiomaterialID
-#&gt; WT_basal_4             FALSE 41018    WT_basal_4 GSM286000               36144
-#&gt; KO_BDNF_48h_5          FALSE 41007 KO_BDNF_48h_5 GSM286011               36133
-#&gt; WT_BDNF_24h_5          FALSE 41029 WT_BDNF_24h_5 GSM285848               36155
-#&gt; WT_BDNF_48h_2          FALSE 41027 WT_BDNF_48h_2 GSM285850               36153
-#&gt; WT_BDNF_24h_1          FALSE 41016 WT_BDNF_24h_1 GSM286002               36142
-#&gt; WT_BDNF_24h_3          FALSE 41014 WT_BDNF_24h_3 GSM286004               36140
-#&gt; KO_basal_1             FALSE 41036    KO_basal_1 GSM285796               36162
-#&gt; KO_basal_3             FALSE 41025    KO_basal_3 GSM285993               36151
-#&gt; WT_BDNF_48h_3          FALSE 41024 WT_BDNF_48h_3 GSM285994               36150
-#&gt; WT_BDNF_24h_4          FALSE 41013 WT_BDNF_24h_4 GSM286005               36139
-#&gt; WT_BDNF_48h_5          FALSE 41022 WT_BDNF_48h_5 GSM285996               36148
-#&gt; KO_BDNF_48h_1          FALSE 41011 KO_BDNF_48h_1 GSM286007               36137
-#&gt; KO_BDNF_24h_1          FALSE 41033 KO_BDNF_24h_1 GSM285841               36159
-#&gt; KO_BDNF_24h_3          FALSE 41031 KO_BDNF_24h_3 GSM285846               36157
-#&gt; WT_basal_2             FALSE 41020    WT_basal_2 GSM285998               36146
-#&gt; KO_BDNF_48h_3          FALSE 41009 KO_BDNF_48h_3 GSM286009               36135
-#&gt; KO_BDNF_48h_4          FALSE 41008 KO_BDNF_48h_4 GSM286010               36134
-#&gt; WT_BDNF_48h_1          FALSE 41028 WT_BDNF_48h_1 GSM285849               36154
-#&gt; WT_basal_5             FALSE 41017    WT_basal_5 GSM286001               36143
-#&gt; KO_basal_2             FALSE 41026    KO_basal_2 GSM285992               36152
-#&gt; WT_BDNF_24h_2          FALSE 41015 WT_BDNF_24h_2 GSM286003               36141
-#&gt; KO_basal_4             FALSE 41035    KO_basal_4 GSM285813               36161
-#&gt; KO_basal_5             FALSE 41034    KO_basal_5 GSM285832               36160
-#&gt; WT_BDNF_48h_4          FALSE 41023 WT_BDNF_48h_4 GSM285995               36149
-#&gt; KO_BDNF_24h_5          FALSE 41012 KO_BDNF_24h_5 GSM286006               36138
-#&gt; KO_BDNF_48h_2          FALSE 41010 KO_BDNF_48h_2 GSM286008               36136
-#&gt; KO_BDNF_24h_2          FALSE 41032 KO_BDNF_24h_2 GSM285844               36158
-#&gt; WT_basal_1             FALSE 41021    WT_basal_1 GSM285997               36147
-#&gt; KO_BDNF_24h_4          FALSE 41030 KO_BDNF_24h_4 GSM285847               36156
-#&gt; WT_basal_3             FALSE 41019    WT_basal_3 GSM285999               36145
-#&gt;                             sampleAnnotCategory
-#&gt; WT_basal_4             timepoint|genotype|block
-#&gt; KO_BDNF_48h_5 genotype;genotype|timepoint|block
-#&gt; WT_BDNF_24h_5          timepoint|genotype|block
-#&gt; WT_BDNF_48h_2          genotype|timepoint|block
-#&gt; WT_BDNF_24h_1          timepoint|genotype|block
-#&gt; WT_BDNF_24h_3          timepoint|genotype|block
-#&gt; KO_basal_1    timepoint|genotype;genotype|block
-#&gt; KO_basal_3    timepoint|genotype;genotype|block
-#&gt; WT_BDNF_48h_3          genotype|timepoint|block
-#&gt; WT_BDNF_24h_4          timepoint|genotype|block
-#&gt; WT_BDNF_48h_5          genotype|timepoint|block
-#&gt; KO_BDNF_48h_1 genotype;genotype|timepoint|block
-#&gt; KO_BDNF_24h_1 timepoint|genotype;genotype|block
-#&gt; KO_BDNF_24h_3 timepoint|genotype;genotype|block
-#&gt; WT_basal_2             timepoint|genotype|block
-#&gt; KO_BDNF_48h_3 genotype;genotype|timepoint|block
-#&gt; KO_BDNF_48h_4 genotype;genotype|timepoint|block
-#&gt; WT_BDNF_48h_1          genotype|timepoint|block
-#&gt; WT_basal_5             timepoint|genotype|block
-#&gt; KO_basal_2    timepoint|genotype;genotype|block
-#&gt; WT_BDNF_24h_2          timepoint|genotype|block
-#&gt; KO_basal_4    timepoint|genotype;genotype|block
-#&gt; KO_basal_5    timepoint|genotype;genotype|block
-#&gt; WT_BDNF_48h_4          genotype|timepoint|block
-#&gt; KO_BDNF_24h_5 timepoint|genotype;genotype|block
-#&gt; KO_BDNF_48h_2 genotype;genotype|timepoint|block
-#&gt; KO_BDNF_24h_2 timepoint|genotype;genotype|block
-#&gt; WT_basal_1             timepoint|genotype|block
-#&gt; KO_BDNF_24h_4 timepoint|genotype;genotype|block
-#&gt; WT_basal_3             timepoint|genotype|block
+#&gt;               geeq.batchConfound geeq.batchEffect geeq.batchCorrected
+#&gt; WT_basal_4                    -1               -1               FALSE
+#&gt; KO_BDNF_48h_5                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_5                 -1               -1               FALSE
+#&gt; WT_BDNF_48h_2                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_1                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_3                 -1               -1               FALSE
+#&gt; KO_basal_1                    -1               -1               FALSE
+#&gt; KO_basal_3                    -1               -1               FALSE
+#&gt; WT_BDNF_48h_3                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_4                 -1               -1               FALSE
+#&gt; WT_BDNF_48h_5                 -1               -1               FALSE
+#&gt; KO_BDNF_48h_1                 -1               -1               FALSE
+#&gt; KO_BDNF_24h_1                 -1               -1               FALSE
+#&gt; KO_BDNF_24h_3                 -1               -1               FALSE
+#&gt; WT_basal_2                    -1               -1               FALSE
+#&gt; KO_BDNF_48h_3                 -1               -1               FALSE
+#&gt; KO_BDNF_48h_4                 -1               -1               FALSE
+#&gt; WT_BDNF_48h_1                 -1               -1               FALSE
+#&gt; WT_basal_5                    -1               -1               FALSE
+#&gt; KO_basal_2                    -1               -1               FALSE
+#&gt;               geeq.batchInfo geeq.qualityScore geeq.suitabilityScore
+#&gt; WT_basal_4                 1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_5              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_5              1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_2              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_1              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_3              1         0.1381725                0.5375
+#&gt; KO_basal_1                 1         0.1381725                0.5375
+#&gt; KO_basal_3                 1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_3              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_4              1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_5              1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_1              1         0.1381725                0.5375
+#&gt; KO_BDNF_24h_1              1         0.1381725                0.5375
+#&gt; KO_BDNF_24h_3              1         0.1381725                0.5375
+#&gt; WT_basal_2                 1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_3              1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_4              1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_1              1         0.1381725                0.5375
+#&gt; WT_basal_5                 1         0.1381725                0.5375
+#&gt; KO_basal_2                 1         0.1381725                0.5375
+#&gt;               geeq.publication geeq.platformAmount geeq.platformsTechMulti
+#&gt; WT_basal_4                   1                   1                       1
+#&gt; KO_BDNF_48h_5                1                   1                       1
+#&gt; WT_BDNF_24h_5                1                   1                       1
+#&gt; WT_BDNF_48h_2                1                   1                       1
+#&gt; WT_BDNF_24h_1                1                   1                       1
+#&gt; WT_BDNF_24h_3                1                   1                       1
+#&gt; KO_basal_1                   1                   1                       1
+#&gt; KO_basal_3                   1                   1                       1
+#&gt; WT_BDNF_48h_3                1                   1                       1
+#&gt; WT_BDNF_24h_4                1                   1                       1
+#&gt; WT_BDNF_48h_5                1                   1                       1
+#&gt; KO_BDNF_48h_1                1                   1                       1
+#&gt; KO_BDNF_24h_1                1                   1                       1
+#&gt; KO_BDNF_24h_3                1                   1                       1
+#&gt; WT_basal_2                   1                   1                       1
+#&gt; KO_BDNF_48h_3                1                   1                       1
+#&gt; KO_BDNF_48h_4                1                   1                       1
+#&gt; WT_BDNF_48h_1                1                   1                       1
+#&gt; WT_basal_5                   1                   1                       1
+#&gt; KO_basal_2                   1                   1                       1
+#&gt;               geeq.platformPopularity geeq.avgPlatformSize geeq.sampleSize
+#&gt; WT_basal_4                          1                    0             0.3
+#&gt; KO_BDNF_48h_5                       1                    0             0.3
+#&gt; WT_BDNF_24h_5                       1                    0             0.3
+#&gt; WT_BDNF_48h_2                       1                    0             0.3
+#&gt; WT_BDNF_24h_1                       1                    0             0.3
+#&gt; WT_BDNF_24h_3                       1                    0             0.3
+#&gt; KO_basal_1                          1                    0             0.3
+#&gt; KO_basal_3                          1                    0             0.3
+#&gt; WT_BDNF_48h_3                       1                    0             0.3
+#&gt; WT_BDNF_24h_4                       1                    0             0.3
+#&gt; WT_BDNF_48h_5                       1                    0             0.3
+#&gt; KO_BDNF_48h_1                       1                    0             0.3
+#&gt; KO_BDNF_24h_1                       1                    0             0.3
+#&gt; KO_BDNF_24h_3                       1                    0             0.3
+#&gt; WT_basal_2                          1                    0             0.3
+#&gt; KO_BDNF_48h_3                       1                    0             0.3
+#&gt; KO_BDNF_48h_4                       1                    0             0.3
+#&gt; WT_BDNF_48h_1                       1                    0             0.3
+#&gt; WT_basal_5                          1                    0             0.3
+#&gt; KO_basal_2                          1                    0             0.3
+#&gt;               geeq.rawData geeq.missingValues geeq.outliers
+#&gt; WT_basal_4              -1                  1             1
+#&gt; KO_BDNF_48h_5           -1                  1             1
+#&gt; WT_BDNF_24h_5           -1                  1             1
+#&gt; WT_BDNF_48h_2           -1                  1             1
+#&gt; WT_BDNF_24h_1           -1                  1             1
+#&gt; WT_BDNF_24h_3           -1                  1             1
+#&gt; KO_basal_1              -1                  1             1
+#&gt; KO_basal_3              -1                  1             1
+#&gt; WT_BDNF_48h_3           -1                  1             1
+#&gt; WT_BDNF_24h_4           -1                  1             1
+#&gt; WT_BDNF_48h_5           -1                  1             1
+#&gt; KO_BDNF_48h_1           -1                  1             1
+#&gt; KO_BDNF_24h_1           -1                  1             1
+#&gt; KO_BDNF_24h_3           -1                  1             1
+#&gt; WT_basal_2              -1                  1             1
+#&gt; KO_BDNF_48h_3           -1                  1             1
+#&gt; KO_BDNF_48h_4           -1                  1             1
+#&gt; WT_BDNF_48h_1           -1                  1             1
+#&gt; WT_basal_5              -1                  1             1
+#&gt; KO_basal_2              -1                  1             1
+#&gt;               geeq.platformTechnology geeq.replicates
+#&gt; WT_basal_4                          1               0
+#&gt; KO_BDNF_48h_5                       1               0
+#&gt; WT_BDNF_24h_5                       1               0
+#&gt; WT_BDNF_48h_2                       1               0
+#&gt; WT_BDNF_24h_1                       1               0
+#&gt; WT_BDNF_24h_3                       1               0
+#&gt; KO_basal_1                          1               0
+#&gt; KO_basal_3                          1               0
+#&gt; WT_BDNF_48h_3                       1               0
+#&gt; WT_BDNF_24h_4                       1               0
+#&gt; WT_BDNF_48h_5                       1               0
+#&gt; KO_BDNF_48h_1                       1               0
+#&gt; KO_BDNF_24h_1                       1               0
+#&gt; KO_BDNF_24h_3                       1               0
+#&gt; WT_basal_2                          1               0
+#&gt; KO_BDNF_48h_3                       1               0
+#&gt; KO_BDNF_48h_4                       1               0
+#&gt; WT_BDNF_48h_1                       1               0
+#&gt; WT_basal_5                          1               0
+#&gt; KO_basal_2                          1               0
+#&gt;               geeq.medianSampleCorrelation    id    sampleName accession
+#&gt; WT_basal_4                     -0.03279278 41018    WT_basal_4 GSM286000
+#&gt; KO_BDNF_48h_5                  -0.03279278 41007 KO_BDNF_48h_5 GSM286011
+#&gt; WT_BDNF_24h_5                  -0.03279278 41029 WT_BDNF_24h_5 GSM285848
+#&gt; WT_BDNF_48h_2                  -0.03279278 41027 WT_BDNF_48h_2 GSM285850
+#&gt; WT_BDNF_24h_1                  -0.03279278 41016 WT_BDNF_24h_1 GSM286002
+#&gt; WT_BDNF_24h_3                  -0.03279278 41014 WT_BDNF_24h_3 GSM286004
+#&gt; KO_basal_1                     -0.03279278 41036    KO_basal_1 GSM285796
+#&gt; KO_basal_3                     -0.03279278 41025    KO_basal_3 GSM285993
+#&gt; WT_BDNF_48h_3                  -0.03279278 41024 WT_BDNF_48h_3 GSM285994
+#&gt; WT_BDNF_24h_4                  -0.03279278 41013 WT_BDNF_24h_4 GSM286005
+#&gt; WT_BDNF_48h_5                  -0.03279278 41022 WT_BDNF_48h_5 GSM285996
+#&gt; KO_BDNF_48h_1                  -0.03279278 41011 KO_BDNF_48h_1 GSM286007
+#&gt; KO_BDNF_24h_1                  -0.03279278 41033 KO_BDNF_24h_1 GSM285841
+#&gt; KO_BDNF_24h_3                  -0.03279278 41031 KO_BDNF_24h_3 GSM285846
+#&gt; WT_basal_2                     -0.03279278 41020    WT_basal_2 GSM285998
+#&gt; KO_BDNF_48h_3                  -0.03279278 41009 KO_BDNF_48h_3 GSM286009
+#&gt; KO_BDNF_48h_4                  -0.03279278 41008 KO_BDNF_48h_4 GSM286010
+#&gt; WT_BDNF_48h_1                  -0.03279278 41028 WT_BDNF_48h_1 GSM285849
+#&gt; WT_basal_5                     -0.03279278 41017    WT_basal_5 GSM286001
+#&gt; KO_basal_2                     -0.03279278 41026    KO_basal_2 GSM285992
+#&gt;               sampleBiomaterialID               sampleAnnotCategory
+#&gt; WT_basal_4                  36144          timepoint|genotype|block
+#&gt; KO_BDNF_48h_5               36133 genotype;genotype|timepoint|block
+#&gt; WT_BDNF_24h_5               36155          timepoint|genotype|block
+#&gt; WT_BDNF_48h_2               36153          genotype|timepoint|block
+#&gt; WT_BDNF_24h_1               36142          timepoint|genotype|block
+#&gt; WT_BDNF_24h_3               36140          timepoint|genotype|block
+#&gt; KO_basal_1                  36162 timepoint|genotype;genotype|block
+#&gt; KO_basal_3                  36151 timepoint|genotype;genotype|block
+#&gt; WT_BDNF_48h_3               36150          genotype|timepoint|block
+#&gt; WT_BDNF_24h_4               36139          timepoint|genotype|block
+#&gt; WT_BDNF_48h_5               36148          genotype|timepoint|block
+#&gt; KO_BDNF_48h_1               36137 genotype;genotype|timepoint|block
+#&gt; KO_BDNF_24h_1               36159 timepoint|genotype;genotype|block
+#&gt; KO_BDNF_24h_3               36157 timepoint|genotype;genotype|block
+#&gt; WT_basal_2                  36146          timepoint|genotype|block
+#&gt; KO_BDNF_48h_3               36135 genotype;genotype|timepoint|block
+#&gt; KO_BDNF_48h_4               36134 genotype;genotype|timepoint|block
+#&gt; WT_BDNF_48h_1               36154          genotype|timepoint|block
+#&gt; WT_basal_5                  36143          timepoint|genotype|block
+#&gt; KO_basal_2                  36152 timepoint|genotype;genotype|block
 #&gt;                                     sampleAnnotCategoryOntoID
 #&gt; WT_basal_4                EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_BDNF_48h_5 EFO_0000513;EFO_0000513|EFO_0000724|EFO_0005067
@@ -523,16 +550,6 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1             EFO_0000513|EFO_0000724|EFO_0005067
 #&gt; WT_basal_5                EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_basal_2    EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_24h_2             EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_basal_4    EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; KO_basal_5    EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_48h_4             EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_5 EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_48h_2 EFO_0000513;EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_2 EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_basal_1                EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_24h_4 EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_basal_3                EFO_0000724|EFO_0000513|EFO_0005067
 #&gt;                                                                                                                                            sampleAnnotCategoryURI
 #&gt; WT_basal_4                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
@@ -554,16 +571,6 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1                                      http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; WT_basal_5                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_24h_2                                      http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_48h_4                                      http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_1                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_3                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt;               sampleAnnotBroadCategory      sampleAnnotBroadCategoryOntoID
 #&gt; WT_basal_4    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_BDNF_48h_5 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
@@ -585,16 +592,6 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
 #&gt; WT_basal_5    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_basal_2    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_24h_2 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_basal_4    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_basal_5    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_48h_4 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_5 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_48h_2 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_2 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_basal_1    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_24h_4 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_basal_3    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
 #&gt;                                                                                                  sampleAnnotBroadCategoryURI
 #&gt; WT_basal_4    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
@@ -616,109 +613,69 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; WT_basal_5    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_1    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_3    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt;                                                                                           sampleAnnotation
 #&gt; WT_basal_4                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_BDNF_48h_5               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_03_6/20/06
+#&gt; KO_BDNF_48h_5               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_03_6/20/06
 #&gt; WT_BDNF_24h_5                                                     24 h|wild type genotype|Batch_02_6/16/06
 #&gt; WT_BDNF_48h_2                                                     wild type genotype|48 h|Batch_02_6/16/06
 #&gt; WT_BDNF_24h_1                                                     24 h|wild type genotype|Batch_01_6/15/06
 #&gt; WT_BDNF_24h_3                                                     24 h|wild type genotype|Batch_02_6/16/06
-#&gt; KO_basal_1    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; KO_basal_3    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
+#&gt; KO_basal_1    initial time point|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
+#&gt; KO_basal_3    initial time point|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
 #&gt; WT_BDNF_48h_3                                                     wild type genotype|48 h|Batch_03_6/20/06
 #&gt; WT_BDNF_24h_4                                                     24 h|wild type genotype|Batch_02_6/16/06
 #&gt; WT_BDNF_48h_5                                                     wild type genotype|48 h|Batch_03_6/20/06
-#&gt; KO_BDNF_48h_1               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_02_6/16/06
-#&gt; KO_BDNF_24h_1               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; KO_BDNF_24h_3               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
+#&gt; KO_BDNF_48h_1               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_02_6/16/06
+#&gt; KO_BDNF_24h_1               24 h|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
+#&gt; KO_BDNF_24h_3               24 h|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_02_6/16/06
 #&gt; WT_basal_2                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_BDNF_48h_3               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_03_6/20/06
-#&gt; KO_BDNF_48h_4               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_03_6/20/06
+#&gt; KO_BDNF_48h_3               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_03_6/20/06
+#&gt; KO_BDNF_48h_4               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_03_6/20/06
 #&gt; WT_BDNF_48h_1                                                     wild type genotype|48 h|Batch_02_6/16/06
 #&gt; WT_basal_5                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_basal_2    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; WT_BDNF_24h_2                                                     24 h|wild type genotype|Batch_02_6/16/06
-#&gt; KO_basal_4    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; KO_basal_5    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; WT_BDNF_48h_4                                                     wild type genotype|48 h|Batch_03_6/20/06
-#&gt; KO_BDNF_24h_5               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
-#&gt; KO_BDNF_48h_2               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_02_6/16/06
-#&gt; KO_BDNF_24h_2               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
-#&gt; WT_basal_1                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_BDNF_24h_4               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
-#&gt; WT_basal_3                                          initial time point|wild type genotype|Batch_01_6/15/06
+#&gt; KO_basal_2    initial time point|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
 #&gt;                              sampleAnnotationOntoID      sampleAnnotType
 #&gt; WT_basal_4               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_BDNF_48h_5          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
+#&gt; KO_BDNF_48h_5          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
 #&gt; WT_BDNF_24h_5                     NA|EFO_0005168|NA factor|factor|factor
 #&gt; WT_BDNF_48h_2                     EFO_0005168|NA|NA factor|factor|factor
 #&gt; WT_BDNF_24h_1                     NA|EFO_0005168|NA factor|factor|factor
 #&gt; WT_BDNF_24h_3                     NA|EFO_0005168|NA factor|factor|factor
-#&gt; KO_basal_1    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_basal_3    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
+#&gt; KO_basal_1    EFO_0004425|GENE_22433;TGEMO_00001|NA factor|factor|factor
+#&gt; KO_basal_3    EFO_0004425|GENE_22433;TGEMO_00001|NA factor|factor|factor
 #&gt; WT_BDNF_48h_3                     EFO_0005168|NA|NA factor|factor|factor
 #&gt; WT_BDNF_24h_4                     NA|EFO_0005168|NA factor|factor|factor
 #&gt; WT_BDNF_48h_5                     EFO_0005168|NA|NA factor|factor|factor
-#&gt; KO_BDNF_48h_1          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
-#&gt; KO_BDNF_24h_1          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_BDNF_24h_3          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
+#&gt; KO_BDNF_48h_1          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
+#&gt; KO_BDNF_24h_1          NA|GENE_22433;TGEMO_00001|NA factor|factor|factor
+#&gt; KO_BDNF_24h_3          NA|GENE_22433;TGEMO_00001|NA factor|factor|factor
 #&gt; WT_basal_2               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_BDNF_48h_3          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
-#&gt; KO_BDNF_48h_4          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
+#&gt; KO_BDNF_48h_3          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
+#&gt; KO_BDNF_48h_4          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
 #&gt; WT_BDNF_48h_1                     EFO_0005168|NA|NA factor|factor|factor
 #&gt; WT_basal_5               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_basal_2    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_BDNF_24h_2                     NA|EFO_0005168|NA factor|factor|factor
-#&gt; KO_basal_4    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_basal_5    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_BDNF_48h_4                     EFO_0005168|NA|NA factor|factor|factor
-#&gt; KO_BDNF_24h_5          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_BDNF_48h_2          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
-#&gt; KO_BDNF_24h_2          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_basal_1               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_BDNF_24h_4          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_basal_3               EFO_0004425|EFO_0005168|NA factor|factor|factor
+#&gt; KO_basal_2    EFO_0004425|GENE_22433;TGEMO_00001|NA factor|factor|factor
 #&gt;                                                                                                                             sampleAnnotationURI
 #&gt; WT_basal_4                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_BDNF_48h_5                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
+#&gt; KO_BDNF_48h_5                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
 #&gt; WT_BDNF_24h_5                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
 #&gt; WT_BDNF_48h_2                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
 #&gt; WT_BDNF_24h_1                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
 #&gt; WT_BDNF_24h_3                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
+#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
+#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
 #&gt; WT_BDNF_48h_3                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
 #&gt; WT_BDNF_24h_4                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
 #&gt; WT_BDNF_48h_5                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
-#&gt; KO_BDNF_48h_1                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
-#&gt; KO_BDNF_24h_1                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_BDNF_24h_3                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
+#&gt; KO_BDNF_48h_1                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
+#&gt; KO_BDNF_24h_1                                   NA|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
+#&gt; KO_BDNF_24h_3                                   NA|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
 #&gt; WT_basal_2                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_BDNF_48h_3                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
-#&gt; KO_BDNF_48h_4                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
+#&gt; KO_BDNF_48h_3                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
+#&gt; KO_BDNF_48h_4                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
 #&gt; WT_BDNF_48h_1                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
 #&gt; WT_basal_5                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_BDNF_24h_2                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_BDNF_48h_4                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
-#&gt; KO_BDNF_24h_5                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_BDNF_48h_2                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
-#&gt; KO_BDNF_24h_2                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_basal_1                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_BDNF_24h_4                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_basal_3                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
+#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
 #&gt;                                                                                                          otherCharacteristics
 #&gt; WT_basal_4     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
 #&gt; KO_BDNF_48h_5  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
@@ -740,233 +697,196 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
 #&gt; WT_basal_5     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
 #&gt; KO_basal_2     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_BDNF_24h_2  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_basal_4     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_basal_5     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_BDNF_48h_4  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_24h_5  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_48h_2  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_24h_2  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_basal_1     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_24h_4  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_basal_3     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'</div><div class='input'><span class='fu'>compileMetadata</span>(<span class='fl'>1017</span>)</div><div class='output co'>#&gt;               datasetID datasetName taxon              experimentAnnotClass
-#&gt; WT_basal_4         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_1         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_3         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_2         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_3      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_1      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_5         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_2         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_24h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_4         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_basal_5         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_BDNF_48h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_5      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_48h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_2      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_1         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; KO_BDNF_24h_4      1017    GSE11322 mouse treatment|cell type|organism part
-#&gt; WT_basal_3         1017    GSE11322 mouse treatment|cell type|organism part
-#&gt;                        experimentAnnotClassOntoID
-#&gt; WT_basal_4    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_1    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_3    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_2    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_3 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_1 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_5    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_2    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_24h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_4    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_basal_5    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_BDNF_48h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_5 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_48h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_2 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_1    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; KO_BDNF_24h_4 EFO_0000727|EFO_0000324|EFO_0000635
-#&gt; WT_basal_3    EFO_0000727|EFO_0000324|EFO_0000635
-#&gt;                                                                                                      experimentAnnotClassURI
-#&gt; WT_basal_4    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_5    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_1    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; KO_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt; WT_basal_3    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000635
-#&gt;                                                              experimentAnnotation
-#&gt; WT_basal_4    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_1    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_3    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_2    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_5    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_2    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_24h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_4    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_basal_5    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_BDNF_48h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_5 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_48h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_2 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_1    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; KO_BDNF_24h_4 Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt; WT_basal_3    Bdnf [mouse] brain derived neurotrophic factor|neuron|telencephalon
-#&gt;                         experimentAnnotationOntoID
-#&gt; WT_basal_4    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_1    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_3    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_2    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_3 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_1 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_5    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_2    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_24h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_4    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_basal_5    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_BDNF_48h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_5 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_48h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_2 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_1    GENE_12064|CL_0000540|UBERON_0001893
-#&gt; KO_BDNF_24h_4 GENE_12064|CL_0000540|UBERON_0001893
-#&gt; WT_basal_3    GENE_12064|CL_0000540|UBERON_0001893
-#&gt;                                                                                                                              experimentAnnotationURI
-#&gt; WT_basal_4    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_1    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_3    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_5    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_24h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_4    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_basal_5    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_BDNF_48h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_48h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_1    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; KO_BDNF_24h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt; WT_basal_3    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/UBERON_0001893
-#&gt;               platformName technologyType batchConfound
-#&gt; WT_basal_4          GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_5       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_5       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_2       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_1       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_3       GPL339       ONECOLOR            -1
-#&gt; KO_basal_1          GPL339       ONECOLOR            -1
-#&gt; KO_basal_3          GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_3       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_4       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_5       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_1       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_1       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_3       GPL339       ONECOLOR            -1
-#&gt; WT_basal_2          GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_3       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_4       GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_1       GPL339       ONECOLOR            -1
-#&gt; WT_basal_5          GPL339       ONECOLOR            -1
-#&gt; KO_basal_2          GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_24h_2       GPL339       ONECOLOR            -1
-#&gt; KO_basal_4          GPL339       ONECOLOR            -1
-#&gt; KO_basal_5          GPL339       ONECOLOR            -1
-#&gt; WT_BDNF_48h_4       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_5       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_48h_2       GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_2       GPL339       ONECOLOR            -1
-#&gt; WT_basal_1          GPL339       ONECOLOR            -1
-#&gt; KO_BDNF_24h_4       GPL339       ONECOLOR            -1
-#&gt; WT_basal_3          GPL339       ONECOLOR            -1
-#&gt;                                                                           batchConf
+#&gt;  [ reached getOption("max.print") -- omitted 10 rows ]</div><div class='input'><span class='fu'>compileMetadata</span>(<span class='fl'>1017</span>)</div><div class='output co'>#&gt;               datasetID datasetName taxon
+#&gt; WT_basal_4         1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_5      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_5      1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_2      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_1      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_3      1017    GSE11322 mouse
+#&gt; KO_basal_1         1017    GSE11322 mouse
+#&gt; KO_basal_3         1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_3      1017    GSE11322 mouse
+#&gt; WT_BDNF_24h_4      1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_5      1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_1      1017    GSE11322 mouse
+#&gt; KO_BDNF_24h_1      1017    GSE11322 mouse
+#&gt; KO_BDNF_24h_3      1017    GSE11322 mouse
+#&gt; WT_basal_2         1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_3      1017    GSE11322 mouse
+#&gt; KO_BDNF_48h_4      1017    GSE11322 mouse
+#&gt; WT_BDNF_48h_1      1017    GSE11322 mouse
+#&gt; WT_basal_5         1017    GSE11322 mouse
+#&gt; KO_basal_2         1017    GSE11322 mouse
+#&gt;                                              experimentAnnotClass
+#&gt; WT_basal_4    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_5 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_5 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_2 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_basal_1    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_basal_3    treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_24h_4 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_5 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_24h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_24h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_basal_2    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_3 treatment|organism part|genotype|cell type|genotype
+#&gt; KO_BDNF_48h_4 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_BDNF_48h_1 treatment|organism part|genotype|cell type|genotype
+#&gt; WT_basal_5    treatment|organism part|genotype|cell type|genotype
+#&gt; KO_basal_2    treatment|organism part|genotype|cell type|genotype
+#&gt;                                                experimentAnnotClassOntoID
+#&gt; WT_basal_4    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_5 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_5 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_2 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_basal_1    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_basal_3    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_24h_4 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_5 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_24h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_24h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_basal_2    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_3 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_BDNF_48h_4 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_BDNF_48h_1 EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; WT_basal_5    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt; KO_basal_2    EFO_0000727|EFO_0000635|EFO_0000513|EFO_0000324|EFO_0000513
+#&gt;                                                                                                                                                                                experimentAnnotClassURI
+#&gt; WT_basal_4    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_24h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_24h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_3 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; WT_basal_5    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000727|http://www.ebi.ac.uk/efo/EFO_0000635|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000324|http://www.ebi.ac.uk/efo/EFO_0000513
+#&gt;                                                                                                                       experimentAnnotation
+#&gt; WT_basal_4    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_5 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_2 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_basal_1    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_basal_3    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_24h_4 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_5 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_24h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_24h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_basal_2    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_3 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_BDNF_48h_4 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_BDNF_48h_1 Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; WT_basal_5    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt; KO_basal_2    Bdnf [mouse] brain derived neurotrophic factor|telencephalon|Xbp1 [mouse] X-box binding protein 1|neuron|Homozygous negative
+#&gt;                                                experimentAnnotationOntoID
+#&gt; WT_basal_4    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_5 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_5 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_2 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_basal_1    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_basal_3    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_24h_4 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_5 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_24h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_24h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_basal_2    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_3 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_BDNF_48h_4 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_BDNF_48h_1 GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; WT_basal_5    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt; KO_basal_2    GENE_12064|UBERON_0001893|GENE_22433|CL_0000540|TGEMO_00001
+#&gt;                                                                                                                                                                                                                        experimentAnnotationURI
+#&gt; WT_basal_4    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_2 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_basal_1    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_basal_3    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_24h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_5 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_24h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_24h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_3 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_BDNF_48h_4 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_BDNF_48h_1 http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; WT_basal_5    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt; KO_basal_2    http://purl.org/commons/record/ncbi_gene/12064|http://purl.obolibrary.org/obo/UBERON_0001893|http://purl.org/commons/record/ncbi_gene/22433|http://purl.obolibrary.org/obo/CL_0000540|http://purl.obolibrary.org/obo/TGEMO_00001
+#&gt;               platformName technologyType externalDatabase troubled
+#&gt; WT_basal_4          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_5       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_5       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_2       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_basal_1          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_basal_3          GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_24h_4       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_5       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_24h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_24h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_basal_2          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_3       GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_BDNF_48h_4       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_BDNF_48h_1       GPL339       ONECOLOR              GEO    FALSE
+#&gt; WT_basal_5          GPL339       ONECOLOR              GEO    FALSE
+#&gt; KO_basal_2          GPL339       ONECOLOR              GEO    FALSE
+#&gt;                             troubleDetails
+#&gt; WT_basal_4    No trouble details provided.
+#&gt; KO_BDNF_48h_5 No trouble details provided.
+#&gt; WT_BDNF_24h_5 No trouble details provided.
+#&gt; WT_BDNF_48h_2 No trouble details provided.
+#&gt; WT_BDNF_24h_1 No trouble details provided.
+#&gt; WT_BDNF_24h_3 No trouble details provided.
+#&gt; KO_basal_1    No trouble details provided.
+#&gt; KO_basal_3    No trouble details provided.
+#&gt; WT_BDNF_48h_3 No trouble details provided.
+#&gt; WT_BDNF_24h_4 No trouble details provided.
+#&gt; WT_BDNF_48h_5 No trouble details provided.
+#&gt; KO_BDNF_48h_1 No trouble details provided.
+#&gt; KO_BDNF_24h_1 No trouble details provided.
+#&gt; KO_BDNF_24h_3 No trouble details provided.
+#&gt; WT_basal_2    No trouble details provided.
+#&gt; KO_BDNF_48h_3 No trouble details provided.
+#&gt; KO_BDNF_48h_4 No trouble details provided.
+#&gt; WT_BDNF_48h_1 No trouble details provided.
+#&gt; WT_basal_5    No trouble details provided.
+#&gt; KO_basal_2    No trouble details provided.
+#&gt;                                                            batchConfoundDescription
 #&gt; WT_basal_4    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; KO_BDNF_48h_5 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; WT_BDNF_24h_5 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
@@ -987,48 +907,7 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; WT_basal_5    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
 #&gt; KO_basal_2    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_BDNF_24h_2 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_basal_4    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_basal_5    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_BDNF_48h_4 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_24h_5 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_48h_2 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_24h_2 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_basal_1    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; KO_BDNF_24h_4 Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt; WT_basal_3    Factor  'SamplingTimePoint' may be confounded with batches; p=7.5e-07
-#&gt;               batchEffect
-#&gt; WT_basal_4             -1
-#&gt; KO_BDNF_48h_5          -1
-#&gt; WT_BDNF_24h_5          -1
-#&gt; WT_BDNF_48h_2          -1
-#&gt; WT_BDNF_24h_1          -1
-#&gt; WT_BDNF_24h_3          -1
-#&gt; KO_basal_1             -1
-#&gt; KO_basal_3             -1
-#&gt; WT_BDNF_48h_3          -1
-#&gt; WT_BDNF_24h_4          -1
-#&gt; WT_BDNF_48h_5          -1
-#&gt; KO_BDNF_48h_1          -1
-#&gt; KO_BDNF_24h_1          -1
-#&gt; KO_BDNF_24h_3          -1
-#&gt; WT_basal_2             -1
-#&gt; KO_BDNF_48h_3          -1
-#&gt; KO_BDNF_48h_4          -1
-#&gt; WT_BDNF_48h_1          -1
-#&gt; WT_basal_5             -1
-#&gt; KO_basal_2             -1
-#&gt; WT_BDNF_24h_2          -1
-#&gt; KO_basal_4             -1
-#&gt; KO_basal_5             -1
-#&gt; WT_BDNF_48h_4          -1
-#&gt; KO_BDNF_24h_5          -1
-#&gt; KO_BDNF_48h_2          -1
-#&gt; KO_BDNF_24h_2          -1
-#&gt; WT_basal_1             -1
-#&gt; KO_BDNF_24h_4          -1
-#&gt; WT_basal_3             -1
-#&gt;                                                                batchEf
+#&gt;                                                 batchEffectDescription
 #&gt; WT_basal_4    This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; KO_BDNF_48h_5 This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; WT_BDNF_24h_5 This data set may have a batch artifact (PC1); p=1.7e-05
@@ -1049,78 +928,174 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; WT_basal_5    This data set may have a batch artifact (PC1); p=1.7e-05
 #&gt; KO_basal_2    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_BDNF_24h_2 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_basal_4    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_basal_5    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_BDNF_48h_4 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_24h_5 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_48h_2 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_24h_2 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_basal_1    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; KO_BDNF_24h_4 This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt; WT_basal_3    This data set may have a batch artifact (PC1); p=1.7e-05
-#&gt;               batchCorrected    id    sampleName accession sampleBiomaterialID
-#&gt; WT_basal_4             FALSE 41018    WT_basal_4 GSM286000               36144
-#&gt; KO_BDNF_48h_5          FALSE 41007 KO_BDNF_48h_5 GSM286011               36133
-#&gt; WT_BDNF_24h_5          FALSE 41029 WT_BDNF_24h_5 GSM285848               36155
-#&gt; WT_BDNF_48h_2          FALSE 41027 WT_BDNF_48h_2 GSM285850               36153
-#&gt; WT_BDNF_24h_1          FALSE 41016 WT_BDNF_24h_1 GSM286002               36142
-#&gt; WT_BDNF_24h_3          FALSE 41014 WT_BDNF_24h_3 GSM286004               36140
-#&gt; KO_basal_1             FALSE 41036    KO_basal_1 GSM285796               36162
-#&gt; KO_basal_3             FALSE 41025    KO_basal_3 GSM285993               36151
-#&gt; WT_BDNF_48h_3          FALSE 41024 WT_BDNF_48h_3 GSM285994               36150
-#&gt; WT_BDNF_24h_4          FALSE 41013 WT_BDNF_24h_4 GSM286005               36139
-#&gt; WT_BDNF_48h_5          FALSE 41022 WT_BDNF_48h_5 GSM285996               36148
-#&gt; KO_BDNF_48h_1          FALSE 41011 KO_BDNF_48h_1 GSM286007               36137
-#&gt; KO_BDNF_24h_1          FALSE 41033 KO_BDNF_24h_1 GSM285841               36159
-#&gt; KO_BDNF_24h_3          FALSE 41031 KO_BDNF_24h_3 GSM285846               36157
-#&gt; WT_basal_2             FALSE 41020    WT_basal_2 GSM285998               36146
-#&gt; KO_BDNF_48h_3          FALSE 41009 KO_BDNF_48h_3 GSM286009               36135
-#&gt; KO_BDNF_48h_4          FALSE 41008 KO_BDNF_48h_4 GSM286010               36134
-#&gt; WT_BDNF_48h_1          FALSE 41028 WT_BDNF_48h_1 GSM285849               36154
-#&gt; WT_basal_5             FALSE 41017    WT_basal_5 GSM286001               36143
-#&gt; KO_basal_2             FALSE 41026    KO_basal_2 GSM285992               36152
-#&gt; WT_BDNF_24h_2          FALSE 41015 WT_BDNF_24h_2 GSM286003               36141
-#&gt; KO_basal_4             FALSE 41035    KO_basal_4 GSM285813               36161
-#&gt; KO_basal_5             FALSE 41034    KO_basal_5 GSM285832               36160
-#&gt; WT_BDNF_48h_4          FALSE 41023 WT_BDNF_48h_4 GSM285995               36149
-#&gt; KO_BDNF_24h_5          FALSE 41012 KO_BDNF_24h_5 GSM286006               36138
-#&gt; KO_BDNF_48h_2          FALSE 41010 KO_BDNF_48h_2 GSM286008               36136
-#&gt; KO_BDNF_24h_2          FALSE 41032 KO_BDNF_24h_2 GSM285844               36158
-#&gt; WT_basal_1             FALSE 41021    WT_basal_1 GSM285997               36147
-#&gt; KO_BDNF_24h_4          FALSE 41030 KO_BDNF_24h_4 GSM285847               36156
-#&gt; WT_basal_3             FALSE 41019    WT_basal_3 GSM285999               36145
-#&gt;                             sampleAnnotCategory
-#&gt; WT_basal_4             timepoint|genotype|block
-#&gt; KO_BDNF_48h_5 genotype;genotype|timepoint|block
-#&gt; WT_BDNF_24h_5          timepoint|genotype|block
-#&gt; WT_BDNF_48h_2          genotype|timepoint|block
-#&gt; WT_BDNF_24h_1          timepoint|genotype|block
-#&gt; WT_BDNF_24h_3          timepoint|genotype|block
-#&gt; KO_basal_1    timepoint|genotype;genotype|block
-#&gt; KO_basal_3    timepoint|genotype;genotype|block
-#&gt; WT_BDNF_48h_3          genotype|timepoint|block
-#&gt; WT_BDNF_24h_4          timepoint|genotype|block
-#&gt; WT_BDNF_48h_5          genotype|timepoint|block
-#&gt; KO_BDNF_48h_1 genotype;genotype|timepoint|block
-#&gt; KO_BDNF_24h_1 timepoint|genotype;genotype|block
-#&gt; KO_BDNF_24h_3 timepoint|genotype;genotype|block
-#&gt; WT_basal_2             timepoint|genotype|block
-#&gt; KO_BDNF_48h_3 genotype;genotype|timepoint|block
-#&gt; KO_BDNF_48h_4 genotype;genotype|timepoint|block
-#&gt; WT_BDNF_48h_1          genotype|timepoint|block
-#&gt; WT_basal_5             timepoint|genotype|block
-#&gt; KO_basal_2    timepoint|genotype;genotype|block
-#&gt; WT_BDNF_24h_2          timepoint|genotype|block
-#&gt; KO_basal_4    timepoint|genotype;genotype|block
-#&gt; KO_basal_5    timepoint|genotype;genotype|block
-#&gt; WT_BDNF_48h_4          genotype|timepoint|block
-#&gt; KO_BDNF_24h_5 timepoint|genotype;genotype|block
-#&gt; KO_BDNF_48h_2 genotype;genotype|timepoint|block
-#&gt; KO_BDNF_24h_2 timepoint|genotype;genotype|block
-#&gt; WT_basal_1             timepoint|genotype|block
-#&gt; KO_BDNF_24h_4 timepoint|genotype;genotype|block
-#&gt; WT_basal_3             timepoint|genotype|block
+#&gt;               geeq.batchConfound geeq.batchEffect geeq.batchCorrected
+#&gt; WT_basal_4                    -1               -1               FALSE
+#&gt; KO_BDNF_48h_5                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_5                 -1               -1               FALSE
+#&gt; WT_BDNF_48h_2                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_1                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_3                 -1               -1               FALSE
+#&gt; KO_basal_1                    -1               -1               FALSE
+#&gt; KO_basal_3                    -1               -1               FALSE
+#&gt; WT_BDNF_48h_3                 -1               -1               FALSE
+#&gt; WT_BDNF_24h_4                 -1               -1               FALSE
+#&gt; WT_BDNF_48h_5                 -1               -1               FALSE
+#&gt; KO_BDNF_48h_1                 -1               -1               FALSE
+#&gt; KO_BDNF_24h_1                 -1               -1               FALSE
+#&gt; KO_BDNF_24h_3                 -1               -1               FALSE
+#&gt; WT_basal_2                    -1               -1               FALSE
+#&gt; KO_BDNF_48h_3                 -1               -1               FALSE
+#&gt; KO_BDNF_48h_4                 -1               -1               FALSE
+#&gt; WT_BDNF_48h_1                 -1               -1               FALSE
+#&gt; WT_basal_5                    -1               -1               FALSE
+#&gt; KO_basal_2                    -1               -1               FALSE
+#&gt;               geeq.batchInfo geeq.qualityScore geeq.suitabilityScore
+#&gt; WT_basal_4                 1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_5              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_5              1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_2              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_1              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_3              1         0.1381725                0.5375
+#&gt; KO_basal_1                 1         0.1381725                0.5375
+#&gt; KO_basal_3                 1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_3              1         0.1381725                0.5375
+#&gt; WT_BDNF_24h_4              1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_5              1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_1              1         0.1381725                0.5375
+#&gt; KO_BDNF_24h_1              1         0.1381725                0.5375
+#&gt; KO_BDNF_24h_3              1         0.1381725                0.5375
+#&gt; WT_basal_2                 1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_3              1         0.1381725                0.5375
+#&gt; KO_BDNF_48h_4              1         0.1381725                0.5375
+#&gt; WT_BDNF_48h_1              1         0.1381725                0.5375
+#&gt; WT_basal_5                 1         0.1381725                0.5375
+#&gt; KO_basal_2                 1         0.1381725                0.5375
+#&gt;               geeq.publication geeq.platformAmount geeq.platformsTechMulti
+#&gt; WT_basal_4                   1                   1                       1
+#&gt; KO_BDNF_48h_5                1                   1                       1
+#&gt; WT_BDNF_24h_5                1                   1                       1
+#&gt; WT_BDNF_48h_2                1                   1                       1
+#&gt; WT_BDNF_24h_1                1                   1                       1
+#&gt; WT_BDNF_24h_3                1                   1                       1
+#&gt; KO_basal_1                   1                   1                       1
+#&gt; KO_basal_3                   1                   1                       1
+#&gt; WT_BDNF_48h_3                1                   1                       1
+#&gt; WT_BDNF_24h_4                1                   1                       1
+#&gt; WT_BDNF_48h_5                1                   1                       1
+#&gt; KO_BDNF_48h_1                1                   1                       1
+#&gt; KO_BDNF_24h_1                1                   1                       1
+#&gt; KO_BDNF_24h_3                1                   1                       1
+#&gt; WT_basal_2                   1                   1                       1
+#&gt; KO_BDNF_48h_3                1                   1                       1
+#&gt; KO_BDNF_48h_4                1                   1                       1
+#&gt; WT_BDNF_48h_1                1                   1                       1
+#&gt; WT_basal_5                   1                   1                       1
+#&gt; KO_basal_2                   1                   1                       1
+#&gt;               geeq.platformPopularity geeq.avgPlatformSize geeq.sampleSize
+#&gt; WT_basal_4                          1                    0             0.3
+#&gt; KO_BDNF_48h_5                       1                    0             0.3
+#&gt; WT_BDNF_24h_5                       1                    0             0.3
+#&gt; WT_BDNF_48h_2                       1                    0             0.3
+#&gt; WT_BDNF_24h_1                       1                    0             0.3
+#&gt; WT_BDNF_24h_3                       1                    0             0.3
+#&gt; KO_basal_1                          1                    0             0.3
+#&gt; KO_basal_3                          1                    0             0.3
+#&gt; WT_BDNF_48h_3                       1                    0             0.3
+#&gt; WT_BDNF_24h_4                       1                    0             0.3
+#&gt; WT_BDNF_48h_5                       1                    0             0.3
+#&gt; KO_BDNF_48h_1                       1                    0             0.3
+#&gt; KO_BDNF_24h_1                       1                    0             0.3
+#&gt; KO_BDNF_24h_3                       1                    0             0.3
+#&gt; WT_basal_2                          1                    0             0.3
+#&gt; KO_BDNF_48h_3                       1                    0             0.3
+#&gt; KO_BDNF_48h_4                       1                    0             0.3
+#&gt; WT_BDNF_48h_1                       1                    0             0.3
+#&gt; WT_basal_5                          1                    0             0.3
+#&gt; KO_basal_2                          1                    0             0.3
+#&gt;               geeq.rawData geeq.missingValues geeq.outliers
+#&gt; WT_basal_4              -1                  1             1
+#&gt; KO_BDNF_48h_5           -1                  1             1
+#&gt; WT_BDNF_24h_5           -1                  1             1
+#&gt; WT_BDNF_48h_2           -1                  1             1
+#&gt; WT_BDNF_24h_1           -1                  1             1
+#&gt; WT_BDNF_24h_3           -1                  1             1
+#&gt; KO_basal_1              -1                  1             1
+#&gt; KO_basal_3              -1                  1             1
+#&gt; WT_BDNF_48h_3           -1                  1             1
+#&gt; WT_BDNF_24h_4           -1                  1             1
+#&gt; WT_BDNF_48h_5           -1                  1             1
+#&gt; KO_BDNF_48h_1           -1                  1             1
+#&gt; KO_BDNF_24h_1           -1                  1             1
+#&gt; KO_BDNF_24h_3           -1                  1             1
+#&gt; WT_basal_2              -1                  1             1
+#&gt; KO_BDNF_48h_3           -1                  1             1
+#&gt; KO_BDNF_48h_4           -1                  1             1
+#&gt; WT_BDNF_48h_1           -1                  1             1
+#&gt; WT_basal_5              -1                  1             1
+#&gt; KO_basal_2              -1                  1             1
+#&gt;               geeq.platformTechnology geeq.replicates
+#&gt; WT_basal_4                          1               0
+#&gt; KO_BDNF_48h_5                       1               0
+#&gt; WT_BDNF_24h_5                       1               0
+#&gt; WT_BDNF_48h_2                       1               0
+#&gt; WT_BDNF_24h_1                       1               0
+#&gt; WT_BDNF_24h_3                       1               0
+#&gt; KO_basal_1                          1               0
+#&gt; KO_basal_3                          1               0
+#&gt; WT_BDNF_48h_3                       1               0
+#&gt; WT_BDNF_24h_4                       1               0
+#&gt; WT_BDNF_48h_5                       1               0
+#&gt; KO_BDNF_48h_1                       1               0
+#&gt; KO_BDNF_24h_1                       1               0
+#&gt; KO_BDNF_24h_3                       1               0
+#&gt; WT_basal_2                          1               0
+#&gt; KO_BDNF_48h_3                       1               0
+#&gt; KO_BDNF_48h_4                       1               0
+#&gt; WT_BDNF_48h_1                       1               0
+#&gt; WT_basal_5                          1               0
+#&gt; KO_basal_2                          1               0
+#&gt;               geeq.medianSampleCorrelation    id    sampleName accession
+#&gt; WT_basal_4                     -0.03279278 41018    WT_basal_4 GSM286000
+#&gt; KO_BDNF_48h_5                  -0.03279278 41007 KO_BDNF_48h_5 GSM286011
+#&gt; WT_BDNF_24h_5                  -0.03279278 41029 WT_BDNF_24h_5 GSM285848
+#&gt; WT_BDNF_48h_2                  -0.03279278 41027 WT_BDNF_48h_2 GSM285850
+#&gt; WT_BDNF_24h_1                  -0.03279278 41016 WT_BDNF_24h_1 GSM286002
+#&gt; WT_BDNF_24h_3                  -0.03279278 41014 WT_BDNF_24h_3 GSM286004
+#&gt; KO_basal_1                     -0.03279278 41036    KO_basal_1 GSM285796
+#&gt; KO_basal_3                     -0.03279278 41025    KO_basal_3 GSM285993
+#&gt; WT_BDNF_48h_3                  -0.03279278 41024 WT_BDNF_48h_3 GSM285994
+#&gt; WT_BDNF_24h_4                  -0.03279278 41013 WT_BDNF_24h_4 GSM286005
+#&gt; WT_BDNF_48h_5                  -0.03279278 41022 WT_BDNF_48h_5 GSM285996
+#&gt; KO_BDNF_48h_1                  -0.03279278 41011 KO_BDNF_48h_1 GSM286007
+#&gt; KO_BDNF_24h_1                  -0.03279278 41033 KO_BDNF_24h_1 GSM285841
+#&gt; KO_BDNF_24h_3                  -0.03279278 41031 KO_BDNF_24h_3 GSM285846
+#&gt; WT_basal_2                     -0.03279278 41020    WT_basal_2 GSM285998
+#&gt; KO_BDNF_48h_3                  -0.03279278 41009 KO_BDNF_48h_3 GSM286009
+#&gt; KO_BDNF_48h_4                  -0.03279278 41008 KO_BDNF_48h_4 GSM286010
+#&gt; WT_BDNF_48h_1                  -0.03279278 41028 WT_BDNF_48h_1 GSM285849
+#&gt; WT_basal_5                     -0.03279278 41017    WT_basal_5 GSM286001
+#&gt; KO_basal_2                     -0.03279278 41026    KO_basal_2 GSM285992
+#&gt;               sampleBiomaterialID               sampleAnnotCategory
+#&gt; WT_basal_4                  36144          timepoint|genotype|block
+#&gt; KO_BDNF_48h_5               36133 genotype;genotype|timepoint|block
+#&gt; WT_BDNF_24h_5               36155          timepoint|genotype|block
+#&gt; WT_BDNF_48h_2               36153          genotype|timepoint|block
+#&gt; WT_BDNF_24h_1               36142          timepoint|genotype|block
+#&gt; WT_BDNF_24h_3               36140          timepoint|genotype|block
+#&gt; KO_basal_1                  36162 timepoint|genotype;genotype|block
+#&gt; KO_basal_3                  36151 timepoint|genotype;genotype|block
+#&gt; WT_BDNF_48h_3               36150          genotype|timepoint|block
+#&gt; WT_BDNF_24h_4               36139          timepoint|genotype|block
+#&gt; WT_BDNF_48h_5               36148          genotype|timepoint|block
+#&gt; KO_BDNF_48h_1               36137 genotype;genotype|timepoint|block
+#&gt; KO_BDNF_24h_1               36159 timepoint|genotype;genotype|block
+#&gt; KO_BDNF_24h_3               36157 timepoint|genotype;genotype|block
+#&gt; WT_basal_2                  36146          timepoint|genotype|block
+#&gt; KO_BDNF_48h_3               36135 genotype;genotype|timepoint|block
+#&gt; KO_BDNF_48h_4               36134 genotype;genotype|timepoint|block
+#&gt; WT_BDNF_48h_1               36154          genotype|timepoint|block
+#&gt; WT_basal_5                  36143          timepoint|genotype|block
+#&gt; KO_basal_2                  36152 timepoint|genotype;genotype|block
 #&gt;                                     sampleAnnotCategoryOntoID
 #&gt; WT_basal_4                EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_BDNF_48h_5 EFO_0000513;EFO_0000513|EFO_0000724|EFO_0005067
@@ -1142,16 +1117,6 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1             EFO_0000513|EFO_0000724|EFO_0005067
 #&gt; WT_basal_5                EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_basal_2    EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_24h_2             EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_basal_4    EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; KO_basal_5    EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_48h_4             EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_5 EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_48h_2 EFO_0000513;EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_2 EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_basal_1                EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_24h_4 EFO_0000724|EFO_0000513;EFO_0000513|EFO_0005067
-#&gt; WT_basal_3                EFO_0000724|EFO_0000513|EFO_0005067
 #&gt;                                                                                                                                            sampleAnnotCategoryURI
 #&gt; WT_basal_4                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
@@ -1173,16 +1138,6 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1                                      http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; WT_basal_5                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_24h_2                                      http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_48h_4                                      http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_1                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_3                                         http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt;               sampleAnnotBroadCategory      sampleAnnotBroadCategoryOntoID
 #&gt; WT_basal_4    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_BDNF_48h_5 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
@@ -1204,16 +1159,6 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
 #&gt; WT_basal_5    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
 #&gt; KO_basal_2    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_24h_2 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_basal_4    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_basal_5    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_BDNF_48h_4 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_5 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_48h_2 genotype|timepoint|block EFO_0000513|EFO_0000724|EFO_0005067
-#&gt; KO_BDNF_24h_2 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_basal_1    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; KO_BDNF_24h_4 timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
-#&gt; WT_basal_3    timepoint|genotype|block EFO_0000724|EFO_0000513|EFO_0005067
 #&gt;                                                                                                  sampleAnnotBroadCategoryURI
 #&gt; WT_basal_4    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_BDNF_48h_5 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
@@ -1235,109 +1180,69 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; WT_basal_5    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_BDNF_48h_4 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_5 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_48h_2 http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_2 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_1    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; KO_BDNF_24h_4 http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
-#&gt; WT_basal_3    http://www.ebi.ac.uk/efo/EFO_0000724|http://www.ebi.ac.uk/efo/EFO_0000513|http://www.ebi.ac.uk/efo/EFO_0005067
 #&gt;                                                                                           sampleAnnotation
 #&gt; WT_basal_4                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_BDNF_48h_5               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_03_6/20/06
+#&gt; KO_BDNF_48h_5               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_03_6/20/06
 #&gt; WT_BDNF_24h_5                                                     24 h|wild type genotype|Batch_02_6/16/06
 #&gt; WT_BDNF_48h_2                                                     wild type genotype|48 h|Batch_02_6/16/06
 #&gt; WT_BDNF_24h_1                                                     24 h|wild type genotype|Batch_01_6/15/06
 #&gt; WT_BDNF_24h_3                                                     24 h|wild type genotype|Batch_02_6/16/06
-#&gt; KO_basal_1    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; KO_basal_3    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
+#&gt; KO_basal_1    initial time point|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
+#&gt; KO_basal_3    initial time point|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
 #&gt; WT_BDNF_48h_3                                                     wild type genotype|48 h|Batch_03_6/20/06
 #&gt; WT_BDNF_24h_4                                                     24 h|wild type genotype|Batch_02_6/16/06
 #&gt; WT_BDNF_48h_5                                                     wild type genotype|48 h|Batch_03_6/20/06
-#&gt; KO_BDNF_48h_1               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_02_6/16/06
-#&gt; KO_BDNF_24h_1               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; KO_BDNF_24h_3               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
+#&gt; KO_BDNF_48h_1               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_02_6/16/06
+#&gt; KO_BDNF_24h_1               24 h|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
+#&gt; KO_BDNF_24h_3               24 h|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_02_6/16/06
 #&gt; WT_basal_2                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_BDNF_48h_3               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_03_6/20/06
-#&gt; KO_BDNF_48h_4               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_03_6/20/06
+#&gt; KO_BDNF_48h_3               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_03_6/20/06
+#&gt; KO_BDNF_48h_4               Xbp1 [mouse] X-box binding protein 1;Homozygous negative|48 h|Batch_03_6/20/06
 #&gt; WT_BDNF_48h_1                                                     wild type genotype|48 h|Batch_02_6/16/06
 #&gt; WT_basal_5                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_basal_2    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; WT_BDNF_24h_2                                                     24 h|wild type genotype|Batch_02_6/16/06
-#&gt; KO_basal_4    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; KO_basal_5    initial time point|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_01_6/15/06
-#&gt; WT_BDNF_48h_4                                                     wild type genotype|48 h|Batch_03_6/20/06
-#&gt; KO_BDNF_24h_5               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
-#&gt; KO_BDNF_48h_2               Homozygous negative;Xbp1 [mouse] X-box binding protein 1|48 h|Batch_02_6/16/06
-#&gt; KO_BDNF_24h_2               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
-#&gt; WT_basal_1                                          initial time point|wild type genotype|Batch_01_6/15/06
-#&gt; KO_BDNF_24h_4               24 h|Homozygous negative;Xbp1 [mouse] X-box binding protein 1|Batch_02_6/16/06
-#&gt; WT_basal_3                                          initial time point|wild type genotype|Batch_01_6/15/06
+#&gt; KO_basal_2    initial time point|Xbp1 [mouse] X-box binding protein 1;Homozygous negative|Batch_01_6/15/06
 #&gt;                              sampleAnnotationOntoID      sampleAnnotType
 #&gt; WT_basal_4               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_BDNF_48h_5          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
+#&gt; KO_BDNF_48h_5          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
 #&gt; WT_BDNF_24h_5                     NA|EFO_0005168|NA factor|factor|factor
 #&gt; WT_BDNF_48h_2                     EFO_0005168|NA|NA factor|factor|factor
 #&gt; WT_BDNF_24h_1                     NA|EFO_0005168|NA factor|factor|factor
 #&gt; WT_BDNF_24h_3                     NA|EFO_0005168|NA factor|factor|factor
-#&gt; KO_basal_1    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_basal_3    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
+#&gt; KO_basal_1    EFO_0004425|GENE_22433;TGEMO_00001|NA factor|factor|factor
+#&gt; KO_basal_3    EFO_0004425|GENE_22433;TGEMO_00001|NA factor|factor|factor
 #&gt; WT_BDNF_48h_3                     EFO_0005168|NA|NA factor|factor|factor
 #&gt; WT_BDNF_24h_4                     NA|EFO_0005168|NA factor|factor|factor
 #&gt; WT_BDNF_48h_5                     EFO_0005168|NA|NA factor|factor|factor
-#&gt; KO_BDNF_48h_1          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
-#&gt; KO_BDNF_24h_1          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_BDNF_24h_3          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
+#&gt; KO_BDNF_48h_1          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
+#&gt; KO_BDNF_24h_1          NA|GENE_22433;TGEMO_00001|NA factor|factor|factor
+#&gt; KO_BDNF_24h_3          NA|GENE_22433;TGEMO_00001|NA factor|factor|factor
 #&gt; WT_basal_2               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_BDNF_48h_3          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
-#&gt; KO_BDNF_48h_4          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
+#&gt; KO_BDNF_48h_3          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
+#&gt; KO_BDNF_48h_4          GENE_22433;TGEMO_00001|NA|NA factor|factor|factor
 #&gt; WT_BDNF_48h_1                     EFO_0005168|NA|NA factor|factor|factor
 #&gt; WT_basal_5               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_basal_2    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_BDNF_24h_2                     NA|EFO_0005168|NA factor|factor|factor
-#&gt; KO_basal_4    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_basal_5    EFO_0004425|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_BDNF_48h_4                     EFO_0005168|NA|NA factor|factor|factor
-#&gt; KO_BDNF_24h_5          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; KO_BDNF_48h_2          TGEMO_00001;GENE_22433|NA|NA factor|factor|factor
-#&gt; KO_BDNF_24h_2          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_basal_1               EFO_0004425|EFO_0005168|NA factor|factor|factor
-#&gt; KO_BDNF_24h_4          NA|TGEMO_00001;GENE_22433|NA factor|factor|factor
-#&gt; WT_basal_3               EFO_0004425|EFO_0005168|NA factor|factor|factor
+#&gt; KO_basal_2    EFO_0004425|GENE_22433;TGEMO_00001|NA factor|factor|factor
 #&gt;                                                                                                                             sampleAnnotationURI
 #&gt; WT_basal_4                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_BDNF_48h_5                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
+#&gt; KO_BDNF_48h_5                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
 #&gt; WT_BDNF_24h_5                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
 #&gt; WT_BDNF_48h_2                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
 #&gt; WT_BDNF_24h_1                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
 #&gt; WT_BDNF_24h_3                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
+#&gt; KO_basal_1    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
+#&gt; KO_basal_3    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
 #&gt; WT_BDNF_48h_3                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
 #&gt; WT_BDNF_24h_4                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
 #&gt; WT_BDNF_48h_5                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
-#&gt; KO_BDNF_48h_1                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
-#&gt; KO_BDNF_24h_1                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_BDNF_24h_3                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
+#&gt; KO_BDNF_48h_1                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
+#&gt; KO_BDNF_24h_1                                   NA|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
+#&gt; KO_BDNF_24h_3                                   NA|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
 #&gt; WT_basal_2                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_BDNF_48h_3                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
-#&gt; KO_BDNF_48h_4                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
+#&gt; KO_BDNF_48h_3                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
+#&gt; KO_BDNF_48h_4                                   http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA|NA
 #&gt; WT_BDNF_48h_1                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
 #&gt; WT_basal_5                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_BDNF_24h_2                                                                                        NA|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_basal_4    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_basal_5    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_BDNF_48h_4                                                                                        http://www.ebi.ac.uk/efo/EFO_0005168|NA|NA
-#&gt; KO_BDNF_24h_5                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; KO_BDNF_48h_2                                   http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA|NA
-#&gt; KO_BDNF_24h_2                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_basal_1                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
-#&gt; KO_BDNF_24h_4                                   NA|http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/22433|NA
-#&gt; WT_basal_3                                                         http://www.ebi.ac.uk/efo/EFO_0004425|http://www.ebi.ac.uk/efo/EFO_0005168|NA
+#&gt; KO_basal_2    http://www.ebi.ac.uk/efo/EFO_0004425|http://purl.org/commons/record/ncbi_gene/22433;http://purl.obolibrary.org/obo/TGEMO_00001|NA
 #&gt;                                                                                                          otherCharacteristics
 #&gt; WT_basal_4     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
 #&gt; KO_BDNF_48h_5  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
@@ -1359,16 +1264,7 @@ Use <code><a href='forgetGemmaMemoised.html'>forgetGemmaMemoised</a></code> to c
 #&gt; WT_BDNF_48h_1  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
 #&gt; WT_basal_5     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
 #&gt; KO_basal_2     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_BDNF_24h_2  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_basal_4     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_basal_5     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_BDNF_48h_4  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_24h_5  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_48h_2  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_24h_2  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_basal_1     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; KO_BDNF_24h_4  total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'
-#&gt; WT_basal_3     total RNA|telencephalon primary culture|biotin|'tissue: telencephalon primary culture', 'embryonic day: E12.5'</div></pre>
+#&gt;  [ reached getOption("max.print") -- omitted 10 rows ]</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

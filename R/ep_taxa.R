@@ -49,7 +49,7 @@ allTaxa = function(taxa = NULL,
     
     content = getContent(url, file = file, return = return,overwrite=overwrite)
     if(return){
-        names(content) =  content %>% purrr::map_chr('scientificName')
+        names(content) =  content %>% purrr::map_chr('scientificName', .default = NA)
     }
     return(content)
 }
@@ -252,11 +252,11 @@ taxonInfo = function(taxon,
         if(is.null(request)){
             # names(content) =  content %>% purrr::map_chr('scientificName')
         } else if(request %in% 'datasets'){
-            names(content) =  content %>% purrr::map_chr('shortName')
+            names(content) =  content %>% purrr::map_chr('shortName', .default = NA)
         } else if(request %in% c('phenoCandidateGenes','phenotypes')){
-            names(content) =  content %>% purrr::map_chr('value')
+            names(content) =  content %>% purrr::map_chr('value', .default = NA)
         } else if(request %in% c('gene','geneEvidence','genesAtLocation')){
-            names(content) =  content %>% purrr::map_chr('officialSymbol')
+            names(content) =  content %>% purrr::map_chr('officialSymbol', .default = NA)
         }
     }
     return(content)

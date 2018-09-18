@@ -13,8 +13,11 @@ function (request = 'data').}
 \item{IdColnames}{Logical. should column names be turned into IDs. Only valid for expression data}
 }
 \value{
-A data frame
+A data frame that includes experiment and sample level data or a list that has experiment
+and sample level data as separate elements.
 }
 \description{
-Read expression data from gemma
+This is a simple wrapper for read_tsv that also deals with comments that are
+at the beginning of the file. If it is an expression file IdColnames simplifies
+column names
 }

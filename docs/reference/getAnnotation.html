@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Match probesets to gene in a platform annotation — annotationProbesetMatch • gemmaAPI</title>
+<title>Get Gemma annotations — getAnnotation • gemmaAPI</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -27,9 +27,9 @@
 <script src="../pkgdown.js"></script>
   
   
-<meta property="og:title" content="Match probesets to gene in a platform annotation — annotationProbesetMatch" />
+<meta property="og:title" content="Get Gemma annotations — getAnnotation" />
 
-<meta property="og:description" content="Match probesets to gene in a platform annotation" />
+<meta property="og:description" content="Gets Gemma's platform annotation files that can be accessed from https://gemma.msl.ubc.ca/annots/" />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -81,36 +81,47 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Match probesets to gene in a platform annotation</h1>
+    <h1>Get Gemma annotations</h1>
     </div>
 
     
-    <p>Match probesets to gene in a platform annotation</p>
+    <p>Gets Gemma's platform annotation files that can be accessed from https://gemma.msl.ubc.ca/annots/</p>
     
 
-    <pre class="usage"><span class='fu'>annotationProbesetMatch</span>(<span class='no'>genes</span>, <span class='no'>annotation</span>, <span class='kw'>removeNAs</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>getAnnotation</span>(<span class='no'>platform</span>, <span class='kw'>annotType</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"bioProcess"</span>, <span class='st'>"noParents"</span>,
+  <span class='st'>"allParents"</span>), <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>return</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>genes</th>
-      <td><p>A character vector of gene names</p></td>
+      <th>platform</th>
+      <td><p>Can either be the platform ID or its short name (e.g: GPL1355). 
+Retrieval by ID is more efficient. Only platforms that user has access to will be available.</p></td>
     </tr>
     <tr>
-      <th>annotation</th>
-      <td><p>Output of <code><a href='getAnnotation.html'>getAnnotation</a></code> or a file path to an annotation
-information written by getAnnotation</p></td>
+      <th>annotType</th>
+      <td><p>Which go terms should the input include</p></td>
     </tr>
     <tr>
-      <th>removeNAs</th>
-      <td><p>If no match is found, NAs will be return. This removes NAs</p></td>
+      <th>file</th>
+      <td><p>Character. File path. If provided, response will be saved to file</p></td>
+    </tr>
+    <tr>
+      <th>return</th>
+      <td><p>Logical. If the response should be returned. Set to false when
+you only want to save a file</p></td>
+    </tr>
+    <tr>
+      <th>overwrite</th>
+      <td><p>Logical. If TRUE, existing files will be overwritten. If FALSE
+a warning will be thrown and no action is taken.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A character vector of probeset names</p>
+    <p>A data frame including annotation information</p>
     
 
   </div>

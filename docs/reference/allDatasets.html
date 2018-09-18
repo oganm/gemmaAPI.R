@@ -197,6 +197,9 @@ to clear memory.</p></td>
 #&gt; $GSE2018$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC 2), p=0.0071"
 #&gt; 
+#&gt; $GSE2018$experimentalDesign
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2018$accession
 #&gt; [1] "GSE2018"
 #&gt; 
@@ -209,13 +212,37 @@ to clear memory.</p></td>
 #&gt; $GSE2018$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE2018$experimentalDesign
-#&gt; [1] 1
+#&gt; $GSE2018$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2018$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2018$geeq
+#&gt; $GSE2018$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2018$geeq$publicQualityScore
+#&gt; [1] 0.4228406
+#&gt; 
+#&gt; $GSE2018$geeq$publicSuitabilityScore
+#&gt; [1] 0.7875
+#&gt; 
+#&gt; $GSE2018$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE2018$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2018$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2018$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2018$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2018$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -261,30 +288,6 @@ to clear memory.</p></td>
 #&gt; $GSE2018$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2018$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2018$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2018$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2018$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2018$geeq$publicQualityScore
-#&gt; [1] 0.4228406
-#&gt; 
-#&gt; $GSE2018$geeq$publicSuitabilityScore
-#&gt; [1] 0.7875
-#&gt; 
-#&gt; $GSE2018$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE2018$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2018$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -292,11 +295,17 @@ to clear memory.</p></td>
 #&gt; [1] 557
 #&gt; 
 #&gt; 
-#&gt; $GSE2018$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2018$bioAssayCount
+#&gt; [1] 34
 #&gt; 
-#&gt; $GSE2018$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2018$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2018$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2018$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2018$public
 #&gt; [1] TRUE
@@ -313,20 +322,8 @@ to clear memory.</p></td>
 #&gt; $GSE2018$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2018$bioAssayCount
-#&gt; [1] 34
-#&gt; 
-#&gt; $GSE2018$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2018$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2018$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2018$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2018$description
 #&gt; [1] " Bronchoalveolar lavage samples collected from lung transplant recipients.  Numeric portion of sample name is an arbitrary patient ID and AxBx number indicates the perivascular (A) and bronchiolar (B) scores from biopsies collected on the same day as the BAL fluid was collected.  Several patients have more than one sample in this series and can be determined by patient number followed by a lower case letter.  Acute rejection state is determined by the combined A and B score - specifically, a combined AB score of 2 or greater is considered an acute rejection.."
@@ -341,16 +338,19 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE2018$lastUpdated
-#&gt; [1] 1.525505e+12
-#&gt; 
-#&gt; $GSE2018$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537216e+12
 #&gt; 
 #&gt; $GSE2018$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2018$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2018$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2018$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2018$lastNeedsAttentionEvent
 #&gt; $GSE2018$lastNeedsAttentionEvent$performer
@@ -392,11 +392,8 @@ to clear memory.</p></td>
 #&gt; $GSE2018$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2018$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2018$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2872
@@ -421,6 +418,9 @@ to clear memory.</p></td>
 #&gt; $GSE2872$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE2872$experimentalDesign
+#&gt; [1] 2
+#&gt; 
 #&gt; $GSE2872$accession
 #&gt; [1] "GSE2872"
 #&gt; 
@@ -433,13 +433,37 @@ to clear memory.</p></td>
 #&gt; $GSE2872$taxonId
 #&gt; [1] 3
 #&gt; 
-#&gt; $GSE2872$experimentalDesign
-#&gt; [1] 2
+#&gt; $GSE2872$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2872$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2872$geeq
+#&gt; $GSE2872$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2872$geeq$publicQualityScore
+#&gt; [1] 0.5677968
+#&gt; 
+#&gt; $GSE2872$geeq$publicSuitabilityScore
+#&gt; [1] 0.4625
+#&gt; 
+#&gt; $GSE2872$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2872$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2872$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE2872$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2872$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2872$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -485,30 +509,6 @@ to clear memory.</p></td>
 #&gt; $GSE2872$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2872$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE2872$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2872$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2872$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2872$geeq$publicQualityScore
-#&gt; [1] 0.2820825
-#&gt; 
-#&gt; $GSE2872$geeq$publicSuitabilityScore
-#&gt; [1] 0.4625
-#&gt; 
-#&gt; $GSE2872$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE2872$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2872$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -516,11 +516,17 @@ to clear memory.</p></td>
 #&gt; [1] 558
 #&gt; 
 #&gt; 
-#&gt; $GSE2872$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2872$bioAssayCount
+#&gt; [1] 12
 #&gt; 
-#&gt; $GSE2872$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2872$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2872$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2872$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2872$public
 #&gt; [1] TRUE
@@ -537,20 +543,8 @@ to clear memory.</p></td>
 #&gt; $GSE2872$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2872$bioAssayCount
-#&gt; [1] 12
-#&gt; 
-#&gt; $GSE2872$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2872$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2872$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2872$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2872$description
 #&gt; [1] " Neurological diseases disrupt the quality of the lives of patients and often lead to their death prematurely.  A common feature of most neurological diseases is the degeneration of neurons, which results from an inappropriate activation of apoptosis. Drugs that inhibit neuronal apoptosis could thus be candidates for therapeutic intervention in neurodegenerative disorders.  We have identified (and recently reported) a chemical called GW5074 that inhibits apoptosis in a variety of cell culture paradigms of neuronal apoptosis.  Additionally, we have found that GW5074 reduces neurodegeneration and improves behavioral outcome in a mouse model of Huntington's disease.  Although GW5074 is a c-Raf inhibitor, we know very little about the molecular mechanisms underlying its neuroprotective action.  Identifying genes that are regulated by GW5074 in neurons will shed insight into this issue. We believe that neuroprotection by GW5074 involves the regulation of several genes.  Some of these genes are likely to be induced whereas the expression of other genes might be inhibited.  The specific aim is to identify genes that are differentially expressed in neurons treated with GW5074. We believe that neuroprotection by GW5074 involves the regulation of several genes.  Some of these genes are likely to be induced whereas the expression of other genes might be inhibited. Cultures of cerebellar granule neurons undergo apoptosis when switched from medium containing levated levels of potassium (high K+ or HK) to medium containing low potassium (LK).  Although cell death begins at about 18 h, we have found that the by 6 h after LK treatment these neurons are irreversibly committed to cell death.  We will treat cerebellar granule neuron cultures with LK medium (which induces them to undergo apoptosis) or with GW5074 (1 uM).  We will extract RNA at two time-points after treatment: 3 h and 6 h. Analysis at the two different time-points will show us whether changes in expression of specific genes is transient or sustained or whether the changes occurs early or relatively late in the process.  Neuronal cultures will be prepared from 1 week old Wistar rats.  The cultures will be maintained in culture for 1 week before treatment.  Following treatment the cells will be lysed and total RNA isolated.  The RNA will be stored at -80oC and shipped to the microarray facility for analysis.  The experiment will be done in triplicate.  Thus, for each time-point (3 or 6h treatment) we will be hope to provide 3 sets of samples (each set coming from a different culture preparation and containing lysates from cells treated with LK or GW5074).  Having samples from 3 independent cultures will mitigate any expression differences resulting from subtle variations in culture quality or in the preparation or quality of RNA..\nDate GSE2872 Last Updated: Jul 06 2005\n\nContributers:  S R D'Mello\n\nIncludes GDS1837.\n Update date: Jun 09 2006.\n Dataset description GDS1837: Analysis of cultured cerebellar granule neurons in low potassium medium 3 and 6 hours following treatment with the c-Raf inhibitor GW5074. GW5074 blocks low potassium induced cell death. Results provide insight into the neuroprotective action of GW5074..\n"
@@ -565,16 +559,19 @@ to clear memory.</p></td>
 #&gt; [1] 2
 #&gt; 
 #&gt; $GSE2872$lastUpdated
-#&gt; [1] 1.525851e+12
-#&gt; 
-#&gt; $GSE2872$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2872$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2872$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2872$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2872$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2872$lastNeedsAttentionEvent
 #&gt; $GSE2872$lastNeedsAttentionEvent$performer
@@ -616,11 +613,8 @@ to clear memory.</p></td>
 #&gt; $GSE2872$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2872$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2872$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE4523
@@ -645,6 +639,9 @@ to clear memory.</p></td>
 #&gt; $GSE4523$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE4523$experimentalDesign
+#&gt; [1] 3
+#&gt; 
 #&gt; $GSE4523$accession
 #&gt; [1] "GSE4523"
 #&gt; 
@@ -657,13 +654,37 @@ to clear memory.</p></td>
 #&gt; $GSE4523$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE4523$experimentalDesign
-#&gt; [1] 3
+#&gt; $GSE4523$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE4523$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE4523$geeq
+#&gt; $GSE4523$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4523$geeq$publicQualityScore
+#&gt; [1] 0.1311354
+#&gt; 
+#&gt; $GSE4523$geeq$publicSuitabilityScore
+#&gt; [1] 0.5
+#&gt; 
+#&gt; $GSE4523$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE4523$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE4523$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE4523$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE4523$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE4523$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -680,7 +701,7 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE4523$geeq$qScoreOutliers
-#&gt; [1] -1
+#&gt; [1] 1
 #&gt; 
 #&gt; $GSE4523$geeq$qScorePlatformsTech
 #&gt; [1] 1
@@ -692,13 +713,13 @@ to clear memory.</p></td>
 #&gt; [1] -1
 #&gt; 
 #&gt; $GSE4523$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9868163
+#&gt; [1] 0.9157926
 #&gt; 
 #&gt; $GSE4523$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9895737
+#&gt; [1] 0.9179481
 #&gt; 
 #&gt; $GSE4523$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 4.76526e-05
+#&gt; [1] 8.925197e-05
 #&gt; 
 #&gt; $GSE4523$geeq$noVectors
 #&gt; [1] FALSE
@@ -709,30 +730,6 @@ to clear memory.</p></td>
 #&gt; $GSE4523$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE4523$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4523$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4523$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4523$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE4523$geeq$publicQualityScore
-#&gt; [1] -0.1443466
-#&gt; 
-#&gt; $GSE4523$geeq$publicSuitabilityScore
-#&gt; [1] 0.5
-#&gt; 
-#&gt; $GSE4523$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE4523$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE4523$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -740,11 +737,17 @@ to clear memory.</p></td>
 #&gt; [1] 559
 #&gt; 
 #&gt; 
-#&gt; $GSE4523$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE4523$bioAssayCount
+#&gt; [1] 6
 #&gt; 
-#&gt; $GSE4523$parentTaxonId
-#&gt; NULL
+#&gt; $GSE4523$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE4523$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4523$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4523$public
 #&gt; [1] TRUE
@@ -761,20 +764,8 @@ to clear memory.</p></td>
 #&gt; $GSE4523$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE4523$bioAssayCount
-#&gt; [1] 6
-#&gt; 
-#&gt; $GSE4523$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE4523$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE4523$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE4523$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4523$description
 #&gt; [1] " Melanotransferrin (MTf) or melanoma tumor antigen p97 is an iron (Fe)-binding transferrin homolog expressed highly on melanomas and at lower levels on normal tissues. It has been suggested that MTf is involved in a variety of processes such as Fe metabolism and cellular differentiation. Considering the crucial role of Fe in many metabolic pathways e.g., DNA synthesis, it is important to understand the function of MTf. To define the roles of MTf, a MTf knockout (MTf -/-) mouse model was developed. Examination of the MTf -/- mice demonstrated no phenotypic differences compared to wild-type littermates. However, microarray analysis showed differential expression of molecules involved in proliferation such as Mef2a, Tcf4, Gls and Apod in MTf -/- mice compared to MTf +/+ littermates, suggesting a role for MTf in proliferation and tumorigenesis..\nDate GSE4523 Last Updated: Jun 13 2006\n\nContributers:  Louise L Dunn Yohan Suryo Rahmanto Eric O Sekyere Des R Richardson\n\nIncludes GDS1964.\n Update date: Jun 14 2006.\n Dataset description GDS1964: Analysis of brain from melanotransferrin (MTf) knockout mutants. MTf or melanoma tumor antigen p97 is a membrane bound iron binding transferrin homolog highly expressed in melanomas and at lower levels in normal tissues. Results provide insight into the function of MTf..\n"
@@ -789,16 +780,19 @@ to clear memory.</p></td>
 #&gt; [1] 3
 #&gt; 
 #&gt; $GSE4523$lastUpdated
-#&gt; [1] 1.526708e+12
-#&gt; 
-#&gt; $GSE4523$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537216e+12
 #&gt; 
 #&gt; $GSE4523$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4523$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE4523$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4523$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE4523$lastNeedsAttentionEvent
 #&gt; $GSE4523$lastNeedsAttentionEvent$performer
@@ -840,11 +834,8 @@ to clear memory.</p></td>
 #&gt; $GSE4523$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE4523$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE4523$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE4036
@@ -869,6 +860,9 @@ to clear memory.</p></td>
 #&gt; $GSE4036$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PCnull); p=0.0"
 #&gt; 
+#&gt; $GSE4036$experimentalDesign
+#&gt; [1] 4
+#&gt; 
 #&gt; $GSE4036$accession
 #&gt; [1] "GSE4036"
 #&gt; 
@@ -881,13 +875,37 @@ to clear memory.</p></td>
 #&gt; $GSE4036$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE4036$experimentalDesign
-#&gt; [1] 4
+#&gt; $GSE4036$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE4036$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE4036$geeq
+#&gt; $GSE4036$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4036$geeq$publicQualityScore
+#&gt; [1] 0.9972556
+#&gt; 
+#&gt; $GSE4036$geeq$publicSuitabilityScore
+#&gt; [1] 0.6625
+#&gt; 
+#&gt; $GSE4036$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE4036$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE4036$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE4036$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE4036$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE4036$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -928,34 +946,10 @@ to clear memory.</p></td>
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4036$geeq$corrMatIssues
-#&gt; [1] 0
+#&gt; [1] 2
 #&gt; 
 #&gt; $GSE4036$geeq$replicatesIssues
 #&gt; [1] 0
-#&gt; 
-#&gt; $GSE4036$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE4036$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4036$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4036$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE4036$geeq$publicQualityScore
-#&gt; [1] 0.7115413
-#&gt; 
-#&gt; $GSE4036$geeq$publicSuitabilityScore
-#&gt; [1] 0.6625
-#&gt; 
-#&gt; $GSE4036$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE4036$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
 #&gt; 
 #&gt; $GSE4036$geeq$`_totalInQuery`
 #&gt; [1] 0
@@ -964,11 +958,17 @@ to clear memory.</p></td>
 #&gt; [1] 560
 #&gt; 
 #&gt; 
-#&gt; $GSE4036$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE4036$bioAssayCount
+#&gt; [1] 28
 #&gt; 
-#&gt; $GSE4036$parentTaxonId
-#&gt; NULL
+#&gt; $GSE4036$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE4036$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4036$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4036$public
 #&gt; [1] TRUE
@@ -985,20 +985,8 @@ to clear memory.</p></td>
 #&gt; $GSE4036$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE4036$bioAssayCount
-#&gt; [1] 28
-#&gt; 
-#&gt; $GSE4036$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE4036$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE4036$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE4036$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4036$description
 #&gt; [1] " Our laboratory has developed the first mouse model overexpressing a RNA-binding protein, the ELAV-like protein HuD, in the CNS under the control of the CaMKinII alpha promoter. Initial behavioral characterization of the mice revealed that they had significant learning deficits together with abnormalities in prepulse inhibition (PPI). At the molecular level, we found that the expression of the growth-associated protein GAP-43, one of the targets of HuD, was increased in the hippocampus of HuD transgenic mice. To characterize these mice further and to evaluate the utility of these animals in understanding human diseases, we propose to use DNA microarray methods. To test our hypothesis we propose 3 specific aims: 1) To characterize the pattern of gene expression in the hippocampus of HuD overexpressor mice 2) To compare the pattern of gene expression in our mouse model with that in the hippocampus of rats prenatally exposed to alcohol (FAS model) and 3) To compare the pattern of gene expression in our mouse model with that shown in post-mortem tissues of patients with schizophrenia. In our previous protocols we examined the pattern of gene expression in our HuD transgenic mice and in rats prenaltally exposed to alcohol. A report by another group (Hakak et al, 2001) showed that three of the HuD targets were upregulated in the prefrontal cortex of patients with schizophrenia. To evaluate whether other target of HuD may be affected in this illness, in the current protocol, we want to compare the pattern of expression in our transgenic mice with in tissue from patients with schizophrenia Based on the behavioral and molecular properties of our HuD transgenic mice we hypothesize that these animals may be good models for the studying the basis of learning disabilities and of diseases that show deficits in PPI such as fetal alcohol syndrome and schizophrenia. All 28 samples are derived from cerebellar tissues for patients with schizophrenia and matched controls.  The specimens were obtained from the Maryland Brain Collection according to NIH guidelines for confidentially and privacy. The protocol used in these studies was reviewed by our HRRC which found that our studies do not fall within the category of protocols monitored by the IRB (see attached letter form the HRRC). Specimens from 14 patients with a diagnosis of schizophrenia performed according to DSM-IV criteria and 14 sex-, age- and PMI-matched controls was included in this study. No differences were found between patients and control subjects in the average age (45±12 versus 43±10 years, p=0.86) or PMI (12±5 versus 16±6 hours, p=0.11). We will provide 28 samples containing 5 ug of RNA each in DEPC water (see validation of the quality of the RNA below). In addition, we include in our study animals treated with haloperidol as control for medication. These samples will be submitted in a separate protocol..\nDate GSE4036 Last Updated: Jan 13 2006\n\nContributers:  Nora I Perrone-Bizzozero\n\nIncludes GDS1917.\n Update date: Jun 14 2006.\n Dataset description GDS1917: Analysis of cortical samples corresponding to the crus I/VIIa area of the cerebellum from schizophrenia patients. A study indicates that targets of the RNA-binding ELAV-like protein HuD are overexpressed in the prefrontal cortex of patients with schizophrenia..\n"
@@ -1013,16 +1001,19 @@ to clear memory.</p></td>
 #&gt; [1] 4
 #&gt; 
 #&gt; $GSE4036$lastUpdated
-#&gt; [1] 1.5221e+12
-#&gt; 
-#&gt; $GSE4036$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE4036$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4036$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE4036$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4036$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE4036$lastNeedsAttentionEvent
 #&gt; $GSE4036$lastNeedsAttentionEvent$performer
@@ -1064,11 +1055,8 @@ to clear memory.</p></td>
 #&gt; $GSE4036$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE4036$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE4036$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE4034
@@ -1093,6 +1081,9 @@ to clear memory.</p></td>
 #&gt; $GSE4034$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC 2), p=0.00049622"
 #&gt; 
+#&gt; $GSE4034$experimentalDesign
+#&gt; [1] 5
+#&gt; 
 #&gt; $GSE4034$accession
 #&gt; [1] "GSE4034"
 #&gt; 
@@ -1105,13 +1096,37 @@ to clear memory.</p></td>
 #&gt; $GSE4034$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE4034$experimentalDesign
-#&gt; [1] 5
+#&gt; $GSE4034$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE4034$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE4034$geeq
+#&gt; $GSE4034$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4034$geeq$publicQualityScore
+#&gt; [1] 0.28097
+#&gt; 
+#&gt; $GSE4034$geeq$publicSuitabilityScore
+#&gt; [1] 0.9125
+#&gt; 
+#&gt; $GSE4034$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE4034$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE4034$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE4034$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE4034$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE4034$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1157,30 +1172,6 @@ to clear memory.</p></td>
 #&gt; $GSE4034$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE4034$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4034$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4034$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE4034$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE4034$geeq$publicQualityScore
-#&gt; [1] 0.28097
-#&gt; 
-#&gt; $GSE4034$geeq$publicSuitabilityScore
-#&gt; [1] 0.9125
-#&gt; 
-#&gt; $GSE4034$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE4034$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE4034$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1188,11 +1179,17 @@ to clear memory.</p></td>
 #&gt; [1] 561
 #&gt; 
 #&gt; 
-#&gt; $GSE4034$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE4034$bioAssayCount
+#&gt; [1] 24
 #&gt; 
-#&gt; $GSE4034$parentTaxonId
-#&gt; NULL
+#&gt; $GSE4034$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE4034$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4034$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4034$public
 #&gt; [1] TRUE
@@ -1209,20 +1206,8 @@ to clear memory.</p></td>
 #&gt; $GSE4034$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE4034$bioAssayCount
-#&gt; [1] 24
-#&gt; 
-#&gt; $GSE4034$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE4034$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE4034$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE4034$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4034$description
 #&gt; [1] " Fear conditioning (FC) is a behavioral paradigm that measures an animal's ability to learn fear related information.  FC is measured by pairing a mild foot-shock with the surroundings in which the shock was recieved.  Upon being placed back in the context, mice exhibit freezing behavior, which is a species-specific response to fear.  We have previously used selective breeding to produce lines of mice with high or low levels of freezing behavior.  This experiment is a replication of a previous experiment that produced lines of mice with high or low levels of freezing behavior.  These lines derive from different progenitor mouse strains.  We are able to identify alleles that govern the genetic variability for FC by using chromosomal markers in these selected lines.  Using microarrays, we will identify differences in gene expression in two key brain regions: amygdala and hippocampus.  Gene expression differences and data regarding chromosomal regions involved in the behavior will be compared to identify particular genes that are both differentially expressed and whose expression is governed by alleles that fall into critical chromosomal regions. We will compare gene expresion in the amygdala and hippocampus (brain regions known to be relevant to fear behavior) from the these two lines of mice and to the those in the previous experiment.  Bayesian statistics will be used in an effort to identify gene expression that affects fear behavior. We hypothesize that selection has acted in part by changing the frequency of alleles that cause differential expression of key genes in the amygdala and hippocampus of our selected lines.  Slective breeding changes the frequency of trait relevand (FC) alleles.  A relevant allele is expected to increas in one selected line and decrease in the oppositely selected line.  Some trait relevant alleles are expected to cause changes in the level of expression at particular genes. Amygdala and hippocampus will be rapidly dissected out of experimentally naïve mice from each line. Naïve mice will be used for expression studies since the behavior of the mice in the FC test can be reliably anticipated due to their lineage. We have practiced these procedures, and can accurately and reproducibly remove these regions in less than 5 minutes. Different mice will be used to collect each brain region, since the dissection of hippocampus disrupts the removal of amygdala. We will collect enough samples from each region to accommodate a total of 6 microarrays per brain region, per line, thus we will use a total of 24 microarrays. We anticipate that a single brain region will be sufficient to for a microarray. However, we propose to utilize three samples per microarray, because this will reduce variability due to environmental factors and due to slight variability in our dissection procedures. Once this tissue is removed, we will isolate RNA for shipment to the Microarray consortium. We will also collect spleens from each subject as a source of genomic DNA, in order to permit direct comparison of genotype and expression phenotypes. Once we have the results of the microarray analysis, we use WebQTL.org to identify the chromosomal locations of alleles that are know to influence the expression of genes for which we have found differential expression. We will then superimpose this information on trait relevant chromosomal regions identified from our selected lines. This will allow us to rapidly identify genes which may account for genetic variability in FC due to differential expression. Such genes will then be subjected to further study..\r\nDate GSE4034 Last Updated: Jan 13 2006\r\n\r\nContributers:  Abraham A Palmer\r\n\r\nIncludes GDS1901.\r\n Update date: Jun 09 2006.\r\n Dataset description GDS1901: Analysis of the amygdalae and hippocampi of strains exhibiting low or high freezing behavior in response to fear.  Previous work identified alleles that contribute to the variability in freezing behavior, and the chromosomal location of these alleles..\r\n"
@@ -1237,16 +1222,19 @@ to clear memory.</p></td>
 #&gt; [1] 5
 #&gt; 
 #&gt; $GSE4034$lastUpdated
-#&gt; [1] 1.526715e+12
-#&gt; 
-#&gt; $GSE4034$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE4034$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE4034$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE4034$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE4034$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE4034$lastNeedsAttentionEvent
 #&gt; $GSE4034$lastNeedsAttentionEvent$performer
@@ -1288,11 +1276,8 @@ to clear memory.</p></td>
 #&gt; $GSE4034$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE4034$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE4034$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2866
@@ -1317,6 +1302,9 @@ to clear memory.</p></td>
 #&gt; $GSE2866$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC2); p=0.00065"
 #&gt; 
+#&gt; $GSE2866$experimentalDesign
+#&gt; [1] 6
+#&gt; 
 #&gt; $GSE2866$accession
 #&gt; [1] "GSE2866"
 #&gt; 
@@ -1329,13 +1317,37 @@ to clear memory.</p></td>
 #&gt; $GSE2866$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2866$experimentalDesign
-#&gt; [1] 6
+#&gt; $GSE2866$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2866$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2866$geeq
+#&gt; $GSE2866$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2866$geeq$publicQualityScore
+#&gt; [1] 0.1332939
+#&gt; 
+#&gt; $GSE2866$geeq$publicSuitabilityScore
+#&gt; [1] 0.65
+#&gt; 
+#&gt; $GSE2866$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE2866$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE2866$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2866$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2866$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2866$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1364,13 +1376,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE2866$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9917422
+#&gt; [1] -0.05758641
 #&gt; 
 #&gt; $GSE2866$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9919873
+#&gt; [1] -0.06694264
 #&gt; 
 #&gt; $GSE2866$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 6.564309e-06
+#&gt; [1] 0.06091614
 #&gt; 
 #&gt; $GSE2866$geeq$noVectors
 #&gt; [1] FALSE
@@ -1381,30 +1393,6 @@ to clear memory.</p></td>
 #&gt; $GSE2866$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2866$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2866$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2866$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2866$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2866$geeq$publicQualityScore
-#&gt; [1] 0.2845696
-#&gt; 
-#&gt; $GSE2866$geeq$publicSuitabilityScore
-#&gt; [1] 0.65
-#&gt; 
-#&gt; $GSE2866$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE2866$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE2866$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1412,11 +1400,17 @@ to clear memory.</p></td>
 #&gt; [1] 562
 #&gt; 
 #&gt; 
-#&gt; $GSE2866$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2866$bioAssayCount
+#&gt; [1] 18
 #&gt; 
-#&gt; $GSE2866$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2866$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2866$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2866$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2866$public
 #&gt; [1] TRUE
@@ -1433,20 +1427,8 @@ to clear memory.</p></td>
 #&gt; $GSE2866$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2866$bioAssayCount
-#&gt; [1] 18
-#&gt; 
-#&gt; $GSE2866$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2866$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2866$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2866$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2866$description
 #&gt; [1] " Succinate semialdehyde dehydrogenase (SSADH) deficiency is a rare autosomal recessive disorder effecting approximately 350 people around the world. Patients suffering from SSADH deficiency experience language acquisition failure, memory deficiencies, autism, increased aggressive behaviors, and seizures. There is a chemical buildup of both gamma-aminobutyric acid (GABA) and gamma-hydroxybutyric acid (GHB) in the neurological system of these patients. The Aldh5a1-/- knock out mouse model of SSADH deficiency shows the same chemical imbalances as the human disease, with additional fatal tonic-clonic seizures at three weeks of age.  The elucidation of seizure causing pathways will facilitate treatment of seizure phenotypes in diseases with related epilepsy. Gene expression patterns within the hippocampus, cerebellum, and cortex of SSADH deficient mice (Aldh5a1-/- mice) will be compared to wild type mice at a time point immediately prior to fatal seizures. We hypothesis that the SSADH deficient mice experience a dysfunction of glutamate/GABA/ glutamine neurotransmitter cycle linked to astroglial metabolism and/or uptake of neuronally-released glutamate. The increased levels of GHB and GABA lead to down regulation of GABA-B-Receptor leading to seizures. The SSADH deficient phenotype may also be caused by ongoing oxidative damage and the pathological role of succinic semialdehyde. SSADH deficient mice (Aldh5a1-/- knock out) exhibit fatal seizures around three weeks of age. Mutant and wild type mice will be sacrificed between 17 and 19 days of life, and brain sections will be extracted and frozen (using a standard protocol). Hippocampus, cerebellum, and cortex from three mutant mice and three wild type mice will individually be expression profiled on the Affymetrix platform, giving a total of eighteen arrays. Comparative analysis will then be carried out, evaluating the transcript differences between mutant and wild type mice in each brain region..\nDate GSE2866 Last Updated: Jun 08 2006\n\nContributers:  E A Donarum\n\nIncludes GDS1745.\n Update date: Jun 08 2006.\n Dataset description GDS1745: Analysis of brain hippocampi, cerebella, and cortices of succinate semialdehyde dehydrogenase (SSADH)-deficient mutants at 3 weeks of age, when fatal seizures occur. Results indicate that SSADH deficiency results in the dysregulation of genes involved in myelin structure and compaction..\n"
@@ -1461,16 +1443,19 @@ to clear memory.</p></td>
 #&gt; [1] 6
 #&gt; 
 #&gt; $GSE2866$lastUpdated
-#&gt; [1] 1.521667e+12
-#&gt; 
-#&gt; $GSE2866$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2866$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2866$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2866$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2866$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2866$lastNeedsAttentionEvent
 #&gt; NULL
@@ -1481,11 +1466,8 @@ to clear memory.</p></td>
 #&gt; $GSE2866$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2866$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2866$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE3253
@@ -1510,6 +1492,9 @@ to clear memory.</p></td>
 #&gt; $GSE3253$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE3253$experimentalDesign
+#&gt; [1] 9
+#&gt; 
 #&gt; $GSE3253$accession
 #&gt; [1] "GSE3253"
 #&gt; 
@@ -1522,13 +1507,37 @@ to clear memory.</p></td>
 #&gt; $GSE3253$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE3253$experimentalDesign
-#&gt; [1] 9
+#&gt; $GSE3253$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE3253$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE3253$geeq
+#&gt; $GSE3253$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3253$geeq$publicQualityScore
+#&gt; [1] -0.01480408
+#&gt; 
+#&gt; $GSE3253$geeq$publicSuitabilityScore
+#&gt; [1] 0.5875
+#&gt; 
+#&gt; $GSE3253$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE3253$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE3253$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3253$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3253$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE3253$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1574,30 +1583,6 @@ to clear memory.</p></td>
 #&gt; $GSE3253$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE3253$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3253$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3253$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3253$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE3253$geeq$publicQualityScore
-#&gt; [1] -0.01480408
-#&gt; 
-#&gt; $GSE3253$geeq$publicSuitabilityScore
-#&gt; [1] 0.5875
-#&gt; 
-#&gt; $GSE3253$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE3253$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE3253$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1605,11 +1590,17 @@ to clear memory.</p></td>
 #&gt; [1] 563
 #&gt; 
 #&gt; 
-#&gt; $GSE3253$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE3253$bioAssayCount
+#&gt; [1] 12
 #&gt; 
-#&gt; $GSE3253$parentTaxonId
-#&gt; NULL
+#&gt; $GSE3253$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE3253$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3253$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3253$public
 #&gt; [1] TRUE
@@ -1626,20 +1617,8 @@ to clear memory.</p></td>
 #&gt; $GSE3253$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE3253$bioAssayCount
-#&gt; [1] 12
-#&gt; 
-#&gt; $GSE3253$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE3253$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE3253$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE3253$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3253$description
 #&gt; [1] " Acute cognitive impairment (i.e., delirium) is common in elderly emergency department patients and frequently results from infections that are unrelated to the central nervous system. Since activation of the peripheral innate immune system induces brain microglia to produce inflammatory cytokines that are responsible for behavioral deficits, we investigated if aging exacerbated neuroinflammation and sickness behavior after peripheral injection of lipopolysaccharide (LPS). Microarray analysis revealed a transcriptional profile indicating the presence of primed or activated microglia and increased inflammation in the aged brain. Furthermore, aged mice had a unique gene expression profile in the brain after an intraperitoneal injection of LPS, and the LPS-induced elevation in the brain inflammatory cytokines and oxidative stress was both exaggerated and prolonged compared with adults. Aged mice were anorectic longer and lost more weight than adults after peripheral LPS administration. Moreover, reductions in both locomotor and social behavior remained 24 h later in aged mice, when adults had fully recovered, and the exaggerated neuroinflammatory response in aged mice was not reliably paralleled by increased circulating cytokines in the periphery. Taken together, these data establish that activation of the peripheral innate immune system leads to exacerbated neuroinflammation in the aged as compared with adult mice. This dysregulated link between the peripheral and central innate immune system is likely to be involved in the severe behavioral deficits that frequently occur in older adults with systemic infections..\nDate GSE3253 Last Updated: Oct 28 2005\n\nContributers:  Johnathan P Godbout Jing Chen Amy F Richwine Brian M Berg Keith K Kelley Rodney W Johnson Jayne Abraham\n\nIncludes GDS1311.\n Update date: Nov 04 2005.\n Dataset description GDS1311: Analysis of aged brain after activation of the peripheral innate immune system by intraperitoneal injection of E. coli lipopolysaccharide (LPS).  Results provide insight into molecular events underlying severe behavioral deficits (delirium) common in older adults with systemic infections..\n"
@@ -1654,16 +1633,19 @@ to clear memory.</p></td>
 #&gt; [1] 9
 #&gt; 
 #&gt; $GSE3253$lastUpdated
-#&gt; [1] 1.526709e+12
-#&gt; 
-#&gt; $GSE3253$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE3253$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3253$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE3253$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3253$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE3253$lastNeedsAttentionEvent
 #&gt; $GSE3253$lastNeedsAttentionEvent$performer
@@ -1705,11 +1687,8 @@ to clear memory.</p></td>
 #&gt; $GSE3253$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE3253$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE3253$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2005
@@ -1734,6 +1713,9 @@ to clear memory.</p></td>
 #&gt; $GSE2005$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE2005$experimentalDesign
+#&gt; [1] 10
+#&gt; 
 #&gt; $GSE2005$accession
 #&gt; [1] "GSE2005"
 #&gt; 
@@ -1746,13 +1728,37 @@ to clear memory.</p></td>
 #&gt; $GSE2005$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2005$experimentalDesign
-#&gt; [1] 10
+#&gt; $GSE2005$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2005$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2005$geeq
+#&gt; $GSE2005$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2005$geeq$publicQualityScore
+#&gt; [1] 0.7136938
+#&gt; 
+#&gt; $GSE2005$geeq$publicSuitabilityScore
+#&gt; [1] 0.5625
+#&gt; 
+#&gt; $GSE2005$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2005$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2005$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2005$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2005$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2005$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -1798,30 +1804,6 @@ to clear memory.</p></td>
 #&gt; $GSE2005$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2005$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2005$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2005$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2005$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2005$geeq$publicQualityScore
-#&gt; [1] 0.7136938
-#&gt; 
-#&gt; $GSE2005$geeq$publicSuitabilityScore
-#&gt; [1] 0.5625
-#&gt; 
-#&gt; $GSE2005$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2005$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2005$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -1829,11 +1811,17 @@ to clear memory.</p></td>
 #&gt; [1] 564
 #&gt; 
 #&gt; 
-#&gt; $GSE2005$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2005$bioAssayCount
+#&gt; [1] 6
 #&gt; 
-#&gt; $GSE2005$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2005$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2005$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2005$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2005$public
 #&gt; [1] TRUE
@@ -1850,20 +1838,8 @@ to clear memory.</p></td>
 #&gt; $GSE2005$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2005$bioAssayCount
-#&gt; [1] 6
-#&gt; 
-#&gt; $GSE2005$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2005$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2005$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2005$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2005$description
 #&gt; [1] " Post-transcriptional mechanisms play an important role in the control of gene expression. RNA-binding proteins are key players in the post-transcriptional control of many neural genes and they participate in multiple processes, from RNA splicing and mRNA transport to mRNA stability and translation. Our laboratory has developed the first mouse model overexpressing a RNA-binding protein, the ELAV-like protein HuD, in the CNS under the control of the CaMKinII alpha promoter. Initial behavioral characterization of the mice revealed that they had significant learning deficits together with abnormalities in prepulse inhibition (PPI). At the molecular level, we found that the expression of the growth-associated protein GAP-43, one of the targets of HuD, was increased in the hippocampus of HuD transgenic mice. To characterize these mice further and to evaluate the utility of these animals in understanding human diseases, we propose to use DNA microarray methods. To test our hypothesis we propose 2 specific aims: 1)To characterize the pattern of gene expression in the hippocampus of HuD overexpressor mice 2)To compare the pattern of gene expression in our mouse model with that in the hippocampus of rats prenatally exposed to alcohol (FAS model) and in post-mortem tissues of patients with schizophrenia Based on the behavioral and molecular properties of our HuD transgenic mice we hypothesize that these animals may be good models for the studying the basis of learning disabilities and of diseases that show deficits in PPI such as fetal alcohol syndrome and schizophrenia. All mice are in C57BL/6 background and are male approximately 60 days old. Initial studies were performed in animals that were not subjected to any experimental manipulation. Animals were bred and sacrificed according to our approved animal protocol.  The brain was rapidly dissected on ice and we isolated the hippocampus, which has the highest expression of the transgene. After dissection both hippocampi were frozen in liquid nitrogen, pooled and stored at -80C until analysis. RNA samples were isolated using RNAeasy Qiagen columns. For our first experiment, we want to examine the pattern of gene expression in the hippocampus of 3 transgenic mice and 3 non-transgenic littermates. RNAs from the 6 hippocampi were of high quality as revealed by the integrity of the 28S and 18S rRNA. We will provide 6 samples containing 10 ug of RNA each in DEPC water at a concentration of about 0.5 ug/ul. Three of the samples (#1, #2 and # 3) are from transgenic mice and three from their non-transgenic littermates (#4, #5 and #6)..\nDate GSE2005 Last Updated: May 29 2005\n\nContributers:  Nora I Perrone-Bizzozero\n\nIncludes GDS1111.\n Update date: May 09 2005.\n Dataset description GDS1111: Analysis of hippocampus of 60 day old C57BL/6 males overexpressing the RNA binding protein HuD. HuD overexpressor mice exhibit learning deficits and abnormalities in prepulse inhibition..\n"
@@ -1878,16 +1854,19 @@ to clear memory.</p></td>
 #&gt; [1] 10
 #&gt; 
 #&gt; $GSE2005$lastUpdated
-#&gt; [1] 1.52677e+12
-#&gt; 
-#&gt; $GSE2005$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2005$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2005$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2005$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2005$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2005$lastNeedsAttentionEvent
 #&gt; $GSE2005$lastNeedsAttentionEvent$performer
@@ -1929,11 +1908,8 @@ to clear memory.</p></td>
 #&gt; $GSE2005$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2005$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2005$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2426
@@ -1958,6 +1934,9 @@ to clear memory.</p></td>
 #&gt; $GSE2426$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE2426$experimentalDesign
+#&gt; [1] 11
+#&gt; 
 #&gt; $GSE2426$accession
 #&gt; [1] "GSE2426"
 #&gt; 
@@ -1970,13 +1949,37 @@ to clear memory.</p></td>
 #&gt; $GSE2426$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2426$experimentalDesign
-#&gt; [1] 11
+#&gt; $GSE2426$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2426$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2426$geeq
+#&gt; $GSE2426$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE2426$geeq$publicQualityScore
+#&gt; [1] 0.7044496
+#&gt; 
+#&gt; $GSE2426$geeq$publicSuitabilityScore
+#&gt; [1] 0.65
+#&gt; 
+#&gt; $GSE2426$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2426$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2426$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2426$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2426$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2426$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -2022,30 +2025,6 @@ to clear memory.</p></td>
 #&gt; $GSE2426$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2426$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2426$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2426$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2426$geeq$batchCorrected
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE2426$geeq$publicQualityScore
-#&gt; [1] 0.7044496
-#&gt; 
-#&gt; $GSE2426$geeq$publicSuitabilityScore
-#&gt; [1] 0.65
-#&gt; 
-#&gt; $GSE2426$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2426$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2426$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2053,11 +2032,17 @@ to clear memory.</p></td>
 #&gt; [1] 565
 #&gt; 
 #&gt; 
-#&gt; $GSE2426$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2426$bioAssayCount
+#&gt; [1] 14
 #&gt; 
-#&gt; $GSE2426$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2426$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2426$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2426$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2426$public
 #&gt; [1] TRUE
@@ -2074,20 +2059,8 @@ to clear memory.</p></td>
 #&gt; $GSE2426$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2426$bioAssayCount
-#&gt; [1] 14
-#&gt; 
-#&gt; $GSE2426$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2426$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2426$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2426$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2426$description
 #&gt; [1] " SUMMARY  Medulloblastoma is the most common malignant brain tumor in children. It is thought to result from transformation of granule cell precursors (GCPs) in the developing cerebellum, but little is known about the early stages of the disease. Here we identify a pre-neoplastic stage of medulloblastoma in patched heterozygous mice, a model of the human disease. We show that pre-neoplastic cells are present in the majority of patched mutants, although only 16% of these mice develop tumors. Pre-neoplastic cells, like tumor cells, exhibit activation of the Sonic hedgehog pathway and constitutive proliferation. Importantly, they also lack expression of the wild-type patched allele, suggesting that loss of patched is an early event in tumorigenesis. While pre-neoplastic cells resemble GCPs and tumor cells in many respects, they have a distinct molecular signature. Genes that mark the pre-neoplastic stage include regulators of migration, apoptosis and differentiation, processes critical for normal development but previously unrecognized for their role in medulloblastoma. The identification and molecular characterization of pre-neoplastic cells provides insight into the early steps in medulloblastoma formation, and may yield important markers for early detection and therapy of this disease.  ANIMALS  Patched heterozygous mice (Goodrich et al., 1997) were obtained from Matthew Scott?s lab at Stanford, and maintained by breeding with 129X1/SvJ mice from Jackson Laboratories. Math1-GFP transgenic mice (Lumpkin et al., 2003) were provided by Jane Johnson at UT Southwestern Medical Center. Math1-GFP/patched+/- mice were generated by crossing patched heterozygotes with Math1-GFP mice, and then backcrossing to Math1-GFP mice three times before further analysis. All mice were maintained in the Cancer Center Isolation Facility at Duke University Medical Center.  ISOLATION OF CELLS  Granule cell precursors (GCPs) were isolated from 7-day-old (P7) patched+/- mice; preneoplastic cells were obtained from 6 week-old patched mutants; and tumor cells were obtained from 10-25-week old patched mutants displaying physical and behavioral signs of medulloblastoma. Cells were isolated from each source using a protocol described in (Wechsler- Reya and Scott, 1999). Briefly, cerebella were digested in solution containing 10 U/ml papain Oliver et al. Pre-Neoplastic Stage of Medulloblastoma - 8 - (Worthington, Lakewood, NJ) and 250 U/ml DNase (Sigma) and triturated to obtain a cell suspension. This suspension was centrifuged through a step gradient of 35% and 65% Percoll (Amersham Biosciences, Piscataway, NJ), and cells were harvested from the 35%-65% interface. Cells were resuspended in serum-free culture medium consisting of Neurobasal containing B27 supplement, sodium pyruvate, L-glutamine, and penicillin/streptomycin (all from Invitrogen, Carlsbad, California) and counted on a hemacytometer. Cells used for RNA isolation were centrifuged and flash frozen in liquid nitrogen. For proliferation assays or immunostaining, cells were plated on poly-D-lysine (PDL)-coated tissue culture vessels and incubated in serum-free culture medium.  MICROARRAY HYBRIDIZATION AND ANALYSIS  RNA from GCPs, pre-neoplastic cells and tumor cells (isolated as described above, but not FACS-sorted) and from normal adult cerebellum (not dissociated) was converted to cDNA using the Superscript Choice cDNA kit (Invitrogen) and a T7-dT(24) primer (Genset/Proligo, Boulder, CO). cRNA was generated using a T7-transcription/labeling kit from Enzo Life Sciences and hybridized to Affymetrix U74Av2 chips (Affymetrix, Santa Clara, CA). Chips were scanned, and hybridization data were acquired using Affymetrix Suite 5.0 software. Affymetrix CEL files were normalized and quantified using Bioconductor software with the gcRMA model to quantify gene expression levels (Gentleman and Carey, 2002). Unsupervised principal components analysis (PCA) was used to identify the relationships among normal adult cerebellum, GCPs, pre-neoplastic cells and tumor cells based on expression profiles. To identify genes that were differentially expressed among GCPs, pre-neoplastic cells and tumor cells, supervised analysis was carried out. A gene-by-gene ANOVA model with three groups (GCP, pre-neoplastic, tumor) was used to fit the log2-transformed intensities. To correct for multiple comparisons, the nominal p-value was adjusted using the false discovery rate (Benjamini and Hochberg, 1995). Genes were considered to be differentially expressed if they satisfied all of the following criteria: a difference in expression greater than 1.9-fold between any two groups, a maximum absolute intensity difference larger than 32 units, and an adjusted pvalue &lt; 0.01. There were 118 genes that met these criteria. The identities of differentially expressed genes were verified by integrating data from the Affymetrix and Unigene databases. Gene functions were determined using information from Gene Ontology, Unigene, LocusLink and PubMed databases. Clustering was performed with Cluster and Treeview (Eisen et al., 1998). All statistical analysis was performed using R-1.7 software (Dalgaard, 2002). Results were visualized with Spotfire 6.0 (Somerville, MA).  CORRESPONDING AUTHOR  Robert J. Wechsler-Reya* Dept. of Pharmacology &amp; Cancer Biology, Duke University Medical Center Box 3813, Durham, NC 27710 Phone: 919-613-8754. Fax: 919-668-3556. Email: rw.reya@duke.edu.\nDate GSE2426 Last Updated: Oct 28 2005\n\nContributers:  R J Wechsler-Reya Trang T Huynh Simon M Lin Jonathan F Wells Tracy A Read Anriada Mehmeti Jessica D Kessler Robert J Wechsler-Reya Trudy G Oliver\n\nIncludes GDS1110.\n Update date: May 09 2005.\n Dataset description GDS1110: Analysis of granule cell precursors, pre-neoplastic cells, and tumor cells obtained from 7 day old, 6 week old, and 10 to 25 week old patched heterozygous animals, respectively. Results provide insight into the mechanisms of pathogenesis of medulloblastoma at the early stage..\n"
@@ -2102,16 +2075,19 @@ to clear memory.</p></td>
 #&gt; [1] 11
 #&gt; 
 #&gt; $GSE2426$lastUpdated
-#&gt; [1] 1.52677e+12
-#&gt; 
-#&gt; $GSE2426$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2426$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2426$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2426$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2426$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2426$lastNeedsAttentionEvent
 #&gt; $GSE2426$lastNeedsAttentionEvent$performer
@@ -2153,11 +2129,8 @@ to clear memory.</p></td>
 #&gt; $GSE2426$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2426$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2426$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2161
@@ -2182,6 +2155,9 @@ to clear memory.</p></td>
 #&gt; $GSE2161$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PCnull); p=0.0"
 #&gt; 
+#&gt; $GSE2161$experimentalDesign
+#&gt; [1] 12
+#&gt; 
 #&gt; $GSE2161$accession
 #&gt; [1] "GSE2161"
 #&gt; 
@@ -2194,13 +2170,37 @@ to clear memory.</p></td>
 #&gt; $GSE2161$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2161$experimentalDesign
-#&gt; [1] 12
+#&gt; $GSE2161$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2161$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2161$geeq
+#&gt; $GSE2161$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2161$geeq$publicQualityScore
+#&gt; [1] 0.5150338
+#&gt; 
+#&gt; $GSE2161$geeq$publicSuitabilityScore
+#&gt; [1] 0.75
+#&gt; 
+#&gt; $GSE2161$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2161$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2161$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2161$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2161$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2161$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -2229,13 +2229,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE2161$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9915099
+#&gt; [1] -0.1422006
 #&gt; 
 #&gt; $GSE2161$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9903973
+#&gt; [1] -0.3947631
 #&gt; 
 #&gt; $GSE2161$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 1.373272e-05
+#&gt; [1] 0.2127051
 #&gt; 
 #&gt; $GSE2161$geeq$noVectors
 #&gt; [1] FALSE
@@ -2246,30 +2246,6 @@ to clear memory.</p></td>
 #&gt; $GSE2161$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2161$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2161$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2161$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2161$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2161$geeq$publicQualityScore
-#&gt; [1] 0.4271996
-#&gt; 
-#&gt; $GSE2161$geeq$publicSuitabilityScore
-#&gt; [1] 0.75
-#&gt; 
-#&gt; $GSE2161$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE2161$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2161$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2277,11 +2253,17 @@ to clear memory.</p></td>
 #&gt; [1] 566
 #&gt; 
 #&gt; 
-#&gt; $GSE2161$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2161$bioAssayCount
+#&gt; [1] 8
 #&gt; 
-#&gt; $GSE2161$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2161$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2161$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2161$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2161$public
 #&gt; [1] TRUE
@@ -2298,20 +2280,8 @@ to clear memory.</p></td>
 #&gt; $GSE2161$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2161$bioAssayCount
-#&gt; [1] 8
-#&gt; 
-#&gt; $GSE2161$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2161$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2161$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2161$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2161$description
 #&gt; [1] " The Dlx homeodomain transcription factors are implicated in regulating the function of inhibitory neurons; therefore understanding their functions will provide insights into disorders such as epilepsy, mental retardation, autism and cerebral palsy. Identify genes that are dysregulated in the telencephalon of Dlx1/2 mutants. I am sending separate samples of the Basal Ganglia (BG) and cortex (Ctx). Comparing gene expression in the embryonic basal ganglia and cortex in wild type and dlx1/2 mutant mice will provide information regarding the types of genes that are downstream of Dlx1/2 function. Perform gene array analyses in duplicate or triplicate; compare expression profile of total RNA from wild type and dlx1/2 telencephalons. I am sending separate samples of the Basal Ganglia (BG) and cortex. I want to perform gene expression comparison between: 1) wild type and dlx1/2 basal ganglia (BG) 2) wild typee and dlx1/2 cortex (ctx) Age of all mice has been indicated as 14 days to satisfy system requirements, however all mice are embryonic day 14.5..\nDate GSE2161 Last Updated: May 29 2005\n\nContributers:  John L Rubenstein\n\nIncludes GDS1084.\n Update date: May 08 2005.\n Dataset description GDS1084: Expression profiling of cortex and basal ganglia from embryonic telencephalon of homozygous and heterozygous Dlx1/2 mutants. Mutants examined at embryonic day 14.5. Dlx homeobox transcription factors are implicated in regulating the function of inhibitory neurons..\n"
@@ -2326,16 +2296,19 @@ to clear memory.</p></td>
 #&gt; [1] 12
 #&gt; 
 #&gt; $GSE2161$lastUpdated
-#&gt; [1] 1.522101e+12
-#&gt; 
-#&gt; $GSE2161$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2161$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2161$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2161$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2161$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2161$lastNeedsAttentionEvent
 #&gt; $GSE2161$lastNeedsAttentionEvent$performer
@@ -2377,11 +2350,8 @@ to clear memory.</p></td>
 #&gt; $GSE2161$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2161$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2161$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2871
@@ -2406,6 +2376,9 @@ to clear memory.</p></td>
 #&gt; $GSE2871$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC 2), p=9.1909e-08"
 #&gt; 
+#&gt; $GSE2871$experimentalDesign
+#&gt; [1] 13
+#&gt; 
 #&gt; $GSE2871$accession
 #&gt; [1] "GSE2871"
 #&gt; 
@@ -2418,13 +2391,37 @@ to clear memory.</p></td>
 #&gt; $GSE2871$taxonId
 #&gt; [1] 3
 #&gt; 
-#&gt; $GSE2871$experimentalDesign
-#&gt; [1] 13
+#&gt; $GSE2871$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2871$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2871$geeq
+#&gt; $GSE2871$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2871$geeq$publicQualityScore
+#&gt; [1] -0.004544465
+#&gt; 
+#&gt; $GSE2871$geeq$publicSuitabilityScore
+#&gt; [1] 0.6
+#&gt; 
+#&gt; $GSE2871$geeq$qScorePublicBatchEffect
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE2871$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE2871$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2871$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2871$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2871$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 0.5
 #&gt; 
@@ -2453,13 +2450,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE2871$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.977037
+#&gt; [1] -0.01982912
 #&gt; 
 #&gt; $GSE2871$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9810994
+#&gt; [1] -0.03181126
 #&gt; 
 #&gt; $GSE2871$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.0001808116
+#&gt; [1] 0.06912994
 #&gt; 
 #&gt; $GSE2871$geeq$noVectors
 #&gt; [1] FALSE
@@ -2470,30 +2467,6 @@ to clear memory.</p></td>
 #&gt; $GSE2871$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2871$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2871$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2871$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2871$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2871$geeq$publicQualityScore
-#&gt; [1] 0.1401571
-#&gt; 
-#&gt; $GSE2871$geeq$publicSuitabilityScore
-#&gt; [1] 0.6
-#&gt; 
-#&gt; $GSE2871$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE2871$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE2871$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2501,11 +2474,17 @@ to clear memory.</p></td>
 #&gt; [1] 654
 #&gt; 
 #&gt; 
-#&gt; $GSE2871$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2871$bioAssayCount
+#&gt; [1] 47
 #&gt; 
-#&gt; $GSE2871$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2871$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2871$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2871$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2871$public
 #&gt; [1] TRUE
@@ -2522,20 +2501,8 @@ to clear memory.</p></td>
 #&gt; $GSE2871$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2871$bioAssayCount
-#&gt; [1] 47
-#&gt; 
-#&gt; $GSE2871$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2871$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2871$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2871$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2871$description
 #&gt; [1] " Traumatic brain injury (TBI) induces a complex cascade of molecular and physiological effects.  This study proposes to investigate the gene expression profile in cortex and hippocampus over early time points, following two different injury severities.  These results will complement prior knowledge of both metabolic and neuroplastic changes after TBI, as well as serve as a starting point to investigate additional gene families whose expression is altered after TBI. To characterize the profile of gene expression following a diffuse traumatic brain injury of varying severity in adult rats. Distinct patterns of gene expression following traumatic brain injury will occur in a time- and injury-dependent fashion.  In particular, changes in expression of enzymes involved in energy metabolism and neuroplasticity will be detected. Adult rats will be subjected to mild and severe lateral fluid percussion injury OR sham surgery without injury.  At various post-injury timepoints (0.5, 4 and 24 hours), animals will be sacrificed, brain regions (parietal cortex and hippocampus, ipsilateral and contralateral to injury) will be dissected and RNA isolated.  RNA will be used to synthesize cRNA probes for microarray hybridization.  RNA from 2 matched animals will be pooled onto a single chip (U34A rat, Affymetrix).  Comparisons will be made between sham and injured animals, with brain region, injury severity, and post-injury time point as the experimental variables..\nDate GSE2871 Last Updated: Jul 06 2005\n\nContributers:  C C Giza\n\nIncludes GDS1795.\n Update date: Jun 09 2006.\n Dataset description GDS1795: Analysis of cortices and hippocampi of animals 4 and 24 hours after mild or severe traumatic brain injury (TBI). TBI induced by lateral fluid percussion. Gene expression in tissues ipsi- and contralateral to the injury examined..\n"
@@ -2550,16 +2517,19 @@ to clear memory.</p></td>
 #&gt; [1] 13
 #&gt; 
 #&gt; $GSE2871$lastUpdated
-#&gt; [1] 1.526715e+12
-#&gt; 
-#&gt; $GSE2871$needsAttention
-#&gt; [1] TRUE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2871$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2871$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2871$needsAttention
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE2871$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2871$lastNeedsAttentionEvent
 #&gt; $GSE2871$lastNeedsAttentionEvent$performer
@@ -2601,11 +2571,8 @@ to clear memory.</p></td>
 #&gt; $GSE2871$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2871$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2871$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2869
@@ -2630,6 +2597,9 @@ to clear memory.</p></td>
 #&gt; $GSE2869$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE2869$experimentalDesign
+#&gt; [1] 15
+#&gt; 
 #&gt; $GSE2869$accession
 #&gt; [1] "GSE2869"
 #&gt; 
@@ -2642,13 +2612,37 @@ to clear memory.</p></td>
 #&gt; $GSE2869$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2869$experimentalDesign
-#&gt; [1] 15
+#&gt; $GSE2869$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2869$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2869$geeq
+#&gt; $GSE2869$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2869$geeq$publicQualityScore
+#&gt; [1] 0.8558936
+#&gt; 
+#&gt; $GSE2869$geeq$publicSuitabilityScore
+#&gt; [1] 0.5
+#&gt; 
+#&gt; $GSE2869$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2869$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2869$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE2869$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2869$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2869$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -2694,30 +2688,6 @@ to clear memory.</p></td>
 #&gt; $GSE2869$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2869$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE2869$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2869$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2869$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2869$geeq$publicQualityScore
-#&gt; [1] 0.8558936
-#&gt; 
-#&gt; $GSE2869$geeq$publicSuitabilityScore
-#&gt; [1] 0.5
-#&gt; 
-#&gt; $GSE2869$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2869$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2869$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2725,11 +2695,17 @@ to clear memory.</p></td>
 #&gt; [1] 656
 #&gt; 
 #&gt; 
-#&gt; $GSE2869$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2869$bioAssayCount
+#&gt; [1] 8
 #&gt; 
-#&gt; $GSE2869$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2869$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2869$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2869$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2869$public
 #&gt; [1] TRUE
@@ -2746,20 +2722,8 @@ to clear memory.</p></td>
 #&gt; $GSE2869$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2869$bioAssayCount
-#&gt; [1] 8
-#&gt; 
-#&gt; $GSE2869$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2869$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2869$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2869$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2869$description
 #&gt; [1] " Using targeted gene deletion, we have firmly established that the Class IV POU domain transcription factor Brn-3.2 controls a developmental program regulating axon pathfinding in the mouse visual system. We have isolated and identified downstream gene targets of Brn-3.2, using Representational Difference Analysis (RDA), on cDNA populations derived from wildtype and Brn-3.2-/- retina at the appropriate embryonic stage. One of these candidate genes, the Homeodomain Interacting Protein Kinase 2 (HIPK2), is postulated to be a transcriptional coregulator, based on its in vitro interactions with repressor homeodomain proteins of the NK class, as well as other components of repressor complexes. HIPK2 has also been shown to be involved in post-translational modification of two major transcriptional regulators, p53 and CtBP. Expression of a dominant-negative form of HIPK2 in sensory neurons affects the innervation patterns of their target tissues, suggesting an axon pathfinding defect. The aim of this project is to identify targets for the Homeodomain Interacting Protein Kinase 2 (HIPK2), that we isolated as a downstream gene target of the class IV POU domain transcription factor Brn-3.2, and to investigate their function in the Brn-3.2 dependent pathway regulating axon pathfinding. We hypothesize that the genes regulated by HIPK2 will play a critical role in axon pathfinding and that the results of this study will provide novel insights into the molecular mechanisms of axon pathfinding, and possibly neural plasticity and regeneration, and therefore, be of great interest to the field of neurobiology in general. In order to uncover potential biological role(s) of HIPK2 in neural development, and particularly axon pathfinding, we generated transgenic mouse models for in vivo studies. Our preliminary observations in transgenic mice, indicate that a form of the molecule expected to act as a dominant-negative and designed to be expressed in sensory neurons, affects the innervation patterns of their target tissues, suggesting an axon pathfinding defect. We plan to take advantage of this model to identify genes regulated by HIPK2, and which are likely to be involved in axon pathfinding. To this end, we will compare gene expression profiles in sensory neurons isolated wild-type and transgenic mice. In our experimental paradigm, the trigeminal ganglion represents the ideal sensory structure in which to perform such an analysis: 1) High levels of transgene can be expressed in the trigeminal ganglion, as assessed by the expression of LacZ from the bicistronic construct which contains IRES-LacZ downstream of a dominant negative form of HIPK2.  2) The trigeminal ganglion can be dissected at embryonic day 13.5, when the phenotype is apparent, with ease and free of contamination from surrounding tissues.  3) The amounts of RNA that can be isolated from a single ganglion are in the range of 200-300 ng, which should be sufficient for microarray analysis following linear amplification of RNA. One series will be carried out with transgenic embryos and a control series will be carried out with wildtype littermates. Animals will be prepared and sacrificed by a standard protocol. Tissue will be rapidly dissected from E13.5 trigeminal ganglion, frozen in liquid nitrogen, and stored at -80C until RNA is extracted. RNA will be prepared using RNeasy Micro Kit. We will be providing 4 tissue samples for each of the wildtype and transgenic animals to mitigate any expression differences resulting from mouse to mouse variation..\nDate GSE2869 Last Updated: Jul 06 2005\n\nContributers:  M Rosenfeld\n\nIncludes GDS1793.\n Update date: Jun 13 2006.\n Dataset description GDS1793: Analysis of the trigeminal ganglia of transgenics expressing a dominant-negative form of homeodomain interacting protein kinase 2 (HIPK2). HIPK2 is a downstream target of Brn-3.2, a class IV POU domain transcription factor that controls a developmental program regulating axon pathfinding..\n"
@@ -2774,16 +2738,19 @@ to clear memory.</p></td>
 #&gt; [1] 15
 #&gt; 
 #&gt; $GSE2869$lastUpdated
-#&gt; [1] 1.526801e+12
-#&gt; 
-#&gt; $GSE2869$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2869$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2869$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2869$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2869$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2869$lastNeedsAttentionEvent
 #&gt; $GSE2869$lastNeedsAttentionEvent$performer
@@ -2825,11 +2792,8 @@ to clear memory.</p></td>
 #&gt; $GSE2869$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2869$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2869$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2868
@@ -2854,6 +2818,9 @@ to clear memory.</p></td>
 #&gt; $GSE2868$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE2868$experimentalDesign
+#&gt; [1] 16
+#&gt; 
 #&gt; $GSE2868$accession
 #&gt; [1] "GSE2868"
 #&gt; 
@@ -2866,13 +2833,37 @@ to clear memory.</p></td>
 #&gt; $GSE2868$taxonId
 #&gt; [1] 3
 #&gt; 
-#&gt; $GSE2868$experimentalDesign
-#&gt; [1] 16
+#&gt; $GSE2868$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2868$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2868$geeq
+#&gt; $GSE2868$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2868$geeq$publicQualityScore
+#&gt; [1] 0.5688081
+#&gt; 
+#&gt; $GSE2868$geeq$publicSuitabilityScore
+#&gt; [1] 0.525
+#&gt; 
+#&gt; $GSE2868$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2868$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2868$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2868$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2868$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2868$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 0.5
 #&gt; 
@@ -2918,30 +2909,6 @@ to clear memory.</p></td>
 #&gt; $GSE2868$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2868$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2868$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2868$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2868$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2868$geeq$publicQualityScore
-#&gt; [1] 0.5688081
-#&gt; 
-#&gt; $GSE2868$geeq$publicSuitabilityScore
-#&gt; [1] 0.525
-#&gt; 
-#&gt; $GSE2868$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2868$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2868$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -2949,11 +2916,17 @@ to clear memory.</p></td>
 #&gt; [1] 659
 #&gt; 
 #&gt; 
-#&gt; $GSE2868$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2868$bioAssayCount
+#&gt; [1] 16
 #&gt; 
-#&gt; $GSE2868$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2868$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2868$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2868$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2868$public
 #&gt; [1] TRUE
@@ -2970,20 +2943,8 @@ to clear memory.</p></td>
 #&gt; $GSE2868$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2868$bioAssayCount
-#&gt; [1] 16
-#&gt; 
-#&gt; $GSE2868$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2868$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2868$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2868$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2868$description
 #&gt; [1] " It is well known that many genes are expressed in the retina where they show a clear daily pattern of expression.  Although several studies have investigated gene expression in the retina, no study ? so far - has investigated the daily and the circadian pattern of gene expression using microarray. In the present study we propose to investigate the daily and circadian pattern of expression in the retina. To determine gene expression in the retina in Light:Dark cycles and in constant condition (constant dim light) in the rat. We hypothesize that (a) different genes are expressed in different retinal layers and (b) the pattern of expression of the same genes can differ among the different layers. Wistar rats (3 for each time point) will be killed in the middle of the day (ZT6) and in the middle of the night (ZT18). Eyeballs will be collected and the retina will be removed and immediately frozen and then stored at -80 oC. The same experiment will be repeated on animals that have been maintained in constant dim light for 3. Retinas (3 for each time point) will be obtained from animal killed at CT6 (middle subjective day) and CT 18 (middle subjectice night) and stored at ? 80 oC. The samples will be then shipped to NINDS-NIMH array facility for analysis..\nDate GSE2868 Last Updated: Oct 28 2005\n\nContributers:  G Tosini\n\nIncludes GDS1759.\n Update date: Jun 16 2006.\n Dataset description GDS1759: Analysis of retinas under a light-dark cycle at Zeitgeber times (ZT) 6 and 18 or in constant dim light at circadian times (CT) 6 and 18. Gene expression in retinas compared to that in pineal glands..\n"
@@ -2998,16 +2959,19 @@ to clear memory.</p></td>
 #&gt; [1] 16
 #&gt; 
 #&gt; $GSE2868$lastUpdated
-#&gt; [1] 1.525937e+12
-#&gt; 
-#&gt; $GSE2868$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2868$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2868$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2868$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2868$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2868$lastNeedsAttentionEvent
 #&gt; $GSE2868$lastNeedsAttentionEvent$performer
@@ -3049,11 +3013,8 @@ to clear memory.</p></td>
 #&gt; $GSE2868$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2868$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2868$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2867
@@ -3078,6 +3039,9 @@ to clear memory.</p></td>
 #&gt; $GSE2867$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PCnull); p=0.0"
 #&gt; 
+#&gt; $GSE2867$experimentalDesign
+#&gt; [1] 17
+#&gt; 
 #&gt; $GSE2867$accession
 #&gt; [1] "GSE2867"
 #&gt; 
@@ -3090,13 +3054,37 @@ to clear memory.</p></td>
 #&gt; $GSE2867$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2867$experimentalDesign
-#&gt; [1] 17
+#&gt; $GSE2867$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2867$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2867$geeq
+#&gt; $GSE2867$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2867$geeq$publicQualityScore
+#&gt; [1] 0.5612539
+#&gt; 
+#&gt; $GSE2867$geeq$publicSuitabilityScore
+#&gt; [1] 0.5375
+#&gt; 
+#&gt; $GSE2867$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2867$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2867$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE2867$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2867$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2867$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -3125,13 +3113,13 @@ to clear memory.</p></td>
 #&gt; [1] 1
 #&gt; 
 #&gt; $GSE2867$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9933249
+#&gt; [1] -0.05111614
 #&gt; 
 #&gt; $GSE2867$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9933845
+#&gt; [1] -0.07122238
 #&gt; 
 #&gt; $GSE2867$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 3.275045e-06
+#&gt; [1] 0.03376555
 #&gt; 
 #&gt; $GSE2867$geeq$noVectors
 #&gt; [1] FALSE
@@ -3142,30 +3130,6 @@ to clear memory.</p></td>
 #&gt; $GSE2867$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2867$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE2867$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2867$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2867$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2867$geeq$publicQualityScore
-#&gt; [1] 0.4276264
-#&gt; 
-#&gt; $GSE2867$geeq$publicSuitabilityScore
-#&gt; [1] 0.5375
-#&gt; 
-#&gt; $GSE2867$geeq$qScorePublicBatchEffect
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE2867$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE2867$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -3173,11 +3137,17 @@ to clear memory.</p></td>
 #&gt; [1] 661
 #&gt; 
 #&gt; 
-#&gt; $GSE2867$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2867$bioAssayCount
+#&gt; [1] 20
 #&gt; 
-#&gt; $GSE2867$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2867$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2867$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2867$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2867$public
 #&gt; [1] TRUE
@@ -3194,20 +3164,8 @@ to clear memory.</p></td>
 #&gt; $GSE2867$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2867$bioAssayCount
-#&gt; [1] 20
-#&gt; 
-#&gt; $GSE2867$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2867$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2867$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2867$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2867$description
 #&gt; [1] " A number of human neurodegenerative diseases result from the expansion of a glutamine repeat within the disease-causing protein. Spinocerebellar ataxia type1 is one such disease, caused by expansion of a polyglutamine tract in the novel protein ataxin-1. To faithfully model SCA1 in the mouse, we generated  knock-in mice carrying 154 CAG repeats in the mouse Sca1 locus. These mice reproduced many aspects of the human disease. Despite ubiquitous expression of the mutant protein, they developed slowly progressive selective neurodegeneration , which is most distinct in Purkinje cells and spinal cord. Alterations in gene expression have been proposed to be involved in the pathogenesis of polyglutamine disease including SCA1, but the changes of gene expression in an authentic disease model have not been characterized. We believe that knowledge of these genes will give insight into the pathophysiology of SCA1 and may ultimately be relevant to the treatment of SCA1. We will determine gene expression patterns in the cerebellum and forebrain at three different time points. We propose that the genes whose expression is affected  by mutant ataxin-1 expression are effectors for neuronal dysfunction and neuronal degeneration in the knock-in mice. We also hypothesize the difference in the expression levels of these genes accounts for selective vulnerability of neurons. We will examine three time points: 4 weeks, 11 weeks, and 20 weeks of age. We have shown that the mice developed motor incoordination as revealed  by rotating rod test as early as 5 weeks of age but it was not until 10 weeks that they start showing clear  neurological  phenotype such as clasping.  At each point, we will compare the pattern between the mutant and wild-type littermate. Animals will be prepared and sacrificed by a standard procedure. Cerebellum and spinal cord are the most affected areas whereas forebrain shows less neurodegeneration. Tissue will be rapidly dissected from cerebellum and forebrain, frozen in liquid nitrogen, and stored at ?80 C until analysis. Tissues will be sent to the centers (as opposed to RNA). We will be providing 9 tissue samples from three litters for each time point to mitigate any expression differences resulting from subtle differences of procedure or environment where the mice grow..\nDate GSE2867 Last Updated: Jul 06 2005\n\nContributers:  H Zoghbi\n\nIncludes GDS1756.\n Update date: May 02 2006.\n Dataset description GDS1756: Analysis of cerebellum and forebrain tissue of knock-in mice carrying 154 CAG repeats in the spinocerebellar ataxia type 1 (SCA1) locus at 4 and 12 weeks of age. Results provide insight into the pathophysiology of the neurodegenerative disease SCA1..\n"
@@ -3222,16 +3180,19 @@ to clear memory.</p></td>
 #&gt; [1] 17
 #&gt; 
 #&gt; $GSE2867$lastUpdated
-#&gt; [1] 1.522099e+12
-#&gt; 
-#&gt; $GSE2867$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2867$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2867$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2867$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2867$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2867$lastNeedsAttentionEvent
 #&gt; $GSE2867$lastNeedsAttentionEvent$performer
@@ -3273,11 +3234,8 @@ to clear memory.</p></td>
 #&gt; $GSE2867$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2867$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2867$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE3489
@@ -3302,6 +3260,9 @@ to clear memory.</p></td>
 #&gt; $GSE3489$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE3489$experimentalDesign
+#&gt; [1] 18
+#&gt; 
 #&gt; $GSE3489$accession
 #&gt; [1] "GSE3489"
 #&gt; 
@@ -3314,13 +3275,37 @@ to clear memory.</p></td>
 #&gt; $GSE3489$taxonId
 #&gt; [1] 1
 #&gt; 
-#&gt; $GSE3489$experimentalDesign
-#&gt; [1] 18
+#&gt; $GSE3489$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE3489$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE3489$geeq
+#&gt; $GSE3489$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3489$geeq$publicQualityScore
+#&gt; [1] 0.2706571
+#&gt; 
+#&gt; $GSE3489$geeq$publicSuitabilityScore
+#&gt; [1] 0.4125
+#&gt; 
+#&gt; $GSE3489$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE3489$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE3489$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3489$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE3489$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE3489$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 0.5
 #&gt; 
@@ -3349,13 +3334,13 @@ to clear memory.</p></td>
 #&gt; [1] -1
 #&gt; 
 #&gt; $GSE3489$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9254106
+#&gt; [1] -0.02490455
 #&gt; 
 #&gt; $GSE3489$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9299675
+#&gt; [1] -0.1054005
 #&gt; 
 #&gt; $GSE3489$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.00193694
+#&gt; [1] 0.2042328
 #&gt; 
 #&gt; $GSE3489$geeq$noVectors
 #&gt; [1] FALSE
@@ -3366,30 +3351,6 @@ to clear memory.</p></td>
 #&gt; $GSE3489$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE3489$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3489$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3489$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE3489$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE3489$geeq$publicQualityScore
-#&gt; [1] 0.4185668
-#&gt; 
-#&gt; $GSE3489$geeq$publicSuitabilityScore
-#&gt; [1] 0.4125
-#&gt; 
-#&gt; $GSE3489$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE3489$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE3489$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -3397,11 +3358,17 @@ to clear memory.</p></td>
 #&gt; [1] 663
 #&gt; 
 #&gt; 
-#&gt; $GSE3489$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE3489$bioAssayCount
+#&gt; [1] 28
 #&gt; 
-#&gt; $GSE3489$parentTaxonId
-#&gt; NULL
+#&gt; $GSE3489$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE3489$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3489$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3489$public
 #&gt; [1] TRUE
@@ -3418,20 +3385,8 @@ to clear memory.</p></td>
 #&gt; $GSE3489$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE3489$bioAssayCount
-#&gt; [1] 28
-#&gt; 
-#&gt; $GSE3489$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE3489$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE3489$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE3489$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3489$description
 #&gt; [1] " The neurodegenerative process in HIV encephalitis (HIVE) is associated with extensive damage to the dendritic and synaptic structure that often leads to cognitive impairment. Several mechanisms might be at play, including release of neurotoxins, oxidative stress and decreased activity of neurotrophic factors. Furthermore, HIV-mediated dysregulation of genes involved in neuronal maintenance might play an important role. For this purpose, cRNA was prepared from the brains of 17 AIDS patients for analysis with the Affymetrix Human U95Av2 GeneChip and analyzed with the GeneSpring Expression Analysis Software. Out of 12,625 genes analyzed, 74 were downregulated and 59 were upregulated compared to controls. Initial alternative analysis of RNA was performed by ribonuclease protection assay (RPA). In cases with HIVE, downregulated genes included neuronal molecules involved in synaptic plasticity and transmission (ion channels, synaptogyrin, synapsin II), cell cycle (p35, p39, CDC-L2, CDC42, PAK1) and signaling molecules (PI3K, Ras-Raf-MEK1), transcription factors and cytoskeletal components (MAP-1B, MAP-2, tubulin, adducin-2). Upregulated genes included those involved in neuroimmune (IgG, MHC, ?2microglobulin) and anti-viral responses (interferon-inducible molecules), transcription (STAT1, OLIG2, Pax-6) and signaling modulation (MEK3, EphB1) of the cytoskeleton (myosin, aduccin-3, radixin, dystrobrevin). Taken together, this study suggests that HIV proteins released from infected macrophages might not only induce a neuroinflammatory response, but also may promote neurodegeneration by interfering with neuronal transcription of genes involved in regulating signaling and cytoskeletal molecules important in maintaining synapto-dendritic functioning and integrity..\nDate GSE3489 Last Updated: Mar 07 2006\n\nContributers:  Eleanor S Roberts Dianne Langford Anthony Adame Edward Rockenstein Leslie Crews Howard S Fox Eliezer Masiliah Ian Everall\n\nIncludes GDS1726.\n Update date: May 30 2006.\n Dataset description GDS1726: Analysis of brain frontal cortex of HIV-seropositive patients with HIV encephalitis (HIVE). HIVE affects &gt;40% of AIDS patients, promoting neurodegeneration and cognitive impairment. Results suggest HIV-mediated dysregulation of genes involved in neuronal maintenance might play an important role..\n"
@@ -3446,16 +3401,19 @@ to clear memory.</p></td>
 #&gt; [1] 18
 #&gt; 
 #&gt; $GSE3489$lastUpdated
-#&gt; [1] 1.522098e+12
-#&gt; 
-#&gt; $GSE3489$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE3489$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE3489$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE3489$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE3489$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE3489$lastNeedsAttentionEvent
 #&gt; $GSE3489$lastNeedsAttentionEvent$performer
@@ -3497,11 +3455,8 @@ to clear memory.</p></td>
 #&gt; $GSE3489$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE3489$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE3489$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE1997
@@ -3526,6 +3481,9 @@ to clear memory.</p></td>
 #&gt; $GSE1997$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE1997$experimentalDesign
+#&gt; [1] 19
+#&gt; 
 #&gt; $GSE1997$accession
 #&gt; [1] "GSE1997"
 #&gt; 
@@ -3538,13 +3496,37 @@ to clear memory.</p></td>
 #&gt; $GSE1997$taxonId
 #&gt; [1] 3
 #&gt; 
-#&gt; $GSE1997$experimentalDesign
-#&gt; [1] 19
+#&gt; $GSE1997$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE1997$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE1997$geeq
+#&gt; $GSE1997$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1997$geeq$publicQualityScore
+#&gt; [1] 0.7101798
+#&gt; 
+#&gt; $GSE1997$geeq$publicSuitabilityScore
+#&gt; [1] 0.1875
+#&gt; 
+#&gt; $GSE1997$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1997$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1997$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE1997$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1997$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE1997$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 0.5
 #&gt; 
@@ -3590,30 +3572,6 @@ to clear memory.</p></td>
 #&gt; $GSE1997$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE1997$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE1997$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1997$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1997$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1997$geeq$publicQualityScore
-#&gt; [1] 0.7101798
-#&gt; 
-#&gt; $GSE1997$geeq$publicSuitabilityScore
-#&gt; [1] 0.1875
-#&gt; 
-#&gt; $GSE1997$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1997$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE1997$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -3621,11 +3579,17 @@ to clear memory.</p></td>
 #&gt; [1] 665
 #&gt; 
 #&gt; 
-#&gt; $GSE1997$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE1997$bioAssayCount
+#&gt; [1] 5
 #&gt; 
-#&gt; $GSE1997$parentTaxonId
-#&gt; NULL
+#&gt; $GSE1997$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE1997$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1997$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1997$public
 #&gt; [1] TRUE
@@ -3642,20 +3606,8 @@ to clear memory.</p></td>
 #&gt; $GSE1997$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE1997$bioAssayCount
-#&gt; [1] 5
-#&gt; 
-#&gt; $GSE1997$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE1997$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE1997$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1997$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1997$description
 #&gt; [1] " Study the effect of fetal alcohol exposure (FAE) on hippocampal development Compare the pattern of gene expression in the hippocampus of FAE and control rats fed either an isocaloric diet or a normal diet, at post-natal day 5 of development. FAE will delay the maturation of the hippocampus Rats were fed one of three diet, a liquid diet with 5% ethanol (FAE group), an isocaloric liquid diet (Isocalorc group) or nomal lab chao (normal group).\nDate GSE1997 Last Updated: Feb 02 2006\n\nContributers:  Nora I Perrone-Bizzozero\n\nIncludes GDS1660.\n Update date: Jun 08 2006.\n Dataset description GDS1660: Analysis of hippocampi of 5-day-old animals subjected to fetal alcohol exposure (FAE) with 5% ETOH. FAE affects the development and function of the hippocampus..\n"
@@ -3670,16 +3622,19 @@ to clear memory.</p></td>
 #&gt; [1] 19
 #&gt; 
 #&gt; $GSE1997$lastUpdated
-#&gt; [1] 1.528357e+12
-#&gt; 
-#&gt; $GSE1997$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE1997$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1997$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE1997$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1997$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE1997$lastNeedsAttentionEvent
 #&gt; $GSE1997$lastNeedsAttentionEvent$performer
@@ -3721,11 +3676,8 @@ to clear memory.</p></td>
 #&gt; $GSE1997$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE1997$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE1997$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE1837
@@ -3750,6 +3702,9 @@ to clear memory.</p></td>
 #&gt; $GSE1837$batchEffect
 #&gt; [1] "Data has been batch-corrected"
 #&gt; 
+#&gt; $GSE1837$experimentalDesign
+#&gt; [1] 21
+#&gt; 
 #&gt; $GSE1837$accession
 #&gt; [1] "GSE1837"
 #&gt; 
@@ -3762,13 +3717,37 @@ to clear memory.</p></td>
 #&gt; $GSE1837$taxonId
 #&gt; [1] 3
 #&gt; 
-#&gt; $GSE1837$experimentalDesign
-#&gt; [1] 21
+#&gt; $GSE1837$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE1837$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE1837$geeq
+#&gt; $GSE1837$geeq$batchCorrected
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE1837$geeq$publicQualityScore
+#&gt; [1] 0.7081982
+#&gt; 
+#&gt; $GSE1837$geeq$publicSuitabilityScore
+#&gt; [1] 0.275
+#&gt; 
+#&gt; $GSE1837$geeq$qScorePublicBatchEffect
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1837$geeq$qScorePublicBatchConfound
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1837$geeq$sScorePublication
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE1837$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1837$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE1837$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 0.5
 #&gt; 
@@ -3814,30 +3793,6 @@ to clear memory.</p></td>
 #&gt; $GSE1837$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE1837$geeq$sScorePublication
-#&gt; [1] -1
-#&gt; 
-#&gt; $GSE1837$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1837$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1837$geeq$batchCorrected
-#&gt; [1] TRUE
-#&gt; 
-#&gt; $GSE1837$geeq$publicQualityScore
-#&gt; [1] 0.7081982
-#&gt; 
-#&gt; $GSE1837$geeq$publicSuitabilityScore
-#&gt; [1] 0.275
-#&gt; 
-#&gt; $GSE1837$geeq$qScorePublicBatchEffect
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1837$geeq$qScorePublicBatchConfound
-#&gt; [1] 1
-#&gt; 
 #&gt; $GSE1837$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -3845,11 +3800,17 @@ to clear memory.</p></td>
 #&gt; [1] 667
 #&gt; 
 #&gt; 
-#&gt; $GSE1837$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE1837$bioAssayCount
+#&gt; [1] 15
 #&gt; 
-#&gt; $GSE1837$parentTaxonId
-#&gt; NULL
+#&gt; $GSE1837$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE1837$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1837$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1837$public
 #&gt; [1] TRUE
@@ -3866,20 +3827,8 @@ to clear memory.</p></td>
 #&gt; $GSE1837$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE1837$bioAssayCount
-#&gt; [1] 15
-#&gt; 
-#&gt; $GSE1837$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE1837$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE1837$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1837$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1837$description
 #&gt; [1] " The cardinal clinical features of Parkinson's disease (PD) (rigidity, rest tremor, bradykinesia, and postural instability) result from selective loss of midbrain dopaminergic neurons.  More specifically, dopaminergic neurons in the substantia nigra pars compacta (SNc) are much more susceptible to damage than the adjacent dopaminergic neurons in the ventral tegmental area (VTA).  This dichotomy is not only seen in human Parkinsons disease, but also in many animal models of PD, including administration of the mitochondrial toxin rotenone to rats, which replicates many of the behavioral and neuropathological features of PD.  The factors underlying this selective vulnerability are unknown, but could be related to differences in neuronal circuitry, differences in glial support, or intrinsic differences between the neuronal populations of the two regions.  Elucidation of these factors may lead to a greater understanding of the pathogenesis and treatment of Parkinson's disease. We will determine gene expression profiles of untreated rat SNc and VTA dopaminergic neurons using laser capture microscopy to obtain region-specific neuronal mRNA. There are intrinsic differences in gene expression between dopaminergic neurons in the rat SNc and VTA that result in greater susceptibility of SNc neurons to degeneration in experimental parkinsonism.  These differences may be related to dopamine metabolism, oxidative metabolism and stress, protein aggregation, or other unforseen pathways. We will compare gene expression profiles between SNc and VTA dopaminergic neurons in normal rats.  No treatment or time points will be studied in this experiment.  Animals will be anesthetized, sacrificed by decapitation, and brains frozen on dry ice.  Frozen sections will be collected onto glass microscope slides and rapidly immunostained for tyrosine hydroxylase to identify dopaminergic neurons.  SNc and VTA neurons (approx. 200 per sample) will be isolated using laser capture microscopy.  Total RNA will be extracted and poly-A RNA will be amplified using a modified Eberwine protocol.  aRNA will be sent to the centers for labeling and hybridization to Affymetrix rat U34A arrays.  We have confirmed with the center that our aRNA protocol is compatible with the centers amplification protocols; in fact, it is essentially identical.  We will be providing a two-round amplification product to the center for labeling and hybridization.  We recognize that using RNA after three rounds of amplification  may decrease sensitivity for low copy number transcripts, but favor this approach versus pooling our samples (which are inherently paired) at this point.  We have discussed this point in detail with the center. SNc and VTA samples from eight animals (16 samples total) will be provided to mitigate differences specific to individual animals.  With the assisatnce of the center, paired t-tests will be used to determine differential expression between the two regions.  Permutational t-test analysis and/or Benjamini and Hochberg analysis of expression ratios will be used to protect against multiple comparisons.  Selected differentially expressed genes will be validated on separate tissue samples using quantitative RT-PCR or in situ hybridization..\nDate GSE1837 Last Updated: Feb 02 2006\n\nContributers:  James G Greene\n\nIncludes GDS1641.\n Update date: Jun 08 2006.\n Dataset description GDS1641: Analysis of dopaminergic neurons of the substantia nigra pars compacta (SNc) and the ventral tegmental area (VTA) from normal animals. SNc dopaminergic neurons are more susceptible to degeneration in Parkinson's disease than VTA dopaminergic neurons..\n"
@@ -3894,16 +3843,19 @@ to clear memory.</p></td>
 #&gt; [1] 21
 #&gt; 
 #&gt; $GSE1837$lastUpdated
-#&gt; [1] 1.525818e+12
-#&gt; 
-#&gt; $GSE1837$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE1837$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1837$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE1837$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1837$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE1837$lastNeedsAttentionEvent
 #&gt; $GSE1837$lastNeedsAttentionEvent$performer
@@ -3945,11 +3897,8 @@ to clear memory.</p></td>
 #&gt; $GSE1837$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE1837$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE1837$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE1606
@@ -3974,6 +3923,9 @@ to clear memory.</p></td>
 #&gt; $GSE1606$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE1606$experimentalDesign
+#&gt; [1] 22
+#&gt; 
 #&gt; $GSE1606$accession
 #&gt; [1] "GSE1606"
 #&gt; 
@@ -3986,13 +3938,37 @@ to clear memory.</p></td>
 #&gt; $GSE1606$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE1606$experimentalDesign
-#&gt; [1] 22
+#&gt; $GSE1606$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE1606$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE1606$geeq
+#&gt; $GSE1606$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1606$geeq$publicQualityScore
+#&gt; [1] 0.1409947
+#&gt; 
+#&gt; $GSE1606$geeq$publicSuitabilityScore
+#&gt; [1] 0.4
+#&gt; 
+#&gt; $GSE1606$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE1606$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE1606$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1606$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE1606$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE1606$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -4038,30 +4014,6 @@ to clear memory.</p></td>
 #&gt; $GSE1606$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE1606$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1606$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1606$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE1606$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1606$geeq$publicQualityScore
-#&gt; [1] 0.1409947
-#&gt; 
-#&gt; $GSE1606$geeq$publicSuitabilityScore
-#&gt; [1] 0.4
-#&gt; 
-#&gt; $GSE1606$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE1606$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE1606$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4069,11 +4021,17 @@ to clear memory.</p></td>
 #&gt; [1] 669
 #&gt; 
 #&gt; 
-#&gt; $GSE1606$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE1606$bioAssayCount
+#&gt; [1] 10
 #&gt; 
-#&gt; $GSE1606$parentTaxonId
-#&gt; NULL
+#&gt; $GSE1606$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE1606$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1606$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1606$public
 #&gt; [1] TRUE
@@ -4090,20 +4048,8 @@ to clear memory.</p></td>
 #&gt; $GSE1606$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE1606$bioAssayCount
-#&gt; [1] 10
-#&gt; 
-#&gt; $GSE1606$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE1606$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE1606$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE1606$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1606$description
 #&gt; [1] " Whole brain gene expression was examined in the following strains of mice: 1. P0 maternal monosomic 39,Xm females, C57BL/6J x C3H/Paf 2. P0 paternal monosomic 39, Xp females, In(X)/C3H x C57BL/6J 3. P0 normal 40,XX females, In(X)/C3H x C57BL/6J 4. P0 normal 40,XX females, C57BL/6J x C3H/Paf.\nDate GSE1606 Last Updated: Jul 21 2005\n\nIncludes GDS1513.\n Update date: May 16 2006.\n Dataset description GDS1513: Analysis of neonatal brains of X-monosomic females that inherited either a maternal or a paternal X chromosome. X-monosomy is the basis of Turner's syndrome (TS). Expressivity of TS phenotypes depends partly on the parental origin of the single X. This expressivity may be due to imprinted X genes..\n"
@@ -4118,16 +4064,19 @@ to clear memory.</p></td>
 #&gt; [1] 22
 #&gt; 
 #&gt; $GSE1606$lastUpdated
-#&gt; [1] 1.526772e+12
-#&gt; 
-#&gt; $GSE1606$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE1606$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE1606$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE1606$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE1606$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE1606$lastNeedsAttentionEvent
 #&gt; $GSE1606$lastNeedsAttentionEvent$performer
@@ -4169,11 +4118,8 @@ to clear memory.</p></td>
 #&gt; $GSE1606$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE1606$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE1606$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2178
@@ -4198,6 +4144,9 @@ to clear memory.</p></td>
 #&gt; $GSE2178$batchEffect
 #&gt; NULL
 #&gt; 
+#&gt; $GSE2178$experimentalDesign
+#&gt; [1] 24
+#&gt; 
 #&gt; $GSE2178$accession
 #&gt; [1] "GSE2178"
 #&gt; 
@@ -4210,13 +4159,37 @@ to clear memory.</p></td>
 #&gt; $GSE2178$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2178$experimentalDesign
-#&gt; [1] 24
+#&gt; $GSE2178$technologyType
+#&gt; [1] "TWOCOLOR"
 #&gt; 
 #&gt; $GSE2178$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2178$geeq
+#&gt; $GSE2178$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2178$geeq$publicQualityScore
+#&gt; [1] -0.2860147
+#&gt; 
+#&gt; $GSE2178$geeq$publicSuitabilityScore
+#&gt; [1] 0.0625
+#&gt; 
+#&gt; $GSE2178$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE2178$geeq$qScorePublicBatchConfound
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE2178$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2178$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2178$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2178$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] -1
 #&gt; 
@@ -4245,13 +4218,13 @@ to clear memory.</p></td>
 #&gt; [1] -1
 #&gt; 
 #&gt; $GSE2178$geeq$qScoreSampleMeanCorrelation
-#&gt; [1] 0.9333021
+#&gt; [1] -0.006192637
 #&gt; 
 #&gt; $GSE2178$geeq$qScoreSampleMedianCorrelation
-#&gt; [1] 0.9421766
+#&gt; [1] -0.002102599
 #&gt; 
 #&gt; $GSE2178$geeq$qScoreSampleCorrelationVariance
-#&gt; [1] 0.002091762
+#&gt; [1] 0.03909313
 #&gt; 
 #&gt; $GSE2178$geeq$noVectors
 #&gt; [1] FALSE
@@ -4262,30 +4235,6 @@ to clear memory.</p></td>
 #&gt; $GSE2178$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2178$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2178$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2178$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2178$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2178$geeq$publicQualityScore
-#&gt; [1] -0.1511176
-#&gt; 
-#&gt; $GSE2178$geeq$publicSuitabilityScore
-#&gt; [1] 0.0625
-#&gt; 
-#&gt; $GSE2178$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE2178$geeq$qScorePublicBatchConfound
-#&gt; [1] 0
-#&gt; 
 #&gt; $GSE2178$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4293,11 +4242,17 @@ to clear memory.</p></td>
 #&gt; [1] 671
 #&gt; 
 #&gt; 
-#&gt; $GSE2178$technologyType
-#&gt; [1] "TWOCOLOR"
+#&gt; $GSE2178$bioAssayCount
+#&gt; [1] 161
 #&gt; 
-#&gt; $GSE2178$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2178$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2178$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2178$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2178$public
 #&gt; [1] TRUE
@@ -4314,20 +4269,8 @@ to clear memory.</p></td>
 #&gt; $GSE2178$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2178$bioAssayCount
-#&gt; [1] 161
-#&gt; 
-#&gt; $GSE2178$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2178$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2178$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2178$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2178$description
 #&gt; [1] " Expression profiles of different mouse tissue samples profiles..\nDate GSE2178 Last Updated: May 29 2005\n\nContributers:  Michael Mucenski Bruce J Aronow Belinda Peach Mitchell Cohen Amy Moseley Susan E Waltz John Maggio Sandra Degen Steve Potter Thomas Doetschman Chris Erwin Joanna A Groden James Lessard Linda Parysek R Hirsch MaryBeth Genter Jianhua Zhang Kathleen Anderson Jonathan D Katz John Dedman Michael Lehman Jorge A Bezerra Michael D Bates Ming Xu Dan Wiginton Jeff A Molkentin\n\nIncludes GDS1322.\n Update date: Nov 09 2005.\n Dataset description GDS1322: Gene expression profiles across a wide variety of tissue samples. The tissues examined include nervous system, skeletal muscle, male and female reproductive organs, gastrointestinal tract, as well as organs in a developmental context including lung, liver, kidney, and heart..\n"
@@ -4342,16 +4285,19 @@ to clear memory.</p></td>
 #&gt; [1] 24
 #&gt; 
 #&gt; $GSE2178$lastUpdated
-#&gt; [1] 1.51986e+12
-#&gt; 
-#&gt; $GSE2178$needsAttention
-#&gt; [1] TRUE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2178$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2178$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2178$needsAttention
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $GSE2178$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2178$lastNeedsAttentionEvent
 #&gt; NULL
@@ -4362,11 +4308,8 @@ to clear memory.</p></td>
 #&gt; $GSE2178$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2178$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2178$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; 
 #&gt; $GSE2031
@@ -4391,6 +4334,9 @@ to clear memory.</p></td>
 #&gt; $GSE2031$batchEffect
 #&gt; [1] "This data set may have a batch artifact (PC 3), p=0.00011938"
 #&gt; 
+#&gt; $GSE2031$experimentalDesign
+#&gt; [1] 25
+#&gt; 
 #&gt; $GSE2031$accession
 #&gt; [1] "GSE2031"
 #&gt; 
@@ -4403,13 +4349,37 @@ to clear memory.</p></td>
 #&gt; $GSE2031$taxonId
 #&gt; [1] 2
 #&gt; 
-#&gt; $GSE2031$experimentalDesign
-#&gt; [1] 25
+#&gt; $GSE2031$technologyType
+#&gt; [1] "ONECOLOR"
 #&gt; 
 #&gt; $GSE2031$isPublic
 #&gt; [1] TRUE
 #&gt; 
 #&gt; $GSE2031$geeq
+#&gt; $GSE2031$geeq$batchCorrected
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2031$geeq$publicQualityScore
+#&gt; [1] -0.004253091
+#&gt; 
+#&gt; $GSE2031$geeq$publicSuitabilityScore
+#&gt; [1] 0.725
+#&gt; 
+#&gt; $GSE2031$geeq$qScorePublicBatchEffect
+#&gt; [1] 0
+#&gt; 
+#&gt; $GSE2031$geeq$qScorePublicBatchConfound
+#&gt; [1] -1
+#&gt; 
+#&gt; $GSE2031$geeq$sScorePublication
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2031$geeq$sScorePlatformAmount
+#&gt; [1] 1
+#&gt; 
+#&gt; $GSE2031$geeq$sScorePlatformsTechMulti
+#&gt; [1] 1
+#&gt; 
 #&gt; $GSE2031$geeq$sScoreAvgPlatformPopularity
 #&gt; [1] 1
 #&gt; 
@@ -4455,30 +4425,6 @@ to clear memory.</p></td>
 #&gt; $GSE2031$geeq$replicatesIssues
 #&gt; [1] 0
 #&gt; 
-#&gt; $GSE2031$geeq$sScorePublication
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2031$geeq$sScorePlatformAmount
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2031$geeq$sScorePlatformsTechMulti
-#&gt; [1] 1
-#&gt; 
-#&gt; $GSE2031$geeq$batchCorrected
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2031$geeq$publicQualityScore
-#&gt; [1] -0.004253091
-#&gt; 
-#&gt; $GSE2031$geeq$publicSuitabilityScore
-#&gt; [1] 0.725
-#&gt; 
-#&gt; $GSE2031$geeq$qScorePublicBatchEffect
-#&gt; [1] 0
-#&gt; 
-#&gt; $GSE2031$geeq$qScorePublicBatchConfound
-#&gt; [1] -1
-#&gt; 
 #&gt; $GSE2031$geeq$`_totalInQuery`
 #&gt; [1] 0
 #&gt; 
@@ -4486,11 +4432,17 @@ to clear memory.</p></td>
 #&gt; [1] 674
 #&gt; 
 #&gt; 
-#&gt; $GSE2031$technologyType
-#&gt; [1] "ONECOLOR"
+#&gt; $GSE2031$bioAssayCount
+#&gt; [1] 44
 #&gt; 
-#&gt; $GSE2031$parentTaxonId
-#&gt; NULL
+#&gt; $GSE2031$externalUri
+#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
+#&gt; 
+#&gt; $GSE2031$currentUserHasWritePermission
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2031$currentUserIsOwner
+#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2031$public
 #&gt; [1] TRUE
@@ -4507,20 +4459,8 @@ to clear memory.</p></td>
 #&gt; $GSE2031$userCanWrite
 #&gt; [1] FALSE
 #&gt; 
-#&gt; $GSE2031$bioAssayCount
-#&gt; [1] 44
-#&gt; 
-#&gt; $GSE2031$externalUri
-#&gt; [1] "http://www.ncbi.nlm.nih.gov/geo/"
-#&gt; 
 #&gt; $GSE2031$arrayDesignCount
 #&gt; [1] 1
-#&gt; 
-#&gt; $GSE2031$currentUserHasWritePermission
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $GSE2031$currentUserIsOwner
-#&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2031$description
 #&gt; [1] " We have combined large-scale mRNA expression and gene mapping methods to identify genes and loci that control hematopoietic stem cell (HSC) functioning. mRNA expression levels were measured in purified HSC isolated from a panel of densely genotyped recombinant inbred mouse strains. Quantitative trait loci (QTLs) associated with variation in expression of thousands of transcripts were mapped. Comparison of the physical transcript position with the location of the controlling QTL identified polymorphic cis-acting stem cell genes. In addition, multiple trans-acting control loci were highlighted that modify expression of large numbers of genes. These groups of co-regulated transcripts identify pathways that specify variation in stem cells. We illustrate this concept with the identification of strong candidate genes involved with HSC turnover.  We compared expression QTLs in HSC and brain from the same animals, and document both shared and tissue-specific QTLs. Our data are accessible through WebQTL, a web-based interface that allows custom genetic linkage analysis and identification of co-regulated transcripts..\nDate GSE2031 Last Updated: Jun 29 2005\n\nContributers:  Bert Dontje Kenneth F Manly Sue Sutton Michael Cooke Rudi Alberts Gerald de Haan Jintao Wang Edo Vellenga Ellen Weersing Elissa Chesler Leonid Bystrykh Andrew I Su Tim Wiltshire Mathew T Pletcher Robert W Williams Ritsert C Jansen Lu Lu\n\nIncludes GDS1077.\n Update date: Mar 16 2005.\n Dataset description GDS1077: Expression profiling of Lin- Sca-1+ c-kit+ hematopoietic stem cells (HSC) from 22 different BXD recombinant inbred (RI) strains. Each RI strain is homozygous for alleles at about 98% of loci. Results combined with QTL mapping to identify candidate genes for the control of HSC function..\n"
@@ -4535,16 +4475,19 @@ to clear memory.</p></td>
 #&gt; [1] 25
 #&gt; 
 #&gt; $GSE2031$lastUpdated
-#&gt; [1] 1.526801e+12
-#&gt; 
-#&gt; $GSE2031$needsAttention
-#&gt; [1] FALSE
+#&gt; [1] 1.537208e+12
 #&gt; 
 #&gt; $GSE2031$troubled
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $GSE2031$lastTroubledEvent
 #&gt; NULL
+#&gt; 
+#&gt; $GSE2031$needsAttention
+#&gt; [1] FALSE
+#&gt; 
+#&gt; $GSE2031$troubleDetails
+#&gt; [1] "No trouble details provided."
 #&gt; 
 #&gt; $GSE2031$lastNeedsAttentionEvent
 #&gt; $GSE2031$lastNeedsAttentionEvent$performer
@@ -4586,11 +4529,8 @@ to clear memory.</p></td>
 #&gt; $GSE2031$curationNote
 #&gt; NULL
 #&gt; 
-#&gt; $GSE2031$troubleDetails
-#&gt; [1] "No trouble details provided."
-#&gt; 
 #&gt; $GSE2031$`_totalInQuery`
-#&gt; [1] 8067
+#&gt; [1] 8488
 #&gt; 
 #&gt; </div><div class='input'>
 # return all datasets. it is slower and prone to connection interruptions

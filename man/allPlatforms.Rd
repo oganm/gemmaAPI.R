@@ -4,9 +4,9 @@
 \alias{allPlatforms}
 \title{All platforms}
 \usage{
-allPlatforms(platforms = NULL, filter = NULL, offset = 0, limit = 20,
-  sort = "+id", file = NULL, return = TRUE, overwrite = FALSE,
-  memoised = FALSE)
+allPlatforms(platforms = NULL, filter = NULL, offset = 0,
+  limit = 20, sort = "+id", file = NULL, return = TRUE,
+  overwrite = FALSE, memoised = FALSE)
 }
 \arguments{
 \item{platforms}{A list of identifiers (e.g: GPL96,GPL1355,GPL1261). 

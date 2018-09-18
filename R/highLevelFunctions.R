@@ -8,7 +8,8 @@
 #' function (request = 'data').
 #' @param IdColnames Logical. should column names be turned into IDs. Only valid for expression data
 #'
-#' @return A data frame
+#' @return A data frame that includes experiment and sample level data or a list that has experiment
+#' and sample level data as separate elements.
 #' @export
 #' 
 readDataFile = function(expFile,IdColnames = FALSE){
@@ -150,6 +151,8 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     # 95 no characteristics for annotations
     
     # prevent NULLs from ruining the data frame
+    # turns out this is not needed as .default argument exists
+    # rework later
     mapNoNull = function(.x,.f,...){
         out = purrr::map(.x,.f,...)
         if(length(out)>0){
@@ -191,65 +194,78 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     }
     
     # getAnnotationID = memoise::memoise(getAnnotationID)
-    
+    experimentData = list()
     # first compile information specific to the dataset
     basicInfo = datasetInfo(dataset,memoised=memoised)[[1]]
     if(length(basicInfo)==1){
         stop('you caught a bug! use internal Gemma IDs to avoid it')
     }
     
-    datasetID = basicInfo$id
-    datasetName = basicInfo$shortName
-    taxon = basicInfo$taxon
+    experimentData$datasetID = basicInfo$id
+    experimentData$datasetName = basicInfo$shortName
+    experimentData$taxon = basicInfo$taxon
     
     # get experiment annotations
     annotation = datasetInfo(dataset,request = 'annotations',memoised = memoised)
     # experiment annotation class
-    experimentAnnotClass = annotation %>% 
+    experimentData$experimentAnnotClass = annotation %>% 
         mapNoNull('className')  %>%  combine()
     
-    experimentAnnotClassURI =  annotation %>% 
-        mapNoNull('classUri') %>% combine()
-    experimentAnnotClassOntoID = annotation %>% purrr::map('classUri') %>%
+    experimentData$experimentAnnotClassOntoID = annotation %>% purrr::map('classUri') %>%
         mapNoNull(getAnnotationID) %>% 
         combine()
+    experimentData$experimentAnnotClassURI =  annotation %>% 
+        mapNoNull('classUri') %>% combine()
+
     
     
     # experiment annotation
-    experimentAnnotation = annotation %>% mapNoNull('termName') %>% combine()
+    experimentData$experimentAnnotation = annotation %>% mapNoNull('termName') %>% combine()
     
-    experimentAnnotationOntoID = annotation %>% mapNoNull('termUri') %>% 
+    experimentData$experimentAnnotationOntoID = annotation %>% mapNoNull('termUri') %>% 
         mapNoNull(getAnnotationID) %>%
         combine()
     
-    experimentAnnotationURI = annotation %>% mapNoNull('termUri') %>% combine()
+    experimentData$experimentAnnotationURI = annotation %>% mapNoNull('termUri') %>% combine()
     
-    # get batch confound information
-    # batchConf and batchEff are temporary. 
-    batchConfound = basicInfo$geeq$qScorePublicBatchConfound
-    batchConf = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
-    batchEffect = basicInfo$geeq$qScorePublicBatchEffect
-    batchEf = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
-    
-    batchCorrected = basicInfo$geeq$batchCorrected
     # get experiment platforms
     platforms = datasetInfo(dataset,request = 'platforms',memoised = memoised)
-    platformName = platforms %>% mapNoNull('shortName') %>% combine()
+    experimentData$platformName = platforms %>% mapNoNull('shortName') %>% combine()
 
-    technologyType = platforms %>% mapNoNull('technologyType') %>% combine()
+    experimentData$technologyType = platforms %>% mapNoNull('technologyType') %>% combine()
     
+    experimentData$externalDatabase = basicInfo$externalDatabase
     
-    experimentData = data.frame(datasetID, datasetName, taxon, 
-                                experimentAnnotClass, experimentAnnotClassOntoID, experimentAnnotClassURI,
-                                experimentAnnotation, experimentAnnotationOntoID, experimentAnnotationURI, 
-                                platformName,
-                                technologyType,
-                                batchConfound,
-                                batchConf,
-                                batchEffect,
-                                batchEf,
-                                batchCorrected,
-                                stringsAsFactors = FALSE)
+    experimentData$troubled = basicInfo$troubled
+    experimentData$troubleDetails = basicInfo$troubleDetails
+    
+    # get batch confound and geeq quality information
+    experimentData$batchConfoundDescription = basicInfo$batchConfound %>% {if(is.null(.)){'NA'}else{.}}
+    experimentData$batchEffectDescription = basicInfo$batchEffect %>% {if(is.null(.)){'NA'}else{.}}
+    
+    # this could have been written in a vectorized manner but I don't want it
+    # to break if geek is changed slightly. also manually naming them has some value
+    
+    experimentData$geeq.batchConfound = basicInfo$geeq$qScorePublicBatchConfound
+    experimentData$geeq.batchEffect = basicInfo$geeq$qScorePublicBatchEffect
+    experimentData$geeq.batchCorrected = basicInfo$geeq$batchCorrected
+    experimentData$geeq.batchInfo = basicInfo$geeq$qScoreBatchInfo
+    experimentData$geeq.qualityScore = basicInfo$geeq$publicQualityScore
+    experimentData$geeq.suitabilityScore = basicInfo$geeq$publicSuitabilityScore
+    experimentData$geeq.publication = basicInfo$geeq$sScorePublication
+    experimentData$geeq.platformAmount = basicInfo$geeq$sScorePlatformAmount
+    experimentData$geeq.platformsTechMulti = basicInfo$geeq$sScorePlatformsTechMulti
+    experimentData$geeq.platformPopularity = basicInfo$geeq$sScoreAvgPlatformPopularity
+    experimentData$geeq.avgPlatformSize = basicInfo$geeq$sScoreAvgPlatformSize
+    experimentData$geeq.sampleSize = basicInfo$geeq$sScoreSampleSize
+    experimentData$geeq.rawData =  basicInfo$geeq$sScoreRawData
+    experimentData$geeq.missingValues = basicInfo$geeq$sScoreMissingValues
+    experimentData$geeq.outliers = basicInfo$geeq$qScoreOutliers
+    experimentData$geeq.platformTechnology = basicInfo$geeq$qScorePlatformsTech
+    experimentData$geeq.replicates= basicInfo$geeq$qScoreReplicates
+    experimentData$geeq.medianSampleCorrelation = basicInfo$geeq$qScoreSampleMedianCorrelation
+    
+    # 
 
     # get sample annotations
     sampleData = tryCatch(datasetInfo(dataset,request = 'samples',memoised = memoised),
@@ -378,10 +394,10 @@ compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('d
     }
     
     if(outputType == 'data.frame'){
-        out = cbind(experimentData,sampleData)
+        out = cbind(as.data.frame(experimentData,stringsAsFactors = FALSE),sampleData)
     } else {
-        out = list(experimentData,
-                   sampleData)
+        out = list(experimentData = experimentData,
+                   sampleData = sampleData)
     }
     
     return(out)

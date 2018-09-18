@@ -44,9 +44,9 @@ annotationInfo = function(annotation,
     
     if(return){
         if(is.null(request)){
-            names(content) =  content %>% purrr::map_chr('value')
+            names(content) =  content %>% purrr::map_chr('value', .default = NA)
         } else if (request %in% c('datasets')){
-            names(content) =  content %>% purrr::map_chr('shortName')
+            names(content) =  content %>% purrr::map_chr('shortName', .default = NA)
         }
     }
     return(content)

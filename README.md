@@ -4,6 +4,14 @@ Gemma API <img src="gemmaAPI.png" align="right" height="100px"/>
 
 [![Build Status](https://travis-ci.org/PavlidisLab/gemmaAPI.R.svg?branch=master)](https://travis-ci.org/PavlidisLab/gemmaAPI.R)[![codecov](https://codecov.io/gh/PavlidisLab/gemmaAPI.R/branch/master/graph/badge.svg)](https://codecov.io/gh/PavlidisLab/gemmaAPI.R)
 
+Table of Contents
+=================
+
+-   [Installation](#installation)
+-   [Documentation](#documentation)
+-   [Examples](#examples)
+-   [Changelog](#changelog)
+
 This is an R wrapper for [Gemma](http://www.chibi.ubc.ca/Gemma/home.html)'s restful [API](http://www.chibi.ubc.ca/Gemma/resources/restapidocs/).
 
 To cite Gemma, please use: [Zoubarev, A., et al., Gemma: A resource for the re-use, sharing and meta-analysis of expression profiling data. Bioinformatics, 2012.](http://dx.doi.org/doi:10.1093/bioinformatics/bts430)
@@ -33,31 +41,7 @@ data =
                 return = TRUE, # TRUE by default, all functions have this. if false there'll be no return
                 file = NULL # NULL by default, all functions have this. If specificed, output will be saved.
     )
-```
 
-    ## Parsed with column specification:
-    ## cols(
-    ##   Probe = col_character(),
-    ##   Sequence = col_character(),
-    ##   GeneSymbol = col_character(),
-    ##   GeneName = col_character(),
-    ##   GemmaId = col_character(),
-    ##   NCBIid = col_character(),
-    ##   `GSE107999_Biomat_9___BioAssayId=427205Name=LUHMEScells,untreated,proliferatingprecursorstaterep4` = col_double(),
-    ##   `GSE107999_Biomat_8___BioAssayId=427206Name=LUHMEScells,untreated,proliferatingprecursorstaterep3` = col_double(),
-    ##   `GSE107999_Biomat_12___BioAssayId=427207Name=LUHMEScells,untreated,proliferatingprecursorstaterep2` = col_double(),
-    ##   `GSE107999_Biomat_10___BioAssayId=427208Name=LUHMEScells,untreated,proliferatingprecursorstaterep1` = col_double(),
-    ##   `GSE107999_Biomat_5___BioAssayId=427201Name=LUHMEScells,untreated,day3ofdifferentiationrep4` = col_double(),
-    ##   `GSE107999_Biomat_4___BioAssayId=427202Name=LUHMEScells,untreated,day3ofdifferentiationrep3` = col_double(),
-    ##   `GSE107999_Biomat_7___BioAssayId=427203Name=LUHMEScells,untreated,day3ofdifferentiationrep2` = col_double(),
-    ##   `GSE107999_Biomat_6___BioAssayId=427204Name=LUHMEScells,untreated,day3ofdifferentiationrep1` = col_double(),
-    ##   `GSE107999_Biomat_11___BioAssayId=427197Name=LUHMEScells,untreated,day6ofdifferentiationrep4` = col_double(),
-    ##   `GSE107999_Biomat_2___BioAssayId=427198Name=LUHMEScells,untreated,day6ofdifferentiationrep3` = col_double(),
-    ##   `GSE107999_Biomat_1___BioAssayId=427199Name=LUHMEScells,untreated,day6ofdifferentiationrep2` = col_double(),
-    ##   `GSE107999_Biomat_3___BioAssayId=427200Name=LUHMEScells,untreated,day6ofdifferentiationrep1` = col_double()
-    ## )
-
-``` r
 head(data) %>% knitr::kable(format ='markdown')
 ```
 
@@ -233,63 +217,33 @@ Get metadata for first 10 mouse studies.
 ``` r
 mouseStudies = taxonInfo('mouse',request = 'datasets',limit = 0)
 studyIDs = mouseStudies %>% purrr::map_int('id')
-mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata)
-mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
+mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata,outputType = 'list') 
+# default outputType is data.frame, which returns a single data frame with study and sample data all together.
+mouseMetadata[[1]]$sampleData %>% head %>% knitr::kable(format ='markdown')
 ```
 
 <table>
 <colgroup>
-<col width="4%" />
-<col width="0%" />
-<col width="1%" />
-<col width="0%" />
-<col width="3%" />
-<col width="4%" />
-<col width="11%" />
-<col width="2%" />
-<col width="4%" />
-<col width="12%" />
-<col width="1%" />
-<col width="1%" />
-<col width="1%" />
-<col width="0%" />
-<col width="1%" />
-<col width="0%" />
-<col width="1%" />
-<col width="0%" />
-<col width="4%" />
-<col width="0%" />
-<col width="1%" />
-<col width="1%" />
-<col width="2%" />
 <col width="6%" />
+<col width="0%" />
+<col width="6%" />
+<col width="1%" />
 <col width="2%" />
 <col width="2%" />
 <col width="3%" />
 <col width="10%" />
+<col width="3%" />
+<col width="4%" />
+<col width="5%" />
+<col width="15%" />
+<col width="3%" />
 <col width="2%" />
-<col width="1%" />
-<col width="7%" />
+<col width="12%" />
+<col width="19%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left"></th>
-<th align="right">datasetID</th>
-<th align="left">datasetName</th>
-<th align="left">taxon</th>
-<th align="left">experimentAnnotClass</th>
-<th align="left">experimentAnnotClassOntoID</th>
-<th align="left">experimentAnnotClassURI</th>
-<th align="left">experimentAnnotation</th>
-<th align="left">experimentAnnotationOntoID</th>
-<th align="left">experimentAnnotationURI</th>
-<th align="left">platformName</th>
-<th align="left">technologyType</th>
-<th align="right">batchConfound</th>
-<th align="left">batchConf</th>
-<th align="right">batchEffect</th>
-<th align="left">batchEf</th>
-<th align="left">batchCorrected</th>
 <th align="left">id</th>
 <th align="left">sampleName</th>
 <th align="left">accession</th>
@@ -304,27 +258,12 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <th align="left">sampleAnnotationOntoID</th>
 <th align="left">sampleAnnotType</th>
 <th align="left">sampleAnnotationURI</th>
+<th align="left">otherCharacteristics</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Brain_C57 Wildtype_affs275-1099</td>
-<td align="right">3</td>
-<td align="left">GSE4523</td>
-<td align="left">mouse</td>
-<td align="left">strain|organism part|sex</td>
-<td align="left">EFO_0005135|EFO_0000635|PATO_0000047</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://purl.obolibrary.org/obo/PATO_0000047" class="uri">http://www.ebi.ac.uk/efo/EFO_0005135|http://www.ebi.ac.uk/efo/EFO_0000635|http://purl.obolibrary.org/obo/PATO_0000047</a></td>
-<td align="left">C57BL/6|brain|female</td>
-<td align="left">TGEMO_00016|UBERON_0000955|PATO_0000383</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00016%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://purl.obolibrary.org/obo/PATO_0000383" class="uri">http://purl.obolibrary.org/obo/TGEMO_00016|http://purl.obolibrary.org/obo/UBERON_0000955|http://purl.obolibrary.org/obo/PATO_0000383</a></td>
-<td align="left">GPL1261</td>
-<td align="left">ONECOLOR</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">FALSE</td>
 <td align="left">48</td>
 <td align="left">Brain_C57 Wildtype_affs275-1099</td>
 <td align="left">GSM101416</td>
@@ -339,25 +278,10 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0005168</td>
 <td align="left">factor</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005168" class="uri">http://www.ebi.ac.uk/efo/EFO_0005168</a></td>
+<td align="left">total RNA|Biotin|C57 Wildtype Mouse #1099 Brain|Strain: C57BL/6 Gender: female Age: 123 days Tissue: brain</td>
 </tr>
 <tr class="even">
 <td align="left">Brain_C57 Wildtype_affs275-1100</td>
-<td align="right">3</td>
-<td align="left">GSE4523</td>
-<td align="left">mouse</td>
-<td align="left">strain|organism part|sex</td>
-<td align="left">EFO_0005135|EFO_0000635|PATO_0000047</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://purl.obolibrary.org/obo/PATO_0000047" class="uri">http://www.ebi.ac.uk/efo/EFO_0005135|http://www.ebi.ac.uk/efo/EFO_0000635|http://purl.obolibrary.org/obo/PATO_0000047</a></td>
-<td align="left">C57BL/6|brain|female</td>
-<td align="left">TGEMO_00016|UBERON_0000955|PATO_0000383</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00016%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://purl.obolibrary.org/obo/PATO_0000383" class="uri">http://purl.obolibrary.org/obo/TGEMO_00016|http://purl.obolibrary.org/obo/UBERON_0000955|http://purl.obolibrary.org/obo/PATO_0000383</a></td>
-<td align="left">GPL1261</td>
-<td align="left">ONECOLOR</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">FALSE</td>
 <td align="left">47</td>
 <td align="left">Brain_C57 Wildtype_affs275-1100</td>
 <td align="left">GSM101417</td>
@@ -372,25 +296,10 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">EFO_0005168</td>
 <td align="left">factor</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005168" class="uri">http://www.ebi.ac.uk/efo/EFO_0005168</a></td>
+<td align="left">total RNA|C57 Wildtype Mouse #1100 Brain|Biotin|Strain: C57BL/6 Gender: female Age: 123 days Tissue: brain</td>
 </tr>
 <tr class="odd">
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1096</td>
-<td align="right">3</td>
-<td align="left">GSE4523</td>
-<td align="left">mouse</td>
-<td align="left">strain|organism part|sex</td>
-<td align="left">EFO_0005135|EFO_0000635|PATO_0000047</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://purl.obolibrary.org/obo/PATO_0000047" class="uri">http://www.ebi.ac.uk/efo/EFO_0005135|http://www.ebi.ac.uk/efo/EFO_0000635|http://purl.obolibrary.org/obo/PATO_0000047</a></td>
-<td align="left">C57BL/6|brain|female</td>
-<td align="left">TGEMO_00016|UBERON_0000955|PATO_0000383</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00016%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://purl.obolibrary.org/obo/PATO_0000383" class="uri">http://purl.obolibrary.org/obo/TGEMO_00016|http://purl.obolibrary.org/obo/UBERON_0000955|http://purl.obolibrary.org/obo/PATO_0000383</a></td>
-<td align="left">GPL1261</td>
-<td align="left">ONECOLOR</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">FALSE</td>
 <td align="left">52</td>
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1096</td>
 <td align="left">GSM101412</td>
@@ -401,29 +310,14 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">genotype</td>
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">GENE_30060;TGEMO_00001</td>
+<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
+<td align="left">TGEMO_00001;GENE_30060</td>
 <td align="left">factor</td>
-<td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
+<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
+<td align="left">total RNA|brain|Melanotransferrin Knockout Mouse #1096 Brain|female|Biotin|Strain: C57BL/6 - Lucy|Age: 123 days</td>
 </tr>
 <tr class="even">
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1097</td>
-<td align="right">3</td>
-<td align="left">GSE4523</td>
-<td align="left">mouse</td>
-<td align="left">strain|organism part|sex</td>
-<td align="left">EFO_0005135|EFO_0000635|PATO_0000047</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://purl.obolibrary.org/obo/PATO_0000047" class="uri">http://www.ebi.ac.uk/efo/EFO_0005135|http://www.ebi.ac.uk/efo/EFO_0000635|http://purl.obolibrary.org/obo/PATO_0000047</a></td>
-<td align="left">C57BL/6|brain|female</td>
-<td align="left">TGEMO_00016|UBERON_0000955|PATO_0000383</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00016%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://purl.obolibrary.org/obo/PATO_0000383" class="uri">http://purl.obolibrary.org/obo/TGEMO_00016|http://purl.obolibrary.org/obo/UBERON_0000955|http://purl.obolibrary.org/obo/PATO_0000383</a></td>
-<td align="left">GPL1261</td>
-<td align="left">ONECOLOR</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">FALSE</td>
 <td align="left">51</td>
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1097</td>
 <td align="left">GSM101413</td>
@@ -434,29 +328,14 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">genotype</td>
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">GENE_30060;TGEMO_00001</td>
+<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
+<td align="left">TGEMO_00001;GENE_30060</td>
 <td align="left">factor</td>
-<td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
+<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
+<td align="left">total RNA|Melanotransferrin Knockout Mouse #1097 Brain|Biotin|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain</td>
 </tr>
 <tr class="odd">
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1098</td>
-<td align="right">3</td>
-<td align="left">GSE4523</td>
-<td align="left">mouse</td>
-<td align="left">strain|organism part|sex</td>
-<td align="left">EFO_0005135|EFO_0000635|PATO_0000047</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://purl.obolibrary.org/obo/PATO_0000047" class="uri">http://www.ebi.ac.uk/efo/EFO_0005135|http://www.ebi.ac.uk/efo/EFO_0000635|http://purl.obolibrary.org/obo/PATO_0000047</a></td>
-<td align="left">C57BL/6|brain|female</td>
-<td align="left">TGEMO_00016|UBERON_0000955|PATO_0000383</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00016%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://purl.obolibrary.org/obo/PATO_0000383" class="uri">http://purl.obolibrary.org/obo/TGEMO_00016|http://purl.obolibrary.org/obo/UBERON_0000955|http://purl.obolibrary.org/obo/PATO_0000383</a></td>
-<td align="left">GPL1261</td>
-<td align="left">ONECOLOR</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">FALSE</td>
 <td align="left">50</td>
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1098</td>
 <td align="left">GSM101414</td>
@@ -467,29 +346,14 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">genotype</td>
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">GENE_30060;TGEMO_00001</td>
+<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
+<td align="left">TGEMO_00001;GENE_30060</td>
 <td align="left">factor</td>
-<td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
+<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
+<td align="left">total RNA|Biotin|Melanotransferrin Knockout Mouse #1098 Brain|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain</td>
 </tr>
 <tr class="even">
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1101</td>
-<td align="right">3</td>
-<td align="left">GSE4523</td>
-<td align="left">mouse</td>
-<td align="left">strain|organism part|sex</td>
-<td align="left">EFO_0005135|EFO_0000635|PATO_0000047</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005135%7Chttp://www.ebi.ac.uk/efo/EFO_0000635%7Chttp://purl.obolibrary.org/obo/PATO_0000047" class="uri">http://www.ebi.ac.uk/efo/EFO_0005135|http://www.ebi.ac.uk/efo/EFO_0000635|http://purl.obolibrary.org/obo/PATO_0000047</a></td>
-<td align="left">C57BL/6|brain|female</td>
-<td align="left">TGEMO_00016|UBERON_0000955|PATO_0000383</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00016%7Chttp://purl.obolibrary.org/obo/UBERON_0000955%7Chttp://purl.obolibrary.org/obo/PATO_0000383" class="uri">http://purl.obolibrary.org/obo/TGEMO_00016|http://purl.obolibrary.org/obo/UBERON_0000955|http://purl.obolibrary.org/obo/PATO_0000383</a></td>
-<td align="left">GPL1261</td>
-<td align="left">ONECOLOR</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="right">0</td>
-<td align="left">NA</td>
-<td align="left">FALSE</td>
 <td align="left">49</td>
 <td align="left">Brain_Melanotransferrin Knockout_affs275-1101</td>
 <td align="left">GSM101415</td>
@@ -500,10 +364,11 @@ mouseMetadata[[1]] %>% head %>% knitr::kable(format ='markdown')
 <td align="left">genotype</td>
 <td align="left">EFO_0000513</td>
 <td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative</td>
-<td align="left">GENE_30060;TGEMO_00001</td>
+<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
+<td align="left">TGEMO_00001;GENE_30060</td>
 <td align="left">factor</td>
-<td align="left"><a href="http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001" class="uri">http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001</a></td>
+<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
+<td align="left">Melanotransferrin Knockout Mouse #1101 Brain|total RNA|Biotin|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain</td>
 </tr>
 </tbody>
 </table>
@@ -513,3 +378,15 @@ Download expression data a study
 ``` r
 studyIDs %>% sapply(function(x){datasetInfo(x,request= 'data',return= FALSE, file = paste0('data/',x))})
 ```
+
+Changelog
+=========
+
+**17 September 2018:**
+
+-   Start writing changelog...
+-   `compileMetadata` function now returns all quality information in geeq. Existing columnames for batch effect information has been altered to better explain what they are.
+-   `compileMetadata` now returns a list instead of a data frame for experiment specific information if the desired output is a list.
+-   endpoint functions are fine if their naming variable is NULL. For most cases this shouldn't happen but names are for interactive usage and should not be relied on.
+-   Started using proper semantic versioning
+-   TOC added to readme

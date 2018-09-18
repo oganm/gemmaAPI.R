@@ -108,9 +108,9 @@ geneInfo = function(gene, request = NULL,
     content = getContent(url,file = file,return=return,overwrite = overwrite)
     if(return){
         if(is.null(request)){
-            names(content) =  content %>% purrr::map_chr('officialSymbol')
+            names(content) =  content %>% purrr::map_chr('officialSymbol', .default = NA)
         } else if (request %in% c('goTerms')){
-            names(content) =  content %>% purrr::map_chr('goId')
+            names(content) =  content %>% purrr::map_chr('goId', .default = NA)
         }
     }
     

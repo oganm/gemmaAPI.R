@@ -29,7 +29,9 @@
   
 <meta property="og:title" content="Read expression data from gemma — readExpression" />
 
-<meta property="og:description" content="Read expression data from gemma" />
+<meta property="og:description" content="This is a simple wrapper for read_tsv that also deals with comments that are
+at the beginning of the file. If it is an expression file IdColnames simplifies
+column names" />
 <meta name="twitter:card" content="summary" />
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -85,7 +87,9 @@
     </div>
 
     
-    <p>Read expression data from gemma</p>
+    <p>This is a simple wrapper for read_tsv that also deals with comments that are
+at the beginning of the file. If it is an expression file IdColnames simplifies
+column names</p>
     
 
     <pre class="usage"><span class='fu'>readExpression</span>(<span class='no'>expFile</span>, <span class='kw'>IdColnames</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
@@ -106,7 +110,8 @@ function (request = 'data').</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame</p>
+    <p>A data frame that includes experiment and sample level data or a list that has experiment
+and sample level data as separate elements.</p>
     
 
   </div>

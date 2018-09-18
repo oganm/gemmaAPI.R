@@ -65,7 +65,7 @@ allDatasets = function(datasets = NULL,
     
     content = getContent(url, file = file, return = return,overwrite = overwrite)
     if(return){
-        names(content) =  content %>% purrr::map_chr('shortName')
+        names(content) =  content %>% purrr::map_chr('shortName', .default = NA)
     }
     return(content)
 }
@@ -234,26 +234,26 @@ datasetInfo  = function(dataset,
                 colnames(content) %<>% simplifyExpressionColnames()
             }
         }else if(request %in% c('platforms')){
-            names(content) =  content %>% purrr::map_chr('shortName')
+            names(content) =  content %>% purrr::map_chr('shortName',.null = NA)
         } else if (request %in% c('samples')){
-            names(content) =  content %>% purrr::map_chr('name')
+            names(content) =  content %>% purrr::map_chr('name',.null = NA)
         } else if(request %in% 'annotations'){
-            names(content) =  content %>% purrr::map_chr('className')
+            names(content) =  content %>% purrr::map_chr('termName',.null = NA)
         } else if (request %in% 'differential'){
             # this will have to change after update
-            names(content[[1]]$resultSets) = content[[1]]$resultSets %>% purrr::map_chr('resultSetId')
+            names(content[[1]]$resultSets) = content[[1]]$resultSets %>% purrr::map_chr('resultSetId',.default = NA)
             content[[1]]$resultSets %<>% lapply(function(x){
-                names(x$experimentalFactors) = x$experimentalFactors %>% purrr::map_chr('category')
+                names(x$experimentalFactors) = x$experimentalFactors %>% purrr::map_chr('category',.default = NA)
                 return(x)
             }) 
             content = content[[1]]
         } else if(request %in% 'geneExpression'){
-            names(content) =  content %>% purrr::map_chr('datasetId')
+            names(content) =  content %>% purrr::map_chr('datasetId',.default = NA)
             content %<>% lapply(function(x){
                 names(x$geneExpressionLevels) = x$geneExpressionLevels %>% 
-                    purrr::map_chr('geneNcbiId')
+                    purrr::map_chr('geneNcbiId', .default = NA)
                 x$geneExpressionLevels %<>% lapply(function(y){
-                    names(y$vectors) = y$vectors %>% purrr::map_chr('designElementName')
+                    names(y$vectors) = y$vectors %>% purrr::map_chr('designElementName', .default = NA)
                     return(y)
                 })
                 return(x)
