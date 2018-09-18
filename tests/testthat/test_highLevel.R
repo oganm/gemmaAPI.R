@@ -18,6 +18,11 @@ testthat::test_that('compileMetadata',{
     testthat::expect_gt(nrow(meta167NoCollapse), nrow(meta167))
     testthat::expect_equal(ncol(meta167NoCollapse), ncol(meta167))
     
+    # test for datasets with missing fields
+    metaRoss = compileMetadata('ross-adipogenesis')
+    testthat::expect_equal(ncol(meta167), ncol(metaRoss))
+    
+    
     # meta924 = compileMetadata(924)
     # testthat::expect_true(meta924$experimentAnnotClassOntoID %>% stringr::str_split('\\|') %>% {.[[1]][1] == "NA"})
     
