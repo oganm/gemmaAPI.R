@@ -8,15 +8,21 @@ testthat::test_that('get gene expression',{
 })
 
 testthat::test_that('compileMetadata',{
+    # double accession dataset  removed find another test
+    # meta167 = compileMetadata(167)
+    # testthat::expect_is(compileMetadata(167),'data.frame')
+    # testthat::expect_true(all(grepl('\\|',meta167$accession)))
+    # 
+    # meta167NoCollapse = compileMetadata(167,collapseBioMaterials = FALSE)
+    # 
+    # testthat::expect_gt(nrow(meta167NoCollapse), nrow(meta167))
+    # testthat::expect_equal(ncol(meta167NoCollapse), ncol(meta167))
     
-    meta167 = compileMetadata(167)
-    testthat::expect_is(compileMetadata(167),'data.frame')
-    testthat::expect_true(all(grepl('\\|',meta167$accession)))
     
-    meta167NoCollapse = compileMetadata(167,collapseBioMaterials = FALSE)
-    
-    testthat::expect_gt(nrow(meta167NoCollapse), nrow(meta167))
-    testthat::expect_equal(ncol(meta167NoCollapse), ncol(meta167))
+    meta6049 = compileMetadata(6049)
+    meta6049NoCollapse = compileMetadata(6049,collapseBioMaterials = FALSE)
+    testthat::expect_gt(nrow(meta6049NoCollapse), nrow(meta6049))
+    testthat::expect_equal(ncol(meta6049NoCollapse), ncol(meta6049))
     
     # test for datasets with missing fields
     metaRoss = compileMetadata('ross-adipogenesis')
