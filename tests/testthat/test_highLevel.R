@@ -26,7 +26,7 @@ testthat::test_that('compileMetadata',{
     
     # test for datasets with missing fields
     metaRoss = compileMetadata('ross-adipogenesis')
-    testthat::expect_equal(ncol(meta167), ncol(metaRoss))
+    testthat::expect_equal(ncol(meta6049), ncol(metaRoss))
     
     
     # meta924 = compileMetadata(924)
