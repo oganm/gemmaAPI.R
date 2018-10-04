@@ -75,10 +75,15 @@ testthat::test_that('datasetInfo',{
     
     
     
+    differential = datasetInfo('GSE12679',request = 'differential')
+    resultSetId = differential$resultSets$`456407`$resultSetId
     
-    testthat::expect_is(datasetInfo('GSE12679',request = 'differential'),'list')
-    testthat::expect_true(length(datasetInfo('GSE12679',request = 'differential'))>0)
+    testthat::expect_is(differential,'list')
+    testthat::expect_true(length(differential)>0)
     
+    difExp = datasetInfo('GSE12679',request = 'diffEx', diffExSet = resultSetId)
+    testthat::expect_is(difExp,'list')
+    testthat::expect_true(length(difExp)>0)
     
     
     # memoise test. memoised function should be faster

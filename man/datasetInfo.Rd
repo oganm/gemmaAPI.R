@@ -38,6 +38,33 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
              \item \code{limit}: Optional, defaults to 20. Limits the result 
              to specified amount of objects. Use 0 for no limit.
          }
+     \item \code{diffEx}: Retrieves differential expression levels for the given datasets.
+     Parameters:
+         \itemize{
+             \item \code{diffExSet}: Result set id of the differential expression. Can be
+             acquired from the \code{differential} endpoint:
+             
+             \code{datasetInfo('GSE43364',request = 'differential')$resultSets[[1]]$id}
+             \item \code{keepNonSpecific}: Optional, defaults to FALSE.
+             
+             If set to false, the response will only include elements that map exclusively to each gene
+             
+             If set to true, the response will include all elements that map to each gene, even if they also map to other genes.
+             \item \code{threshold}: Optional, defaults to 100. 
+             The threshold that the differential expression has to meet to be included in the response.
+             \item \code{limit}: Optional, defaults to 100. Maximum amount of returned gene-probe expression level pairs to include in the response.
+             \item \code{consolidate}: Optional. Defaults no NULL. 
+             
+             Whether genes with multiple elements should consolidate the information. If the 'keepNonSpecific' parameter is set to true, then all gene non-specific vectors are excluded from the chosen procedure.
+             
+             The options are:
+                 \itemize{
+                     \item \code{NULL}:list all vectors separately. 
+                     \item \code{"pickmax"}: only return the vector that has the highest expression (mean over all its bioAssays).
+                     \item \code{"pickvar"}: only return the vector with highest variance of expression across its bioAssays
+                     \item \code{"average"}: create a new vector that will average the bioAssay values from all vectors
+                 }
+         }
      \item \code{geneExpression}: Retrieves the expression levels of given genes for 
      given datasets. Can be used with multiple datasets. Parameters:
          \itemize{
@@ -60,7 +87,6 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
              If set to true, the response will include all elements that map to each queried gene, even if they also map to other genes.
              
              \item \code{consolidate}: Optional. Defaults no NULL. 
-             Optional, defaults to empty.
              
              Whether genes with multiple elements should consolidate the information. If the 'keepNonSpecific' parameter is set to true, then all gene non-specific vectors are excluded from the chosen procedure.
              

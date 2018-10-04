@@ -106,6 +106,33 @@ allDatasets = function(datasets = NULL,
 #'              \item \code{limit}: Optional, defaults to 20. Limits the result 
 #'              to specified amount of objects. Use 0 for no limit.
 #'          }
+#'      \item \code{diffEx}: Retrieves differential expression levels for the given datasets.
+#'      Parameters:
+#'          \itemize{
+#'              \item \code{diffExSet}: Result set id of the differential expression. Can be
+#'              acquired from the \code{differential} endpoint:
+#'              
+#'              \code{datasetInfo('GSE43364',request = 'differential')$resultSets[[1]]$id}
+#'              \item \code{keepNonSpecific}: Optional, defaults to FALSE.
+#'              
+#'              If set to false, the response will only include elements that map exclusively to each gene
+#'              
+#'              If set to true, the response will include all elements that map to each gene, even if they also map to other genes.
+#'              \item \code{threshold}: Optional, defaults to 100. 
+#'              The threshold that the differential expression has to meet to be included in the response.
+#'              \item \code{limit}: Optional, defaults to 100. Maximum amount of returned gene-probe expression level pairs to include in the response.
+#'              \item \code{consolidate}: Optional. Defaults no NULL. 
+#'              
+#'              Whether genes with multiple elements should consolidate the information. If the 'keepNonSpecific' parameter is set to true, then all gene non-specific vectors are excluded from the chosen procedure.
+#'              
+#'              The options are:
+#'                  \itemize{
+#'                      \item \code{NULL}:list all vectors separately. 
+#'                      \item \code{"pickmax"}: only return the vector that has the highest expression (mean over all its bioAssays).
+#'                      \item \code{"pickvar"}: only return the vector with highest variance of expression across its bioAssays
+#'                      \item \code{"average"}: create a new vector that will average the bioAssay values from all vectors
+#'                  }
+#'          }
 #'      \item \code{geneExpression}: Retrieves the expression levels of given genes for 
 #'      given datasets. Can be used with multiple datasets. Parameters:
 #'          \itemize{
@@ -128,7 +155,6 @@ allDatasets = function(datasets = NULL,
 #'              If set to true, the response will include all elements that map to each queried gene, even if they also map to other genes.
 #'              
 #'              \item \code{consolidate}: Optional. Defaults no NULL. 
-#'              Optional, defaults to empty.
 #'              
 #'              Whether genes with multiple elements should consolidate the information. If the 'keepNonSpecific' parameter is set to true, then all gene non-specific vectors are excluded from the chosen procedure.
 #'              
@@ -186,21 +212,34 @@ datasetInfo  = function(dataset,
                                         'annotations',
                                         'design','data',
                                         'differential',
+                                        'diffEx',
                                         'geneExpression'))
         
         allowedArguments = list(data = c('filter','IdColnames'),
                                 differential = c('offset',
                                                  'limit'),
+                                diffEx = c('diffExSet',
+                                            'keepNonSpecific',
+                                            'threshold',
+                                            'limit',
+                                            'consolidate'),
                                 geneExpression = c('genes',
                                                    'keepNonSpecific',
                                                    'consolidate'))
-        mandatoryArguments = list(geneExpression = 'genes')
+        mandatoryArguments = list(geneExpression = 'genes',
+                                  diffEx = 'diffExSet')
         
         checkArguments(request,requestParams,allowedArguments,mandatoryArguments)
-        
         if(request == 'differential'){
             url = glue::glue('{url}/analyses/differential?',
                              '{queryLimit(requestParams$offset, requestParams$limit)}')
+        } else if(request == 'diffEx'){
+            url = glue::glue('{url}/expressions/differential?',
+                             numberArg(diffExSet = requestParams$diffExSet, 
+                                       threshold = requestParams$threshold, 
+                                       limit = requestParams$limit), '&',
+                             logicArg(keepNonSpecific= requestParams$keepNonSpecific),'&',
+                             stringArg(consolidate = requestParams$consolidate))
         } else if (request == 'geneExpression'){
             requestParams$genes %<>% paste(collapse=',')
             requestParams$consolidate %<>% match.arg(choices = c('NULL',
@@ -248,6 +287,9 @@ datasetInfo  = function(dataset,
                 return(x)
             }) 
             content = content[[1]]
+        } else if (request == 'diffEx'){
+            content = content[[1]]$geneExpressionLevels
+            names(content) = content %>% purrr::map_chr('geneOfficialSymbol')
         } else if(request %in% 'geneExpression'){
             names(content) =  content %>% purrr::map_chr('datasetId',.default = NA)
             content %<>% lapply(function(x){
