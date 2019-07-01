@@ -35,6 +35,25 @@ readDataFile = function(expFile,IdColnames = FALSE){
 #' @export
 readExpression = readDataFile
 
+
+#' Split expression data into gene metadata expression data
+#' @param expression Expression data outputted by readExpression/readDataFile
+#' @export
+splitExpression = function(expression){
+    geneColumns = c('Probe','Sequence','GeneSymbol','GeneName','GemmaId','NCBIid')
+    colClasses = expression %>% sapply(class)
+    geneColumns = unique(c(geneColumns, names(colClasses)[!colClasses %in% 'numeric']))
+    
+    
+    expressionColumns = colnames(expression)[!colnames(expression) %in% geneColumns]
+    
+    gene = expression[,colnames(expression) %in% geneColumns, drop = FALSE]
+    exp = expression[,colnames(expression) %in% expressionColumns, drop = FALSE]
+    
+    return(list(gene = gene,
+                exp = exp))
+}
+
 #'expressionSubset
 #'
 #' Uses gene expression endpoint to get expression of some genes
