@@ -19,7 +19,9 @@ readDataFile = function(expFile,IdColnames = FALSE){
     skip = lines %>% grepl('^#',x = .) %>% which %>% max
     close(con)
     con = gzfile(expFile,open = c('rb'))
-    expData = suppressMessages(readr::read_tsv(con, col_names= TRUE,skip = skip))
+    expData = suppressMessages(readr::read_tsv(con, col_names= TRUE,skip = skip,
+                                               guess_max = R.utils::countLines(expFile) 
+                                                ))
     close(con)
     
     if(IdColnames){
