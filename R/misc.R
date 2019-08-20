@@ -18,7 +18,11 @@ setGemmaUser = function(username = NULL, password = NULL){
 
 
 gemmaBase = function(x){
-    'https://gemma.msl.ubc.ca/rest/v2/'
+    if(is.null(options('gemmaBase')$gemmaBase)){
+        'https://gemma.msl.ubc.ca/rest/v2/'
+    } else{
+        options('gemmaBase')$gemmaBase
+    }
 }
 
 simplifyExpressionColnames = function(cn){
