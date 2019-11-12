@@ -42,7 +42,7 @@ readExpression = readDataFile
 splitExpression = function(expression){
     geneColumns = c('Probe','Sequence','GeneSymbol','GeneName','GemmaId','NCBIid')
     colClasses = expression %>% sapply(class)
-    geneColumns = unique(c(geneColumns, names(colClasses)[!colClasses %in% 'numeric']))
+    geneColumns = unique(c(geneColumns, names(colClasses)[!colClasses %in% c('numeric','integer')]))
     
     
     expressionColumns = colnames(expression)[!colnames(expression) %in% geneColumns]
