@@ -50,7 +50,7 @@ splitExpression = function(expression){
     gene = expression[,colnames(expression) %in% geneColumns, drop = FALSE]
     exp = expression[,colnames(expression) %in% expressionColumns, drop = FALSE]
     
-    for(i in seq_len(ncol(exp)){
+    for(i in seq_len(ncol(exp))){
         exp[,i] %<>% as.double
     }
     
