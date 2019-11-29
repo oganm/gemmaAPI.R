@@ -19,13 +19,13 @@ testthat::test_that('allPlatforms',{
 
 
 testthat::test_that('platformInfo',{
-    testthat::expect_is(platformInfo('GPL1355'),'list')
+    testthat::expect_is(platformInfo('GPL6246'),'list')
     # no longer is an error
     # testthat::expect_error(platformInfo('o zaman dans'),'404')
-    testthat::expect_null(platformInfo('GPL1355',return = FALSE))
-    testthat::expect_true(length(platformInfo('GPL1355'))>0)
+    testthat::expect_null(platformInfo('GPL6246',return = FALSE))
+    testthat::expect_true(length(platformInfo('GPL6246'))>0)
     
-    testthat::expect_is(platformInfo('GPL19485',request = 'annotations'),'data.frame')
+    testthat::expect_is(platformInfo('GPL6246',request = 'annotations'),'data.frame')
     
     testthat::expect_true(length(platformInfo('GPL1355',request = 'datasets'))>0)
     testthat::expect_length(platformInfo('GPL1355',request = 'datasets',limit = 10,offset = 14),10)

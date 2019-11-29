@@ -19,9 +19,11 @@ getAnnotation = function(platform,
     # other packages
     
     # in case the user uses platform ID instead of the shortname
-    platform = platformInfo(platform)[[1]]$shortName
+    pData = platformInfo(platform)[[1]]
+    platform = pData$shortName
     
     annotType = match.arg(annotType)
+    originalAnnotType = annotType
     if (annotType == 'allParents'){
         annotType = ''
     } else{
@@ -31,12 +33,28 @@ getAnnotation = function(platform,
     if(is.null(file)){
        file = tempfile() 
     }
-    
     if(file.exists(file) & ! overwrite){
         warning('Annotation file already exists. Not overwriting')
     } else{
-        download.file(paste0('https://gemma.msl.ubc.ca/annots/',platform,annotType,'.an.txt.gz'),
-                      paste0(file,'.gz'))
+        tryCatch({download.file(paste0('https://gemma.msl.ubc.ca/annots/',platform,annotType,'.an.txt.gz'),
+                      paste0(file,'.gz'));TRUE},
+                 error = function(e){
+                    FALSE
+                 }) -> downloaded
+        if(!downloaded){
+            message(glue::glue('https://gemma.msl.ubc.ca/annots/{platform}{annotType}.an.txt.gz is missing.\nAttemtping to re-generate. This may take a while. If you interupt it the file will probably be there the next time you try.'))
+            if('chromote' %in% installed.packages()[,1]){
+                session = chromote::ChromoteSession$new()
+                session$Page$navigate(glue::glue('https://gemma.msl.ubc.ca/arrays/downloadAnnotationFile.html?id={pData$id}&fileType={originalAnnotType}'))
+                session$close()
+                download.file(paste0('https://gemma.msl.ubc.ca/annots/',platform,annotType,'.an.txt.gz'),
+                              paste0(file,'.gz'))
+            } else{
+                stop(glue::glue('chromote package is needed for automated re-generation of the annotation file.\nPlease install from https://github.com/rstudio/chromote or manually force installation by visiting https://gemma.msl.ubc.ca/arrays/showArrayDesign.html?id={pData$id} and requesting the file'))
+            }
+            
+        }
+        
         R.utils::gunzip(paste0(file,'.gz'), overwrite=TRUE,remove = TRUE)
     }
      if(return){
