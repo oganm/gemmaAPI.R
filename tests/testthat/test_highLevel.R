@@ -67,7 +67,7 @@ testthat::test_that('Matching colnames in expression data and metadata',{
     testthat::expect_true(all(metadata$id %in% colnames(data)))
 })
 
-testthat::test_that('readExpression',{
+testthat::test_that('readExpression, splitExpression',{
     temp = tempfile()
     data = datasetInfo('GSE1294',request= 'data', IdColnames = TRUE,return = TRUE,file = temp)
     readData =  readExpression(temp)
@@ -75,6 +75,11 @@ testthat::test_that('readExpression',{
     
     readData2 =  readExpression(temp,IdColnames = TRUE)
     testthat::expect_identical(readData2, data)
+    
+    splitExp = splitExpression(readData)
+    
+    testthat::expect_is(splitExp$gene$GeneSymbol,'character')
+    testthat::expect_is(splitExp$exp[,1,drop=TRUE],'numeric')
     
     
 })
