@@ -37,6 +37,9 @@ simplifyExpressionColnames = function(cn){
 # if content can't be converted into text, assumes it is a gzipped platform
 # annotation file
 getContent = function(url,file = NULL, return = TRUE,overwrite = FALSE){
+    if(!is.null(options('gemmaDebug'))$gemmaDebug && options('gemmaDebug')$gemmaDebug){
+        print(url)
+    }
     if(return == FALSE & overwrite == FALSE & !is.null(file) && file.exists(file)){
         warning(file,' exists. Skipping')
         return(NULL)
