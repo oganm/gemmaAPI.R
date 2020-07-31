@@ -81,7 +81,7 @@ testthat::test_that('datasetInfo',{
     testthat::expect_is(differential,'list')
     testthat::expect_true(length(differential)>0)
     
-    difExp = datasetInfo('GSE12679',request = 'diffEx', diffExSet = resultSetId)
+    difExp = datasetInfo('GSE12679',request = 'diffExExpr', diffExSet = resultSetId)
     testthat::expect_is(difExp,'list')
     testthat::expect_true(length(difExp)>0)
     

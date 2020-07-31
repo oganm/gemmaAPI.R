@@ -97,8 +97,8 @@ allDatasets = function(datasets = NULL,
 #'                which is unique to samples in Gemma. Makes it easier to match to
 #'                samples acqured from the "samples" request.
 #'          }
-#'      \item \code{differential}: Retrieves the differential analysis results
-#'       for the given dataset. Parameters:
+#'      \item \code{differential}: Retrieves available differential expression
+#'      tests for the given dataset.
 #'          \itemize{
 #'              \item \code{offset}: Optional, defaults to 0. Skips the 
 #'              specified amount of objects when retrieving them from the
@@ -106,7 +106,12 @@ allDatasets = function(datasets = NULL,
 #'              \item \code{limit}: Optional, defaults to 20. Limits the result 
 #'              to specified amount of objects. Use 0 for no limit.
 #'          }
-#'      \item \code{diffEx}: Retrieves differential expression levels for the given datasets.
+#'      \item \code{degs}: Retrieves the differential expression results for the given dataset.
+#'          \itemize{
+#'              \item \code{differential}: Differential id of the differential expression. Can be acquired
+#'              from the \code{differential} endpoint.
+#'          }
+#'      \item \code{diffExExpr}: Retrieves expression values for differential expression subsets for the given datasets.
 #'      Parameters:
 #'          \itemize{
 #'              \item \code{diffExSet}: Result set id of the differential expression. Can be
@@ -212,13 +217,15 @@ datasetInfo  = function(dataset,
                                         'annotations',
                                         'design','data',
                                         'differential',
-                                        'diffEx',
+                                        'degs',
+                                        'diffExExpr',
                                         'geneExpression'))
         
         allowedArguments = list(data = c('filter','IdColnames'),
                                 differential = c('offset',
                                                  'limit'),
-                                diffEx = c('diffExSet',
+                                degs = c('differential'),
+                                diffExExpr = c('diffExSet',
                                             'keepNonSpecific',
                                             'threshold',
                                             'limit',
@@ -227,13 +234,14 @@ datasetInfo  = function(dataset,
                                                    'keepNonSpecific',
                                                    'consolidate'))
         mandatoryArguments = list(geneExpression = 'genes',
-                                  diffEx = 'diffExSet')
+                                  degs = c('differential'),
+                                  diffExExpr = 'diffExSet')
         
         checkArguments(request,requestParams,allowedArguments,mandatoryArguments)
         if(request == 'differential'){
             url = glue::glue('{url}/analyses/differential?',
                              '{queryLimit(requestParams$offset, requestParams$limit)}')
-        } else if(request == 'diffEx'){
+        } else if(request == 'diffExExpr'){
             url = glue::glue('{url}/expressions/differential?',
                              numberArg(diffExSet = requestParams$diffExSet, 
                                        threshold = requestParams$threshold, 
@@ -252,6 +260,45 @@ datasetInfo  = function(dataset,
             }
             url = glue::glue('{url}/expressions/genes/{stringArg(genes = requestParams$genes,addName = FALSE)}?',
                              stringArg(consolidate = requestParams$consolidate), '&', logicArg(keepNonSpecific = requestParams$keepNonSpecific))
+        }else if(request =='degs'){
+            
+            # this is a special little request that is handled asyncrounusly on gemma's side and not a real part of the API right now
+            # consider moving this to high level functions later
+            gemma = gemmaBase() %>% dirname() %>% dirname()
+            
+            # shortname mandatory it seems
+            dts = datasetInfo(dataset)
+            diffs = datasetInfo(dataset, request = 'differential')
+            bioAssaySetId = diffs[[requestParams$differential]]$bioAssaySetId
+            
+            shortName = dts[[1]]$shortName
+            
+
+            temp = tempfile(fileext = '.zip')
+            
+            if(is.null(file)){
+                file = tempfile()
+            }
+            url = glue::glue('{gemma}/getData.html?file={bioAssaySetId}_{shortName}_diffExpAnalysis_{requestParams$differential}.zip')
+
+            download.file(url, temp)
+            dir.create(file,showWarnings = FALSE)
+            files = utils::unzip(temp,exdir = file)
+            if(return){
+                output = files %>% purrr::map(function(x){
+                    skip = readLines(x) %>% grepl('^#',x = .) %>% which %>% max
+                    readr::read_tsv(x, col_names= TRUE,skip = skip)
+                    
+                })
+                names(output) = gsub('\\.txt','',basename(files))
+                return(output)
+                
+            }else{
+                return(NULL)
+            }
+            
+
+            
         } else{
             url = glue::glue('{url}/{request}')
         }
@@ -294,7 +341,7 @@ datasetInfo  = function(dataset,
                 
             })
   
-        } else if (request == 'diffEx'){
+        } else if (request == 'diffExExpr'){
             content = content[[1]]$geneExpressionLevels
             names(content) = content %>% purrr::map_chr('geneOfficialSymbol')
         } else if(request %in% 'geneExpression'){
