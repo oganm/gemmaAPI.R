@@ -280,13 +280,20 @@ datasetInfo  = function(dataset,
         } else if(request %in% 'annotations'){
             names(content) =  content %>% purrr::map_chr('termName',.null = NA)
         } else if (request %in% 'differential'){
-            # this will have to change after update
-            names(content[[1]]$resultSets) = content[[1]]$resultSets %>% purrr::map_chr('resultSetId',.default = NA)
-            content[[1]]$resultSets %<>% lapply(function(x){
-                names(x$experimentalFactors) = x$experimentalFactors %>% purrr::map_chr('category',.default = NA)
+            
+            names(content) = content %>% purrr::map_chr('id')
+            content %<>% lapply(function(x){
+                names(x$resultSets) = x$resultSets %>% purrr::map_chr('resultSetId',.default = NA)
+                
+                x$resultSets %<>% lapply(function(y){
+                    names(y$experimentalFactors) = y$experimentalFactors %>% purrr::map_chr('category',.default = NA)
+                    return(y) 
+                })
+                
                 return(x)
-            }) 
-            content = content[[1]]
+                
+            })
+  
         } else if (request == 'diffEx'){
             content = content[[1]]$geneExpressionLevels
             names(content) = content %>% purrr::map_chr('geneOfficialSymbol')

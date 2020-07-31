@@ -76,7 +76,7 @@ testthat::test_that('datasetInfo',{
     
     
     differential = datasetInfo('GSE12679',request = 'differential')
-    resultSetId = differential$resultSets$`456407`$resultSetId
+    resultSetId = differential$`47888`$resultSets$`456407`$resultSetId
     
     testthat::expect_is(differential,'list')
     testthat::expect_true(length(differential)>0)
