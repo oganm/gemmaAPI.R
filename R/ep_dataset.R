@@ -280,8 +280,27 @@ datasetInfo  = function(dataset,
                 file = tempfile()
             }
             url = glue::glue('{gemma}/getData.html?file={bioAssaySetId}_{shortName}_diffExpAnalysis_{requestParams$differential}.zip')
-
-            download.file(url, temp)
+            print(url)
+            
+            
+            tryCatch(download.file(url, temp),
+                     error = function(e){
+                       b <- chromote::ChromoteSession$new()
+                       b$view()
+                       b$Page$navigate(glue::glue('https://gemma.msl.ubc.ca/expressionExperiment/showExpressionExperiment.html?id={dts[[1]]$id}'))
+                       Sys.sleep(1)
+                       b$Runtime$enable()
+                       Sys.sleep(1)
+                       script = b$Runtime$compileScript(expression = glue::glue('fetchDiffExpressionData({requestParams$differential})'),
+                                               sourceURL = 'meh',persistScript = TRUE)
+                       Sys.sleep(1)
+                       b$Runtime$runScript(scriptId = script$scriptId)
+                       Sys.sleep(30)
+                       b$close()
+                       download.file(url, temp)
+                     })
+            
+            
             dir.create(file,showWarnings = FALSE)
             files = utils::unzip(temp,exdir = file)
             if(return){
