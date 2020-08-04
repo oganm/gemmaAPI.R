@@ -4,8 +4,13 @@
 \alias{expressionSubset}
 \title{expressionSubset}
 \usage{
-expressionSubset(dataset, genes, keepNonSpecific = FALSE,
-  consolidate = NULL, memoised = FALSE)
+expressionSubset(
+  dataset,
+  genes,
+  keepNonSpecific = FALSE,
+  consolidate = NULL,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{dataset}{Can either be the dataset ID or its short name

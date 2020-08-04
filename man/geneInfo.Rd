@@ -4,8 +4,15 @@
 \alias{geneInfo}
 \title{geneInfo}
 \usage{
-geneInfo(gene, request = NULL, ..., file = NULL, return = TRUE,
-  overwrite = FALSE, memoised = FALSE)
+geneInfo(
+  gene,
+  request = NULL,
+  ...,
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{gene}{Can either be the NCBI ID (1859), Ensembl ID (ENSG00000157540) or 

@@ -4,8 +4,15 @@
 \alias{taxonInfo}
 \title{taxonInfo}
 \usage{
-taxonInfo(taxon, request = NULL, ..., file = NULL, return = TRUE,
-  overwrite = FALSE, memoised = FALSE)
+taxonInfo(
+  taxon,
+  request = NULL,
+  ...,
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{taxon}{can either be Taxon ID, Taxon NCBI ID, or one of its string

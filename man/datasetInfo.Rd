@@ -4,8 +4,15 @@
 \alias{datasetInfo}
 \title{datasetInfo}
 \usage{
-datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
-  overwrite = FALSE, memoised = FALSE)
+datasetInfo(
+  dataset,
+  request = NULL,
+  ...,
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{dataset}{Character. Can either be the dataset ID or its short name 
@@ -29,8 +36,8 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
                which is unique to samples in Gemma. Makes it easier to match to
                samples acqured from the "samples" request.
          }
-     \item \code{differential}: Retrieves the differential analysis results
-      for the given dataset. Parameters:
+     \item \code{differential}: Retrieves available differential expression
+     tests for the given dataset.
          \itemize{
              \item \code{offset}: Optional, defaults to 0. Skips the 
              specified amount of objects when retrieving them from the
@@ -38,7 +45,12 @@ datasetInfo(dataset, request = NULL, ..., file = NULL, return = TRUE,
              \item \code{limit}: Optional, defaults to 20. Limits the result 
              to specified amount of objects. Use 0 for no limit.
          }
-     \item \code{diffEx}: Retrieves differential expression levels for the given datasets.
+     \item \code{degs}: Retrieves the differential expression results for the given dataset.
+         \itemize{
+             \item \code{differential}: Differential id of the differential expression. Can be acquired
+             from the \code{differential} endpoint.
+         }
+     \item \code{diffExExpr}: Retrieves expression values for differential expression subsets for the given datasets.
      Parameters:
          \itemize{
              \item \code{diffExSet}: Result set id of the differential expression. Can be

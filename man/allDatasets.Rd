@@ -4,9 +4,17 @@
 \alias{allDatasets}
 \title{All datasets}
 \usage{
-allDatasets(datasets = NULL, filter = NULL, offset = 0, limit = 20,
-  sort = "+id", file = NULL, return = TRUE, overwrite = FALSE,
-  memoised = FALSE)
+allDatasets(
+  datasets = NULL,
+  filter = NULL,
+  offset = 0,
+  limit = 20,
+  sort = "+id",
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{datasets}{Character vector of identifiers. 

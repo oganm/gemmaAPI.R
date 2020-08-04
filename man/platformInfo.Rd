@@ -4,8 +4,15 @@
 \alias{platformInfo}
 \title{platformInfo}
 \usage{
-platformInfo(platform, request = NULL, ..., file = NULL,
-  return = TRUE, overwrite = FALSE, memoised = FALSE)
+platformInfo(
+  platform,
+  request = NULL,
+  ...,
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{platform}{Can either be the platform ID or its short name (e.g: GPL1355). 

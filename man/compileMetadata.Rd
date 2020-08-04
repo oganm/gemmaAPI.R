@@ -4,8 +4,12 @@
 \alias{compileMetadata}
 \title{compileMetadata}
 \usage{
-compileMetadata(dataset, collapseBioMaterials = TRUE,
-  outputType = c("data.frame", "list"), memoised = TRUE)
+compileMetadata(
+  dataset,
+  collapseBioMaterials = TRUE,
+  outputType = c("data.frame", "list"),
+  memoised = TRUE
+)
 }
 \arguments{
 \item{dataset}{Character. Can either be the dataset ID or its short name 

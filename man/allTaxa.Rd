@@ -4,8 +4,13 @@
 \alias{allTaxa}
 \title{All taxa}
 \usage{
-allTaxa(taxa = NULL, file = NULL, return = TRUE, overwrite = FALSE,
-  memoised = FALSE)
+allTaxa(
+  taxa = NULL,
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{taxa}{Limits the result to entities with given identifiers.

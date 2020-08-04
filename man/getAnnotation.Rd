@@ -4,8 +4,13 @@
 \alias{getAnnotation}
 \title{Get Gemma annotations}
 \usage{
-getAnnotation(platform, annotType = c("bioProcess", "noParents",
-  "allParents"), file = NULL, return = TRUE, overwrite = FALSE)
+getAnnotation(
+  platform,
+  annotType = c("bioProcess", "noParents", "allParents"),
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE
+)
 }
 \arguments{
 \item{platform}{Can either be the platform ID or its short name (e.g: GPL1355). 

@@ -4,8 +4,14 @@
 \alias{annotationInfo}
 \title{annotationInfo}
 \usage{
-annotationInfo(annotation, request = NULL, file = NULL,
-  return = TRUE, overwrite = FALSE, memoised = FALSE)
+annotationInfo(
+  annotation,
+  request = NULL,
+  file = NULL,
+  return = TRUE,
+  overwrite = FALSE,
+  memoised = FALSE
+)
 }
 \arguments{
 \item{annotation}{Character. Either plain text, ontology term ID or an ontology term URI.}
