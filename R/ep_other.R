@@ -12,9 +12,11 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105')
 #' annotationInfo('transplantation')
 #' annotationInfo('http://purl.obolibrary.org/obo/OBI_0000105', request = 'datasets')
+#' }
 annotationInfo = function(annotation,
                           request = NULL,
                           file = NULL,

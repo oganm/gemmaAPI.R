@@ -18,8 +18,10 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' allPlatforms()
 #' allPlatforms(c('GPL1355','GPL570'))
+#' }
 #' # return all platforms it is slower and prone to connection interruptions
 #' # alternative is to loop using offset and limit
 #' \dontrun{
@@ -110,8 +112,10 @@ allPlatforms = function(platforms = NULL,
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' platformInfo('GPL1355')
 #' platformInfo('GPL1355',request = 'datasets',limit = 10)
+#' }
 platformInfo = function(platform,
                         request = NULL,
                         ...,

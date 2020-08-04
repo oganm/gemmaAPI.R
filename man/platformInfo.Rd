@@ -71,6 +71,8 @@ A data.frame or a list depending on the request
 Retrieves information about a single platform. Combines several API calls.
 }
 \examples{
+\donttest{
 platformInfo('GPL1355')
 platformInfo('GPL1355',request = 'datasets',limit = 10)
+}
 }

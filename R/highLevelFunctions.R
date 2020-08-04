@@ -161,8 +161,10 @@ expressionSubset = function(dataset,genes, keepNonSpecific = FALSE, consolidate 
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' compileMetadata('GSE11322')
 #' compileMetadata(1017)
+#' }
 compileMetadata = function(dataset,collapseBioMaterials = TRUE,outputType = c('data.frame','list'),
                            memoised = TRUE){
     outputType = match.arg(outputType)

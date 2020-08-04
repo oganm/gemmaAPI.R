@@ -134,7 +134,9 @@ Retrieves information about a single dataset based on the given dataset
 identifier. Combines several API calls
 }
 \examples{
+\donttest{
 datasetInfo('GSE81454')
 datasetInfo('GSE81454', request = 'platforms')
 datasetInfo('GSE81454', request='data',filter = FALSE)
+}
 }

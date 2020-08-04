@@ -155,6 +155,7 @@ allTaxa = function(taxa = NULL,
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' taxonInfo('human')
 #' taxonInfo('human', request = 'datasets')
 #' taxonInfo('human',request = 'phenotypes')
@@ -163,6 +164,7 @@ allTaxa = function(taxa = NULL,
 #'                    'http://purl.obolibrary.org/obo/DOID_3119'))
 #' taxonInfo('human', request= 'gene',gene='DYRK1A')
 #' taxonInfo('human', request= 'geneLocation',gene='DYRK1A')
+#' }
 taxonInfo = function(taxon,
                      request = NULL,
                      ...,

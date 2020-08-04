@@ -73,6 +73,7 @@ A list
 geneInfo
 }
 \examples{
+\donttest{
 geneInfo(1859)
 geneInfo('1859') # single match it is a unique NCBI id
 geneInfo('DYRK1A') # this returns all genes named DYRK1A from all species
@@ -81,5 +82,6 @@ geneInfo('1859','goTerms')
 geneInfo('1859','locations')
 geneInfo('1859','probes')
 geneInfo('1859','evidence')
+}
 
 }

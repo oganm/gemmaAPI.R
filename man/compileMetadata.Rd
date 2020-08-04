@@ -36,6 +36,8 @@ If something changes in gemma as you work and you want to update, restart
 your session or use \code{\link{forgetGemmaMemoised}}
 }
 \examples{
+\donttest{
 compileMetadata('GSE11322')
 compileMetadata(1017)
+}
 }

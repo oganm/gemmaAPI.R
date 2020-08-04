@@ -179,9 +179,11 @@ allDatasets = function(datasets = NULL,
 #' @export
 #'
 #' @examples
+#' \donttest{
 #' datasetInfo('GSE81454')
 #' datasetInfo('GSE81454', request = 'platforms')
 #' datasetInfo('GSE81454', request='data',filter = FALSE)
+#' }
 datasetInfo  = function(dataset, 
                         request = NULL,
                         ...,
