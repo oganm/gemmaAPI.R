@@ -1,4 +1,5 @@
 context('high level functions')
+httr::set_config(httr::config(ssl_verifypeer = 0L)) 
 
 testthat::test_that('get gene expression',{
     out = expressionSubset(3888,genes = c('1859','6506'))

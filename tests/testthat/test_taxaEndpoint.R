@@ -1,4 +1,5 @@
 context('taxa endpoint')
+httr::set_config(httr::config(ssl_verifypeer = 0L)) 
 
 testthat::test_that('allDatasets',{
     defaultCall = allTaxa() 
