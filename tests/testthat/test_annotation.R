@@ -3,6 +3,7 @@ httr::set_config(httr::config(ssl_verifypeer = 0L))
 
 
 testthat::test_that('annotations',{
+    testthat::skip_on_travis()
     gpl96 = getAnnotation(1)
     
     testthat::expect_equal(names(gpl96),
