@@ -269,7 +269,7 @@ datasetInfo  = function(dataset,
             # shortname mandatory it seems
             dts = datasetInfo(dataset)
             diffs = datasetInfo(dataset, request = 'differential')
-            bioAssaySetId = diffs[[requestParams$differential]]$bioAssaySetId
+            bioAssaySetId = diffs[[as.character(requestParams$differential)]]$bioAssaySetId
             
             shortName = dts[[1]]$shortName
             
@@ -280,8 +280,6 @@ datasetInfo  = function(dataset,
                 file = tempfile()
             }
             url = glue::glue('{gemma}/getData.html?file={bioAssaySetId}_{shortName}_diffExpAnalysis_{requestParams$differential}.zip')
-            print(url)
-            
             
             tryCatch(download.file(url, temp),
                      error = function(e){
@@ -294,12 +292,31 @@ datasetInfo  = function(dataset,
                                                sourceURL = 'meh',persistScript = TRUE)
                        Sys.sleep(1)
                        b$Runtime$runScript(scriptId = script$scriptId)
-                       Sys.sleep(30)
                        b$close()
-                       download.file(url, temp)
+                       Sys.sleep(10)
+                       pastSize = 0
+                       for(i in 1:10){
+                         tryCatch(
+                           download.file(url, temp),
+                           error = function(e){
+                             Sys.sleep(5)
+                           }
+                         )
+
+                         if(file.exists(temp)){
+                           fileData = file.info(temp)
+                           if(fileData$size==pastSize){
+                             break
+                           } else{
+                             Sys.sleep(5)
+                             pastSize = fileData$size
+                           }
+                         }
+                       }
+                       
                      })
             
-            
+
             dir.create(file,showWarnings = FALSE)
             files = utils::unzip(temp,exdir = file)
             if(return){
