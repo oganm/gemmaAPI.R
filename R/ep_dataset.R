@@ -286,7 +286,6 @@ datasetInfo  = function(dataset,
             tryCatch(download.file(url, temp),
                      error = function(e){
                        b <- chromote::ChromoteSession$new()
-                       b$view()
                        b$Page$navigate(glue::glue('https://gemma.msl.ubc.ca/expressionExperiment/showExpressionExperiment.html?id={dts[[1]]$id}'))
                        Sys.sleep(1)
                        b$Runtime$enable()
