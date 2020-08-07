@@ -1,35 +1,34 @@
 
-Gemma API <img src="gemmaAPI.png" align="right" height="100px"/>
-================================================================
+# Gemma API <img src="gemmaAPI.png" align="right" height="100px"/>
 
-[![Build Status](https://travis-ci.org/PavlidisLab/gemmaAPI.R.svg?branch=master)](https://travis-ci.org/PavlidisLab/gemmaAPI.R)[![codecov](https://codecov.io/gh/PavlidisLab/gemmaAPI.R/branch/master/graph/badge.svg)](https://codecov.io/gh/PavlidisLab/gemmaAPI.R)
+# Table of Contents
 
-Table of Contents
-=================
+  - [Installation](#installation)
+  - [Documentation](#documentation)
+  - [Examples](#examples)
+  - [Changelog](#changelog)
 
--   [Installation](#installation)
--   [Documentation](#documentation)
--   [Examples](#examples)
--   [Changelog](#changelog)
+This is an R wrapper for
+[Gemma](http://www.chibi.ubc.ca/Gemma/home.html)’s restful
+[API](http://www.chibi.ubc.ca/Gemma/resources/restapidocs/).
 
-This is an R wrapper for [Gemma](http://www.chibi.ubc.ca/Gemma/home.html)'s restful [API](http://www.chibi.ubc.ca/Gemma/resources/restapidocs/).
+To cite Gemma, please use: [Zoubarev, A., et al., Gemma: A resource for
+the re-use, sharing and meta-analysis of expression profiling data.
+Bioinformatics, 2012.](http://dx.doi.org/doi:10.1093/bioinformatics/bts430)
 
-To cite Gemma, please use: [Zoubarev, A., et al., Gemma: A resource for the re-use, sharing and meta-analysis of expression profiling data. Bioinformatics, 2012.](http://dx.doi.org/doi:10.1093/bioinformatics/bts430)
-
-Installation
-============
+# Installation
 
     devtools::install_github('PavlidisLab/gemmaAPI.R')
 
-Documentation
-=============
+# Documentation
 
-For basic api calls see `?endpointFunctions`. These functions return mostly unaltered data from a given API endpoint.
+For basic api calls see `?endpointFunctions`. These functions return
+mostly unaltered data from a given API endpoint.
 
-For high level functions see `?highLevelFunctions`. These functions return data compiled from multiple api calls.
+For high level functions see `?highLevelFunctions`. These functions
+return data compiled from multiple api calls.
 
-Examples
-========
+# Examples
 
 Download data for a dataset
 
@@ -45,172 +44,14 @@ data =
 head(data) %>% knitr::kable(format ='markdown')
 ```
 
-<table style="width:100%;">
-<colgroup>
-<col width="0%" />
-<col width="1%" />
-<col width="1%" />
-<col width="7%" />
-<col width="1%" />
-<col width="1%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Probe</th>
-<th align="left">Sequence</th>
-<th align="left">GeneSymbol</th>
-<th align="left">GeneName</th>
-<th align="left">GemmaId</th>
-<th align="left">NCBIid</th>
-<th align="right">GSE107999_Biomat_9___BioAssayId=427205Name=LUHMEScells,untreated,proliferatingprecursorstaterep4</th>
-<th align="right">GSE107999_Biomat_8___BioAssayId=427206Name=LUHMEScells,untreated,proliferatingprecursorstaterep3</th>
-<th align="right">GSE107999_Biomat_12___BioAssayId=427207Name=LUHMEScells,untreated,proliferatingprecursorstaterep2</th>
-<th align="right">GSE107999_Biomat_10___BioAssayId=427208Name=LUHMEScells,untreated,proliferatingprecursorstaterep1</th>
-<th align="right">GSE107999_Biomat_5___BioAssayId=427201Name=LUHMEScells,untreated,day3ofdifferentiationrep4</th>
-<th align="right">GSE107999_Biomat_4___BioAssayId=427202Name=LUHMEScells,untreated,day3ofdifferentiationrep3</th>
-<th align="right">GSE107999_Biomat_7___BioAssayId=427203Name=LUHMEScells,untreated,day3ofdifferentiationrep2</th>
-<th align="right">GSE107999_Biomat_6___BioAssayId=427204Name=LUHMEScells,untreated,day3ofdifferentiationrep1</th>
-<th align="right">GSE107999_Biomat_11___BioAssayId=427197Name=LUHMEScells,untreated,day6ofdifferentiationrep4</th>
-<th align="right">GSE107999_Biomat_2___BioAssayId=427198Name=LUHMEScells,untreated,day6ofdifferentiationrep3</th>
-<th align="right">GSE107999_Biomat_1___BioAssayId=427199Name=LUHMEScells,untreated,day6ofdifferentiationrep2</th>
-<th align="right">GSE107999_Biomat_3___BioAssayId=427200Name=LUHMEScells,untreated,day6ofdifferentiationrep1</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">1007_s_at</td>
-<td align="left">1007_s_at_collapsed</td>
-<td align="left">DDR1</td>
-<td align="left">discoidin domain receptor tyrosine kinase 1</td>
-<td align="left">16908</td>
-<td align="left">780</td>
-<td align="right">8.360044</td>
-<td align="right">8.347570</td>
-<td align="right">8.384220</td>
-<td align="right">8.631552</td>
-<td align="right">9.426037</td>
-<td align="right">9.332862</td>
-<td align="right">9.556137</td>
-<td align="right">9.571225</td>
-<td align="right">9.830016</td>
-<td align="right">9.534368</td>
-<td align="right">9.644813</td>
-<td align="right">9.638160</td>
-</tr>
-<tr class="even">
-<td align="left">1053_at</td>
-<td align="left">1053_at_collapsed</td>
-<td align="left">RFC2</td>
-<td align="left">replication factor C subunit 2</td>
-<td align="left">139878</td>
-<td align="left">5982</td>
-<td align="right">8.321700</td>
-<td align="right">8.441607</td>
-<td align="right">8.538243</td>
-<td align="right">8.223463</td>
-<td align="right">6.900833</td>
-<td align="right">7.811239</td>
-<td align="right">7.362803</td>
-<td align="right">7.487110</td>
-<td align="right">6.727149</td>
-<td align="right">6.781015</td>
-<td align="right">6.871821</td>
-<td align="right">6.822983</td>
-</tr>
-<tr class="odd">
-<td align="left">117_at</td>
-<td align="left">117_at_collapsed</td>
-<td align="left">HSPA7|HSPA6</td>
-<td align="left">heat shock protein family A (Hsp70) member 7|heat shock protein family A (Hsp70) member 6</td>
-<td align="left">73442|73420</td>
-<td align="left">3311|3310</td>
-<td align="right">5.640347</td>
-<td align="right">4.309247</td>
-<td align="right">4.561608</td>
-<td align="right">4.412733</td>
-<td align="right">4.274228</td>
-<td align="right">4.109736</td>
-<td align="right">4.466428</td>
-<td align="right">4.262011</td>
-<td align="right">4.013711</td>
-<td align="right">4.285905</td>
-<td align="right">4.445415</td>
-<td align="right">3.929470</td>
-</tr>
-<tr class="even">
-<td align="left">121_at</td>
-<td align="left">121_at_collapsed</td>
-<td align="left">PAX8</td>
-<td align="left">paired box 8</td>
-<td align="left">173107</td>
-<td align="left">7849</td>
-<td align="right">6.915072</td>
-<td align="right">7.001704</td>
-<td align="right">6.886536</td>
-<td align="right">6.995852</td>
-<td align="right">6.789746</td>
-<td align="right">6.988139</td>
-<td align="right">6.950670</td>
-<td align="right">6.897583</td>
-<td align="right">6.632473</td>
-<td align="right">6.872863</td>
-<td align="right">6.892053</td>
-<td align="right">6.845294</td>
-</tr>
-<tr class="odd">
-<td align="left">1255_g_at</td>
-<td align="left">1255_g_at_collapsed</td>
-<td align="left">GUCA1A</td>
-<td align="left">guanylate cyclase activator 1A</td>
-<td align="left">58787</td>
-<td align="left">2978</td>
-<td align="right">2.328086</td>
-<td align="right">2.683368</td>
-<td align="right">2.292127</td>
-<td align="right">2.395157</td>
-<td align="right">2.267915</td>
-<td align="right">2.371985</td>
-<td align="right">2.148122</td>
-<td align="right">2.219700</td>
-<td align="right">2.078340</td>
-<td align="right">2.243999</td>
-<td align="right">2.376379</td>
-<td align="right">2.238994</td>
-</tr>
-<tr class="even">
-<td align="left">1294_at</td>
-<td align="left">1294_at_collapsed</td>
-<td align="left">UBA7</td>
-<td align="left">ubiquitin like modifier activating enzyme 7</td>
-<td align="left">165857</td>
-<td align="left">7318</td>
-<td align="right">4.436209</td>
-<td align="right">4.315595</td>
-<td align="right">4.434729</td>
-<td align="right">4.505724</td>
-<td align="right">4.182772</td>
-<td align="right">4.334539</td>
-<td align="right">4.278525</td>
-<td align="right">4.204030</td>
-<td align="right">4.105466</td>
-<td align="right">4.410392</td>
-<td align="right">4.382536</td>
-<td align="right">4.151413</td>
-</tr>
-</tbody>
-</table>
+| Probe       | Sequence               | GeneSymbol  | GeneName                                                                                  | GemmaId     | NCBIid    | GSE107999\_Biomat\_9\_\_\_BioAssayId=427205Name=LUHMEScells,untreated,proliferatingprecursorstaterep4 | GSE107999\_Biomat\_8\_\_\_BioAssayId=427206Name=LUHMEScells,untreated,proliferatingprecursorstaterep3 | GSE107999\_Biomat\_12\_\_\_BioAssayId=427207Name=LUHMEScells,untreated,proliferatingprecursorstaterep2 | GSE107999\_Biomat\_10\_\_\_BioAssayId=427208Name=LUHMEScells,untreated,proliferatingprecursorstaterep1 | GSE107999\_Biomat\_5\_\_\_BioAssayId=427201Name=LUHMEScells,untreated,day3ofdifferentiationrep4 | GSE107999\_Biomat\_4\_\_\_BioAssayId=427202Name=LUHMEScells,untreated,day3ofdifferentiationrep3 | GSE107999\_Biomat\_7\_\_\_BioAssayId=427203Name=LUHMEScells,untreated,day3ofdifferentiationrep2 | GSE107999\_Biomat\_6\_\_\_BioAssayId=427204Name=LUHMEScells,untreated,day3ofdifferentiationrep1 | GSE107999\_Biomat\_11\_\_\_BioAssayId=427197Name=LUHMEScells,untreated,day6ofdifferentiationrep4 | GSE107999\_Biomat\_2\_\_\_BioAssayId=427198Name=LUHMEScells,untreated,day6ofdifferentiationrep3 | GSE107999\_Biomat\_1\_\_\_BioAssayId=427199Name=LUHMEScells,untreated,day6ofdifferentiationrep2 | GSE107999\_Biomat\_3\_\_\_BioAssayId=427200Name=LUHMEScells,untreated,day6ofdifferentiationrep1 |
+| :---------- | :--------------------- | :---------- | :---------------------------------------------------------------------------------------- | :---------- | :-------- | ----------------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------------: | -----------------------------------------------------------------------------------------------------: | -----------------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------: | -----------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------: |
+| 1007\_s\_at | 1007\_s\_at\_collapsed | DDR1        | discoidin domain receptor tyrosine kinase 1                                               | 16908       | 780       |                                                                                              8.360044 |                                                                                              8.347570 |                                                                                               8.384220 |                                                                                               8.631552 |                                                                                        9.426037 |                                                                                        9.332862 |                                                                                        9.556137 |                                                                                        9.571225 |                                                                                         9.830016 |                                                                                        9.534368 |                                                                                        9.644813 |                                                                                        9.638160 |
+| 1053\_at    | 1053\_at\_collapsed    | RFC2        | replication factor C subunit 2                                                            | 139878      | 5982      |                                                                                              8.321700 |                                                                                              8.441607 |                                                                                               8.538243 |                                                                                               8.223463 |                                                                                        6.900833 |                                                                                        7.811239 |                                                                                        7.362803 |                                                                                        7.487110 |                                                                                         6.727149 |                                                                                        6.781015 |                                                                                        6.871821 |                                                                                        6.822983 |
+| 117\_at     | 117\_at\_collapsed     | HSPA6|HSPA7 | heat shock protein family A (Hsp70) member 6|heat shock protein family A (Hsp70) member 7 | 73420|73442 | 3310|3311 |                                                                                              5.640347 |                                                                                              4.309247 |                                                                                               4.561608 |                                                                                               4.412733 |                                                                                        4.274228 |                                                                                        4.109736 |                                                                                        4.466428 |                                                                                        4.262011 |                                                                                         4.013711 |                                                                                        4.285905 |                                                                                        4.445415 |                                                                                        3.929470 |
+| 121\_at     | 121\_at\_collapsed     | PAX8        | paired box 8                                                                              | 173107      | 7849      |                                                                                              6.915072 |                                                                                              7.001704 |                                                                                               6.886536 |                                                                                               6.995852 |                                                                                        6.789746 |                                                                                        6.988139 |                                                                                        6.950670 |                                                                                        6.897583 |                                                                                         6.632473 |                                                                                        6.872863 |                                                                                        6.892053 |                                                                                        6.845294 |
+| 1255\_g\_at | 1255\_g\_at\_collapsed | GUCA1A      | guanylate cyclase activator 1A                                                            | 58787       | 2978      |                                                                                              2.328086 |                                                                                              2.683368 |                                                                                               2.292127 |                                                                                               2.395157 |                                                                                        2.267915 |                                                                                        2.371985 |                                                                                        2.148122 |                                                                                        2.219700 |                                                                                         2.078340 |                                                                                        2.243999 |                                                                                        2.376379 |                                                                                        2.238994 |
+| 1294\_at    | 1294\_at\_collapsed    | UBA7        | ubiquitin like modifier activating enzyme 7                                               | 165857      | 7318      |                                                                                              4.436209 |                                                                                              4.315595 |                                                                                               4.434729 |                                                                                               4.505724 |                                                                                        4.182772 |                                                                                        4.334539 |                                                                                        4.278525 |                                                                                        4.204030 |                                                                                         4.105466 |                                                                                        4.410392 |                                                                                        4.382536 |                                                                                        4.151413 |
 
 Get metadata for first 10 mouse studies.
 
@@ -222,171 +63,34 @@ mouseMetadata = studyIDs[1:10] %>% lapply(compileMetadata,outputType = 'list')
 mouseMetadata[[1]]$sampleData %>% head %>% knitr::kable(format ='markdown')
 ```
 
-<table>
-<colgroup>
-<col width="6%" />
-<col width="0%" />
-<col width="6%" />
-<col width="1%" />
-<col width="2%" />
-<col width="2%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="4%" />
-<col width="5%" />
-<col width="15%" />
-<col width="3%" />
-<col width="2%" />
-<col width="12%" />
-<col width="19%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">id</th>
-<th align="left">sampleName</th>
-<th align="left">accession</th>
-<th align="right">sampleBiomaterialID</th>
-<th align="left">sampleAnnotCategory</th>
-<th align="left">sampleAnnotCategoryOntoID</th>
-<th align="left">sampleAnnotCategoryURI</th>
-<th align="left">sampleAnnotBroadCategory</th>
-<th align="left">sampleAnnotBroadCategoryOntoID</th>
-<th align="left">sampleAnnotBroadCategoryURI</th>
-<th align="left">sampleAnnotation</th>
-<th align="left">sampleAnnotationOntoID</th>
-<th align="left">sampleAnnotType</th>
-<th align="left">sampleAnnotationURI</th>
-<th align="left">otherCharacteristics</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Brain_C57 Wildtype_affs275-1099</td>
-<td align="left">48</td>
-<td align="left">Brain_C57 Wildtype_affs275-1099</td>
-<td align="left">GSM101416</td>
-<td align="right">48</td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">wild type genotype</td>
-<td align="left">EFO_0005168</td>
-<td align="left">factor</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005168" class="uri">http://www.ebi.ac.uk/efo/EFO_0005168</a></td>
-<td align="left">total RNA|Biotin|C57 Wildtype Mouse #1099 Brain|Strain: C57BL/6 Gender: female Age: 123 days Tissue: brain</td>
-</tr>
-<tr class="even">
-<td align="left">Brain_C57 Wildtype_affs275-1100</td>
-<td align="left">47</td>
-<td align="left">Brain_C57 Wildtype_affs275-1100</td>
-<td align="left">GSM101417</td>
-<td align="right">47</td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">wild type genotype</td>
-<td align="left">EFO_0005168</td>
-<td align="left">factor</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0005168" class="uri">http://www.ebi.ac.uk/efo/EFO_0005168</a></td>
-<td align="left">total RNA|C57 Wildtype Mouse #1100 Brain|Biotin|Strain: C57BL/6 Gender: female Age: 123 days Tissue: brain</td>
-</tr>
-<tr class="odd">
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1096</td>
-<td align="left">52</td>
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1096</td>
-<td align="left">GSM101412</td>
-<td align="right">52</td>
-<td align="left">genotype;genotype</td>
-<td align="left">EFO_0000513;EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">TGEMO_00001;GENE_30060</td>
-<td align="left">factor</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
-<td align="left">total RNA|brain|Melanotransferrin Knockout Mouse #1096 Brain|female|Biotin|Strain: C57BL/6 - Lucy|Age: 123 days</td>
-</tr>
-<tr class="even">
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1097</td>
-<td align="left">51</td>
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1097</td>
-<td align="left">GSM101413</td>
-<td align="right">51</td>
-<td align="left">genotype;genotype</td>
-<td align="left">EFO_0000513;EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">TGEMO_00001;GENE_30060</td>
-<td align="left">factor</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
-<td align="left">total RNA|Melanotransferrin Knockout Mouse #1097 Brain|Biotin|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain</td>
-</tr>
-<tr class="odd">
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1098</td>
-<td align="left">50</td>
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1098</td>
-<td align="left">GSM101414</td>
-<td align="right">50</td>
-<td align="left">genotype;genotype</td>
-<td align="left">EFO_0000513;EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">TGEMO_00001;GENE_30060</td>
-<td align="left">factor</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
-<td align="left">total RNA|Biotin|Melanotransferrin Knockout Mouse #1098 Brain|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain</td>
-</tr>
-<tr class="even">
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1101</td>
-<td align="left">49</td>
-<td align="left">Brain_Melanotransferrin Knockout_affs275-1101</td>
-<td align="left">GSM101415</td>
-<td align="right">49</td>
-<td align="left">genotype;genotype</td>
-<td align="left">EFO_0000513;EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">genotype</td>
-<td align="left">EFO_0000513</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/EFO_0000513" class="uri">http://www.ebi.ac.uk/efo/EFO_0000513</a></td>
-<td align="left">Homozygous negative;Mfi2 [mouse] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5</td>
-<td align="left">TGEMO_00001;GENE_30060</td>
-<td align="left">factor</td>
-<td align="left"><a href="http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060" class="uri">http://purl.obolibrary.org/obo/TGEMO_00001;http://purl.org/commons/record/ncbi_gene/30060</a></td>
-<td align="left">Melanotransferrin Knockout Mouse #1101 Brain|total RNA|Biotin|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain</td>
-</tr>
-</tbody>
-</table>
+|                                                 | id | sampleName                                      | accession | sampleBiomaterialID | sampleAnnotCategory | sampleAnnotCategoryOntoID | sampleAnnotCategoryURI                                                      | sampleAnnotBroadCategory | sampleAnnotBroadCategoryOntoID | sampleAnnotBroadCategoryURI            | sampleAnnotation                                                                                                        | sampleAnnotationOntoID   | sampleAnnotType | sampleAnnotationURI                                                                         | otherCharacteristics                                                                                                             |
+| :---------------------------------------------- | :- | :---------------------------------------------- | :-------- | ------------------: | :------------------ | :------------------------ | :-------------------------------------------------------------------------- | :----------------------- | :----------------------------- | :------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- | :----------------------- | :-------------- | :------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
+| Brain\_C57 Wildtype\_affs275-1099               | 48 | Brain\_C57 Wildtype\_affs275-1099               | GSM101416 |                  48 | genotype            | EFO\_0000513              | <http://www.ebi.ac.uk/efo/EFO_0000513>                                      | genotype                 | EFO\_0000513                   | <http://www.ebi.ac.uk/efo/EFO_0000513> | wild type genotype                                                                                                      | EFO\_0005168             | factor          | <http://www.ebi.ac.uk/efo/EFO_0005168>                                                      | total RNA|Biotin|C57 Wildtype Mouse \#1099 Brain|Strain: C57BL/6 Gender: female Age: 123 days Tissue: brain                      |
+| Brain\_C57 Wildtype\_affs275-1100               | 47 | Brain\_C57 Wildtype\_affs275-1100               | GSM101417 |                  47 | genotype            | EFO\_0000513              | <http://www.ebi.ac.uk/efo/EFO_0000513>                                      | genotype                 | EFO\_0000513                   | <http://www.ebi.ac.uk/efo/EFO_0000513> | wild type genotype                                                                                                      | EFO\_0005168             | factor          | <http://www.ebi.ac.uk/efo/EFO_0005168>                                                      | total RNA|C57 Wildtype Mouse \#1100 Brain|Biotin|Strain: C57BL/6 Gender: female Age: 123 days Tissue: brain                      |
+| Brain\_Melanotransferrin Knockout\_affs275-1096 | 52 | Brain\_Melanotransferrin Knockout\_affs275-1096 | GSM101412 |                  52 | genotype;genotype   | EFO\_0000513;EFO\_0000513 | <http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513> | genotype                 | EFO\_0000513                   | <http://www.ebi.ac.uk/efo/EFO_0000513> | Mfi2 \[mouse\] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative | GENE\_30060;TGEMO\_00001 | factor          | <http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001> | total RNA|brain|Melanotransferrin Knockout Mouse \#1096 Brain|Biotin|female|Strain: C57BL/6 - Lucy|Age: 123 days                 |
+| Brain\_Melanotransferrin Knockout\_affs275-1097 | 51 | Brain\_Melanotransferrin Knockout\_affs275-1097 | GSM101413 |                  51 | genotype;genotype   | EFO\_0000513;EFO\_0000513 | <http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513> | genotype                 | EFO\_0000513                   | <http://www.ebi.ac.uk/efo/EFO_0000513> | Mfi2 \[mouse\] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative | GENE\_30060;TGEMO\_00001 | factor          | <http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001> | total RNA|Melanotransferrin Knockout Mouse \#1097 Brain|Biotin|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain |
+| Brain\_Melanotransferrin Knockout\_affs275-1098 | 50 | Brain\_Melanotransferrin Knockout\_affs275-1098 | GSM101414 |                  50 | genotype;genotype   | EFO\_0000513;EFO\_0000513 | <http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513> | genotype                 | EFO\_0000513                   | <http://www.ebi.ac.uk/efo/EFO_0000513> | Mfi2 \[mouse\] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative | GENE\_30060;TGEMO\_00001 | factor          | <http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001> | total RNA|Biotin|Melanotransferrin Knockout Mouse \#1098 Brain|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain |
+| Brain\_Melanotransferrin Knockout\_affs275-1101 | 49 | Brain\_Melanotransferrin Knockout\_affs275-1101 | GSM101415 |                  49 | genotype;genotype   | EFO\_0000513;EFO\_0000513 | <http://www.ebi.ac.uk/efo/EFO_0000513;http://www.ebi.ac.uk/efo/EFO_0000513> | genotype                 | EFO\_0000513                   | <http://www.ebi.ac.uk/efo/EFO_0000513> | Mfi2 \[mouse\] antigen p97 (melanoma associated) identified by monoclonal antibodies 133.2 and 96.5;Homozygous negative | GENE\_30060;TGEMO\_00001 | factor          | <http://purl.org/commons/record/ncbi_gene/30060;http://purl.obolibrary.org/obo/TGEMO_00001> | Melanotransferrin Knockout Mouse \#1101 Brain|total RNA|Biotin|Strain: C57BL/6 - Lucy Gender: female Age: 123 days Tissue: brain |
 
-Download expression data a study
+Download expression data a
+study
 
 ``` r
 studyIDs %>% sapply(function(x){datasetInfo(x,request= 'data',return= FALSE, file = paste0('data/',x))})
 ```
 
-Changelog
-=========
+# Changelog
 
 **17 September 2018:**
 
--   Start writing changelog...
--   `compileMetadata` function now returns all quality information in geeq. Existing columnames for batch effect information has been altered to better explain what they are.
--   `compileMetadata` now returns a list instead of a data frame for experiment specific information if the desired output is a list.
--   endpoint functions are fine if their naming variable is NULL. For most cases this shouldn't happen but names are for interactive usage and should not be relied on.
--   Started using proper semantic versioning
--   TOC added to readme
+  - Start writing changelog…
+  - `compileMetadata` function now returns all quality information in
+    geeq. Existing columnames for batch effect information has been
+    altered to better explain what they are.
+  - `compileMetadata` now returns a list instead of a data frame for
+    experiment specific information if the desired output is a list.
+  - endpoint functions are fine if their naming variable is NULL. For
+    most cases this shouldn’t happen but names are for interactive usage
+    and should not be relied on.
+  - Started using proper semantic versioning
+  - TOC added to readme
