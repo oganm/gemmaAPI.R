@@ -292,7 +292,7 @@ datasetInfo  = function(dataset,
               raw = httr::GET(url = url)
             }
             
-            if(raw$status_code %in% c(200, 500)){
+            if(!raw$status_code %in% c(200, 500)){
               stop("Received a response with status ", raw$status_code, '\n', raw$error$message);
             }
             
