@@ -293,6 +293,7 @@ datasetInfo  = function(dataset,
                        script = b$Runtime$compileScript(expression = glue::glue('fetchDiffExpressionData({requestParams$differential})'),
                                                sourceURL = 'meh',persistScript = TRUE)
                        Sys.sleep(1)
+                       b$Console$enable()
                        b$Runtime$runScript(scriptId = script$scriptId)
                        b$close()
                        Sys.sleep(10)
