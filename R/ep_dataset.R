@@ -262,10 +262,12 @@ datasetInfo  = function(dataset,
             }
             url = glue::glue('{url}/expressions/genes/{stringArg(genes = requestParams$genes,addName = FALSE)}?',
                              stringArg(consolidate = requestParams$consolidate), '&', logicArg(keepNonSpecific = requestParams$keepNonSpecific))
-        }else if(request =='degs'){
+        } else if(request =='degs'){
             
-            # this is a special little request that is handled asyncrounusly on gemma's side and not a real part of the API right now
-            # consider moving this to high level functions later
+            # this is a special little request that is handled asyncrounusly on 
+            # gemma's side and not a real part of the API right now
+            # consider moving this to high level functions later and/or migrate 
+            # the processing bits to getContent
             gemma = gemmaBase() %>% dirname() %>% dirname()
             
             # shortname mandatory it seems
@@ -283,42 +285,56 @@ datasetInfo  = function(dataset,
             }
             url = glue::glue('{gemma}/getData.html?file={bioAssaySetId}_{shortName}_diffExpAnalysis_{requestParams$differential}.zip')
             
-            tryCatch(download.file(url, temp),
-                     error = function(e){
-                       b <- chromote::ChromoteSession$new()
-                       b$Page$navigate(glue::glue('https://gemma.msl.ubc.ca/expressionExperiment/showExpressionExperiment.html?id={dts[[1]]$id}'))
-                       Sys.sleep(1)
-                       b$Runtime$enable()
-                       Sys.sleep(1)
-                       script = b$Runtime$compileScript(expression = glue::glue('fetchDiffExpressionData({requestParams$differential})'),
-                                               sourceURL = 'meh',persistScript = TRUE)
-                       Sys.sleep(1)
-                       b$Runtime$runScript(scriptId = script$scriptId)
-                       b$close()
-                       Sys.sleep(10)
-                       pastSize = 0
-                       for(i in 1:10){
-                         tryCatch(
-                           download.file(url, temp),
-                           error = function(e){
-                             Sys.sleep(5)
-                           }
-                         )
-
-                         if(file.exists(temp)){
-                           fileData = file.info(temp)
-                           if(fileData$size==pastSize){
-                             break
-                           } else{
-                             Sys.sleep(5)
-                             pastSize = fileData$size
-                           }
-                         }
-                       }
-                       
-                     })
+            if(!is.null(getOption('gemmaPassword')) & !is.null(getOption('gemmaUsername'))){
+              raw = httr::GET(url = url, httr::authenticate(getOption('gemmaUsername'), 
+                                                            getOption('gemmaPassword')))
+            } else{
+              raw = httr::GET(url = url)
+            }
             
-
+            if(!raw$status_code %in% c(200, 500)){
+              stop("Received a response with status ", raw$status_code, '\n', raw$error$message);
+            }
+            
+            
+            if(raw$status_code==500){
+              b <- chromote::ChromoteSession$new()
+              b$Page$navigate(glue::glue('https://gemma.msl.ubc.ca/expressionExperiment/showExpressionExperiment.html?id={dts[[1]]$id}'))
+              Sys.sleep(1)
+              b$Runtime$enable()
+              Sys.sleep(1)
+              script = b$Runtime$compileScript(expression = glue::glue('fetchDiffExpressionData({requestParams$differential})'),
+                                               sourceURL = 'meh',persistScript = TRUE)
+              Sys.sleep(1)
+              b$Console$enable()
+              b$Runtime$runScript(scriptId = script$scriptId)
+              b$close()
+              Sys.sleep(10)
+              pastSize = 0
+              for(i in 1:10){
+                if(!is.null(getOption('gemmaPassword')) & !is.null(getOption('gemmaUsername'))){
+                  raw = httr::GET(url = url, httr::authenticate(getOption('gemmaUsername'), 
+                                                                getOption('gemmaPassword')))
+                } else{
+                  raw = httr::GET(url = url)
+                }
+                pastLength = 0
+                if(raw$status_code==500){
+                  Sys.sleep(5)
+                  next
+                }else{
+                  fileLength = length(raw$content)
+                  if(fileLength == pastLength){
+                    break
+                  } else{
+                    Sys.sleep(5)
+                    pastLength = fileLength
+                  }
+                }
+              }
+            }
+            writeBin(raw$content,con = temp)
+            
             dir.create(file,showWarnings = FALSE)
             files = utils::unzip(temp,exdir = file)
             if(return){
