@@ -121,4 +121,8 @@ checkArguments = function(request, requestParams, allowedArguments,mandatoryArgu
     }
 }
 
+httrDownload = function(url, destfile){
+    content = httr::GET(url)
+    writeBin(content$content,destfile)
+}
 

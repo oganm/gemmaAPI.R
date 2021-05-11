@@ -36,7 +36,7 @@ getAnnotation = function(platform,
     if(file.exists(file) & ! overwrite){
         warning('Annotation file already exists. Not overwriting')
     } else{
-        tryCatch({download.file(paste0('https://gemma.msl.ubc.ca/annots/',platform,annotType,'.an.txt.gz'),
+        tryCatch({httrDownload(paste0('https://gemma.msl.ubc.ca/annots/',platform,annotType,'.an.txt.gz'),
                       paste0(file,'.gz'));TRUE},
                  error = function(e){
                     FALSE
@@ -47,7 +47,7 @@ getAnnotation = function(platform,
                 session = chromote::ChromoteSession$new()
                 session$Page$navigate(glue::glue('https://gemma.msl.ubc.ca/arrays/downloadAnnotationFile.html?id={pData$id}&fileType={originalAnnotType}'))
                 session$close()
-                download.file(paste0('https://gemma.msl.ubc.ca/annots/',platform,annotType,'.an.txt.gz'),
+                httrDownload(paste0('https://gemma.msl.ubc.ca/annots/',platform,annotType,'.an.txt.gz'),
                               paste0(file,'.gz'))
             } else{
                 stop(glue::glue('chromote package is needed for automated re-generation of the annotation file.\nPlease install from https://github.com/rstudio/chromote or manually force installation by visiting https://gemma.msl.ubc.ca/arrays/showArrayDesign.html?id={pData$id} and requesting the file'))
