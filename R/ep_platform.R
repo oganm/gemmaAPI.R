@@ -55,7 +55,6 @@ allPlatforms = function(platforms = NULL,
     } else{
         platforms = ''
     }
-    
     url = 
         glue::glue(gemmaBase(),
                    'platforms/{platforms}?{queryLimit(offset,limit)}&{sortArg(sort)}&{filterArg(filter)}')
@@ -172,11 +171,10 @@ platformInfo = function(platform,
             url = glue::glue(url,'/{request}')
         }
     } else{
-        content = allPlatforms(platform,limit = 0,file=file,return= return,
+        content = allPlatforms(platform,limit = 1,file=file,return= return,
                                overwrite = overwrite,memoised = memoised)
         return(content)
     }
-    
     content = getContent(url,file = file,return=return, overwrite = overwrite)
     if(return){
         if(is.null(request)){
