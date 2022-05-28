@@ -48,6 +48,7 @@ allDatasets = function(datasets = NULL,
                         memoised = FALSE) -> out
         return(out)
     }
+
     
     
     if(!is.null(datasets)){
@@ -359,7 +360,7 @@ datasetInfo  = function(dataset,
             url = glue::glue('{url}?{logicArg(filter = requestParams$filter)}')
         }
     } else{
-        content = allDatasets(dataset,limit = 0,file=file,return= return,overwrite = overwrite,memoised = memoised)
+        content = allDatasets(dataset,limit = 1,file=file,return= return,overwrite = overwrite,memoised = memoised)
         return(content)
     }
 
