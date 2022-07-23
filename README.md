@@ -8,6 +8,8 @@
   - [Examples](#examples)
   - [Changelog](#changelog)
 
+Deprecated in favour of [gemma.R](https://github.com/PavlidisLab/gemma.R)
+
 This is an R wrapper for
 [Gemma](http://www.chibi.ubc.ca/Gemma/home.html)’s restful
 [API](http://www.chibi.ubc.ca/Gemma/resources/restapidocs/).
